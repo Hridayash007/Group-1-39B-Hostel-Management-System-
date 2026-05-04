@@ -1,0 +1,2 @@
+HostelManagementSystem
+hostel.management.system.HostelManagementSystem
