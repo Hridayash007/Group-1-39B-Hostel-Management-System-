@@ -128,34 +128,21 @@ public class VerifyOtp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void resendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resendActionPerformed
-        String newOtp = dao.EmailService.generateOTP();
-    controller.SessionData.currentOTP = newOtp;
-    boolean sent = dao.EmailService.sendOTPEmail(controller.SessionData.currentEmail, newOtp);
-    if (sent) {
-        javax.swing.JOptionPane.showMessageDialog(this, "New OTP sent to " + controller.SessionData.currentEmail);
-    } else {
-        javax.swing.JOptionPane.showMessageDialog(this, "Failed to resend OTP.");
-    }
+       
+    
 // TODO add your handling code here:
     }//GEN-LAST:event_resendActionPerformed
 
     private void verifyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_verifyActionPerformed
-String enteredOTP = code1.getText() + code2.getText() + code3.getText()
-                  + code4.getText() + code5.getText() + code6.getText();
 
-if (enteredOTP.equals(controller.SessionData.currentOTP)) {
-    javax.swing.JOptionPane.showMessageDialog(this, "OTP Verified!");
-    new ResetPassword().setVisible(true);
-    this.dispose();
-} else {
-    javax.swing.JOptionPane.showMessageDialog(this, "Invalid OTP. Please try again.");
-// TODO add your handling code here:
+
+
+
+    
     }//GEN-LAST:event_verifyActionPerformed
-    }
+
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-    ForgetPassword forget= new ForgetPassword();
-    forget.setVisible(true);
-    this.dispose();// TODO add your handling code here:
+    
     }//GEN-LAST:event_backActionPerformed
 
     /**

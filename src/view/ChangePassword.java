@@ -280,29 +280,7 @@ public class ChangePassword extends javax.swing.JFrame {
     }//GEN-LAST:event_confirmnewpasswordtextActionPerformed
 
     private void updatepasswordbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updatepasswordbuttonActionPerformed
-        PasswordResetSuccessful successful= new PasswordResetSuccessful();
-        String newPass = newpasswordtext.getText().trim();
-        String confirmPass = confirmnewpasswordtext.getText().trim();
-
-        if (newPass.isEmpty() || confirmPass.isEmpty()) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Fields cannot be empty.");
-            return;
-        }
-
-        if (!newPass.equals(confirmPass)) {
-            javax.swing.JOptionPane.showMessageDialog(this, "Passwords do not match.");
-            return;
-        }
-
-        // Update password in database using the stored email
-        boolean updated = new dao.NewClass().updatePassword(controller.SessionData.currentEmail, newPass);
-
-        if (updated) {
-            new PasswordResetSuccessful().setVisible(true);
-            this.dispose();
-        } else {
-            javax.swing.JOptionPane.showMessageDialog(this, "Failed to update password.");
-        }
+        
     }//GEN-LAST:event_updatepasswordbuttonActionPerformed
 
     /**

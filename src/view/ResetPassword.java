@@ -120,36 +120,11 @@ public class ResetPassword extends javax.swing.JFrame {
     }//GEN-LAST:event_newpasswordtextActionPerformed
 
     private void resetpasswordbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetpasswordbuttonActionPerformed
-    PasswordResetSuccessful successful= new PasswordResetSuccessful();
-    String newPass = newpasswordtext.getText().trim();
-String confirmPass = confirmnewpasswordtext.getText().trim();
-
-if (newPass.isEmpty() || confirmPass.isEmpty()) {
-    javax.swing.JOptionPane.showMessageDialog(this, "Fields cannot be empty.");
-    return;
-}
-
-if (!newPass.equals(confirmPass)) {
-    javax.swing.JOptionPane.showMessageDialog(this, "Passwords do not match.");
-    return;
-}
-
-// Update password in database using the stored email
-boolean updated = new dao.NewClass().updatePassword(controller.SessionData.currentEmail, newPass);
-
-if (updated) {
-    new PasswordResetSuccessful().setVisible(true);
-    this.dispose();
-} else {
-    javax.swing.JOptionPane.showMessageDialog(this, "Failed to update password.");
-}
 
     }//GEN-LAST:event_resetpasswordbuttonActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-VerifyOtp b = new VerifyOtp();
-b.setVisible(true); 
-this.dispose();        // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_backActionPerformed
 
     /**

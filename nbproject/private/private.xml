@@ -6,18 +6,17 @@
             <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/HostelManagementSystem/HostelManagementSystem.java</file>
             <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/database/db.java</file>
             <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/database/MYSqlConnector.java</file>
-            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/controller/NewClass.java</file>
-            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/model/NewClass.java</file>
-            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/dao/NewClass.java</file>
             <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/images/NewClass.java</file>
             <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/view/AddStudentDetails.java</file>
             <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/view/ForgetPassword.java</file>
             <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/view/VerifyOtp.java</file>
             <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/view/ResetPassword.java</file>
             <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/view/PasswordResetSuccessful.java</file>
-            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/dao/EmailService.java</file>
-            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/controller/SessionData.java</file>
             <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/view/ChangePassword.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/controller/LoginController.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/controller/SignupController.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/dao/UserDao.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/model/UserData.java</file>
         </group>
     </open-files>
 </project-private>

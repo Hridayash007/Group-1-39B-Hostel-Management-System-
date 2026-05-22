@@ -106,29 +106,7 @@ public class ForgetPassword extends javax.swing.JFrame {
 
     private void sendotpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendotpActionPerformed
 
-    if (email.getText().trim().isEmpty()) {
-        javax.swing.JOptionPane.showMessageDialog(this, "Please enter your email address.");
-        return;
-    }
-
-    // Generate OTP
-    String otp = dao.EmailService.generateOTP();
-
-    // Store OTP and email in session
-    controller.SessionData.currentOTP = otp;
-    controller.SessionData.currentEmail = email.getText().trim();
-
-    // Send OTP email
-    boolean sent = dao.EmailService.sendOTPEmail(email.getText().trim(), otp);
-
-    if (sent) {
-        javax.swing.JOptionPane.showMessageDialog(this, "OTP sent to " + email.getText().trim());
-        VerifyOtp verify = new VerifyOtp();
-        verify.setVisible(true);
-        this.dispose();
-    } else {
-        javax.swing.JOptionPane.showMessageDialog(this, "Failed to send OTP. Check your email or internet.");
-    }
+ 
     }//GEN-LAST:event_sendotpActionPerformed
 
     
