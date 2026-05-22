@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/HostelManagementSystem/HostelManagementSystem.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/database/db.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/database/MYSqlConnector.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/controller/NewClass.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/model/NewClass.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/dao/NewClass.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/images/NewClass.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/view/AddStudentDetails.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/view/ForgetPassword.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/view/VerifyOtp.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/view/ResetPassword.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/view/PasswordResetSuccessful.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/dao/EmailService.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/controller/SessionData.java</file>
+            <file>file:/C:/Users/Hridayash/Documents/NetBeansProjects/Hostel%20Management%20System/src/view/ChangePassword.java</file>
+        </group>
+    </open-files>
+</project-private>
