@@ -56,7 +56,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="Email_data" min="-2" pref="516" max="-2" attributes="0"/>
                           <Component id="Email" min="-2" pref="87" max="-2" attributes="0"/>
-                          <Component id="SignUP" min="-2" pref="516" max="-2" attributes="0"/>
+                          <Component id="SignUPBtn" min="-2" pref="516" max="-2" attributes="0"/>
                           <Component id="Password_data" alignment="0" min="-2" pref="516" max="-2" attributes="0"/>
                           <Component id="Signup" alignment="0" min="-2" pref="115" max="-2" attributes="0"/>
                           <Component id="username" alignment="0" min="-2" pref="87" max="-2" attributes="0"/>
@@ -67,7 +67,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="Account_exist" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="LogIn" min="-2" max="-2" attributes="0"/>
+                              <Component id="LogInBtn" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="54" max="32767" attributes="0"/>
@@ -96,11 +96,11 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="Confirm_password_data" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="SignUP" min="-2" max="-2" attributes="0"/>
+                      <Component id="SignUPBtn" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="Account_exist" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="LogIn" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="LogInBtn" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="152" max="32767" attributes="0"/>
                   </Group>
@@ -193,7 +193,7 @@
                 <Property name="text" type="java.lang.String" value="Confirm Password "/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="SignUP">
+            <Component class="javax.swing.JButton" name="SignUPBtn">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="99" green="d" red="5" type="rgb"/>
@@ -204,10 +204,10 @@
                 <Property name="text" type="java.lang.String" value="Sign up"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SignUPActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SignUPBtnActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="LogIn">
+            <Component class="javax.swing.JButton" name="LogInBtn">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -220,7 +220,7 @@
                 <Property name="contentAreaFilled" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogInActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LogInBtnActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="Email">

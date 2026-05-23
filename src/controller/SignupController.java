@@ -1,34 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
-
 
 import dao.UserDao;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.UserData;
-import view.Login;
-import view.signup;
+import view.LogIn;
+import view.UserRegistration;
 
-
-/**
- *
- * @author User
- */
 public class SignupController {
+
     private final UserDao userDao = new UserDao();
-    private final signup userView;
+    private final UserRegistration userView;
 
-    public SignupController(signup userView) {
+    public SignupController(UserRegistration userView) {
         this.userView = userView;
-
-        userView.addAddUserListener(new AddUserListener());
-        userView.addLoginListener(new LoginListener());
-        
-
+        userView.AddUserListener(new AddUserListener());
+        userView.LoginListener(new LoginListener());
     }
 
     public void open() {
@@ -43,37 +31,49 @@ public class SignupController {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
-                String name = userView.getUsernameField().getText();
-                String email = userView.getEmailField().getText();
-                String password = userView.getPasswordField().getText();
-                UserData user = new UserData(name, email, password);
-               
-                boolean check = userDao.checkUser(user);
+                String username        = userView.getUsernameField().getText().trim();
+                String email           = userView.getEmailField().getText().trim();
+                String password        = userView.getPasswordText();        
+                String confirm_password = userView.getConfirmPasswordText(); 
 
-                if (check) {
-                    JOptionPane.showMessageDialog(userView, "Duplicate user");
+                // Validation
+                if (username.isEmpty() || email.isEmpty() || 
+                    password.isEmpty() || confirm_password.isEmpty()) {
+                    JOptionPane.showMessageDialog(userView, "All fields are required.");
+                    return;
+                }
+
+                if (!password.equals(confirm_password)) {
+                    JOptionPane.showMessageDialog(userView, "Passwords do not match.");
+                    return;
+                }
+
+                UserData user = new UserData(username, email, password, confirm_password);
+
+                boolean exists = userDao.checkUser(user);
+                if (exists) {
+                    JOptionPane.showMessageDialog(userView, "Email or username already registered.");
                 } else {
                     userDao.createUser(user);
-                    JOptionPane.showMessageDialog(userView, "Succesful");
-
+                    JOptionPane.showMessageDialog(userView, "Registration Successful! Please log in.");
+                    close();
+                    LogIn loginView = new LogIn();
+                    new LoginController(loginView).open();
                 }
+
             } catch (Exception ex) {
-                System.out.println("Error adding user: " + ex.getMessage());
+                System.out.println("Signup error: " + ex.getMessage());
+                JOptionPane.showMessageDialog(userView, "Error: " + ex.getMessage());
             }
-
         }
-
     }
 
     class LoginListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            Login loginView = new Login();
-            LoginController login = new LoginController(loginView);
             close();
-            login.open();
+            LogIn loginView = new LogIn();
+            new LoginController(loginView).open();
         }
     }
-    
-
 }

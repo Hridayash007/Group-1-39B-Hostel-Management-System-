@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package controller;
 
 import dao.UserDao;
@@ -9,21 +5,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.UserData;
-import view.Login;
+import view.LogIn;
 
-/**
- *
- * @author User
- */
 public class LoginController {
 
     private final UserDao userDao = new UserDao();
-    private final Login userView;
-    
+    private final LogIn userView;
 
-    public LoginController(Login userView) {
+    public LoginController(LogIn userView) {
         this.userView = userView;
-      
+        userView.LoginListener(new LoginListener());
+        userView.SignupListener(new SignupListener());
     }
 
     public void open() {
@@ -34,6 +26,45 @@ public class LoginController {
         this.userView.dispose();
     }
 
-    
-    
+    class LoginListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            try {
+                String email = userView.getEmailField().getText().trim();
+
+                // FIXED: read from JPasswordField correctly
+                String password = new String(userView.getPasswordField().getPassword());
+
+                if (email.isEmpty() || password.isEmpty()) {
+                    JOptionPane.showMessageDialog(userView, "Please enter email and password.");
+                    return;
+                }
+
+                UserData loggedInUser = userDao.loginUser(email, password);
+
+                if (loggedInUser != null) {
+                    JOptionPane.showMessageDialog(userView, "Welcome, " + loggedInUser.getUsername() + "!");
+                    close();
+                    // TODO: Open dashboard here
+                    // new DashboardController(new Dashboard(loggedInUser)).open();
+                } else {
+                    JOptionPane.showMessageDialog(userView, "Invalid email or password. Please try again.");
+                }
+
+            } catch (Exception ex) {
+                System.out.println("Login error: " + ex.getMessage());
+                JOptionPane.showMessageDialog(userView, "Error: " + ex.getMessage());
+            }
+        }
+    }
+
+    class SignupListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close();
+            view.UserRegistration signupView = new view.UserRegistration();
+            SignupController signupController = new SignupController(signupView);
+            signupController.open();
+        }
+    }
 }

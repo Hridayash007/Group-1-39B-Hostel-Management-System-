@@ -1,79 +1,66 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package controller;
+package dao;
 
-
-import dao.UserDao;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.JOptionPane;
+import database.MYSqlConnector;
 import model.UserData;
-import view.Login;
-import view.signup;
+import java.sql.*;
 
+public class UserDao {
 
-/**
- *
- * @author User
- */
-public class SignupController {
-    private final UserDao userDao = new UserDao();
-    private final signup userView;
+    MYSqlConnector mysql = new MYSqlConnector();
 
-    public SignupController(signup userView) {
-        this.userView = userView;
-
-        userView.addAddUserListener(new AddUserListener());
-        userView.addLoginListener(new LoginListener());
-        
-
+    public void createUser(UserData user) {
+        Connection conn = mysql.openConnection();
+        String sql = "INSERT INTO users (username, email, password, confirm_password) VALUES (?, ?, ?, ?)";
+        try (PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, user.getUsername());
+            pstm.setString(2, user.getEmail());
+            pstm.setString(3, user.getPassword());
+            pstm.setString(4, user.getConfirmPassword()); 
+            pstm.executeUpdate();
+        } catch (Exception e) {
+            System.out.print(e);
+            
+        } finally {
+            mysql.closeConnection(conn);
+        }
     }
 
-    public void open() {
-        this.userView.setVisible(true);
+    public boolean checkUser(UserData user) {
+        Connection conn = mysql.openConnection();
+        String sql = "SELECT * FROM users WHERE email = ? OR username = ?";
+        try (PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, user.getEmail());
+            pstm.setString(2, user.getUsername());
+            ResultSet result = pstm.executeQuery();
+            return result.next();
+        } catch (SQLException ex) {
+            System.out.print(ex);
+        } finally {
+            mysql.closeConnection(conn);
+        }
+        return false;
     }
 
-    public void close() {
-        this.userView.dispose();
-    }
-
-    class AddUserListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            try {
-                String name = userView.getUsernameField().getText();
-                String email = userView.getEmailField().getText();
-                String password = userView.getPasswordField().getText();
-                UserData user = new UserData(name, email, password);
-               
-                boolean check = userDao.checkUser(user);
-
-                if (check) {
-                    JOptionPane.showMessageDialog(userView, "Duplicate user");
-                } else {
-                    userDao.createUser(user);
-                    JOptionPane.showMessageDialog(userView, "Succesful");
-
-                }
-            } catch (Exception ex) {
-                System.out.println("Error adding user: " + ex.getMessage());
+    // NEW METHOD: validates login credentials against the database
+    public UserData loginUser(String email, String password) {
+        Connection conn = mysql.openConnection();
+        String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+        try (PreparedStatement pstm = conn.prepareStatement(sql)) {
+            pstm.setString(1, email);
+            pstm.setString(2, password);
+            ResultSet result = pstm.executeQuery();
+            if (result.next()) {
+                UserData user = new UserData();
+                user.setId(result.getInt("student_id"));
+                user.setUsername(result.getString("username"));
+                user.setEmail(result.getString("email"));
+                return user; // credentials matched
             }
-
+        } catch (SQLException ex) {
+            System.out.print(ex);
+        } finally {
+            mysql.closeConnection(conn);
         }
-
+        return null; // no match found
     }
-
-    class LoginListener implements ActionListener {
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            Login loginView = new Login();
-            LoginController login = new LoginController(loginView);
-            close();
-            login.open();
-        }
-    }
-    
-
 }

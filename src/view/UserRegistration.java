@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author sulav
@@ -39,8 +41,8 @@ public class UserRegistration extends javax.swing.JFrame {
         usernamedata = new javax.swing.JTextField();
         password = new javax.swing.JLabel();
         confirm = new javax.swing.JLabel();
-        SignUP = new javax.swing.JButton();
-        LogIn = new javax.swing.JButton();
+        SignUPBtn = new javax.swing.JButton();
+        LogInBtn = new javax.swing.JButton();
         Email = new javax.swing.JLabel();
         Email_data = new javax.swing.JTextField();
         Background = new javax.swing.JLabel();
@@ -97,17 +99,17 @@ public class UserRegistration extends javax.swing.JFrame {
         confirm.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         confirm.setText("Confirm Password ");
 
-        SignUP.setBackground(new java.awt.Color(5, 13, 153));
-        SignUP.setForeground(new java.awt.Color(255, 255, 255));
-        SignUP.setText("Sign up");
-        SignUP.addActionListener(this::SignUPActionPerformed);
+        SignUPBtn.setBackground(new java.awt.Color(5, 13, 153));
+        SignUPBtn.setForeground(new java.awt.Color(255, 255, 255));
+        SignUPBtn.setText("Sign up");
+        SignUPBtn.addActionListener(this::SignUPBtnActionPerformed);
 
-        LogIn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        LogIn.setForeground(new java.awt.Color(5, 13, 153));
-        LogIn.setText("Log in");
-        LogIn.setBorderPainted(false);
-        LogIn.setContentAreaFilled(false);
-        LogIn.addActionListener(this::LogInActionPerformed);
+        LogInBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LogInBtn.setForeground(new java.awt.Color(5, 13, 153));
+        LogInBtn.setText("Log in");
+        LogInBtn.setBorderPainted(false);
+        LogInBtn.setContentAreaFilled(false);
+        LogInBtn.addActionListener(this::LogInBtnActionPerformed);
 
         Email.setBackground(new java.awt.Color(0, 0, 0));
         Email.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -125,7 +127,7 @@ public class UserRegistration extends javax.swing.JFrame {
                 .addGroup(SignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Email_data, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Email, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SignUP, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SignUPBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Password_data, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Signup, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,7 +138,7 @@ public class UserRegistration extends javax.swing.JFrame {
                     .addGroup(SignUpLayout.createSequentialGroup()
                         .addComponent(Account_exist)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(LogIn)))
+                        .addComponent(LogInBtn)))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         SignUpLayout.setVerticalGroup(
@@ -161,11 +163,11 @@ public class UserRegistration extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Confirm_password_data, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(SignUP)
+                .addComponent(SignUPBtn)
                 .addGap(18, 18, 18)
                 .addGroup(SignUpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Account_exist)
-                    .addComponent(LogIn))
+                    .addComponent(LogInBtn))
                 .addContainerGap(152, Short.MAX_VALUE))
         );
 
@@ -183,15 +185,13 @@ public class UserRegistration extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
-LogIn LI = new LogIn();
-LI.setVisible(true);
-this.dispose();// TODO add your handling code here:
-    }//GEN-LAST:event_LogInActionPerformed
+    private void LogInBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInBtnActionPerformed
 
-    private void SignUPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUPActionPerformed
+    }//GEN-LAST:event_LogInBtnActionPerformed
+
+    private void SignUPBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SignUPBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SignUPActionPerformed
+    }//GEN-LAST:event_SignUPBtnActionPerformed
 
     private void usernamedataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernamedataActionPerformed
         // TODO add your handling code here:
@@ -211,28 +211,33 @@ this.dispose();// TODO add your handling code here:
 
     private void Password_dataFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Password_dataFocusGained
         // TODO add your handling code here:
-        if(Password_data.getText().equals("********")){
-            Password_data.setText("");
-        }
+        if (new String(Password_data.getPassword()).equals("********")) {
+        Password_data.setText("");
+    }
+    
+        
     }//GEN-LAST:event_Password_dataFocusGained
 
     private void Password_dataFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Password_dataFocusLost
         // TODO add your handling code here:
-        if(Password_data.getText().equals("")){
-            Password_data.setText("********");
+        if (new String(Password_data.getPassword()).isEmpty()) {
+        Password_data.setText("********");
+    
         }
     }//GEN-LAST:event_Password_dataFocusLost
 
     private void Confirm_password_dataFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Confirm_password_dataFocusGained
-         if(Confirm_password_data.getText().equals("********")){
-            Confirm_password_data.setText("");        // TODO add your handling code here:
+        if (new String(Confirm_password_data.getPassword()).equals("********")) {
+        Confirm_password_data.setText("");
+         // TODO add your handling code here:
     }//GEN-LAST:event_Confirm_password_dataFocusGained
     }
     private void Confirm_password_dataFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_Confirm_password_dataFocusLost
-        if(Confirm_password_data.getText().equals("")){
-            Confirm_password_data.setText("*********");// TODO add your handling code here:
+        if (new String(Confirm_password_data.getPassword()).isEmpty()) {
+        Confirm_password_data.setText("********");
+        }// TODO add your handling code here:
     }//GEN-LAST:event_Confirm_password_dataFocusLost
-    }
+
     /**
      * @param args the command line arguments
      */
@@ -264,9 +269,9 @@ this.dispose();// TODO add your handling code here:
     private javax.swing.JPasswordField Confirm_password_data;
     private javax.swing.JLabel Email;
     private javax.swing.JTextField Email_data;
-    private javax.swing.JButton LogIn;
+    private javax.swing.JButton LogInBtn;
     private javax.swing.JPasswordField Password_data;
-    private javax.swing.JButton SignUP;
+    private javax.swing.JButton SignUPBtn;
     private javax.swing.JPanel SignUp;
     private javax.swing.JLabel Signup;
     private javax.swing.JLabel confirm;
@@ -275,4 +280,29 @@ this.dispose();// TODO add your handling code here:
     private javax.swing.JLabel username;
     private javax.swing.JTextField usernamedata;
     // End of variables declaration//GEN-END:variables
+public void AddUserListener(ActionListener listener){
+    SignUPBtn.addActionListener(listener);
 }
+
+public void LoginListener(ActionListener listener){
+    LogInBtn.addActionListener(listener);
+}
+
+
+
+public javax.swing.JTextField getEmailField(){
+    return Email_data;
+}
+
+public javax.swing.JTextField getUsernameField(){
+    return usernamedata;
+}
+public String getPasswordText() {
+    return new String(Password_data.getPassword());
+}
+public String getConfirmPasswordText() {
+    return new String(Confirm_password_data.getPassword());
+}
+
+}
+

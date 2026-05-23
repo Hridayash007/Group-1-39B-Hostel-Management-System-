@@ -37,10 +37,10 @@ public class LogIn extends javax.swing.JFrame {
         Email = new javax.swing.JLabel();
         Email_data = new javax.swing.JTextField();
         password = new javax.swing.JLabel();
-        LogIn = new javax.swing.JButton();
-        Register = new javax.swing.JButton();
+        loginbutton = new javax.swing.JButton();
+        registerbutton = new javax.swing.JButton();
         Text = new javax.swing.JLabel();
-        Foget_password = new javax.swing.JButton();
+        forgetpasswordbutton = new javax.swing.JButton();
         Or = new javax.swing.JLabel();
         username1 = new javax.swing.JLabel();
         Username_data1 = new javax.swing.JTextField();
@@ -97,33 +97,33 @@ public class LogIn extends javax.swing.JFrame {
         LogIN.add(password);
         password.setBounds(20, 220, 75, 16);
 
-        LogIn.setBackground(new java.awt.Color(5, 13, 153));
-        LogIn.setForeground(new java.awt.Color(255, 255, 255));
-        LogIn.setText("Log In");
-        LogIn.addActionListener(this::LogInActionPerformed);
-        LogIN.add(LogIn);
-        LogIn.setBounds(20, 340, 516, 23);
+        loginbutton.setBackground(new java.awt.Color(5, 13, 153));
+        loginbutton.setForeground(new java.awt.Color(255, 255, 255));
+        loginbutton.setText("Log In");
+        loginbutton.addActionListener(this::loginbuttonActionPerformed);
+        LogIN.add(loginbutton);
+        loginbutton.setBounds(20, 340, 516, 23);
 
-        Register.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        Register.setForeground(new java.awt.Color(5, 13, 153));
-        Register.setText("Register here");
-        Register.setBorderPainted(false);
-        Register.setContentAreaFilled(false);
-        Register.addActionListener(this::RegisterActionPerformed);
-        LogIN.add(Register);
-        Register.setBounds(160, 370, 120, 40);
+        registerbutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        registerbutton.setForeground(new java.awt.Color(5, 13, 153));
+        registerbutton.setText("Register here");
+        registerbutton.setBorderPainted(false);
+        registerbutton.setContentAreaFilled(false);
+        registerbutton.addActionListener(this::registerbuttonActionPerformed);
+        LogIN.add(registerbutton);
+        registerbutton.setBounds(160, 370, 120, 40);
 
         Text.setText("Enter your credentials to access your dashboard");
         LogIN.add(Text);
         Text.setBounds(20, 64, 263, 16);
 
-        Foget_password.setForeground(new java.awt.Color(5, 13, 153));
-        Foget_password.setText("Forget password?");
-        Foget_password.setBorderPainted(false);
-        Foget_password.setContentAreaFilled(false);
-        Foget_password.addActionListener(this::Foget_passwordActionPerformed);
-        LogIN.add(Foget_password);
-        Foget_password.setBounds(400, 270, 140, 23);
+        forgetpasswordbutton.setForeground(new java.awt.Color(5, 13, 153));
+        forgetpasswordbutton.setText("Forget password?");
+        forgetpasswordbutton.setBorderPainted(false);
+        forgetpasswordbutton.setContentAreaFilled(false);
+        forgetpasswordbutton.addActionListener(this::forgetpasswordbuttonActionPerformed);
+        LogIN.add(forgetpasswordbutton);
+        forgetpasswordbutton.setBounds(400, 270, 140, 23);
 
         Or.setText("--------------------------------------------------------------- or -------------------------------------------------------------");
         LogIN.add(Or);
@@ -158,19 +158,17 @@ public class LogIn extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Email_dataActionPerformed
 
-    private void LogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogInActionPerformed
+    private void loginbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbuttonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_LogInActionPerformed
+    }//GEN-LAST:event_loginbuttonActionPerformed
 
-    private void RegisterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterActionPerformed
-UserRegistration UR = new UserRegistration();
-UR.setVisible(true);
-this.dispose();    // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterActionPerformed
+    private void registerbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerbuttonActionPerformed
+    // TODO add your handling code here:
+    }//GEN-LAST:event_registerbuttonActionPerformed
 
-    private void Foget_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Foget_passwordActionPerformed
+    private void forgetpasswordbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_forgetpasswordbuttonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Foget_passwordActionPerformed
+    }//GEN-LAST:event_forgetpasswordbuttonActionPerformed
 
     private void Username_data1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Username_data1ActionPerformed
         // TODO add your handling code here:
@@ -217,17 +215,45 @@ this.dispose();    // TODO add your handling code here:
     private javax.swing.JLabel Dont_have_acc;
     private javax.swing.JLabel Email;
     private javax.swing.JTextField Email_data;
-    private javax.swing.JButton Foget_password;
     private javax.swing.JLabel LOGIN;
     private javax.swing.JPanel LogIN;
-    private javax.swing.JButton LogIn;
     private javax.swing.JLabel Or;
     private javax.swing.JPasswordField Password_data;
-    private javax.swing.JButton Register;
     private javax.swing.JLabel Text;
     private javax.swing.JTextField Username_data1;
+    private javax.swing.JButton forgetpasswordbutton;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton loginbutton;
     private javax.swing.JLabel password;
+    private javax.swing.JButton registerbutton;
     private javax.swing.JLabel username1;
     // End of variables declaration//GEN-END:variables
+
+// REPLACE these methods at the bottom of LogIn.java
+
+public javax.swing.JTextField getEmailField() {
+    return Email_data;
+}
+
+// FIXED: return JPasswordField, not JTextField
+public javax.swing.JPasswordField getPasswordField() {
+    return Password_data;
+}
+
+public javax.swing.JTextField getUsernameField() {
+    return Username_data1;
+}
+
+public void LoginListener(java.awt.event.ActionListener listener) {
+    loginbutton.addActionListener(listener);
+}
+
+public void SignupListener(java.awt.event.ActionListener listener) {
+    registerbutton.addActionListener(listener);
+}
+
+public void ForgetPasswordListener(java.awt.event.ActionListener listener) {
+    forgetpasswordbutton.addActionListener(listener);
+}
+
 }

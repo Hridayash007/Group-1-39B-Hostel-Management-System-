@@ -1,17 +1,19 @@
 package HostelManagementSystem;
 
-import database.MYSqlConnector;
+import controller.LoginController;
+import view.LogIn;
 import database.db;
-
+import database.MYSqlConnector;
 
 public class HostelManagementSystem {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        db database = new MYSqlConnector();
-        database.openConnection();
+        java.awt.EventQueue.invokeLater(() -> {
+            // FIXED: Start from Login screen, not Signup
+            LogIn view = new LogIn();
+            LoginController controller = new LoginController(view);
+            controller.open();
+        });
     }
-    
 }
+
