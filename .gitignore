@@ -1,1 +1,12 @@
-/dist/
+# NetBeans build files
+build/
+dist/
+
+# Compiled Java classes
+*.class
+
+# NetBeans private config
+nbproject/private/
+
+# Logs
+*.log
