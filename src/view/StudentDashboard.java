@@ -17,6 +17,7 @@ public class StudentDashboard extends javax.swing.JFrame {
      */
     public StudentDashboard() {
         initComponents();
+        setSize(1600, 900);
     }
 
     /**
