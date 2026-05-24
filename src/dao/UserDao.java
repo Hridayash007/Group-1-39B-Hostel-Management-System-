@@ -51,7 +51,7 @@ public class UserDao {
             ResultSet result = pstm.executeQuery();
             if (result.next()) {
                 UserData user = new UserData();
-                user.setId(result.getInt("student_id"));
+                user.setId(result.getInt("user_id"));
                 user.setUsername(result.getString("username"));
                 user.setEmail(result.getString("email"));
                 return user; // credentials matched

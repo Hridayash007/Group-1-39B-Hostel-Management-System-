@@ -57,7 +57,7 @@ public class LogIn extends javax.swing.JFrame {
         LogIN.setLayout(null);
 
         Password_data.setBackground(new java.awt.Color(171, 186, 255));
-        Password_data.setText("8888888888");
+        Password_data.setText("**********");
         Password_data.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 Password_dataFocusGained(evt);
