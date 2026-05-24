@@ -16,6 +16,8 @@ public class LoginController {
         this.userView = userView;
         userView.LoginListener(new LoginListener());
         userView.SignupListener(new SignupListener());
+       
+        
     }
 
     public void open() {
@@ -31,12 +33,12 @@ public class LoginController {
         public void actionPerformed(ActionEvent e) {
             try {
                 String email = userView.getEmailField().getText().trim();
+ 
+           
+                String password = new String(userView.getPasswordField().getPassword()).trim();
 
-                // FIXED: read from JPasswordField correctly
-                String password = new String(userView.getPasswordField().getPassword());
-
-                if (email.isEmpty() || password.isEmpty()) {
-                    JOptionPane.showMessageDialog(userView, "Please enter email and password.");
+               if (email.isEmpty() || password.isEmpty() || password.equals("********") || password.equals("8888888888")) {
+                    JOptionPane.showMessageDialog(userView, "Please enter your email and password.");
                     return;
                 }
 
@@ -68,3 +70,4 @@ public class LoginController {
         }
     }
 }
+
