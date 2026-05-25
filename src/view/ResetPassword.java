@@ -66,7 +66,7 @@ public class ResetPassword extends javax.swing.JFrame {
         desc.setForeground(new java.awt.Color(153, 161, 175));
         desc.setText("Create a new password for your account.");
         resetpasswordpanel.add(desc);
-        desc.setBounds(160, 90, 220, 16);
+        desc.setBounds(160, 90, 230, 16);
 
         newpasswordlabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         newpasswordlabel.setText("New password");
@@ -166,4 +166,20 @@ public class ResetPassword extends javax.swing.JFrame {
     private javax.swing.JLabel resetpasswordicon;
     private javax.swing.JPanel resetpasswordpanel;
     // End of variables declaration//GEN-END:variables
+
+public javax.swing.JTextField NewPasswordField() {
+    return newpasswordtext;
+}
+
+public javax.swing.JTextField ConfirmNewPasswordField() {
+    return confirmnewpasswordtext;
+}
+
+public void ResetPasswordListener(java.awt.event.ActionListener listener) {
+    resetpasswordbutton.addActionListener(listener);
+}
+
+public void backButtonListener(java.awt.event.ActionListener listener) {
+    back.addActionListener(listener);
+}
 }

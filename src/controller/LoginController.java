@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.UserData;
 import view.LogIn;
+import view.ForgetPassword;
 
 public class LoginController {
 
@@ -16,7 +17,7 @@ public class LoginController {
         this.userView = userView;
         userView.LoginListener(new LoginListener());
         userView.SignupListener(new SignupListener());
-       
+        userView.ForgetPasswordListener(new ForgetPasswordListener());
         
     }
 
@@ -67,6 +68,15 @@ public class LoginController {
             view.UserRegistration signupView = new view.UserRegistration();
             SignupController signupController = new SignupController(signupView);
             signupController.open();
+        }
+    }
+    
+    class ForgetPasswordListener implements ActionListener {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            close();
+            ForgetPassword forgetView = new ForgetPassword();
+            new ForgetPasswordController(forgetView).open();
         }
     }
 }

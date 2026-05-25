@@ -56,7 +56,7 @@ public class ForgetPassword extends javax.swing.JFrame {
         desc.setForeground(new java.awt.Color(153, 161, 175));
         desc.setText("<html><center> Enter your registered email address and we'll<br> send you a verification code. </center></html> ");
         forgetpasspanel.add(desc);
-        desc.setBounds(130, 90, 240, 40);
+        desc.setBounds(130, 90, 260, 40);
 
         emailaddress.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         emailaddress.setText("Email Address");
@@ -81,7 +81,7 @@ public class ForgetPassword extends javax.swing.JFrame {
         backtologin.setBorderPainted(false);
         backtologin.setContentAreaFilled(false);
         forgetpasspanel.add(backtologin);
-        backtologin.setBounds(190, 380, 130, 31);
+        backtologin.setBounds(190, 380, 160, 31);
 
         forgetpasswordicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/forgotpasswordicon.png"))); // NOI18N
         forgetpasspanel.add(forgetpasswordicon);
@@ -147,4 +147,18 @@ public class ForgetPassword extends javax.swing.JFrame {
     private javax.swing.JLabel forgetpasswordicon;
     private javax.swing.JButton sendotp;
     // End of variables declaration//GEN-END:variables
+
+public javax.swing.JTextField getEmailField() {
+    return email;
+}
+
+public void SendotpListener(java.awt.event.ActionListener listener) {
+    sendotp.addActionListener(listener);
+}
+
+public void BacktoLoginListener(java.awt.event.ActionListener listener) {
+    backtologin.addActionListener(listener);
+}
+
+
 }

@@ -113,4 +113,8 @@ public class PasswordResetSuccessful extends javax.swing.JFrame {
     private javax.swing.JPanel resetsuccessfulpanel;
     private javax.swing.JLabel successfuldesc;
     // End of variables declaration//GEN-END:variables
+
+public void GoToLoginListener(java.awt.event.ActionListener listener) {
+    gotologin.addActionListener(listener);
+}
 }

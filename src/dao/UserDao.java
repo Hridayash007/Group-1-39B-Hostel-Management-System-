@@ -41,7 +41,7 @@ public class UserDao {
         return false;
     }
 
-    // NEW METHOD: validates login credentials against the database
+    // validates login credentials against the database
     public UserData loginUser(String email, String password) {
         Connection conn = mysql.openConnection();
         String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
@@ -62,5 +62,42 @@ public class UserDao {
             mysql.closeConnection(conn);
         }
         return null; // no match found
+    }
+
+
+// Check if email exists
+public boolean checkEmailExists(String email) {
+        String query = "SELECT * FROM users WHERE email = ?";
+        Connection con = mysql.openConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, email);
+            ResultSet rs = ps.executeQuery();
+            return rs.next();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            mysql.closeConnection(con);
+        }
+    }
+
+    
+    public boolean updatePassword(String email, String newPassword, String newconfirmPassword) {
+        String query = "UPDATE users SET password = ? ,confirm_password=? WHERE email = ?";
+        Connection con = mysql.openConnection();
+        try {
+            PreparedStatement ps = con.prepareStatement(query);
+            ps.setString(1, newPassword);
+            ps.setString(2, newconfirmPassword);
+            ps.setString(3, email);
+            
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            mysql.closeConnection(con);
+        }
     }
 }
