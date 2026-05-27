@@ -84,7 +84,7 @@ public class ViewNotice extends javax.swing.JFrame {
 
         welcomeback.setText("Welcome Back");
         backgroundpanel.add(welcomeback);
-        welcomeback.setBounds(340, 30, 90, 16);
+        welcomeback.setBounds(300, 30, 240, 16);
 
         dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));

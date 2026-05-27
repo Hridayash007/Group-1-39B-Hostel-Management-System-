@@ -52,8 +52,6 @@ public class AddStudentDetails extends javax.swing.JFrame {
         additionalinformation = new javax.swing.JLabel();
         address = new javax.swing.JLabel();
         adress = new javax.swing.JTextField();
-        notes = new javax.swing.JLabel();
-        note = new javax.swing.JTextField();
         accountsecurity = new javax.swing.JPanel();
         account = new javax.swing.JLabel();
         password = new javax.swing.JPanel();
@@ -64,7 +62,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         contactname = new javax.swing.JLabel();
         cname = new javax.swing.JTextField();
         relation = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        relationtext = new javax.swing.JTextField();
         contactnumber = new javax.swing.JLabel();
         cnumber = new javax.swing.JTextField();
         academic = new javax.swing.JPanel();
@@ -72,9 +70,9 @@ public class AddStudentDetails extends javax.swing.JFrame {
         program = new javax.swing.JLabel();
         course = new javax.swing.JTextField();
         yearofstudy = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         semester = new javax.swing.JLabel();
-        sem = new javax.swing.JTextField();
+        semCB = new javax.swing.JComboBox<>();
+        yosCB = new javax.swing.JComboBox<>();
         personalinfo = new javax.swing.JPanel();
         personalinformation = new javax.swing.JLabel();
         fullname = new javax.swing.JLabel();
@@ -117,7 +115,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
 
         welcomeback.setText("Welcome Back");
         backgroundpanel.add(welcomeback);
-        welcomeback.setBounds(340, 30, 90, 16);
+        welcomeback.setBounds(300, 30, 250, 16);
 
         dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,7 +125,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         dashboard.setContentAreaFilled(false);
         dashboard.addActionListener(this::dashboardActionPerformed);
         backgroundpanel.add(dashboard);
-        dashboard.setBounds(10, 210, 160, 43);
+        dashboard.setBounds(-20, 210, 210, 43);
 
         mycomplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         mycomplaints.setForeground(new java.awt.Color(255, 255, 255));
@@ -145,7 +143,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         mealroutine.setBorderPainted(false);
         mealroutine.setContentAreaFilled(false);
         backgroundpanel.add(mealroutine);
-        mealroutine.setBounds(10, 350, 180, 43);
+        mealroutine.setBounds(-10, 350, 210, 43);
 
         notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         notice.setForeground(new java.awt.Color(255, 255, 255));
@@ -165,14 +163,14 @@ public class AddStudentDetails extends javax.swing.JFrame {
         backgroundpanel.add(roomdetails);
         roomdetails.setBounds(0, 490, 200, 43);
 
-        myprofile.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        myprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         myprofile.setForeground(new java.awt.Color(255, 255, 255));
         myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
         myprofile.setText("My Profile");
         myprofile.setBorderPainted(false);
         myprofile.setContentAreaFilled(false);
         backgroundpanel.add(myprofile);
-        myprofile.setBounds(0, 560, 160, 43);
+        myprofile.setBounds(-20, 560, 210, 43);
 
         cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cityscape.setForeground(new java.awt.Color(255, 255, 255));
@@ -233,13 +231,6 @@ public class AddStudentDetails extends javax.swing.JFrame {
         additionalinfo.add(adress);
         adress.setBounds(20, 60, 540, 22);
 
-        notes.setForeground(new java.awt.Color(153, 161, 175));
-        notes.setText("Notes");
-        additionalinfo.add(notes);
-        notes.setBounds(630, 40, 31, 16);
-        additionalinfo.add(note);
-        note.setBounds(630, 60, 560, 22);
-
         backgroundpanel.add(additionalinfo);
         additionalinfo.setBounds(310, 680, 1210, 100);
 
@@ -264,7 +255,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         change.setForeground(new java.awt.Color(21, 93, 252));
         change.setText("Change");
         password.add(change);
-        change.setBounds(440, 20, 72, 23);
+        change.setBounds(440, 20, 100, 23);
 
         accountsecurity.add(password);
         password.setBounds(20, 60, 550, 60);
@@ -293,14 +284,14 @@ public class AddStudentDetails extends javax.swing.JFrame {
         emergencycontact.add(relation);
         relation.setBounds(330, 40, 50, 16);
 
-        jTextField2.addActionListener(this::jTextField2ActionPerformed);
-        emergencycontact.add(jTextField2);
-        jTextField2.setBounds(330, 60, 240, 22);
+        relationtext.addActionListener(this::relationtextActionPerformed);
+        emergencycontact.add(relationtext);
+        relationtext.setBounds(330, 60, 240, 22);
 
         contactnumber.setForeground(new java.awt.Color(153, 161, 175));
         contactnumber.setText("Contact Number");
         emergencycontact.add(contactnumber);
-        contactnumber.setBounds(10, 100, 90, 16);
+        contactnumber.setBounds(10, 100, 110, 16);
         emergencycontact.add(cnumber);
         cnumber.setBounds(10, 120, 240, 22);
 
@@ -327,15 +318,19 @@ public class AddStudentDetails extends javax.swing.JFrame {
         yearofstudy.setText("Year of Study");
         academic.add(yearofstudy);
         yearofstudy.setBounds(10, 130, 80, 16);
-        academic.add(jTextField1);
-        jTextField1.setBounds(10, 150, 560, 22);
 
         semester.setForeground(new java.awt.Color(153, 161, 175));
         semester.setText("Semester");
         academic.add(semester);
         semester.setBounds(10, 200, 60, 16);
-        academic.add(sem);
-        sem.setBounds(10, 220, 560, 22);
+
+        semCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th" }));
+        academic.add(semCB);
+        semCB.setBounds(10, 220, 560, 22);
+
+        yosCB.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1st Year", "2nd Year", "3rd Year", "4th Year" }));
+        academic.add(yosCB);
+        yosCB.setBounds(10, 150, 560, 22);
 
         backgroundpanel.add(academic);
         academic.setBounds(920, 190, 590, 270);
@@ -393,12 +388,12 @@ public class AddStudentDetails extends javax.swing.JFrame {
         savechanges.setForeground(new java.awt.Color(255, 255, 255));
         savechanges.setText("Save Changes");
         backgroundpanel.add(savechanges);
-        savechanges.setBounds(1413, 800, 110, 23);
+        savechanges.setBounds(1393, 800, 130, 23);
 
         cancel.setForeground(new java.awt.Color(81, 162, 255));
         cancel.setText("Cancel");
         backgroundpanel.add(cancel);
-        cancel.setBounds(1330, 800, 75, 23);
+        cancel.setBounds(1310, 800, 75, 23);
 
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.png"))); // NOI18N
         backgroundpanel.add(background);
@@ -426,9 +421,9 @@ public class AddStudentDetails extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void relationtextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_relationtextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_relationtextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -484,8 +479,6 @@ public class AddStudentDetails extends javax.swing.JFrame {
     private javax.swing.JLabel email;
     private javax.swing.JPanel emergencycontact;
     private javax.swing.JLabel fullname;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField mail;
     private javax.swing.JButton mealroutine;
     private javax.swing.JButton mycomplaints;
@@ -493,8 +486,6 @@ public class AddStudentDetails extends javax.swing.JFrame {
     private javax.swing.JTextField name;
     private javax.swing.JLabel nationality;
     private javax.swing.JLabel navigation;
-    private javax.swing.JTextField note;
-    private javax.swing.JLabel notes;
     private javax.swing.JButton notice;
     private javax.swing.JButton notification;
     private javax.swing.JTextField number;
@@ -506,14 +497,117 @@ public class AddStudentDetails extends javax.swing.JFrame {
     private javax.swing.JButton profile;
     private javax.swing.JLabel program;
     private javax.swing.JLabel relation;
+    private javax.swing.JTextField relationtext;
     private javax.swing.JButton roomdetails;
     private javax.swing.JButton savechanges;
-    private javax.swing.JTextField sem;
+    private javax.swing.JComboBox<String> semCB;
     private javax.swing.JLabel semester;
     private javax.swing.JButton signout;
     private javax.swing.JLabel studentportal;
     private javax.swing.JLabel updateinfo;
     private javax.swing.JLabel welcomeback;
     private javax.swing.JLabel yearofstudy;
+    private javax.swing.JComboBox<String> yosCB;
     // End of variables declaration//GEN-END:variables
+public void ChangePasswordListener(java.awt.event.ActionListener listener) {
+    change.addActionListener(listener);
+}
+public void DashboardListener(java.awt.event.ActionListener listener) {
+    dashboard.addActionListener(listener);
+}
+
+public void MyComplaintsListener(java.awt.event.ActionListener listener) {
+    mycomplaints.addActionListener(listener);
+}
+
+public void MealRoutineListener(java.awt.event.ActionListener listener) {
+    mealroutine.addActionListener(listener);
+}
+
+public void NoticeListener(java.awt.event.ActionListener listener) {
+    notice.addActionListener(listener);
+}
+
+public void RoomDetailsListener(java.awt.event.ActionListener listener) {
+    roomdetails.addActionListener(listener);
+}
+
+public void MyProfileListener(java.awt.event.ActionListener listener) {
+    myprofile.addActionListener(listener);
+}
+
+public void SignOutListener(java.awt.event.ActionListener listener) {
+    signout.addActionListener(listener);
+}
+
+public void NotificatinListener(java.awt.event.ActionListener listener) {
+    notification.addActionListener(listener);
+}
+
+public void ProfileListener(java.awt.event.ActionListener listener) {
+    profile.addActionListener(listener);
+}
+
+public void SaveChangesListener(java.awt.event.ActionListener listener) {
+    savechanges.addActionListener(listener);
+}
+
+public void CancelListener(java.awt.event.ActionListener listener) {
+    cancel.addActionListener(listener);
+}
+
+public void BackToProfileListener(java.awt.event.ActionListener listener) {
+    backtoprofile.addActionListener(listener);
+}
+
+public javax.swing.JTextField getFullNameField() {
+    return name;
+}
+
+public javax.swing.JTextField getMailField() {
+    return mail;
+}
+
+public javax.swing.JTextField getNumberField() {
+    return number ;
+}
+
+public javax.swing.JTextField getDOBField() {
+    return dateofbirth;
+}
+
+public javax.swing.JTextField getCountryField() {
+    return country;
+}
+
+public javax.swing.JTextField getCourseField() {
+    return course;
+}
+
+public javax.swing.JComboBox getYearOfStudyField() {
+    return yosCB;
+}
+
+public javax.swing.JComboBox getUsernameField() {
+    return semCB;
+}
+
+public javax.swing.JTextField getContactNameField() {
+    return cname;
+}
+
+public javax.swing.JTextField getRelationField() {
+    return relationtext;
+}
+
+public javax.swing.JTextField getContactNumberField() {
+    return cnumber;
+}
+
+public javax.swing.JTextField getAddressField() {
+    return adress;
+}
+public void setWelcomeUser(String username) {
+    welcomeback.setText("Welcome back, " + username + "!");
+}
 }

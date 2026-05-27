@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 import model.UserData;
 import view.LogIn;
 import view.ForgetPassword;
+import view.StudentDashboard;
 
 public class LoginController {
 
@@ -48,6 +49,8 @@ public class LoginController {
                 if (loggedInUser != null) {
                     JOptionPane.showMessageDialog(userView, "Welcome, " + loggedInUser.getUsername() + "!");
                     close();
+                    StudentDashboard dashboardView = new StudentDashboard();
+                    new StudentDashboardController(dashboardView, loggedInUser).open();
                     // TODO: Open dashboard here
                     // new DashboardController(new Dashboard(loggedInUser)).open();
                 } else {

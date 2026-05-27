@@ -81,7 +81,7 @@ public class ChangePassword extends javax.swing.JFrame {
 
         welcomeback.setText("Welcome Back");
         backgroundpanel.add(welcomeback);
-        welcomeback.setBounds(340, 30, 90, 16);
+        welcomeback.setBounds(300, 30, 280, 16);
 
         dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
@@ -338,4 +338,62 @@ public class ChangePassword extends javax.swing.JFrame {
     private javax.swing.JButton updatepasswordbutton;
     private javax.swing.JLabel welcomeback;
     // End of variables declaration//GEN-END:variables
+public void UpdatePasswordListener(java.awt.event.ActionListener listener) {
+    updatepasswordbutton.addActionListener(listener);
+}
+public void DashboardListener(java.awt.event.ActionListener listener) {
+    dashboard.addActionListener(listener);
+}
+
+public void MyComplaintsListener(java.awt.event.ActionListener listener) {
+    mycomplaints.addActionListener(listener);
+}
+
+public void MealRoutineListener(java.awt.event.ActionListener listener) {
+    mealroutine.addActionListener(listener);
+}
+
+public void NoticeListener(java.awt.event.ActionListener listener) {
+    notice.addActionListener(listener);
+}
+
+public void RoomDetailsListener(java.awt.event.ActionListener listener) {
+    roomdetails.addActionListener(listener);
+}
+
+public void MyProfileListener(java.awt.event.ActionListener listener) {
+    myprofile.addActionListener(listener);
+}
+
+public void SignOutListener(java.awt.event.ActionListener listener) {
+    signout.addActionListener(listener);
+}
+
+public void NotificatinListener(java.awt.event.ActionListener listener) {
+    notification.addActionListener(listener);
+}
+
+public void ProfileListener(java.awt.event.ActionListener listener) {
+    profile.addActionListener(listener);
+}
+
+public void BackToProfileListener(java.awt.event.ActionListener listener) {
+    backtoprofile.addActionListener(listener);
+}
+
+public void setWelcomeUser(String username) {
+    welcomeback.setText("Welcome back, " + username + "!");
+}
+
+public javax.swing.JTextField getCurrentPasswordField() {
+     return currentpasswordtext ;
+}
+
+public javax.swing.JTextField getNewPasswordField() {
+    return newpasswordtext;
+}
+
+public javax.swing.JTextField getConfirmNewPasswordField() {
+    return confirmnewpasswordtext;
+}
 }

@@ -1,0 +1,118 @@
+package controller;
+
+import model.UserData;
+import view.AddStudentDetails;
+import view.LogIn;
+import view.StudentDashboard;
+import view.StudentProfile;
+
+public class StudentProfileController {
+
+    private final StudentProfile view;
+    private UserData user;
+
+    public StudentProfileController(StudentProfile view, UserData user) {
+        this.view = view;
+        this.user = user;
+        
+        // Display the logged-in user's name on the dashboard
+        view.setWelcomeUser(user.getUsername());
+        populateProfile();
+
+        // ── "edit Profile" button top-right → open AddStudentDetails ────────
+        view.EditProfileListener(e -> {
+            close();
+            AddStudentDetails addView = new AddStudentDetails();
+            new AddStudentDetailsController(addView, user).open();
+        });
+
+        // ── "Change" password button (Account Security section) ──────────────
+        view.ChangePasswordListener(e -> {
+            close();
+            view.ChangePassword changeView = new view.ChangePassword();
+            new ChangePasswordController(changeView, user).open();
+        });
+
+        // ── Navigation ───────────────────────────────────────────────────────
+        view.DashboardListener(e -> {
+            close();
+            StudentDashboard dashView = new StudentDashboard();
+            new StudentDashboardController(dashView, user).open();
+        });
+
+        view.MyProfileListener(e -> {
+            close();
+            StudentProfile freshView = new StudentProfile();
+            new StudentProfileController(freshView, user).open();
+        });
+
+        view.ProfileListener(e -> {
+            close();
+            StudentProfile freshView = new StudentProfile();
+            new StudentProfileController(freshView, user).open();
+        });
+
+        // ── Sign Out ─────────────────────────────────────────────────────────
+        view.SignOutListener(e -> {
+            int confirm = javax.swing.JOptionPane.showConfirmDialog(
+                    view,
+                    "Are you sure you want to sign out?",
+                    "Sign Out",
+                    javax.swing.JOptionPane.YES_NO_OPTION,
+                    javax.swing.JOptionPane.QUESTION_MESSAGE
+            );
+            if (confirm == javax.swing.JOptionPane.YES_OPTION) {
+                close();
+                LogIn loginView = new LogIn();
+                new LoginController(loginView).open();
+            }
+        });
+    }
+
+    /**
+     * Populates ONLY the black value labels — the grey fixed labels are
+     * already set in initComponents() and are never touched here.
+     */
+    private void populateProfile() {
+        String displayName = notEmpty(user.getFullName()) ? user.getFullName() : user.getUsername();
+        String studentId   = "Student id-" + user.getId();
+        String yearSem     = orDash(user.getYearOfStudy()) + ", " + orDash(user.getSemester()) + " Semester";
+
+        // Header card
+        view.setNameDetails(displayName);
+        view.setIdLabel(studentId);
+        view.setYearsLabel(yearSem);
+
+        // Personal Information section (black value labels only)
+        // Fall back to username if full_name not yet filled in AddStudentDetails
+        view.setFullNameLabel(notEmpty(user.getFullName()) ? user.getFullName() : user.getUsername());
+        view.setEmailLabel(orDash(user.getEmail()));
+        view.setPhoneLabel(orDash(user.getPhone()));
+        view.setDobLabel(orDash(user.getDateOfBirth()));
+        view.setNationalityLabel(orDash(user.getNationality()));
+
+        // Academic Details section (black value labels only)
+        view.setProgramLabel(orDash(user.getProgram()));
+        view.setYearOfStudyLabel(orDash(user.getYearOfStudy()));
+        view.setSemesterLabel(orDash(user.getSemester()));
+        view.setStudentIdLabel(String.valueOf(user.getId()));
+
+        // Emergency Contact section (black value labels only)
+        String ecDisplay = notEmpty(user.getEcName())
+                ? user.getEcName() + (notEmpty(user.getEcRelation()) ? "(" + user.getEcRelation() + ")" : "")
+                : "—";
+        view.setEmergencyContactLabel(ecDisplay);
+        view.setEmergencyNumberLabel(orDash(user.getEcNumber()));
+    }
+
+    private String orDash(String val) {
+        return (val != null && !val.isEmpty()) ? val : "—";
+    }
+
+    private boolean notEmpty(String val) {
+        return val != null && !val.isEmpty();
+    }
+
+    public void open()  { view.setVisible(true); }
+    public void close() { view.dispose(); }
+}

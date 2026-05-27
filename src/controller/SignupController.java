@@ -42,7 +42,22 @@ public class SignupController {
                     JOptionPane.showMessageDialog(userView, "All fields are required.");
                     return;
                 }
-
+                
+                if(!email.endsWith("@gmail.com")){
+                   JOptionPane.showMessageDialog(userView, "Invalid Email.");
+                    return; 
+                }
+                
+                if(password.equals("********") ){
+                   JOptionPane.showMessageDialog(userView, "Enter Password.");
+                    return; 
+                }
+                
+                if(password.length()<6 ){
+                    JOptionPane.showMessageDialog(userView, "Password must be atleast 6 characters");
+                    return; 
+                }
+                    
                 if (!password.equals(confirm_password)) {
                     JOptionPane.showMessageDialog(userView, "Passwords do not match.");
                     return;
