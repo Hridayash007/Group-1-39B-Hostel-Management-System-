@@ -56,8 +56,71 @@ public class StudentMealRoutine extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel5 = new javax.swing.JPanel();
+        Meal = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
+        jLabel44 = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        jLabel46 = new javax.swing.JLabel();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jLabel51 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        jLabel53 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel57 = new javax.swing.JLabel();
+        jLabel58 = new javax.swing.JLabel();
+        jLabel59 = new javax.swing.JLabel();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel65 = new javax.swing.JLabel();
+        jLabel66 = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -104,6 +167,7 @@ public class StudentMealRoutine extends javax.swing.JFrame {
         mycomplaints.setText("My Complaints\n");
         mycomplaints.setBorderPainted(false);
         mycomplaints.setContentAreaFilled(false);
+        mycomplaints.addActionListener(this::mycomplaintsActionPerformed);
         backgroundpanel.add(mycomplaints);
         mycomplaints.setBounds(-10, 280, 230, 43);
 
@@ -224,13 +288,339 @@ public class StudentMealRoutine extends javax.swing.JFrame {
         backgroundpanel.add(jPanel3);
         jPanel3.setBounds(740, 110, 340, 60);
 
-        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel5.setToolTipText("");
-        jPanel5.setLayout(null);
-        jPanel5.add(jPanel4);
-        jPanel4.setBounds(0, 0, 1180, 140);
+        Meal.setBackground(new java.awt.Color(204, 204, 204));
+        Meal.setToolTipText("");
+        Meal.setLayout(null);
 
-        jScrollPane1.setViewportView(jPanel5);
+        jPanel4.setLayout(null);
+
+        jPanel6.setBackground(new java.awt.Color(148, 163, 184));
+        jPanel6.setLayout(null);
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel4.setText("Monday");
+        jPanel6.add(jLabel4);
+        jLabel4.setBounds(40, 0, 70, 30);
+
+        jPanel4.add(jPanel6);
+        jPanel6.setBounds(0, 0, 1180, 30);
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(249, 115, 22));
+        jLabel8.setText("Breakfast");
+        jPanel4.add(jLabel8);
+        jLabel8.setBounds(30, 40, 60, 16);
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(59, 130, 246));
+        jLabel9.setText("Lunch");
+        jPanel4.add(jLabel9);
+        jLabel9.setBounds(450, 40, 37, 16);
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(139, 92, 246));
+        jLabel10.setText("Dinner");
+        jPanel4.add(jLabel10);
+        jLabel10.setBounds(860, 40, 43, 16);
+
+        jLabel11.setText("Tea/Coffee");
+        jPanel4.add(jLabel11);
+        jLabel11.setBounds(40, 120, 80, 16);
+
+        jLabel12.setText("Boiled Eggs");
+        jPanel4.add(jLabel12);
+        jLabel12.setBounds(40, 100, 80, 16);
+
+        jLabel13.setText("Steamed Rice");
+        jPanel4.add(jLabel13);
+        jLabel13.setBounds(450, 60, 80, 16);
+
+        jLabel14.setText("Coconut Chutney");
+        jPanel4.add(jLabel14);
+        jLabel14.setBounds(40, 80, 110, 16);
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(249, 115, 22));
+        jLabel15.setText("-");
+        jPanel4.add(jLabel15);
+        jLabel15.setBounds(30, 80, 10, 16);
+
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(249, 115, 22));
+        jLabel16.setText("-");
+        jPanel4.add(jLabel16);
+        jLabel16.setBounds(30, 100, 10, 16);
+
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(249, 115, 22));
+        jLabel17.setText("-");
+        jPanel4.add(jLabel17);
+        jLabel17.setBounds(30, 120, 10, 16);
+
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(59, 130, 246));
+        jLabel18.setText("-");
+        jPanel4.add(jLabel18);
+        jLabel18.setBounds(440, 80, 10, 16);
+
+        jLabel19.setText("Rajma Curry");
+        jPanel4.add(jLabel19);
+        jLabel19.setBounds(450, 80, 80, 16);
+
+        jLabel20.setText("Seasonal Veg");
+        jPanel4.add(jLabel20);
+        jLabel20.setBounds(450, 100, 80, 16);
+
+        jLabel21.setText("Salad");
+        jPanel4.add(jLabel21);
+        jLabel21.setBounds(450, 120, 80, 16);
+
+        jLabel22.setText("Buttermilk");
+        jPanel4.add(jLabel22);
+        jLabel22.setBounds(450, 140, 80, 16);
+
+        jLabel23.setText("Chapati");
+        jPanel4.add(jLabel23);
+        jLabel23.setBounds(870, 60, 80, 16);
+
+        jLabel24.setText("Dal Makhani");
+        jPanel4.add(jLabel24);
+        jLabel24.setBounds(870, 80, 80, 16);
+
+        jLabel25.setText("Aloo Jeera");
+        jPanel4.add(jLabel25);
+        jLabel25.setBounds(870, 100, 80, 16);
+
+        jLabel26.setText("Raita");
+        jPanel4.add(jLabel26);
+        jLabel26.setBounds(870, 120, 80, 16);
+
+        jLabel27.setText("Idli & Sambar");
+        jPanel4.add(jLabel27);
+        jLabel27.setBounds(40, 60, 80, 16);
+
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel28.setForeground(new java.awt.Color(249, 115, 22));
+        jLabel28.setText("-");
+        jPanel4.add(jLabel28);
+        jLabel28.setBounds(30, 60, 10, 16);
+
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel29.setForeground(new java.awt.Color(59, 130, 246));
+        jLabel29.setText("-");
+        jPanel4.add(jLabel29);
+        jLabel29.setBounds(440, 100, 10, 16);
+
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel30.setForeground(new java.awt.Color(59, 130, 246));
+        jLabel30.setText("-");
+        jPanel4.add(jLabel30);
+        jLabel30.setBounds(440, 120, 10, 16);
+
+        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(59, 130, 246));
+        jLabel31.setText("-");
+        jPanel4.add(jLabel31);
+        jLabel31.setBounds(440, 140, 10, 16);
+
+        jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel32.setForeground(new java.awt.Color(139, 92, 246));
+        jLabel32.setText("-");
+        jPanel4.add(jLabel32);
+        jLabel32.setBounds(860, 80, 10, 16);
+
+        jLabel33.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(59, 130, 246));
+        jLabel33.setText("-");
+        jPanel4.add(jLabel33);
+        jLabel33.setBounds(440, 60, 10, 16);
+
+        jLabel34.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(139, 92, 246));
+        jLabel34.setText("-");
+        jPanel4.add(jLabel34);
+        jLabel34.setBounds(860, 100, 10, 16);
+
+        jLabel35.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(139, 92, 246));
+        jLabel35.setText("-");
+        jPanel4.add(jLabel35);
+        jLabel35.setBounds(860, 120, 10, 16);
+
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(139, 92, 246));
+        jLabel36.setText("-");
+        jPanel4.add(jLabel36);
+        jLabel36.setBounds(860, 60, 10, 16);
+
+        Meal.add(jPanel4);
+        jPanel4.setBounds(0, 180, 1180, 160);
+
+        jPanel5.setLayout(null);
+
+        jPanel7.setBackground(new java.awt.Color(148, 163, 184));
+        jPanel7.setLayout(null);
+
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel37.setText("Monday");
+        jPanel7.add(jLabel37);
+        jLabel37.setBounds(40, 0, 70, 30);
+
+        jPanel5.add(jPanel7);
+        jPanel7.setBounds(0, 0, 1180, 30);
+
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel38.setForeground(new java.awt.Color(249, 115, 22));
+        jLabel38.setText("Breakfast");
+        jPanel5.add(jLabel38);
+        jLabel38.setBounds(30, 40, 60, 16);
+
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel39.setForeground(new java.awt.Color(59, 130, 246));
+        jLabel39.setText("Lunch");
+        jPanel5.add(jLabel39);
+        jLabel39.setBounds(450, 40, 37, 16);
+
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel40.setForeground(new java.awt.Color(139, 92, 246));
+        jLabel40.setText("Dinner");
+        jPanel5.add(jLabel40);
+        jLabel40.setBounds(860, 40, 43, 16);
+
+        jLabel41.setText("Tea/Coffee");
+        jPanel5.add(jLabel41);
+        jLabel41.setBounds(40, 120, 80, 16);
+
+        jLabel42.setText("Boiled Eggs");
+        jPanel5.add(jLabel42);
+        jLabel42.setBounds(40, 100, 80, 16);
+
+        jLabel43.setText("Steamed Rice");
+        jPanel5.add(jLabel43);
+        jLabel43.setBounds(450, 60, 80, 16);
+
+        jLabel44.setText("Coconut Chutney");
+        jPanel5.add(jLabel44);
+        jLabel44.setBounds(40, 80, 110, 16);
+
+        jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(249, 115, 22));
+        jLabel45.setText("-");
+        jPanel5.add(jLabel45);
+        jLabel45.setBounds(30, 80, 10, 16);
+
+        jLabel46.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel46.setForeground(new java.awt.Color(249, 115, 22));
+        jLabel46.setText("-");
+        jPanel5.add(jLabel46);
+        jLabel46.setBounds(30, 100, 10, 16);
+
+        jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel47.setForeground(new java.awt.Color(249, 115, 22));
+        jLabel47.setText("-");
+        jPanel5.add(jLabel47);
+        jLabel47.setBounds(30, 120, 10, 16);
+
+        jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel48.setForeground(new java.awt.Color(59, 130, 246));
+        jLabel48.setText("-");
+        jPanel5.add(jLabel48);
+        jLabel48.setBounds(440, 80, 10, 16);
+
+        jLabel49.setText("Rajma Curry");
+        jPanel5.add(jLabel49);
+        jLabel49.setBounds(450, 80, 80, 16);
+
+        jLabel50.setText("Seasonal Veg");
+        jPanel5.add(jLabel50);
+        jLabel50.setBounds(450, 100, 80, 16);
+
+        jLabel51.setText("Salad");
+        jPanel5.add(jLabel51);
+        jLabel51.setBounds(450, 120, 80, 16);
+
+        jLabel52.setText("Buttermilk");
+        jPanel5.add(jLabel52);
+        jLabel52.setBounds(450, 140, 80, 16);
+
+        jLabel53.setText("Chapati");
+        jPanel5.add(jLabel53);
+        jLabel53.setBounds(870, 60, 80, 16);
+
+        jLabel54.setText("Dal Makhani");
+        jPanel5.add(jLabel54);
+        jLabel54.setBounds(870, 80, 80, 16);
+
+        jLabel55.setText("Aloo Jeera");
+        jPanel5.add(jLabel55);
+        jLabel55.setBounds(870, 100, 80, 16);
+
+        jLabel56.setText("Raita");
+        jPanel5.add(jLabel56);
+        jLabel56.setBounds(870, 120, 80, 16);
+
+        jLabel57.setText("Idli & Sambar");
+        jPanel5.add(jLabel57);
+        jLabel57.setBounds(40, 60, 80, 16);
+
+        jLabel58.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel58.setForeground(new java.awt.Color(249, 115, 22));
+        jLabel58.setText("-");
+        jPanel5.add(jLabel58);
+        jLabel58.setBounds(30, 60, 10, 16);
+
+        jLabel59.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel59.setForeground(new java.awt.Color(59, 130, 246));
+        jLabel59.setText("-");
+        jPanel5.add(jLabel59);
+        jLabel59.setBounds(440, 100, 10, 16);
+
+        jLabel60.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel60.setForeground(new java.awt.Color(59, 130, 246));
+        jLabel60.setText("-");
+        jPanel5.add(jLabel60);
+        jLabel60.setBounds(440, 120, 10, 16);
+
+        jLabel61.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel61.setForeground(new java.awt.Color(59, 130, 246));
+        jLabel61.setText("-");
+        jPanel5.add(jLabel61);
+        jLabel61.setBounds(440, 140, 10, 16);
+
+        jLabel62.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel62.setForeground(new java.awt.Color(139, 92, 246));
+        jLabel62.setText("-");
+        jPanel5.add(jLabel62);
+        jLabel62.setBounds(860, 80, 10, 16);
+
+        jLabel63.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel63.setForeground(new java.awt.Color(59, 130, 246));
+        jLabel63.setText("-");
+        jPanel5.add(jLabel63);
+        jLabel63.setBounds(440, 60, 10, 16);
+
+        jLabel64.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel64.setForeground(new java.awt.Color(139, 92, 246));
+        jLabel64.setText("-");
+        jPanel5.add(jLabel64);
+        jLabel64.setBounds(860, 100, 10, 16);
+
+        jLabel65.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel65.setForeground(new java.awt.Color(139, 92, 246));
+        jLabel65.setText("-");
+        jPanel5.add(jLabel65);
+        jLabel65.setBounds(860, 120, 10, 16);
+
+        jLabel66.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel66.setForeground(new java.awt.Color(139, 92, 246));
+        jLabel66.setText("-");
+        jPanel5.add(jLabel66);
+        jLabel66.setBounds(860, 60, 10, 16);
+
+        Meal.add(jPanel5);
+        jPanel5.setBounds(0, 0, 1180, 160);
+
+        jScrollPane1.setViewportView(Meal);
 
         backgroundpanel.add(jScrollPane1);
         jScrollPane1.setBounds(320, 190, 1180, 550);
@@ -252,6 +642,10 @@ public class StudentMealRoutine extends javax.swing.JFrame {
     private void dashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashboardActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dashboardActionPerformed
+
+    private void mycomplaintsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mycomplaintsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mycomplaintsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -279,22 +673,85 @@ public class StudentMealRoutine extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel Meal;
     private javax.swing.JLabel background;
     private javax.swing.JPanel backgroundpanel;
     private javax.swing.JLabel cityscape;
     private javax.swing.JButton dashboard;
     private javax.swing.JLabel editprofile;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel46;
+    private javax.swing.JLabel jLabel47;
+    private javax.swing.JLabel jLabel48;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
+    private javax.swing.JLabel jLabel51;
+    private javax.swing.JLabel jLabel52;
+    private javax.swing.JLabel jLabel53;
+    private javax.swing.JLabel jLabel54;
+    private javax.swing.JLabel jLabel55;
+    private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
+    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
+    private javax.swing.JLabel jLabel65;
+    private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton mealroutine;
     private javax.swing.JButton mycomplaints;
