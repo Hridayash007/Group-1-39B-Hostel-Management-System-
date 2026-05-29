@@ -46,7 +46,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
-        jLabel52 = new javax.swing.JLabel();
         jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
@@ -55,7 +54,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
-        jLabel61 = new javax.swing.JLabel();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
         jLabel64 = new javax.swing.JLabel();
@@ -78,7 +76,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         jLabel79 = new javax.swing.JLabel();
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
-        jLabel82 = new javax.swing.JLabel();
         jLabel83 = new javax.swing.JLabel();
         jLabel84 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
@@ -87,30 +84,28 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         jLabel88 = new javax.swing.JLabel();
         jLabel89 = new javax.swing.JLabel();
         jLabel90 = new javax.swing.JLabel();
-        jLabel91 = new javax.swing.JLabel();
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
         jLabel94 = new javax.swing.JLabel();
         jLabel95 = new javax.swing.JLabel();
         jLabel96 = new javax.swing.JLabel();
+        jLabel157 = new javax.swing.JLabel();
+        jLabel158 = new javax.swing.JLabel();
         Saturday = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel97 = new javax.swing.JLabel();
         jLabel98 = new javax.swing.JLabel();
         jLabel99 = new javax.swing.JLabel();
         jLabel100 = new javax.swing.JLabel();
-        jLabel101 = new javax.swing.JLabel();
         jLabel102 = new javax.swing.JLabel();
         jLabel103 = new javax.swing.JLabel();
         jLabel104 = new javax.swing.JLabel();
         jLabel105 = new javax.swing.JLabel();
         jLabel106 = new javax.swing.JLabel();
-        jLabel107 = new javax.swing.JLabel();
         jLabel108 = new javax.swing.JLabel();
         jLabel109 = new javax.swing.JLabel();
         jLabel110 = new javax.swing.JLabel();
         jLabel111 = new javax.swing.JLabel();
-        jLabel112 = new javax.swing.JLabel();
         jLabel113 = new javax.swing.JLabel();
         jLabel114 = new javax.swing.JLabel();
         jLabel115 = new javax.swing.JLabel();
@@ -119,30 +114,28 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         jLabel118 = new javax.swing.JLabel();
         jLabel119 = new javax.swing.JLabel();
         jLabel120 = new javax.swing.JLabel();
-        jLabel121 = new javax.swing.JLabel();
         jLabel122 = new javax.swing.JLabel();
         jLabel123 = new javax.swing.JLabel();
         jLabel124 = new javax.swing.JLabel();
         jLabel125 = new javax.swing.JLabel();
         jLabel126 = new javax.swing.JLabel();
+        jLabel159 = new javax.swing.JLabel();
+        jLabel160 = new javax.swing.JLabel();
         Sunday = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jLabel127 = new javax.swing.JLabel();
         jLabel128 = new javax.swing.JLabel();
         jLabel129 = new javax.swing.JLabel();
         jLabel130 = new javax.swing.JLabel();
-        jLabel131 = new javax.swing.JLabel();
         jLabel132 = new javax.swing.JLabel();
         jLabel133 = new javax.swing.JLabel();
         jLabel134 = new javax.swing.JLabel();
         jLabel135 = new javax.swing.JLabel();
         jLabel136 = new javax.swing.JLabel();
-        jLabel137 = new javax.swing.JLabel();
         jLabel138 = new javax.swing.JLabel();
         jLabel139 = new javax.swing.JLabel();
         jLabel140 = new javax.swing.JLabel();
         jLabel141 = new javax.swing.JLabel();
-        jLabel142 = new javax.swing.JLabel();
         jLabel143 = new javax.swing.JLabel();
         jLabel144 = new javax.swing.JLabel();
         jLabel145 = new javax.swing.JLabel();
@@ -151,7 +144,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         jLabel148 = new javax.swing.JLabel();
         jLabel149 = new javax.swing.JLabel();
         jLabel150 = new javax.swing.JLabel();
-        jLabel151 = new javax.swing.JLabel();
         jLabel152 = new javax.swing.JLabel();
         jLabel153 = new javax.swing.JLabel();
         jLabel154 = new javax.swing.JLabel();
@@ -194,7 +186,7 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         Friday.add(jLabel40);
         jLabel40.setBounds(860, 40, 43, 16);
 
-        jLabel41.setText("Tea/Coffee");
+        jLabel41.setText("Milk");
         Friday.add(jLabel41);
         jLabel41.setBounds(40, 120, 80, 16);
 
@@ -202,11 +194,11 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         Friday.add(jLabel42);
         jLabel42.setBounds(40, 100, 80, 16);
 
-        jLabel43.setText("Steamed Rice");
+        jLabel43.setText("Fried Rice");
         Friday.add(jLabel43);
         jLabel43.setBounds(450, 60, 80, 16);
 
-        jLabel44.setText("Coconut Chutney");
+        jLabel44.setText("Jam");
         Friday.add(jLabel44);
         jLabel44.setBounds(40, 80, 110, 16);
 
@@ -234,39 +226,35 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         Friday.add(jLabel48);
         jLabel48.setBounds(440, 80, 10, 16);
 
-        jLabel49.setText("Rajma Curry");
+        jLabel49.setText("Veg Manchurian");
         Friday.add(jLabel49);
         jLabel49.setBounds(450, 80, 80, 16);
 
-        jLabel50.setText("Seasonal Veg");
+        jLabel50.setText("Egg Curry");
         Friday.add(jLabel50);
         jLabel50.setBounds(450, 100, 80, 16);
 
-        jLabel51.setText("Salad");
+        jLabel51.setText("Papad");
         Friday.add(jLabel51);
         jLabel51.setBounds(450, 120, 80, 16);
-
-        jLabel52.setText("Buttermilk");
-        Friday.add(jLabel52);
-        jLabel52.setBounds(450, 140, 80, 16);
 
         jLabel53.setText("Chapati");
         Friday.add(jLabel53);
         jLabel53.setBounds(870, 60, 80, 16);
 
-        jLabel54.setText("Dal Makhani");
+        jLabel54.setText("Kadai Veg");
         Friday.add(jLabel54);
         jLabel54.setBounds(870, 80, 80, 16);
 
-        jLabel55.setText("Aloo Jeera");
+        jLabel55.setText("Sweet Lassi");
         Friday.add(jLabel55);
         jLabel55.setBounds(870, 100, 80, 16);
 
-        jLabel56.setText("Raita");
+        jLabel56.setText("Ice Cream");
         Friday.add(jLabel56);
         jLabel56.setBounds(870, 120, 80, 16);
 
-        jLabel57.setText("Idli & Sambar");
+        jLabel57.setText("Bread & Butter");
         Friday.add(jLabel57);
         jLabel57.setBounds(40, 60, 80, 16);
 
@@ -287,12 +275,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         jLabel60.setText("-");
         Friday.add(jLabel60);
         jLabel60.setBounds(440, 120, 10, 16);
-
-        jLabel61.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel61.setForeground(new java.awt.Color(59, 130, 246));
-        jLabel61.setText("-");
-        Friday.add(jLabel61);
-        jLabel61.setBounds(440, 140, 10, 16);
 
         jLabel62.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel62.setForeground(new java.awt.Color(139, 92, 246));
@@ -362,15 +344,15 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         Thusday.add(jLabel71);
         jLabel71.setBounds(40, 120, 80, 16);
 
-        jLabel72.setText("Boiled Eggs");
+        jLabel72.setText("Fruit Bowl");
         Thusday.add(jLabel72);
         jLabel72.setBounds(40, 100, 80, 16);
 
-        jLabel73.setText("Steamed Rice");
+        jLabel73.setText("Biryani (Veg/Non-Veg)");
         Thusday.add(jLabel73);
-        jLabel73.setBounds(450, 60, 80, 16);
+        jLabel73.setBounds(450, 60, 130, 16);
 
-        jLabel74.setText("Coconut Chutney");
+        jLabel74.setText("Boiled Eggs");
         Thusday.add(jLabel74);
         jLabel74.setBounds(40, 80, 110, 16);
 
@@ -398,11 +380,11 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         Thusday.add(jLabel78);
         jLabel78.setBounds(440, 80, 10, 16);
 
-        jLabel79.setText("Rajma Curry");
+        jLabel79.setText("Raita");
         Thusday.add(jLabel79);
         jLabel79.setBounds(450, 80, 80, 16);
 
-        jLabel80.setText("Seasonal Veg");
+        jLabel80.setText("Boiled Eggs");
         Thusday.add(jLabel80);
         jLabel80.setBounds(450, 100, 80, 16);
 
@@ -410,27 +392,23 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         Thusday.add(jLabel81);
         jLabel81.setBounds(450, 120, 80, 16);
 
-        jLabel82.setText("Buttermilk");
-        Thusday.add(jLabel82);
-        jLabel82.setBounds(450, 140, 80, 16);
-
-        jLabel83.setText("Chapati");
+        jLabel83.setText("RotiChapati");
         Thusday.add(jLabel83);
         jLabel83.setBounds(870, 60, 80, 16);
 
-        jLabel84.setText("Dal Makhani");
+        jLabel84.setText("Mutton Curry");
         Thusday.add(jLabel84);
         jLabel84.setBounds(870, 80, 80, 16);
 
-        jLabel85.setText("Aloo Jeera");
+        jLabel85.setText("Dal Fry");
         Thusday.add(jLabel85);
         jLabel85.setBounds(870, 100, 80, 16);
 
-        jLabel86.setText("Raita");
+        jLabel86.setText("Salad");
         Thusday.add(jLabel86);
-        jLabel86.setBounds(870, 120, 80, 16);
+        jLabel86.setBounds(870, 140, 80, 16);
 
-        jLabel87.setText("Idli & Sambar");
+        jLabel87.setText("Upma");
         Thusday.add(jLabel87);
         jLabel87.setBounds(40, 60, 80, 16);
 
@@ -451,12 +429,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         jLabel90.setText("-");
         Thusday.add(jLabel90);
         jLabel90.setBounds(440, 120, 10, 16);
-
-        jLabel91.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel91.setForeground(new java.awt.Color(59, 130, 246));
-        jLabel91.setText("-");
-        Thusday.add(jLabel91);
-        jLabel91.setBounds(440, 140, 10, 16);
 
         jLabel92.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel92.setForeground(new java.awt.Color(139, 92, 246));
@@ -480,13 +452,23 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         jLabel95.setForeground(new java.awt.Color(139, 92, 246));
         jLabel95.setText("-");
         Thusday.add(jLabel95);
-        jLabel95.setBounds(860, 120, 10, 16);
+        jLabel95.setBounds(860, 140, 10, 16);
 
         jLabel96.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel96.setForeground(new java.awt.Color(139, 92, 246));
         jLabel96.setText("-");
         Thusday.add(jLabel96);
         jLabel96.setBounds(860, 60, 10, 16);
+
+        jLabel157.setText("Rice");
+        Thusday.add(jLabel157);
+        jLabel157.setBounds(870, 120, 80, 16);
+
+        jLabel158.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel158.setForeground(new java.awt.Color(139, 92, 246));
+        jLabel158.setText("-");
+        Thusday.add(jLabel158);
+        jLabel158.setBounds(860, 120, 10, 16);
 
         jPanel1.add(Thusday);
         Thusday.setBounds(0, 0, 1180, 190);
@@ -522,19 +504,15 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         Saturday.add(jLabel100);
         jLabel100.setBounds(860, 40, 43, 16);
 
-        jLabel101.setText("Tea/Coffee");
-        Saturday.add(jLabel101);
-        jLabel101.setBounds(40, 120, 80, 16);
-
-        jLabel102.setText("Boiled Eggs");
+        jLabel102.setText("Juice");
         Saturday.add(jLabel102);
         jLabel102.setBounds(40, 100, 80, 16);
 
-        jLabel103.setText("Steamed Rice");
+        jLabel103.setText("Dosa");
         Saturday.add(jLabel103);
         jLabel103.setBounds(450, 60, 80, 16);
 
-        jLabel104.setText("Coconut Chutney");
+        jLabel104.setText("Tea/Coffee");
         Saturday.add(jLabel104);
         jLabel104.setBounds(40, 80, 110, 16);
 
@@ -550,51 +528,41 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         Saturday.add(jLabel106);
         jLabel106.setBounds(30, 100, 10, 16);
 
-        jLabel107.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel107.setForeground(new java.awt.Color(249, 115, 22));
-        jLabel107.setText("-");
-        Saturday.add(jLabel107);
-        jLabel107.setBounds(30, 120, 10, 16);
-
         jLabel108.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel108.setForeground(new java.awt.Color(59, 130, 246));
         jLabel108.setText("-");
         Saturday.add(jLabel108);
         jLabel108.setBounds(440, 80, 10, 16);
 
-        jLabel109.setText("Rajma Curry");
+        jLabel109.setText("Sambar");
         Saturday.add(jLabel109);
         jLabel109.setBounds(450, 80, 80, 16);
 
-        jLabel110.setText("Seasonal Veg");
+        jLabel110.setText("Coconut Chutney");
         Saturday.add(jLabel110);
         jLabel110.setBounds(450, 100, 80, 16);
 
-        jLabel111.setText("Salad");
+        jLabel111.setText("Special Dessert");
         Saturday.add(jLabel111);
         jLabel111.setBounds(450, 120, 80, 16);
 
-        jLabel112.setText("Buttermilk");
-        Saturday.add(jLabel112);
-        jLabel112.setBounds(450, 140, 80, 16);
-
-        jLabel113.setText("Chapati");
+        jLabel113.setText("Pulao");
         Saturday.add(jLabel113);
         jLabel113.setBounds(870, 60, 80, 16);
 
-        jLabel114.setText("Dal Makhani");
+        jLabel114.setText("Kadhi");
         Saturday.add(jLabel114);
         jLabel114.setBounds(870, 80, 80, 16);
 
-        jLabel115.setText("Aloo Jeera");
+        jLabel115.setText("Papad");
         Saturday.add(jLabel115);
         jLabel115.setBounds(870, 100, 80, 16);
 
-        jLabel116.setText("Raita");
+        jLabel116.setText("Salad");
         Saturday.add(jLabel116);
-        jLabel116.setBounds(870, 120, 80, 16);
+        jLabel116.setBounds(870, 140, 80, 16);
 
-        jLabel117.setText("Idli & Sambar");
+        jLabel117.setText("Puri Bhaji");
         Saturday.add(jLabel117);
         jLabel117.setBounds(40, 60, 80, 16);
 
@@ -615,12 +583,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         jLabel120.setText("-");
         Saturday.add(jLabel120);
         jLabel120.setBounds(440, 120, 10, 16);
-
-        jLabel121.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel121.setForeground(new java.awt.Color(59, 130, 246));
-        jLabel121.setText("-");
-        Saturday.add(jLabel121);
-        jLabel121.setBounds(440, 140, 10, 16);
 
         jLabel122.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel122.setForeground(new java.awt.Color(139, 92, 246));
@@ -644,13 +606,23 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         jLabel125.setForeground(new java.awt.Color(139, 92, 246));
         jLabel125.setText("-");
         Saturday.add(jLabel125);
-        jLabel125.setBounds(860, 120, 10, 16);
+        jLabel125.setBounds(860, 140, 10, 16);
 
         jLabel126.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel126.setForeground(new java.awt.Color(139, 92, 246));
         jLabel126.setText("-");
         Saturday.add(jLabel126);
         jLabel126.setBounds(860, 60, 10, 16);
+
+        jLabel159.setText("Pickles");
+        Saturday.add(jLabel159);
+        jLabel159.setBounds(870, 120, 80, 16);
+
+        jLabel160.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel160.setForeground(new java.awt.Color(139, 92, 246));
+        jLabel160.setText("-");
+        Saturday.add(jLabel160);
+        jLabel160.setBounds(860, 120, 10, 16);
 
         jPanel1.add(Saturday);
         Saturday.setBounds(0, 400, 1180, 190);
@@ -686,19 +658,15 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         Sunday.add(jLabel130);
         jLabel130.setBounds(860, 40, 43, 16);
 
-        jLabel131.setText("Tea/Coffee");
-        Sunday.add(jLabel131);
-        jLabel131.setBounds(40, 120, 80, 16);
-
-        jLabel132.setText("Boiled Eggs");
+        jLabel132.setText("Fresh Juice");
         Sunday.add(jLabel132);
         jLabel132.setBounds(40, 100, 80, 16);
 
-        jLabel133.setText("Steamed Rice");
+        jLabel133.setText("Special Sunday Lunch");
         Sunday.add(jLabel133);
         jLabel133.setBounds(450, 60, 80, 16);
 
-        jLabel134.setText("Coconut Chutney");
+        jLabel134.setText("Tea/Coffee");
         Sunday.add(jLabel134);
         jLabel134.setBounds(40, 80, 110, 16);
 
@@ -714,51 +682,41 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         Sunday.add(jLabel136);
         jLabel136.setBounds(30, 100, 10, 16);
 
-        jLabel137.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel137.setForeground(new java.awt.Color(249, 115, 22));
-        jLabel137.setText("-");
-        Sunday.add(jLabel137);
-        jLabel137.setBounds(30, 120, 10, 16);
-
         jLabel138.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel138.setForeground(new java.awt.Color(59, 130, 246));
         jLabel138.setText("-");
         Sunday.add(jLabel138);
         jLabel138.setBounds(440, 80, 10, 16);
 
-        jLabel139.setText("Rajma Curry");
+        jLabel139.setText("Chicken Biryani");
         Sunday.add(jLabel139);
         jLabel139.setBounds(450, 80, 80, 16);
 
-        jLabel140.setText("Seasonal Veg");
+        jLabel140.setText("Raita");
         Sunday.add(jLabel140);
         jLabel140.setBounds(450, 100, 80, 16);
 
-        jLabel141.setText("Salad");
+        jLabel141.setText("Sweet");
         Sunday.add(jLabel141);
         jLabel141.setBounds(450, 120, 80, 16);
 
-        jLabel142.setText("Buttermilk");
-        Sunday.add(jLabel142);
-        jLabel142.setBounds(450, 140, 80, 16);
-
-        jLabel143.setText("Chapati");
+        jLabel143.setText("Light Dinner");
         Sunday.add(jLabel143);
         jLabel143.setBounds(870, 60, 80, 16);
 
-        jLabel144.setText("Dal Makhani");
+        jLabel144.setText("Khichdi");
         Sunday.add(jLabel144);
         jLabel144.setBounds(870, 80, 80, 16);
 
-        jLabel145.setText("Aloo Jeera");
+        jLabel145.setText("Curd");
         Sunday.add(jLabel145);
         jLabel145.setBounds(870, 100, 80, 16);
 
-        jLabel146.setText("Raita");
+        jLabel146.setText("Papad");
         Sunday.add(jLabel146);
         jLabel146.setBounds(870, 120, 80, 16);
 
-        jLabel147.setText("Idli & Sambar");
+        jLabel147.setText("Chole Bhature");
         Sunday.add(jLabel147);
         jLabel147.setBounds(40, 60, 80, 16);
 
@@ -779,12 +737,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         jLabel150.setText("-");
         Sunday.add(jLabel150);
         jLabel150.setBounds(440, 120, 10, 16);
-
-        jLabel151.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel151.setForeground(new java.awt.Color(59, 130, 246));
-        jLabel151.setText("-");
-        Sunday.add(jLabel151);
-        jLabel151.setBounds(440, 140, 10, 16);
 
         jLabel152.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel152.setForeground(new java.awt.Color(139, 92, 246));
@@ -823,11 +775,11 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1550, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 840, Short.MAX_VALUE)
         );
 
         pack();
@@ -864,18 +816,15 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
     private javax.swing.JPanel Sunday;
     private javax.swing.JPanel Thusday;
     private javax.swing.JLabel jLabel100;
-    private javax.swing.JLabel jLabel101;
     private javax.swing.JLabel jLabel102;
     private javax.swing.JLabel jLabel103;
     private javax.swing.JLabel jLabel104;
     private javax.swing.JLabel jLabel105;
     private javax.swing.JLabel jLabel106;
-    private javax.swing.JLabel jLabel107;
     private javax.swing.JLabel jLabel108;
     private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel111;
-    private javax.swing.JLabel jLabel112;
     private javax.swing.JLabel jLabel113;
     private javax.swing.JLabel jLabel114;
     private javax.swing.JLabel jLabel115;
@@ -884,7 +833,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel120;
-    private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
     private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel124;
@@ -894,18 +842,15 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel130;
-    private javax.swing.JLabel jLabel131;
     private javax.swing.JLabel jLabel132;
     private javax.swing.JLabel jLabel133;
     private javax.swing.JLabel jLabel134;
     private javax.swing.JLabel jLabel135;
     private javax.swing.JLabel jLabel136;
-    private javax.swing.JLabel jLabel137;
     private javax.swing.JLabel jLabel138;
     private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel140;
     private javax.swing.JLabel jLabel141;
-    private javax.swing.JLabel jLabel142;
     private javax.swing.JLabel jLabel143;
     private javax.swing.JLabel jLabel144;
     private javax.swing.JLabel jLabel145;
@@ -914,12 +859,15 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel148;
     private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel150;
-    private javax.swing.JLabel jLabel151;
     private javax.swing.JLabel jLabel152;
     private javax.swing.JLabel jLabel153;
     private javax.swing.JLabel jLabel154;
     private javax.swing.JLabel jLabel155;
     private javax.swing.JLabel jLabel156;
+    private javax.swing.JLabel jLabel157;
+    private javax.swing.JLabel jLabel158;
+    private javax.swing.JLabel jLabel159;
+    private javax.swing.JLabel jLabel160;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
@@ -935,7 +883,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
@@ -944,7 +891,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel64;
@@ -965,7 +911,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel80;
     private javax.swing.JLabel jLabel81;
-    private javax.swing.JLabel jLabel82;
     private javax.swing.JLabel jLabel83;
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
@@ -974,7 +919,6 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel88;
     private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel90;
-    private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabel92;
     private javax.swing.JLabel jLabel93;
     private javax.swing.JLabel jLabel94;
