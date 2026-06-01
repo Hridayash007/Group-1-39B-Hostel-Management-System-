@@ -17,11 +17,7 @@ public class StudentDashboard extends javax.swing.JFrame {
      */
     public StudentDashboard() {
         initComponents();
-<<<<<<< HEAD
-        setSize(1600, 900);
-=======
         setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
     }
 
     /**
@@ -42,19 +38,11 @@ public class StudentDashboard extends javax.swing.JFrame {
         RoomDetails = new javax.swing.JButton();
         Myprofile = new javax.swing.JButton();
         Dashboard = new javax.swing.JButton();
-<<<<<<< HEAD
-        Dashboard1 = new javax.swing.JButton();
-        Studentportal = new javax.swing.JLabel();
-        Welcomeback = new javax.swing.JLabel();
-        Notification = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-=======
         signout = new javax.swing.JButton();
         Studentportal = new javax.swing.JLabel();
         Welcomeback = new javax.swing.JLabel();
         Notification = new javax.swing.JButton();
         profile = new javax.swing.JButton();
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
         hello = new javax.swing.JPanel();
         hellolabel = new javax.swing.JLabel();
         hellodesc = new javax.swing.JLabel();
@@ -90,11 +78,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         viewroomdetails = new javax.swing.JButton();
         checknotice = new javax.swing.JButton();
         mealroutine = new javax.swing.JButton();
-<<<<<<< HEAD
-        filecomplain = new javax.swing.JButton();
-=======
         filecomplaint = new javax.swing.JButton();
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -122,11 +106,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         MealRoutine.setBorderPainted(false);
         MealRoutine.setContentAreaFilled(false);
         backgroundpanel.add(MealRoutine);
-<<<<<<< HEAD
-        MealRoutine.setBounds(10, 350, 180, 43);
-=======
         MealRoutine.setBounds(-50, 350, 300, 43);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         MyComplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MyComplaints.setForeground(new java.awt.Color(255, 255, 255));
@@ -134,14 +114,9 @@ public class StudentDashboard extends javax.swing.JFrame {
         MyComplaints.setText("My Complaints");
         MyComplaints.setBorderPainted(false);
         MyComplaints.setContentAreaFilled(false);
-<<<<<<< HEAD
-        backgroundpanel.add(MyComplaints);
-        MyComplaints.setBounds(-10, 280, 230, 43);
-=======
         MyComplaints.addActionListener(this::MyComplaintsActionPerformed);
         backgroundpanel.add(MyComplaints);
         MyComplaints.setBounds(-20, 280, 250, 43);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         Notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Notice.setForeground(new java.awt.Color(255, 255, 255));
@@ -149,14 +124,9 @@ public class StudentDashboard extends javax.swing.JFrame {
         Notice.setText("Notice");
         Notice.setBorderPainted(false);
         Notice.setContentAreaFilled(false);
-<<<<<<< HEAD
-        backgroundpanel.add(Notice);
-        Notice.setBounds(0, 420, 140, 43);
-=======
         Notice.addActionListener(this::NoticeActionPerformed);
         backgroundpanel.add(Notice);
         Notice.setBounds(-10, 420, 170, 43);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         RoomDetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         RoomDetails.setForeground(new java.awt.Color(255, 255, 255));
@@ -165,11 +135,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         RoomDetails.setBorderPainted(false);
         RoomDetails.setContentAreaFilled(false);
         backgroundpanel.add(RoomDetails);
-<<<<<<< HEAD
-        RoomDetails.setBounds(0, 490, 200, 43);
-=======
         RoomDetails.setBounds(-20, 490, 240, 43);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         Myprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Myprofile.setForeground(new java.awt.Color(255, 255, 255));
@@ -183,22 +149,6 @@ public class StudentDashboard extends javax.swing.JFrame {
         Dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Dashboard.setForeground(new java.awt.Color(255, 255, 255));
         Dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dashboard.png"))); // NOI18N
-<<<<<<< HEAD
-        Dashboard.setText("Dashbaord");
-        Dashboard.setBorderPainted(false);
-        Dashboard.setContentAreaFilled(false);
-        backgroundpanel.add(Dashboard);
-        Dashboard.setBounds(10, 220, 160, 43);
-
-        Dashboard1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Dashboard1.setForeground(new java.awt.Color(255, 255, 255));
-        Dashboard1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/sign out.png"))); // NOI18N
-        Dashboard1.setText("Sign out");
-        Dashboard1.setBorderPainted(false);
-        Dashboard1.setContentAreaFilled(false);
-        backgroundpanel.add(Dashboard1);
-        Dashboard1.setBounds(0, 780, 170, 43);
-=======
         Dashboard.setText("Dashboard");
         Dashboard.setBorderPainted(false);
         Dashboard.setContentAreaFilled(false);
@@ -214,7 +164,6 @@ public class StudentDashboard extends javax.swing.JFrame {
         signout.setContentAreaFilled(false);
         backgroundpanel.add(signout);
         signout.setBounds(0, 780, 170, 43);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         Studentportal.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Studentportal.setText("Student Portal");
@@ -223,11 +172,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         Welcomeback.setText("Welcome Back");
         backgroundpanel.add(Welcomeback);
-<<<<<<< HEAD
-        Welcomeback.setBounds(340, 30, 90, 16);
-=======
         Welcomeback.setBounds(300, 30, 220, 16);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         Notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notification.png"))); // NOI18N
         Notification.setBorderPainted(false);
@@ -235,19 +180,11 @@ public class StudentDashboard extends javax.swing.JFrame {
         backgroundpanel.add(Notification);
         Notification.setBounds(1440, 10, 30, 40);
 
-<<<<<<< HEAD
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        backgroundpanel.add(jButton1);
-        jButton1.setBounds(1480, 10, 41, 40);
-=======
         profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
         profile.setBorderPainted(false);
         profile.setContentAreaFilled(false);
         backgroundpanel.add(profile);
         profile.setBounds(1480, 10, 41, 40);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         hello.setBackground(new java.awt.Color(37, 99, 235));
         hello.setLayout(null);
@@ -262,11 +199,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         hellodesc.setForeground(new java.awt.Color(190, 219, 255));
         hellodesc.setText("Here's what's happening at Cityscape Hostel today");
         hello.add(hellodesc);
-<<<<<<< HEAD
-        hellodesc.setBounds(20, 40, 320, 20);
-=======
         hellodesc.setBounds(20, 40, 350, 20);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         roomnumber.setForeground(new java.awt.Color(190, 219, 255));
         roomnumber.setText(" Room 204");
@@ -279,11 +212,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         daydate.setBounds(90, 70, 150, 16);
 
         backgroundpanel.add(hello);
-<<<<<<< HEAD
-        hello.setBounds(300, 88, 1230, 100);
-=======
         hello.setBounds(290, 90, 1230, 100);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         card1.setBackground(new java.awt.Color(255, 255, 255));
         card1.setForeground(new java.awt.Color(255, 255, 255));
@@ -308,11 +237,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         roomicon.setBounds(230, 10, 24, 24);
 
         backgroundpanel.add(card1);
-<<<<<<< HEAD
-        card1.setBounds(300, 220, 270, 90);
-=======
         card1.setBounds(290, 220, 270, 90);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         card2.setBackground(new java.awt.Color(255, 255, 255));
         card2.setForeground(new java.awt.Color(255, 255, 255));
@@ -325,22 +250,14 @@ public class StudentDashboard extends javax.swing.JFrame {
         mealsnumber.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         mealsnumber.setText("16");
         card2.add(mealsnumber);
-<<<<<<< HEAD
-        mealsnumber.setBounds(10, 40, 70, 20);
-=======
         mealsnumber.setBounds(10, 40, 70, 30);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         mealicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAmealroutine.png"))); // NOI18N
         card2.add(mealicon);
         mealicon.setBounds(260, 10, 24, 24);
 
         backgroundpanel.add(card2);
-<<<<<<< HEAD
-        card2.setBounds(610, 220, 300, 90);
-=======
         card2.setBounds(600, 220, 300, 90);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         card3.setBackground(new java.awt.Color(255, 255, 255));
         card3.setLayout(null);
@@ -359,11 +276,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         complaintsnumber.setBounds(10, 40, 30, 20);
 
         backgroundpanel.add(card3);
-<<<<<<< HEAD
-        card3.setBounds(950, 220, 270, 90);
-=======
         card3.setBounds(940, 220, 270, 90);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         card4.setBackground(new java.awt.Color(255, 255, 255));
         card4.setLayout(null);
@@ -382,11 +295,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         unreadnoticenumber.setBounds(10, 40, 14, 20);
 
         backgroundpanel.add(card4);
-<<<<<<< HEAD
-        card4.setBounds(1260, 220, 270, 90);
-=======
         card4.setBounds(1250, 220, 270, 90);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         mealschedule.setBackground(new java.awt.Color(255, 255, 255));
         mealschedule.setLayout(null);
@@ -400,11 +309,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         breakfastpanel.setLayout(null);
 
         breakfastlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/breakfast.png"))); // NOI18N
-<<<<<<< HEAD
-        breakfastlabel.setText("<html> <b><font size=\"4\">Breakfast</font></b><br> <font color=\"#6b7280\" size=\"3\">7:00 – 9:00 AM</font> </html> ");
-=======
         breakfastlabel.setText("<html>\n<b><font size=\"4\">Breakfast</font></b><br>\n<font color=\"#6b7280\" size=\"3\">7:00 – 9:00 AM</font>\n</html>\n");
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
         breakfastpanel.add(breakfastlabel);
         breakfastlabel.setBounds(10, 0, 230, 57);
 
@@ -434,11 +339,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         jPanel3.setBounds(20, 260, 710, 60);
 
         backgroundpanel.add(mealschedule);
-<<<<<<< HEAD
-        mealschedule.setBounds(310, 360, 750, 380);
-=======
         mealschedule.setBounds(290, 360, 750, 380);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         quickactions.setBackground(new java.awt.Color(255, 255, 255));
         quickactions.setLayout(null);
@@ -471,18 +372,6 @@ public class StudentDashboard extends javax.swing.JFrame {
         quickactions.add(mealroutine);
         mealroutine.setBounds(20, 280, 400, 40);
 
-<<<<<<< HEAD
-        filecomplain.setBackground(new java.awt.Color(248, 250, 252));
-        filecomplain.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        filecomplain.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAcomplaints.png"))); // NOI18N
-        filecomplain.setText("File a Complaint");
-        filecomplain.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        quickactions.add(filecomplain);
-        filecomplain.setBounds(20, 70, 400, 40);
-
-        backgroundpanel.add(quickactions);
-        quickactions.setBounds(1090, 360, 440, 380);
-=======
         filecomplaint.setBackground(new java.awt.Color(248, 250, 252));
         filecomplaint.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         filecomplaint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAcomplaints.png"))); // NOI18N
@@ -493,7 +382,6 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         backgroundpanel.add(quickactions);
         quickactions.setBounds(1080, 360, 440, 380);
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 
         Background.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Background.setForeground(new java.awt.Color(255, 255, 255));
@@ -507,8 +395,6 @@ public class StudentDashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< HEAD
-=======
     private void NoticeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoticeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NoticeActionPerformed
@@ -517,7 +403,6 @@ public class StudentDashboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_MyComplaintsActionPerformed
 
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
     /**
      * @param args the command line arguments
      */
@@ -546,10 +431,6 @@ public class StudentDashboard extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
     private javax.swing.JButton Dashboard;
-<<<<<<< HEAD
-    private javax.swing.JButton Dashboard1;
-=======
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
     private javax.swing.JButton MealRoutine;
     private javax.swing.JButton MyComplaints;
     private javax.swing.JButton Myprofile;
@@ -574,19 +455,11 @@ public class StudentDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel complaintsicon;
     private javax.swing.JLabel complaintsnumber;
     private javax.swing.JLabel daydate;
-<<<<<<< HEAD
-    private javax.swing.JButton filecomplain;
-=======
     private javax.swing.JButton filecomplaint;
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
     private javax.swing.JLabel floor;
     private javax.swing.JPanel hello;
     private javax.swing.JLabel hellodesc;
     private javax.swing.JLabel hellolabel;
-<<<<<<< HEAD
-    private javax.swing.JButton jButton1;
-=======
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel logo;
@@ -600,14 +473,6 @@ public class StudentDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel mealsnumber;
     private javax.swing.JLabel noticeicon;
     private javax.swing.JLabel opencomplaints;
-<<<<<<< HEAD
-    private javax.swing.JPanel quickactions;
-    private javax.swing.JLabel roomicon;
-    private javax.swing.JLabel roomnumber;
-    private javax.swing.JLabel unreadnoticenumber;
-    private javax.swing.JButton viewroomdetails;
-    // End of variables declaration//GEN-END:variables
-=======
     private javax.swing.JButton profile;
     private javax.swing.JPanel quickactions;
     private javax.swing.JLabel roomicon;
@@ -672,5 +537,4 @@ public void MyMealRoutineListener(java.awt.event.ActionListener listener) {
 public void setWelcomeUser(String username) {
     Welcomeback.setText("Welcome back, " + username + "!");
 }
->>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
 }
