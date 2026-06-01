@@ -306,7 +306,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         breakfastpanel.setLayout(null);
 
         breakfastlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/breakfast.png"))); // NOI18N
-        breakfastlabel.setText("<html>\n<b><font size=\"4\">Breakfast</font></b><br>\n<font color=\"#6b7280\" size=\"3\">7:00 – 9:00 AM</font>\n</html>\n");
+        breakfastlabel.setText("<html> <b><font size=\"4\">Breakfast</font></b><br> <font color=\"#6b7280\" size=\"3\">7:00 – 9:00 AM</font> </html> ");
         breakfastpanel.add(breakfastlabel);
         breakfastlabel.setBounds(10, 0, 230, 57);
 

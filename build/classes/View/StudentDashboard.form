@@ -626,7 +626,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/view/breakfast.png"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;b&gt;&lt;font size=&quot;4&quot;&gt;Breakfast&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&#xa;&lt;font color=&quot;#6b7280&quot; size=&quot;3&quot;&gt;7:00 &#x2013; 9:00 AM&lt;/font&gt;&#xa;&lt;/html&gt;&#xa;"/>
+                    <Property name="text" type="java.lang.String" value="&lt;html&gt; &lt;b&gt;&lt;font size=&quot;4&quot;&gt;Breakfast&lt;/font&gt;&lt;/b&gt;&lt;br&gt; &lt;font color=&quot;#6b7280&quot; size=&quot;3&quot;&gt;7:00 &#x2013; 9:00 AM&lt;/font&gt; &lt;/html&gt; "/>
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
