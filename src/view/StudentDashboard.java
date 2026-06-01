@@ -250,7 +250,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         mealsnumber.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         mealsnumber.setText("16");
         card2.add(mealsnumber);
-        mealsnumber.setBounds(10, 40, 70, 20);
+        mealsnumber.setBounds(10, 40, 70, 30);
 
         mealicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAmealroutine.png"))); // NOI18N
         card2.add(mealicon);

@@ -49,13 +49,20 @@ public class ViewNotice extends javax.swing.JFrame {
         noticedesc = new javax.swing.JLabel();
         pinnednotices = new javax.swing.JScrollPane();
         pinnednoticepanel = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        pinnednotice = new javax.swing.JLabel();
+        pinnednotice1 = new javax.swing.JPanel();
+        pinnednotice2 = new javax.swing.JPanel();
         allnotices = new javax.swing.JScrollPane();
         allnoticepanel = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        allnoticescrollpane = new javax.swing.JScrollPane();
+        allnotice = new javax.swing.JPanel();
+        viewnotice = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        noticetitle = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        dateofissue = new javax.swing.JLabel();
+        category = new javax.swing.JLabel();
+        priority = new javax.swing.JLabel();
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -94,7 +101,7 @@ public class ViewNotice extends javax.swing.JFrame {
         dashboard.setContentAreaFilled(false);
         dashboard.addActionListener(this::dashboardActionPerformed);
         backgroundpanel.add(dashboard);
-        dashboard.setBounds(10, 210, 160, 43);
+        dashboard.setBounds(-40, 210, 250, 43);
 
         mycomplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         mycomplaints.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,7 +110,7 @@ public class ViewNotice extends javax.swing.JFrame {
         mycomplaints.setBorderPainted(false);
         mycomplaints.setContentAreaFilled(false);
         backgroundpanel.add(mycomplaints);
-        mycomplaints.setBounds(-10, 280, 230, 43);
+        mycomplaints.setBounds(-30, 280, 270, 43);
 
         mealroutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         mealroutine.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,7 +119,7 @@ public class ViewNotice extends javax.swing.JFrame {
         mealroutine.setBorderPainted(false);
         mealroutine.setContentAreaFilled(false);
         backgroundpanel.add(mealroutine);
-        mealroutine.setBounds(10, 350, 180, 43);
+        mealroutine.setBounds(-30, 350, 250, 43);
 
         notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         notice.setForeground(new java.awt.Color(255, 255, 255));
@@ -130,7 +137,7 @@ public class ViewNotice extends javax.swing.JFrame {
         roomdetails.setBorderPainted(false);
         roomdetails.setContentAreaFilled(false);
         backgroundpanel.add(roomdetails);
-        roomdetails.setBounds(0, 490, 200, 43);
+        roomdetails.setBounds(-20, 490, 230, 43);
 
         myprofile.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         myprofile.setForeground(new java.awt.Color(255, 255, 255));
@@ -179,20 +186,20 @@ public class ViewNotice extends javax.swing.JFrame {
         pinnednoticepanel.setBackground(new java.awt.Color(255, 255, 255));
         pinnednoticepanel.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/pinnedmessage.png"))); // NOI18N
-        jLabel1.setText("Pinned Notice");
-        pinnednoticepanel.add(jLabel1);
-        jLabel1.setBounds(10, 10, 110, 24);
+        pinnednotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/pinnedmessage.png"))); // NOI18N
+        pinnednotice.setText("Pinned Notice");
+        pinnednoticepanel.add(pinnednotice);
+        pinnednotice.setBounds(10, 10, 110, 24);
 
-        jPanel1.setBackground(new java.awt.Color(191, 219, 254));
-        jPanel1.setLayout(null);
-        pinnednoticepanel.add(jPanel1);
-        jPanel1.setBounds(10, 50, 1180, 50);
+        pinnednotice1.setBackground(new java.awt.Color(191, 219, 254));
+        pinnednotice1.setLayout(null);
+        pinnednoticepanel.add(pinnednotice1);
+        pinnednotice1.setBounds(10, 50, 1180, 50);
 
-        jPanel2.setBackground(new java.awt.Color(191, 219, 254));
-        jPanel2.setLayout(null);
-        pinnednoticepanel.add(jPanel2);
-        jPanel2.setBounds(10, 120, 1180, 50);
+        pinnednotice2.setBackground(new java.awt.Color(191, 219, 254));
+        pinnednotice2.setLayout(null);
+        pinnednoticepanel.add(pinnednotice2);
+        pinnednotice2.setBounds(10, 120, 1180, 50);
 
         pinnednotices.setViewportView(pinnednoticepanel);
 
@@ -204,21 +211,48 @@ public class ViewNotice extends javax.swing.JFrame {
         allnoticepanel.setBackground(new java.awt.Color(255, 255, 255));
         allnoticepanel.setLayout(null);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Title ", "Category ", "Priority", "Date Posted", "Action"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable1);
+        allnotice.setBackground(new java.awt.Color(255, 255, 255));
+        allnotice.setLayout(null);
 
-        allnoticepanel.add(jScrollPane2);
-        jScrollPane2.setBounds(11, 5, 1190, 350);
+        viewnotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/viewnotice.png"))); // NOI18N
+        viewnotice.setBorderPainted(false);
+        viewnotice.setContentAreaFilled(false);
+        allnotice.add(viewnotice);
+        viewnotice.setBounds(1060, 40, 24, 24);
+
+        jPanel3.setLayout(null);
+
+        noticetitle.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        noticetitle.setText("Hostel Fee Payment Deadline ");
+        jPanel3.add(noticetitle);
+        noticetitle.setBounds(20, 10, 250, 16);
+
+        jLabel2.setText("All hostel residents are reminded that the hostel fee for May 2025 must be paid by May 15, 2025. Late payments will incur a penalty of ₹500 per week.");
+        jPanel3.add(jLabel2);
+        jLabel2.setBounds(20, 30, 1000, 16);
+
+        dateofissue.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        dateofissue.setText("Apr 28, 2025 ");
+        jPanel3.add(dateofissue);
+        dateofissue.setBounds(20, 60, 100, 14);
+
+        category.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        category.setText("Finance");
+        jPanel3.add(category);
+        category.setBounds(120, 60, 80, 14);
+
+        priority.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        priority.setText("Urgent");
+        jPanel3.add(priority);
+        priority.setBounds(220, 60, 60, 14);
+
+        allnotice.add(jPanel3);
+        jPanel3.setBounds(30, 20, 1130, 80);
+
+        allnoticescrollpane.setViewportView(allnotice);
+
+        allnoticepanel.add(allnoticescrollpane);
+        allnoticescrollpane.setBounds(12, 12, 1180, 340);
 
         allnotices.setViewportView(allnoticepanel);
 
@@ -269,17 +303,18 @@ public class ViewNotice extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel allnotice;
     private javax.swing.JPanel allnoticepanel;
     private javax.swing.JScrollPane allnotices;
+    private javax.swing.JScrollPane allnoticescrollpane;
     private javax.swing.JLabel background;
     private javax.swing.JPanel backgroundpanel;
+    private javax.swing.JLabel category;
     private javax.swing.JLabel cityscape;
     private javax.swing.JButton dashboard;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel dateofissue;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JButton mealroutine;
     private javax.swing.JButton mycomplaints;
     private javax.swing.JButton myprofile;
@@ -287,13 +322,59 @@ public class ViewNotice extends javax.swing.JFrame {
     private javax.swing.JButton notice;
     private javax.swing.JLabel noticeboard;
     private javax.swing.JLabel noticedesc;
+    private javax.swing.JLabel noticetitle;
     private javax.swing.JButton notification;
+    private javax.swing.JLabel pinnednotice;
+    private javax.swing.JPanel pinnednotice1;
+    private javax.swing.JPanel pinnednotice2;
     private javax.swing.JPanel pinnednoticepanel;
     private javax.swing.JScrollPane pinnednotices;
+    private javax.swing.JLabel priority;
     private javax.swing.JButton profile;
     private javax.swing.JButton roomdetails;
     private javax.swing.JButton signout;
     private javax.swing.JLabel studentportal;
+    private javax.swing.JButton viewnotice;
     private javax.swing.JLabel welcomeback;
     // End of variables declaration//GEN-END:variables
+
+
+// ── Panel accessors (controller dynamically builds notice cards into these) ───
+public javax.swing.JPanel getPinnedNoticePanel() {
+    return pinnednoticepanel;
+}
+
+public javax.swing.JPanel getAllNoticePanel() {
+    return allnotice;
+}
+
+// ── Welcome label ─────────────────────────────────────────────────────────────
+public void setWelcomeUser(String username) {
+    welcomeback.setText("Welcome Back, " + username);
+}
+
+// ── Button listeners ─────────────────────────────────────────────────────────
+public void DashboardListener(java.awt.event.ActionListener listener) {
+    dashboard.addActionListener(listener);
+}
+
+public void NoticeListener(java.awt.event.ActionListener listener) {
+    notice.addActionListener(listener);
+}
+
+public void MyProfileListener(java.awt.event.ActionListener listener) {
+    myprofile.addActionListener(listener);
+}
+
+public void ProfileListener(java.awt.event.ActionListener listener) {
+    profile.addActionListener(listener);
+}
+
+public void SignOutListener(java.awt.event.ActionListener listener) {
+    signout.addActionListener(listener);
+}
+
+public void NotificationListener(java.awt.event.ActionListener listener) {
+    notification.addActionListener(listener);
+}
 }

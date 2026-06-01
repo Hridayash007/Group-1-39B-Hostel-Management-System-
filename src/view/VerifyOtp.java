@@ -76,7 +76,7 @@ public class VerifyOtp extends javax.swing.JFrame {
 
         email.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         verifyotppanel.add(email);
-        email.setBounds(177, 110, 140, 20);
+        email.setBounds(157, 110, 240, 20);
 
         code1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         code1.setHorizontalAlignment(javax.swing.JTextField.CENTER);

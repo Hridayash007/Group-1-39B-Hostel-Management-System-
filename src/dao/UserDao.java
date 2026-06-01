@@ -140,7 +140,7 @@ public class UserDao {
         }
     }
 
-    // ── Helper: map a full ResultSet row to UserData ─────────────────────────
+   
     private UserData mapFullRow(ResultSet rs) throws SQLException {
         UserData user = new UserData();
         user.setId(rs.getInt("user_id"));
@@ -162,6 +162,48 @@ public class UserDao {
         user.setEcNumber(    nullSafe(rs, "ec_number"));
         return user;
     }
+    
+    public java.util.List<model.UserData> getAllStudents() {
+    java.util.List<model.UserData> list = new java.util.ArrayList<>();
+    String sql = "SELECT * FROM users ORDER BY user_id ASC";
+    java.sql.Connection conn = mysql.openConnection();
+    try (java.sql.PreparedStatement ps = conn.prepareStatement(sql)) {
+        java.sql.ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            model.UserData u = new model.UserData();
+            u.setId(rs.getInt("user_id"));
+            u.setUsername(rs.getString("username"));
+            u.setEmail(rs.getString("email"));
+            u.setFullName(  nullSafe(rs, "full_name"));
+            u.setPhone(     nullSafe(rs, "phone"));
+            u.setProgram(   nullSafe(rs, "program"));
+            u.setSemester(  nullSafe(rs, "semester"));
+            u.setYearOfStudy(nullSafe(rs, "year_of_study"));
+            list.add(u);
+        }
+    } catch (java.sql.SQLException e) {
+        e.printStackTrace();
+    } finally {
+        mysql.closeConnection(conn);
+    }
+    return list;
+}
+ 
+/** Deletes a student by user_id. Returns true on success. */
+public boolean deleteStudent(int userId) {
+    String sql = "DELETE FROM users WHERE user_id = ?";
+    java.sql.Connection conn = mysql.openConnection();
+    try (java.sql.PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setInt(1, userId);
+        return ps.executeUpdate() > 0;
+    } catch (java.sql.SQLException e) {
+        e.printStackTrace();
+        return false;
+    } finally {
+        mysql.closeConnection(conn);
+    }
+}
+
 
     private String nullSafe(ResultSet rs, String col) throws SQLException {
         String val = rs.getString(col);
