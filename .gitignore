@@ -1,1 +1,16 @@
+<<<<<<< HEAD
 /dist/
+=======
+# NetBeans build files
+build/
+dist/
+
+# Compiled Java classes
+*.class
+
+# NetBeans private config
+nbproject/private/
+
+# Logs
+*.log
+>>>>>>> 0d601cef5fe804d541ee6c93814b65d8aea9adee
