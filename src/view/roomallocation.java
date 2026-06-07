@@ -167,7 +167,7 @@ public class RoomAllocation extends javax.swing.JFrame {
         Admindashboard.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Admindashboard.setText("Admin Dashboard");
         BackgroundPanel.add(Admindashboard);
-        Admindashboard.setBounds(300, 0, 207, 32);
+        Admindashboard.setBounds(300, 0, 204, 32);
 
         Welcomeback.setText("Welcome Back");
         BackgroundPanel.add(Welcomeback);
@@ -237,7 +237,7 @@ public class RoomAllocation extends javax.swing.JFrame {
         Studentcount.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         Studentcount.setText("155");
         card3.add(Studentcount);
-        Studentcount.setBounds(10, 40, 36, 30);
+        Studentcount.setBounds(10, 40, 34, 30);
 
         BackgroundPanel.add(card3);
         card3.setBounds(300, 160, 300, 100);
