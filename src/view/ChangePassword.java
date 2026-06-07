@@ -91,7 +91,7 @@ public class ChangePassword extends javax.swing.JFrame {
         dashboard.setContentAreaFilled(false);
         dashboard.addActionListener(this::dashboardActionPerformed);
         backgroundpanel.add(dashboard);
-        dashboard.setBounds(10, 210, 160, 43);
+        dashboard.setBounds(-30, 210, 240, 43);
 
         mycomplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         mycomplaints.setForeground(new java.awt.Color(255, 255, 255));
@@ -109,7 +109,7 @@ public class ChangePassword extends javax.swing.JFrame {
         mealroutine.setBorderPainted(false);
         mealroutine.setContentAreaFilled(false);
         backgroundpanel.add(mealroutine);
-        mealroutine.setBounds(10, 350, 180, 43);
+        mealroutine.setBounds(-30, 350, 260, 43);
 
         notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         notice.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,14 +129,14 @@ public class ChangePassword extends javax.swing.JFrame {
         backgroundpanel.add(roomdetails);
         roomdetails.setBounds(0, 490, 200, 43);
 
-        myprofile.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        myprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         myprofile.setForeground(new java.awt.Color(255, 255, 255));
         myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
         myprofile.setText("My Profile");
         myprofile.setBorderPainted(false);
         myprofile.setContentAreaFilled(false);
         backgroundpanel.add(myprofile);
-        myprofile.setBounds(0, 560, 160, 43);
+        myprofile.setBounds(0, 560, 180, 43);
 
         cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cityscape.setForeground(new java.awt.Color(255, 255, 255));

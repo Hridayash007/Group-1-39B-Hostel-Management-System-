@@ -4,6 +4,7 @@ import dao.NoticeDao;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -12,9 +13,9 @@ import model.NoticeData;
 import view.IssueNotice;
 import view.LogIn;
 import view.NoticeAdmin;
-import view.viewnoticeexpand;
-import javax.swing.ImageIcon;
 import view.ViewStudentDetails;
+import view.viewnoticeexpand;
+
 public class NoticeAdminController {
 
     private final NoticeDao noticeDao = new NoticeDao();
@@ -31,14 +32,20 @@ public class NoticeAdminController {
             IssueNotice issueView = new IssueNotice();
             new IssueNoticeController(issueView, this).open();
         });
-        
+
+        // ── Complaints button (sidebar) ───────────────────────────────────────
+        view.ComplaintsListener(e -> {
+            close();
+            new ViewComplaintController(new view.ViewComplaint()).open();
+        });
+
         // ── Students button (sidebar) ────────────────────────────────────────
         view.StudentsListener(e -> {
             close();
             ViewStudentDetails studView = new ViewStudentDetails();
             new ViewStudentDetailsController(studView).open();
         });
-        
+
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(view,
@@ -57,7 +64,9 @@ public class NoticeAdminController {
         loadNoticeList();
     }
 
-    public view.NoticeAdmin getView() { return view; }
+    /** Returns the view — used by IssueNoticeController to center dialogs. */
+    public NoticeAdmin getView() { return view; }
+
     public void open()  { view.setVisible(true); }
     public void close() { view.dispose(); }
 
@@ -88,8 +97,8 @@ public class NoticeAdminController {
     }
 
     /**
-     * Builds a notice card with View (👁) and Delete (🗑) buttons on the right.
-     * All button logic is handled here in the controller — view stays passive.
+     * Builds a notice card with View and Delete icon buttons on the right.
+     * All logic stays in the controller — view is passive.
      */
     private JPanel buildAdminNoticeCard(NoticeData n) {
         JPanel card = new JPanel();
@@ -116,7 +125,7 @@ public class NoticeAdminController {
         titleLabel.setBounds(10, 20, 980, 18);
         card.add(titleLabel);
 
-        // Description (truncated preview)
+        // Description preview
         String desc = n.getDescription().length() > 120
                 ? n.getDescription().substring(0, 120) + "..." : n.getDescription();
         JLabel descLabel = new JLabel(desc);
@@ -150,7 +159,7 @@ public class NoticeAdminController {
         priorityBadge.add(priLabel);
         card.add(priorityBadge);
 
-        // Pinned label
+        // Pinned
         if (n.isPinned()) {
             JLabel pinnedLabel = new JLabel("📌 Pinned");
             pinnedLabel.setFont(new Font("Segoe UI", Font.PLAIN, 10));
@@ -159,34 +168,43 @@ public class NoticeAdminController {
             card.add(pinnedLabel);
         }
 
-        // ── View button (👁) — opens viewnoticeexpand as modal dialog ─────────
+        // ── View button — icon with text fallback ─────────────────────────────
         JButton viewBtn = new JButton();
-viewBtn.setIcon(new ImageIcon( getClass().getResource("/view/viewnotice.png")));
-viewBtn.setText("");
-viewBtn.setToolTipText("View full notice");
-viewBtn.setBorderPainted(false);
-viewBtn.setContentAreaFilled(false);
-viewBtn.setFocusPainted(false);
-viewBtn.setBounds(1060, 28, 40, 32);
-card.add(viewBtn);
+        try {
+            viewBtn.setIcon(new ImageIcon(getClass().getResource("/view/viewnotice.png")));
+        } catch (Exception ex) {
+            viewBtn.setText("👁");
+        }
+        viewBtn.setToolTipText("View full notice");
+        viewBtn.setBorderPainted(false);
+        viewBtn.setContentAreaFilled(false);
+        viewBtn.setFocusPainted(false);
+        viewBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        viewBtn.setBounds(1055, 25, 40, 36);
+        card.add(viewBtn);
 
         viewBtn.addActionListener(e -> {
             viewnoticeexpand expandView = new viewnoticeexpand();
             ViewNoticeExpandController ctrl = new ViewNoticeExpandController(expandView);
             ctrl.setNotice(n);
-            ctrl.open(view);   // center over NoticeAdmin window
+            ctrl.open(view);
         });
 
-        // ── Delete button (🗑) — confirms then removes from DB ────────────────
+        // ── Delete button — icon with text fallback ───────────────────────────
         JButton deleteBtn = new JButton();
-deleteBtn.setIcon(new ImageIcon(getClass().getResource("/view/deletenotice.png")));
-deleteBtn.setText("");
-deleteBtn.setToolTipText("Delete notice");
-deleteBtn.setBorderPainted(false);
-deleteBtn.setContentAreaFilled(false);
-deleteBtn.setFocusPainted(false);
-deleteBtn.setBounds(1105, 28, 40, 32);
-card.add(deleteBtn);
+        try {
+            deleteBtn.setIcon(new ImageIcon(getClass().getResource("/view/deletenotice.png")));
+        } catch (Exception ex) {
+            deleteBtn.setText("🗑");
+        }
+        deleteBtn.setToolTipText("Delete notice");
+        deleteBtn.setForeground(new Color(220, 38, 38));
+        deleteBtn.setBorderPainted(false);
+        deleteBtn.setContentAreaFilled(false);
+        deleteBtn.setFocusPainted(false);
+        deleteBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        deleteBtn.setBounds(1100, 25, 40, 36);
+        card.add(deleteBtn);
 
         deleteBtn.addActionListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(view,

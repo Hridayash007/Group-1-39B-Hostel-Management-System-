@@ -17,6 +17,7 @@ public class IssueComplaints extends javax.swing.JFrame {
      */
     public IssueComplaints() {
         initComponents();
+        setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -45,14 +46,27 @@ public class IssueComplaints extends javax.swing.JFrame {
         Pendingcount = new javax.swing.JLabel();
         Pending = new javax.swing.JLabel();
         Card3 = new javax.swing.JPanel();
-        Inprogresscount = new javax.swing.JLabel();
-        Inprogress = new javax.swing.JLabel();
-        Card4 = new javax.swing.JPanel();
         Resolvedcount = new javax.swing.JLabel();
         Resolved = new javax.swing.JLabel();
         Mycomplaints = new javax.swing.JLabel();
         Trackandmanageyourhostelcomplaints = new javax.swing.JLabel();
         Newcomplaint = new javax.swing.JButton();
+        studentportal = new javax.swing.JLabel();
+        welcomeback = new javax.swing.JLabel();
+        notification = new javax.swing.JButton();
+        profile = new javax.swing.JButton();
+        complaintsscrollpanel = new javax.swing.JScrollPane();
+        complaintpanel = new javax.swing.JPanel();
+        particularcomplaintpanel = new javax.swing.JPanel();
+        noticetitle = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        dateofissue = new javax.swing.JLabel();
+        category = new javax.swing.JLabel();
+        priority = new javax.swing.JLabel();
+        buttonpanel = new javax.swing.JPanel();
+        pendingbtn = new javax.swing.JButton();
+        resolvedbtn = new javax.swing.JButton();
+        allbtn = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -65,11 +79,11 @@ public class IssueComplaints extends javax.swing.JFrame {
         CityScape.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
         CityScape.setText("Cityscape");
         backgroundpanel.add(CityScape);
-        CityScape.setBounds(20, 20, 170, 36);
+        CityScape.setBounds(20, 10, 170, 36);
 
         Administration.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        Administration.setForeground(new java.awt.Color(194, 122, 255));
-        Administration.setText("Administration");
+        Administration.setForeground(new java.awt.Color(81, 162, 255));
+        Administration.setText("NAVIGATION");
         backgroundpanel.add(Administration);
         Administration.setBounds(20, 180, 70, 16);
 
@@ -79,7 +93,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         Dashboard.setText("Dashboard");
         Dashboard.setContentAreaFilled(false);
         backgroundpanel.add(Dashboard);
-        Dashboard.setBounds(10, 210, 160, 43);
+        Dashboard.setBounds(-40, 210, 260, 43);
 
         MyComplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MyComplaints.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,7 +101,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         MyComplaints.setText("My complaints");
         MyComplaints.setContentAreaFilled(false);
         backgroundpanel.add(MyComplaints);
-        MyComplaints.setBounds(10, 280, 190, 43);
+        MyComplaints.setBounds(-20, 280, 250, 43);
 
         MealRoutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MealRoutine.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,7 +109,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         MealRoutine.setText("Meal Routine");
         MealRoutine.setContentAreaFilled(false);
         backgroundpanel.add(MealRoutine);
-        MealRoutine.setBounds(10, 350, 180, 43);
+        MealRoutine.setBounds(-30, 350, 260, 43);
 
         Notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Notice.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,7 +117,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         Notice.setText("Notice");
         Notice.setContentAreaFilled(false);
         backgroundpanel.add(Notice);
-        Notice.setBounds(-10, 480, 180, 43);
+        Notice.setBounds(-20, 480, 190, 43);
 
         RoomDetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         RoomDetails.setForeground(new java.awt.Color(255, 255, 255));
@@ -111,7 +125,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         RoomDetails.setText("Room Details");
         RoomDetails.setContentAreaFilled(false);
         backgroundpanel.add(RoomDetails);
-        RoomDetails.setBounds(10, 420, 190, 43);
+        RoomDetails.setBounds(-20, 420, 240, 43);
 
         Myprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Myprofile.setForeground(new java.awt.Color(255, 255, 255));
@@ -119,7 +133,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         Myprofile.setText("My Profile");
         Myprofile.setContentAreaFilled(false);
         backgroundpanel.add(Myprofile);
-        Myprofile.setBounds(10, 540, 170, 43);
+        Myprofile.setBounds(0, 540, 170, 43);
 
         SignOut.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         SignOut.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,79 +141,61 @@ public class IssueComplaints extends javax.swing.JFrame {
         SignOut.setText("Sign Out");
         SignOut.setContentAreaFilled(false);
         backgroundpanel.add(SignOut);
-        SignOut.setBounds(10, 610, 190, 43);
+        SignOut.setBounds(0, 780, 190, 43);
 
         Card1.setBackground(new java.awt.Color(255, 255, 255));
         Card1.setLayout(null);
 
-        Totalcomplaintscount.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        Totalcomplaintscount.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Totalcomplaintscount.setForeground(new java.awt.Color(102, 102, 255));
         Totalcomplaintscount.setText("5");
         Card1.add(Totalcomplaintscount);
-        Totalcomplaintscount.setBounds(100, 30, 30, 30);
+        Totalcomplaintscount.setBounds(130, 10, 70, 30);
 
         Total.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Total.setForeground(new java.awt.Color(153, 161, 175));
         Total.setText("Total");
         Card1.add(Total);
-        Total.setBounds(90, 70, 40, 16);
+        Total.setBounds(120, 40, 70, 40);
 
         backgroundpanel.add(Card1);
-        Card1.setBounds(320, 190, 250, 100);
+        Card1.setBounds(300, 190, 340, 80);
 
         Card2.setBackground(new java.awt.Color(255, 255, 255));
         Card2.setLayout(null);
 
-        Pendingcount.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        Pendingcount.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Pendingcount.setForeground(new java.awt.Color(255, 153, 51));
         Pendingcount.setText("1");
         Card2.add(Pendingcount);
-        Pendingcount.setBounds(120, 30, 12, 40);
+        Pendingcount.setBounds(130, 10, 60, 40);
 
         Pending.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Pending.setForeground(new java.awt.Color(153, 161, 175));
         Pending.setText("Pending");
         Card2.add(Pending);
-        Pending.setBounds(90, 60, 80, 30);
+        Pending.setBounds(110, 40, 140, 40);
 
         backgroundpanel.add(Card2);
-        Card2.setBounds(620, 190, 250, 99);
+        Card2.setBounds(770, 190, 300, 80);
 
         Card3.setBackground(new java.awt.Color(255, 255, 255));
         Card3.setLayout(null);
 
-        Inprogresscount.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        Inprogresscount.setForeground(new java.awt.Color(51, 51, 255));
-        Inprogresscount.setText("1");
-        Card3.add(Inprogresscount);
-        Inprogresscount.setBounds(110, 36, 37, 30);
-
-        Inprogress.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Inprogress.setForeground(new java.awt.Color(153, 161, 175));
-        Inprogress.setText("In Progress");
-        Card3.add(Inprogress);
-        Inprogress.setBounds(70, 60, 110, 30);
-
-        backgroundpanel.add(Card3);
-        Card3.setBounds(920, 190, 250, 100);
-
-        Card4.setBackground(new java.awt.Color(255, 255, 255));
-        Card4.setLayout(null);
-
-        Resolvedcount.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        Resolvedcount.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Resolvedcount.setForeground(new java.awt.Color(0, 153, 51));
         Resolvedcount.setText("5");
-        Card4.add(Resolvedcount);
-        Resolvedcount.setBounds(100, 40, 20, 20);
+        Card3.add(Resolvedcount);
+        Resolvedcount.setBounds(130, 20, 60, 30);
 
         Resolved.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Resolved.setForeground(new java.awt.Color(153, 161, 175));
         Resolved.setText("Resolved");
-        Card4.add(Resolved);
-        Resolved.setBounds(80, 60, 90, 25);
+        Card3.add(Resolved);
+        Resolved.setBounds(110, 50, 120, 25);
 
-        backgroundpanel.add(Card4);
-        Card4.setBounds(1230, 190, 250, 100);
+        backgroundpanel.add(Card3);
+        Card3.setBounds(1200, 190, 310, 80);
 
         Mycomplaints.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Mycomplaints.setText("My Complaints");
@@ -217,18 +213,98 @@ public class IssueComplaints extends javax.swing.JFrame {
         Newcomplaint.setForeground(new java.awt.Color(255, 255, 255));
         Newcomplaint.setText("+ New Complaint");
         backgroundpanel.add(Newcomplaint);
-        Newcomplaint.setBounds(1340, 143, 140, 30);
+        Newcomplaint.setBounds(1350, 140, 160, 30);
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/adminbackground.png"))); // NOI18N
+        studentportal.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        studentportal.setText("Student Portal");
+        backgroundpanel.add(studentportal);
+        studentportal.setBounds(300, 0, 170, 30);
+
+        welcomeback.setText("Welcome Back");
+        backgroundpanel.add(welcomeback);
+        welcomeback.setBounds(300, 30, 250, 16);
+
+        notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notification.png"))); // NOI18N
+        notification.setBorderPainted(false);
+        notification.setContentAreaFilled(false);
+        notification.addActionListener(this::notificationActionPerformed);
+        backgroundpanel.add(notification);
+        notification.setBounds(1440, 10, 30, 40);
+
+        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
+        profile.setBorderPainted(false);
+        profile.setContentAreaFilled(false);
+        backgroundpanel.add(profile);
+        profile.setBounds(1480, 10, 41, 40);
+
+        complaintpanel.setBackground(new java.awt.Color(255, 255, 255));
+        complaintpanel.setLayout(null);
+
+        particularcomplaintpanel.setLayout(null);
+
+        noticetitle.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        noticetitle.setText("Hostel Fee Payment Deadline ");
+        particularcomplaintpanel.add(noticetitle);
+        noticetitle.setBounds(20, 10, 250, 16);
+
+        jLabel2.setText("All hostel residents are reminded that the hostel fee for May 2025 must be paid by May 15, 2025. Late payments will incur a penalty of ₹500 per week.");
+        particularcomplaintpanel.add(jLabel2);
+        jLabel2.setBounds(20, 30, 1000, 16);
+
+        dateofissue.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        dateofissue.setText("Apr 28, 2025 ");
+        particularcomplaintpanel.add(dateofissue);
+        dateofissue.setBounds(20, 60, 100, 14);
+
+        category.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        category.setText("Finance");
+        particularcomplaintpanel.add(category);
+        category.setBounds(120, 60, 80, 14);
+
+        priority.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        priority.setText("Urgent");
+        particularcomplaintpanel.add(priority);
+        priority.setBounds(220, 60, 60, 14);
+
+        complaintpanel.add(particularcomplaintpanel);
+        particularcomplaintpanel.setBounds(30, 60, 1130, 80);
+
+        buttonpanel.setLayout(null);
+
+        pendingbtn.setText("Pending");
+        buttonpanel.add(pendingbtn);
+        pendingbtn.setBounds(104, 0, 90, 30);
+
+        resolvedbtn.setText("Resolved");
+        buttonpanel.add(resolvedbtn);
+        resolvedbtn.setBounds(220, 0, 90, 30);
+
+        allbtn.setText("All");
+        buttonpanel.add(allbtn);
+        allbtn.setBounds(0, 0, 80, 30);
+
+        complaintpanel.add(buttonpanel);
+        buttonpanel.setBounds(850, 10, 310, 30);
+
+        complaintsscrollpanel.setViewportView(complaintpanel);
+
+        backgroundpanel.add(complaintsscrollpanel);
+        complaintsscrollpanel.setBounds(300, 310, 1210, 490);
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.png"))); // NOI18N
         Background.setText("jLabel1");
         backgroundpanel.add(Background);
-        Background.setBounds(0, 0, 1550, 680);
+        Background.setBounds(0, 0, 1550, 840);
 
         getContentPane().add(backgroundpanel);
         backgroundpanel.setBounds(0, 0, 1550, 840);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void notificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_notificationActionPerformed
 
     /**
      * @param args the command line arguments
@@ -261,11 +337,8 @@ public class IssueComplaints extends javax.swing.JFrame {
     private javax.swing.JPanel Card1;
     private javax.swing.JPanel Card2;
     private javax.swing.JPanel Card3;
-    private javax.swing.JPanel Card4;
     private javax.swing.JLabel CityScape;
     private javax.swing.JButton Dashboard;
-    private javax.swing.JLabel Inprogress;
-    private javax.swing.JLabel Inprogresscount;
     private javax.swing.JButton MealRoutine;
     private javax.swing.JButton MyComplaints;
     private javax.swing.JLabel Mycomplaints;
@@ -281,6 +354,39 @@ public class IssueComplaints extends javax.swing.JFrame {
     private javax.swing.JLabel Total;
     private javax.swing.JLabel Totalcomplaintscount;
     private javax.swing.JLabel Trackandmanageyourhostelcomplaints;
+    private javax.swing.JButton allbtn;
     private javax.swing.JPanel backgroundpanel;
+    private javax.swing.JPanel buttonpanel;
+    private javax.swing.JLabel category;
+    private javax.swing.JPanel complaintpanel;
+    private javax.swing.JScrollPane complaintsscrollpanel;
+    private javax.swing.JLabel dateofissue;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel noticetitle;
+    private javax.swing.JButton notification;
+    private javax.swing.JPanel particularcomplaintpanel;
+    private javax.swing.JButton pendingbtn;
+    private javax.swing.JLabel priority;
+    private javax.swing.JButton profile;
+    private javax.swing.JButton resolvedbtn;
+    private javax.swing.JLabel studentportal;
+    private javax.swing.JLabel welcomeback;
     // End of variables declaration//GEN-END:variables
+
+public void setWelcomeUser(String username)     { welcomeback.setText("Welcome Back, " + username); }
+public void setTotalComplaints(int n)           { Totalcomplaintscount.setText(String.valueOf(n)); }
+public void setPendingCount(int n)              { Pendingcount.setText(String.valueOf(n)); }
+public void setResolvedCount(int n)             { Resolvedcount.setText(String.valueOf(n)); }
+ 
+public javax.swing.JPanel getComplaintPanel()   { return complaintpanel; }
+ 
+public void NewComplaintListener(java.awt.event.ActionListener l)  { Newcomplaint.addActionListener(l); }
+public void AllListener(java.awt.event.ActionListener l)           { allbtn.addActionListener(l); }
+public void PendingListener(java.awt.event.ActionListener l)       { pendingbtn.addActionListener(l); }
+public void ResolvedListener(java.awt.event.ActionListener l)      { resolvedbtn.addActionListener(l); }
+public void DashboardListener(java.awt.event.ActionListener l)     { Dashboard.addActionListener(l); }
+public void NoticeListener(java.awt.event.ActionListener l)        { Notice.addActionListener(l); }
+public void MyProfileListener(java.awt.event.ActionListener l)     { Myprofile.addActionListener(l); }
+public void SignOutListener(java.awt.event.ActionListener l)       { SignOut.addActionListener(l); }
+public void ProfileListener(java.awt.event.ActionListener l)       { profile.addActionListener(l); }
 }

@@ -1,6 +1,7 @@
 package controller;
 
 import model.UserData;
+import view.IssueComplaints;
 import view.LogIn;
 import view.StudentDashboard;
 import view.StudentProfile;
@@ -17,36 +18,37 @@ public class StudentDashboardController {
 
         view.setWelcomeUser(user.getUsername());
 
-        // ── Notice button ────────────────────────────────────────────────────
+        // ── My Complaints ────────────────────────────────────────────────────
+        view.MyComplaintsListener(e -> {
+            close();
+            IssueComplaints complaintsView = new IssueComplaints();
+            new IssueComplaintsController(complaintsView, user).open();
+        });
+
+        // ── Notice ───────────────────────────────────────────────────────────
         view.NoticeListener(e -> {
             close();
-            ViewNotice noticeView = new ViewNotice();
-            new ViewNoticeController(noticeView, user).open();
+            new ViewNoticeController(new ViewNotice(), user).open();
         });
 
         // ── My Profile ───────────────────────────────────────────────────────
         view.MyProfileListener(e -> {
             close();
-            StudentProfile profileView = new StudentProfile();
-            new StudentProfileController(profileView, user).open();
+            new StudentProfileController(new StudentProfile(), user).open();
         });
 
         // ── Profile icon (top-right) ─────────────────────────────────────────
         view.ProfileListener(e -> {
             close();
-            StudentProfile profileView = new StudentProfile();
-            new StudentProfileController(profileView, user).open();
+            new StudentProfileController(new StudentProfile(), user).open();
         });
 
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
-            int confirm = javax.swing.JOptionPane.showConfirmDialog(
-                    view,
-                    "Are you sure you want to sign out?",
-                    "Sign Out",
+            int confirm = javax.swing.JOptionPane.showConfirmDialog(view,
+                    "Are you sure you want to sign out?", "Sign Out",
                     javax.swing.JOptionPane.YES_NO_OPTION,
-                    javax.swing.JOptionPane.QUESTION_MESSAGE
-            );
+                    javax.swing.JOptionPane.QUESTION_MESSAGE);
             if (confirm == javax.swing.JOptionPane.YES_OPTION) {
                 close();
                 new LoginController(new LogIn()).open();

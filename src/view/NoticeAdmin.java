@@ -418,4 +418,8 @@ public void StudentsListener(java.awt.event.ActionListener listener) {
     students.addActionListener(listener); 
 }
  
+public void ComplaintsListener(java.awt.event.ActionListener listener) {
+    complaints.addActionListener(listener);
+}
+ 
 }
