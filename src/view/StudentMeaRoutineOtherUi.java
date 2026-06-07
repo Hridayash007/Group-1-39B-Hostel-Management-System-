@@ -544,7 +544,7 @@ public class StudentMeaRoutineOtherUi extends javax.swing.JFrame {
 
         jLabel111.setText("Special Dessert");
         Saturday.add(jLabel111);
-        jLabel111.setBounds(450, 120, 80, 16);
+        jLabel111.setBounds(450, 120, 110, 16);
 
         jLabel113.setText("Pulao");
         Saturday.add(jLabel113);

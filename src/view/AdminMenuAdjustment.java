@@ -4,22 +4,19 @@
  */
 package view;
 
-import java.awt.Color;
-
 /**
  *
- * @author Hridayash
+ * @author sulav
  */
-public class StudentMealRoutine extends javax.swing.JFrame {
+public class AdminMenuAdjustment extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(StudentMealRoutine.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdminMenuAdjustment.class.getName());
 
     /**
-     * Creates new form AddStudentDetails
+     * Creates new form AdminMenuAdjustment
      */
-    public StudentMealRoutine() {
+    public AdminMenuAdjustment() {
         initComponents();
-        setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -158,8 +155,6 @@ public class StudentMealRoutine extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(0, 0, 1920, 1080));
-        getContentPane().setLayout(null);
 
         backgroundpanel.setLayout(null);
 
@@ -177,7 +172,7 @@ public class StudentMealRoutine extends javax.swing.JFrame {
         profile.setBounds(1480, 10, 41, 40);
 
         studentportal.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        studentportal.setText("Student Portal");
+        studentportal.setText("Admin Portal");
         backgroundpanel.add(studentportal);
         studentportal.setBounds(300, 0, 170, 30);
 
@@ -837,8 +832,26 @@ public class StudentMealRoutine extends javax.swing.JFrame {
         backgroundpanel.add(jScrollPane2);
         jScrollPane2.setBounds(570, 80, 48, 146);
 
-        getContentPane().add(backgroundpanel);
-        backgroundpanel.setBounds(0, 0, 1550, 840);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1550, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(backgroundpanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 840, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(backgroundpanel, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -877,7 +890,7 @@ public class StudentMealRoutine extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new StudentMealRoutine().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new AdminMenuAdjustment().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
