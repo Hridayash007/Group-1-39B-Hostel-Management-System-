@@ -17,6 +17,7 @@ public class RoomDetails extends javax.swing.JFrame {
      */
     public RoomDetails() {
         initComponents();
+        setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -46,8 +47,8 @@ public class RoomDetails extends javax.swing.JFrame {
         Logo = new javax.swing.JLabel();
         Title = new javax.swing.JLabel();
         Administration = new javax.swing.JLabel();
+        dashboard = new javax.swing.JButton();
         Students = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
         Complaints = new javax.swing.JButton();
         MealRoutine = new javax.swing.JButton();
         Notice = new javax.swing.JButton();
@@ -73,6 +74,7 @@ public class RoomDetails extends javax.swing.JFrame {
         occupiedlabel = new javax.swing.JLabel();
         occupiedvariable = new javax.swing.JLabel();
         profilebtn = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -198,25 +200,25 @@ public class RoomDetails extends javax.swing.JFrame {
         backgroundpanel.add(Administration);
         Administration.setBounds(30, 160, 130, 30);
 
+        dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dashboard.png"))); // NOI18N
+        dashboard.setText("Dashboard");
+        dashboard.setBorderPainted(false);
+        dashboard.setContentAreaFilled(false);
+        dashboard.addActionListener(this::dashboardActionPerformed);
+        backgroundpanel.add(dashboard);
+        dashboard.setBounds(-20, 200, 230, 40);
+
         Students.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Students.setForeground(new java.awt.Color(255, 255, 255));
-        Students.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dashboard.png"))); // NOI18N
-        Students.setText("Dashboard");
+        Students.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/students.png"))); // NOI18N
+        Students.setText("Students");
         Students.setBorderPainted(false);
         Students.setContentAreaFilled(false);
         Students.addActionListener(this::StudentsActionPerformed);
         backgroundpanel.add(Students);
-        Students.setBounds(-20, 200, 230, 40);
-
-        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/students.png"))); // NOI18N
-        jButton7.setText("Students");
-        jButton7.setBorderPainted(false);
-        jButton7.setContentAreaFilled(false);
-        jButton7.addActionListener(this::jButton7ActionPerformed);
-        backgroundpanel.add(jButton7);
-        jButton7.setBounds(-30, 260, 230, 43);
+        Students.setBounds(-30, 260, 230, 43);
 
         Complaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Complaints.setForeground(new java.awt.Color(255, 255, 255));
@@ -383,6 +385,12 @@ public class RoomDetails extends javax.swing.JFrame {
         backgroundpanel.add(profilebtn);
         profilebtn.setBounds(1470, 0, 49, 50);
 
+        jButton1.setBackground(new java.awt.Color(99, 102, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/addnotice.png"))); // NOI18N
+        jButton1.setText("Add Room");
+        backgroundpanel.add(jButton1);
+        jButton1.setBounds(1390, 220, 130, 31);
+
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/adminbackground.png"))); // NOI18N
         backgroundpanel.add(Background);
         Background.setBounds(0, 0, 1550, 840);
@@ -397,13 +405,13 @@ public class RoomDetails extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ComplaintsActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton7ActionPerformed
-
     private void StudentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StudentsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_StudentsActionPerformed
+
+    private void dashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashboardActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dashboardActionPerformed
 
     private void profilebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profilebtnActionPerformed
         // TODO add your handling code here:
@@ -469,8 +477,9 @@ public class RoomDetails extends javax.swing.JFrame {
     private javax.swing.JPanel blockbuttonpanel;
     private javax.swing.JButton blockc;
     private javax.swing.JButton blockd;
+    private javax.swing.JButton dashboard;
     private javax.swing.JLabel desc;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel occupancypanel;
     private javax.swing.JLabel occupiedlabel;
@@ -494,4 +503,27 @@ public class RoomDetails extends javax.swing.JFrame {
     private javax.swing.JLabel vacantbedsvariable;
     private javax.swing.JLabel welcomeback;
     // End of variables declaration//GEN-END:variables
+
+public javax.swing.JTable getRoomTable()        { return roomdetailstable; }
+public void setTotalRooms(int n)                { totalroomsvariable.setText(String.valueOf(n)); }
+public void setTotalCapacity(int n)             { totalcapacityvariable.setText(String.valueOf(n)); }
+public void setOccupied(int n)                  { occupiedvariable.setText(String.valueOf(n)); }
+public void setVacantBeds(int n)                { vacantbedsvariable.setText(String.valueOf(n)); }
+ 
+public void AddRoomListener(java.awt.event.ActionListener l)       { jButton1.addActionListener(l); }
+public void AllListener(java.awt.event.ActionListener l)           { all.addActionListener(l); }
+public void BlockAListener(java.awt.event.ActionListener l)        { blocka.addActionListener(l); }
+public void BlockBListener(java.awt.event.ActionListener l)        { blockb.addActionListener(l); }
+public void BlockCListener(java.awt.event.ActionListener l)        { blockc.addActionListener(l); }
+public void BlockDListener(java.awt.event.ActionListener l)        { blockd.addActionListener(l); }
+public void VacantListener(java.awt.event.ActionListener l)        { vacant.addActionListener(l); }
+public void PartialListener(java.awt.event.ActionListener l)       { partial.addActionListener(l); }
+public void DashboardListener(java.awt.event.ActionListener l)     { dashboard.addActionListener(l); }
+public void NoticeListener(java.awt.event.ActionListener l)        { Notice.addActionListener(l); }
+public void RoomAllocationListener(java.awt.event.ActionListener l){ RoomAllocation.addActionListener(l); }
+public void StudentsListener(java.awt.event.ActionListener l)      { dashboard.addActionListener(l); }
+public void ComplaintsListener(java.awt.event.ActionListener l)    { Complaints.addActionListener(l); }
+public void AdminProfileListener(java.awt.event.ActionListener l)  { AdminProfile.addActionListener(l); }
+public void ProfileListener(java.awt.event.ActionListener l)       { profilebtn.addActionListener(l); }
+public void SignOutListener(java.awt.event.ActionListener l)       { SignOut.addActionListener(l); }
 }

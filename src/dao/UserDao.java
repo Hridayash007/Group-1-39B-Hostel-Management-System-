@@ -42,12 +42,13 @@ public class UserDao {
     }
 
     // ── Login ────────────────────────────────────────────────────────────────
-    public UserData loginUser(String email, String password) {
+    public UserData loginUser(String username,String email, String password) {
         Connection conn = mysql.openConnection();
-        String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+        String sql = "SELECT * FROM users WHERE username=? AND email = ? AND password = ?";
         try (PreparedStatement pstm = conn.prepareStatement(sql)) {
-            pstm.setString(1, email);
-            pstm.setString(2, password);
+            pstm.setString(1, username);
+            pstm.setString(2, email);
+            pstm.setString(3, password);
             ResultSet rs = pstm.executeQuery();
             if (rs.next()) {
                 return mapFullRow(rs);

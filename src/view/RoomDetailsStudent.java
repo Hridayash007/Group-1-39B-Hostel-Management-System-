@@ -15,6 +15,7 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
     
     public RoomDetailsStudent() {
         initComponents();
+        setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
     }
 
     /**

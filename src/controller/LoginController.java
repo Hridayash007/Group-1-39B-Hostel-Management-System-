@@ -30,12 +30,13 @@ public class LoginController {
         @Override
         public void actionPerformed(ActionEvent e) {
             try {
+                String username = userView.getUsernameField().getText().trim();
                 String email    = userView.getEmailField().getText().trim();
                 String password = new String(userView.getPasswordField().getPassword()).trim();
 
-                if (email.isEmpty() || password.isEmpty()
+                if (username.isEmpty()||email.isEmpty() || password.isEmpty()
                         || password.equals("**********") || password.equals("8888888888")) {
-                    JOptionPane.showMessageDialog(userView, "Please enter your email and password.");
+                    JOptionPane.showMessageDialog(userView, "Please enter your username,email and password.");
                     return;
                 }
 
@@ -48,7 +49,7 @@ public class LoginController {
                 }
 
                 // ── Regular student login ────────────────────────────────────
-                UserData loggedInUser = userDao.loginUser(email, password);
+                UserData loggedInUser = userDao.loginUser(username,email, password);
 
                 if (loggedInUser != null) {
                     close();
@@ -56,7 +57,7 @@ public class LoginController {
                     new StudentDashboardController(dashboardView, loggedInUser).open();
                 } else {
                     JOptionPane.showMessageDialog(userView,
-                            "Invalid email or password. Please try again.",
+                            "Invalid username or email or password. Please try again.",
                             "Login Failed", JOptionPane.ERROR_MESSAGE);
                 }
 

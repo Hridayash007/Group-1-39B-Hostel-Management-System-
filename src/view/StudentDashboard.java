@@ -232,7 +232,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         card1.add(floor);
         floor.setBounds(10, 60, 100, 30);
 
-        roomicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAroomdetails (1).png"))); // NOI18N
+        roomicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAroomdetails .png"))); // NOI18N
         card1.add(roomicon);
         roomicon.setBounds(230, 10, 24, 24);
 
@@ -351,7 +351,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         viewroomdetails.setBackground(new java.awt.Color(248, 250, 252));
         viewroomdetails.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        viewroomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAroomdetails (1).png"))); // NOI18N
+        viewroomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAroomdetails .png"))); // NOI18N
         viewroomdetails.setText("View Room Details");
         viewroomdetails.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         quickactions.add(viewroomdetails);

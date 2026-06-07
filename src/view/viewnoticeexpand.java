@@ -116,7 +116,7 @@ public void setNoticeData(model.NoticeData n) {
     category.setText(n.getCategory());
     priority.setText(n.getPriority());
    
-    description.setText("<html><body style='width:360px'>"
+    description.setText("<html><body style='width:300px'>"
             + n.getDescription().replace("\n", "<br>")
             + "</body></html>");
 }

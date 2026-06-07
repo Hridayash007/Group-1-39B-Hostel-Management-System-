@@ -422,4 +422,12 @@ public void ComplaintsListener(java.awt.event.ActionListener listener) {
     complaints.addActionListener(listener);
 }
  
+public void RoomDetailsListener(java.awt.event.ActionListener listener) {
+    roomdetails.addActionListener(listener);
+}
+ 
+public void RoomAllocationListener(java.awt.event.ActionListener listener) {
+    roomallocation.addActionListener(listener);
+}
+ 
 }

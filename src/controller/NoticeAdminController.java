@@ -33,6 +33,18 @@ public class NoticeAdminController {
             new IssueNoticeController(issueView, this).open();
         });
 
+        // ── Room Details button ─────────────────────────────────────────────────
+        view.RoomDetailsListener(e -> {
+            close();
+            new RoomDetailsController(new view.RoomDetails()).open();
+        });
+
+        // ── Room Allocation button ─────────────────────────────────────────────
+        view.RoomAllocationListener(e -> {
+            close();
+            new RoomAllocationController(new view.RoomAllocation()).open();
+        });
+
         // ── Complaints button (sidebar) ───────────────────────────────────────
         view.ComplaintsListener(e -> {
             close();

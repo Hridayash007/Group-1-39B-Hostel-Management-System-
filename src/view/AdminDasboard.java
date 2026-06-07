@@ -17,6 +17,7 @@ public class AdminDasboard extends javax.swing.JFrame {
      */
     public AdminDasboard() {
         initComponents();
+        setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
     }
 
     /**
