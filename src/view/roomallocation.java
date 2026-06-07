@@ -6,16 +6,16 @@ package view;
 
 /**
  *
- * @author pralo
+ * @author SkyLine Computer
  */
-public class roomallocation extends javax.swing.JFrame {
+public class RoomAllocation extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(roomallocation.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(RoomAllocation.class.getName());
 
     /**
-     * Creates new form roomallocation
+     * Creates new form RoomAllocation
      */
-    public roomallocation() {
+    public RoomAllocation() {
         initComponents();
     }
 
@@ -28,105 +28,96 @@ public class roomallocation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Navigation = new javax.swing.JLabel();
-        logo = new javax.swing.JLabel();
-        Dashboard = new javax.swing.JButton();
-        MyComplaints = new javax.swing.JButton();
+        BackgroundPanel = new javax.swing.JPanel();
+        Cityscape = new javax.swing.JLabel();
+        Administration = new javax.swing.JLabel();
+        dashboard = new javax.swing.JButton();
+        Students = new javax.swing.JButton();
+        Complaints = new javax.swing.JButton();
+        SignOut = new javax.swing.JButton();
         MealRoutine = new javax.swing.JButton();
         Notice = new javax.swing.JButton();
         RoomDetails = new javax.swing.JButton();
-        Myprofile = new javax.swing.JButton();
-        Dashboard1 = new javax.swing.JButton();
-        Studentportal = new javax.swing.JLabel();
+        RoomAllocation = new javax.swing.JButton();
+        Adminprofile = new javax.swing.JButton();
+        Admindashboard = new javax.swing.JLabel();
         Welcomeback = new javax.swing.JLabel();
         Notification = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jPanel11 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel15 = new javax.swing.JPanel();
-        jLabel31 = new javax.swing.JLabel();
-        jLabel34 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel32 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel33 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jPanel16 = new javax.swing.JPanel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel29 = new javax.swing.JLabel();
+        roomallocation = new javax.swing.JLabel();
+        assignroomdesc = new javax.swing.JLabel();
+        card2 = new javax.swing.JPanel();
+        totalallocation = new javax.swing.JLabel();
+        allocationcount = new javax.swing.JLabel();
+        card4 = new javax.swing.JPanel();
+        availablerooms = new javax.swing.JLabel();
+        Roomcount = new javax.swing.JLabel();
+        card3 = new javax.swing.JPanel();
+        Totalstudents = new javax.swing.JLabel();
+        Studentcount = new javax.swing.JLabel();
+        Studentspendingroom = new javax.swing.JPanel();
+        pendingroom = new javax.swing.JLabel();
+        rooms = new javax.swing.JPanel();
+        roomallocate = new javax.swing.JLabel();
+        currentallocation = new javax.swing.JPanel();
+        allocation = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        Navigation.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        Navigation.setForeground(new java.awt.Color(81, 130, 255));
-        Navigation.setText("NAVIGATION");
-        getContentPane().add(Navigation);
-        Navigation.setBounds(20, 180, 70, 16);
+        BackgroundPanel.setLayout(null);
 
-        logo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        logo.setForeground(new java.awt.Color(255, 255, 255));
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
-        logo.setText("Cityscape");
-        getContentPane().add(logo);
-        logo.setBounds(20, 10, 150, 36);
+        Cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Cityscape.setForeground(new java.awt.Color(255, 255, 255));
+        Cityscape.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        Cityscape.setText("Cityscape");
+        BackgroundPanel.add(Cityscape);
+        Cityscape.setBounds(20, 20, 170, 36);
 
-        Dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Dashboard.setForeground(new java.awt.Color(255, 255, 255));
-        Dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dashboard.png"))); // NOI18N
-        Dashboard.setText("Dashbaord");
-        Dashboard.setBorderPainted(false);
-        Dashboard.setContentAreaFilled(false);
-        getContentPane().add(Dashboard);
-        Dashboard.setBounds(10, 220, 160, 43);
+        Administration.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        Administration.setForeground(new java.awt.Color(194, 122, 255));
+        Administration.setText("Administration");
+        BackgroundPanel.add(Administration);
+        Administration.setBounds(20, 180, 70, 16);
 
-        MyComplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        MyComplaints.setForeground(new java.awt.Color(255, 255, 255));
-        MyComplaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/my complaints.png"))); // NOI18N
-        MyComplaints.setText("My Complaints");
-        MyComplaints.setBorderPainted(false);
-        MyComplaints.setContentAreaFilled(false);
-        getContentPane().add(MyComplaints);
-        MyComplaints.setBounds(-10, 280, 230, 43);
+        dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        dashboard.setForeground(new java.awt.Color(255, 255, 255));
+        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dashboard.png"))); // NOI18N
+        dashboard.setText("Dashboard");
+        dashboard.setBorderPainted(false);
+        dashboard.setContentAreaFilled(false);
+        BackgroundPanel.add(dashboard);
+        dashboard.setBounds(10, 210, 160, 43);
+
+        Students.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Students.setForeground(new java.awt.Color(255, 255, 255));
+        Students.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/students.png"))); // NOI18N
+        Students.setText("Students");
+        Students.setBorderPainted(false);
+        Students.setContentAreaFilled(false);
+        BackgroundPanel.add(Students);
+        Students.setBounds(0, 280, 160, 43);
+
+        Complaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Complaints.setForeground(new java.awt.Color(255, 255, 255));
+        Complaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/my complaints.png"))); // NOI18N
+        Complaints.setText("Complaints");
+        Complaints.setBorderPainted(false);
+        Complaints.setContentAreaFilled(false);
+        BackgroundPanel.add(Complaints);
+        Complaints.setBounds(10, 350, 160, 43);
+
+        SignOut.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        SignOut.setForeground(new java.awt.Color(255, 255, 255));
+        SignOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/sign out.png"))); // NOI18N
+        SignOut.setText("Sign Out");
+        SignOut.setBorderPainted(false);
+        SignOut.setContentAreaFilled(false);
+        BackgroundPanel.add(SignOut);
+        SignOut.setBounds(0, 780, 170, 43);
 
         MealRoutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MealRoutine.setForeground(new java.awt.Color(255, 255, 255));
@@ -134,8 +125,8 @@ public class roomallocation extends javax.swing.JFrame {
         MealRoutine.setText("Meal Routine");
         MealRoutine.setBorderPainted(false);
         MealRoutine.setContentAreaFilled(false);
-        getContentPane().add(MealRoutine);
-        MealRoutine.setBounds(10, 350, 180, 43);
+        BackgroundPanel.add(MealRoutine);
+        MealRoutine.setBounds(0, 420, 190, 43);
 
         Notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Notice.setForeground(new java.awt.Color(255, 255, 255));
@@ -143,8 +134,8 @@ public class roomallocation extends javax.swing.JFrame {
         Notice.setText("Notice");
         Notice.setBorderPainted(false);
         Notice.setContentAreaFilled(false);
-        getContentPane().add(Notice);
-        Notice.setBounds(0, 420, 140, 43);
+        BackgroundPanel.add(Notice);
+        Notice.setBounds(-20, 490, 180, 43);
 
         RoomDetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         RoomDetails.setForeground(new java.awt.Color(255, 255, 255));
@@ -152,353 +143,166 @@ public class roomallocation extends javax.swing.JFrame {
         RoomDetails.setText("Room Details");
         RoomDetails.setBorderPainted(false);
         RoomDetails.setContentAreaFilled(false);
-        getContentPane().add(RoomDetails);
-        RoomDetails.setBounds(0, 490, 200, 43);
+        BackgroundPanel.add(RoomDetails);
+        RoomDetails.setBounds(10, 560, 180, 43);
 
-        Myprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Myprofile.setForeground(new java.awt.Color(255, 255, 255));
-        Myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
-        Myprofile.setText("My Profile");
-        Myprofile.setBorderPainted(false);
-        Myprofile.setContentAreaFilled(false);
-        getContentPane().add(Myprofile);
-        Myprofile.setBounds(10, 560, 160, 43);
+        RoomAllocation.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        RoomAllocation.setForeground(new java.awt.Color(255, 255, 255));
+        RoomAllocation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomallocation.png"))); // NOI18N
+        RoomAllocation.setText("Room Allocation");
+        RoomAllocation.setBorderPainted(false);
+        RoomAllocation.setContentAreaFilled(false);
+        BackgroundPanel.add(RoomAllocation);
+        RoomAllocation.setBounds(10, 630, 210, 43);
 
-        Dashboard1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Dashboard1.setForeground(new java.awt.Color(255, 255, 255));
-        Dashboard1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/sign out.png"))); // NOI18N
-        Dashboard1.setText("Sign out");
-        Dashboard1.setBorderPainted(false);
-        Dashboard1.setContentAreaFilled(false);
-        getContentPane().add(Dashboard1);
-        Dashboard1.setBounds(0, 780, 170, 43);
+        Adminprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Adminprofile.setForeground(new java.awt.Color(255, 255, 255));
+        Adminprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
+        Adminprofile.setText("Admin Profile");
+        Adminprofile.setBorderPainted(false);
+        Adminprofile.setContentAreaFilled(false);
+        BackgroundPanel.add(Adminprofile);
+        Adminprofile.setBounds(10, 700, 190, 43);
 
-        Studentportal.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        Studentportal.setText("Student Portal");
-        getContentPane().add(Studentportal);
-        Studentportal.setBounds(300, 0, 170, 30);
+        Admindashboard.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Admindashboard.setText("Admin Dashboard");
+        BackgroundPanel.add(Admindashboard);
+        Admindashboard.setBounds(300, 0, 207, 32);
 
         Welcomeback.setText("Welcome Back");
-        getContentPane().add(Welcomeback);
-        Welcomeback.setBounds(340, 30, 90, 16);
+        BackgroundPanel.add(Welcomeback);
+        Welcomeback.setBounds(300, 30, 78, 16);
 
         Notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notification.png"))); // NOI18N
         Notification.setBorderPainted(false);
         Notification.setContentAreaFilled(false);
-        Notification.addActionListener(this::NotificationActionPerformed);
-        getContentPane().add(Notification);
+        BackgroundPanel.add(Notification);
         Notification.setBounds(1440, 10, 30, 40);
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1);
+        BackgroundPanel.add(jButton1);
         jButton1.setBounds(1480, 10, 41, 40);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setText("Room Details");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(320, 100, 160, 30);
-
-        jLabel2.setForeground(new java.awt.Color(106, 114, 130));
-        jLabel2.setText("Your room information and facilities.");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(320, 120, 200, 50);
-
-        jPanel1.setBackground(new java.awt.Color(37, 99, 235));
-        jPanel1.setPreferredSize(new java.awt.Dimension(50, 50));
-        jPanel1.setLayout(null);
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomdetails.png"))); // NOI18N
-        jLabel3.setPreferredSize(new java.awt.Dimension(68, 68));
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(20, 10, 70, 50);
-
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Room 204");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(70, 0, 180, 40);
-
-        jLabel5.setForeground(new java.awt.Color(190, 219, 255));
-        jLabel5.setText("Block A . 2nd Floor");
-        jPanel1.add(jLabel5);
-        jLabel5.setBounds(80, 40, 110, 20);
-
-        jLabel7.setBackground(new java.awt.Color(85, 115, 195));
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/hariyo circle.png"))); // NOI18N
-        jLabel7.setText("Active");
-        jLabel7.setIconTextGap(8);
-        jLabel7.setMinimumSize(new java.awt.Dimension(110, 36));
-        jLabel7.setOpaque(true);
-        jLabel7.setPreferredSize(new java.awt.Dimension(110, 36));
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(1090, 10, 90, 30);
-
-        jLabel6.setForeground(new java.awt.Color(190, 219, 255));
-        jLabel6.setText("Since sept 1, 2024");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(1090, 50, 110, 16);
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(320, 180, 1200, 80);
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setMinimumSize(new java.awt.Dimension(850, 90));
-        jPanel2.setPreferredSize(new java.awt.Dimension(950, 90));
-        jPanel2.setLayout(null);
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 161, 175));
-        jLabel8.setText("Check-in");
-        jPanel2.add(jLabel8);
-        jLabel8.setBounds(960, 10, 100, 20);
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setText("Sep 1, 2024");
-        jPanel2.add(jLabel9);
-        jLabel9.setBounds(950, 30, 160, 32);
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(153, 161, 175));
-        jLabel10.setText("Room Type");
-        jPanel2.add(jLabel10);
-        jLabel10.setBounds(100, 10, 100, 20);
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel11.setText("Triple Sharing");
-        jPanel2.add(jLabel11);
-        jLabel11.setBounds(90, 30, 160, 32);
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(153, 161, 175));
-        jLabel12.setText("Floor");
-        jPanel2.add(jLabel12);
-        jLabel12.setBounds(390, 10, 100, 20);
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel13.setText("2nd Floor");
-        jPanel2.add(jLabel13);
-        jLabel13.setBounds(370, 30, 160, 32);
-
-        jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(153, 161, 175));
-        jLabel14.setText("Block");
-        jPanel2.add(jLabel14);
-        jLabel14.setBounds(670, 10, 100, 20);
-
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel15.setText("Block A");
-        jPanel2.add(jLabel15);
-        jLabel15.setBounds(660, 30, 160, 32);
-
-        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon_users.png"))); // NOI18N
-        jPanel2.add(jLabel16);
-        jLabel16.setBounds(50, 10, 40, 40);
+        roomallocation.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        roomallocation.setText("Room Allocation");
+        BackgroundPanel.add(roomallocation);
+        roomallocation.setBounds(300, 70, 220, 32);
+
+        assignroomdesc.setText("Assign rooms to students and manage allocation.");
+        BackgroundPanel.add(assignroomdesc);
+        assignroomdesc.setBounds(300, 100, 270, 16);
+
+        card2.setBackground(new java.awt.Color(255, 255, 255));
+        card2.setLayout(null);
+
+        totalallocation.setForeground(new java.awt.Color(153, 161, 175));
+        totalallocation.setText("Total Allocation");
+        card2.add(totalallocation);
+        totalallocation.setBounds(20, 10, 110, 16);
+
+        allocationcount.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        allocationcount.setText("32");
+        card2.add(allocationcount);
+        allocationcount.setBounds(30, 40, 37, 20);
+
+        BackgroundPanel.add(card2);
+        card2.setBounds(1200, 160, 310, 100);
+
+        card4.setBackground(new java.awt.Color(255, 255, 255));
+        card4.setLayout(null);
+
+        availablerooms.setForeground(new java.awt.Color(153, 161, 175));
+        availablerooms.setText("Available Rooms");
+        card4.add(availablerooms);
+        availablerooms.setBounds(10, 10, 90, 16);
+
+        Roomcount.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        Roomcount.setText("155");
+        card4.add(Roomcount);
+        Roomcount.setBounds(10, 40, 90, 27);
+
+        BackgroundPanel.add(card4);
+        card4.setBounds(750, 160, 310, 100);
+
+        card3.setBackground(new java.awt.Color(255, 255, 255));
+        card3.setLayout(null);
+
+        Totalstudents.setForeground(new java.awt.Color(153, 161, 175));
+        Totalstudents.setText("Pending Allocation");
+        card3.add(Totalstudents);
+        Totalstudents.setBounds(10, 10, 120, 16);
+
+        Studentcount.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        Studentcount.setText("155");
+        card3.add(Studentcount);
+        Studentcount.setBounds(10, 40, 36, 30);
+
+        BackgroundPanel.add(card3);
+        card3.setBounds(300, 160, 300, 100);
+
+        Studentspendingroom.setBackground(new java.awt.Color(255, 255, 255));
+        Studentspendingroom.setLayout(null);
+
+        pendingroom.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        pendingroom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/adstudents.png"))); // NOI18N
+        pendingroom.setText("Students Pending Room");
+        Studentspendingroom.add(pendingroom);
+        pendingroom.setBounds(10, 10, 240, 25);
+
+        BackgroundPanel.add(Studentspendingroom);
+        Studentspendingroom.setBounds(300, 320, 580, 340);
+
+        rooms.setBackground(new java.awt.Color(255, 255, 255));
+        rooms.setLayout(null);
+
+        roomallocate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        roomallocate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAroomdetails.png"))); // NOI18N
+        roomallocate.setText("Available Rooms");
+        rooms.add(roomallocate);
+        roomallocate.setBounds(10, 0, 180, 30);
+
+        BackgroundPanel.add(rooms);
+        rooms.setBounds(930, 320, 580, 340);
+
+        currentallocation.setBackground(new java.awt.Color(255, 255, 255));
+        currentallocation.setLayout(null);
+
+        allocation.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        allocation.setText("Current Allocation");
+        currentallocation.add(allocation);
+        allocation.setBounds(20, 10, 140, 20);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
 
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon_location.png"))); // NOI18N
-        jPanel2.add(jLabel17);
-        jLabel17.setBounds(330, 10, 40, 40);
+        currentallocation.add(jScrollPane1);
+        jScrollPane1.setBounds(20, 40, 1170, 80);
 
-        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon_shield (5).png"))); // NOI18N
-        jPanel2.add(jLabel18);
-        jLabel18.setBounds(620, 10, 50, 40);
+        BackgroundPanel.add(currentallocation);
+        currentallocation.setBounds(300, 700, 1210, 130);
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon_calendar (5).png"))); // NOI18N
-        jPanel2.add(jLabel19);
-        jLabel19.setBounds(910, 10, 50, 40);
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/adminbackground.png"))); // NOI18N
+        Background.setText("Background");
+        BackgroundPanel.add(Background);
+        Background.setBounds(0, 0, 1550, 840);
 
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(320, 260, 1200, 70);
-
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel5.setLayout(null);
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel20.setText("Roommates");
-        jPanel5.add(jLabel20);
-        jLabel20.setBounds(20, 10, 160, 20);
-
-        jPanel10.setBackground(new java.awt.Color(248, 250, 252));
-        jPanel10.setLayout(null);
-
-        jPanel11.setBackground(new java.awt.Color(248, 250, 252));
-        jPanel11.setLayout(null);
-        jPanel10.add(jPanel11);
-        jPanel11.setBounds(20, 230, 530, 50);
-
-        jPanel12.setBackground(new java.awt.Color(248, 250, 252));
-        jPanel12.setLayout(null);
-
-        jPanel13.setBackground(new java.awt.Color(248, 250, 252));
-        jPanel13.setLayout(null);
-
-        jPanel14.setBackground(new java.awt.Color(248, 250, 252));
-        jPanel14.setLayout(null);
-
-        jPanel15.setBackground(new java.awt.Color(248, 250, 252));
-        jPanel15.setLayout(null);
-        jPanel14.add(jPanel15);
-        jPanel15.setBounds(20, 230, 530, 50);
-
-        jPanel13.add(jPanel14);
-        jPanel14.setBounds(20, 230, 530, 50);
-
-        jPanel12.add(jPanel13);
-        jPanel13.setBounds(20, 230, 530, 50);
-
-        jPanel10.add(jPanel12);
-        jPanel12.setBounds(20, 230, 530, 50);
-
-        jLabel31.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel31.setText("Hari Khadka");
-        jPanel10.add(jLabel31);
-        jLabel31.setBounds(20, 0, 180, 20);
-
-        jLabel34.setForeground(new java.awt.Color(106, 114, 130));
-        jLabel34.setText("Student_id       Program");
-        jPanel10.add(jLabel34);
-        jLabel34.setBounds(20, 20, 160, 16);
-
-        jPanel5.add(jPanel10);
-        jPanel10.setBounds(20, 240, 530, 50);
-
-        jPanel9.setBackground(new java.awt.Color(248, 250, 252));
-        jPanel9.setLayout(null);
-
-        jLabel32.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel32.setText("Ram Thapa");
-        jPanel9.add(jLabel32);
-        jLabel32.setBounds(20, 0, 180, 20);
-
-        jLabel35.setForeground(new java.awt.Color(106, 114, 130));
-        jLabel35.setText("Student_id       Program");
-        jPanel9.add(jLabel35);
-        jLabel35.setBounds(20, 20, 160, 16);
-
-        jPanel5.add(jPanel9);
-        jPanel9.setBounds(20, 70, 530, 50);
-
-        jPanel8.setBackground(new java.awt.Color(248, 250, 252));
-        jPanel8.setLayout(null);
-
-        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel30.setText("Shyam Sharma");
-        jPanel8.add(jLabel30);
-        jLabel30.setBounds(20, 0, 180, 20);
-
-        jLabel33.setForeground(new java.awt.Color(106, 114, 130));
-        jLabel33.setText("Student_id       Program");
-        jPanel8.add(jLabel33);
-        jLabel33.setBounds(20, 20, 160, 16);
-
-        jPanel5.add(jPanel8);
-        jPanel8.setBounds(20, 150, 530, 50);
-
-        getContentPane().add(jPanel5);
-        jPanel5.setBounds(950, 360, 570, 390);
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.setLayout(null);
-
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel21.setText("Room Facilities");
-        jPanel4.add(jLabel21);
-        jLabel21.setBounds(20, 10, 160, 20);
-
-        jPanel7.setBackground(new java.awt.Color(248, 250, 252));
-        jPanel7.setLayout(null);
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel25.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon_wifi.png"))); // NOI18N
-        jLabel25.setText("Wi-Fi");
-        jPanel7.add(jLabel25);
-        jLabel25.setBounds(10, 4, 260, 40);
-
-        jLabel28.setBackground(new java.awt.Color(240, 253, 244));
-        jLabel28.setForeground(new java.awt.Color(22, 163, 74));
-        jLabel28.setText("active");
-        jPanel7.add(jLabel28);
-        jLabel28.setBounds(460, 10, 50, 20);
-
-        jPanel4.add(jPanel7);
-        jPanel7.setBounds(20, 70, 530, 50);
-
-        jPanel6.setBackground(new java.awt.Color(248, 250, 252));
-        jPanel6.setLayout(null);
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon_wind.png"))); // NOI18N
-        jLabel22.setText("AC/Heater");
-        jPanel6.add(jLabel22);
-        jLabel22.setBounds(10, 10, 260, 40);
-
-        jLabel24.setBackground(new java.awt.Color(240, 253, 244));
-        jLabel24.setForeground(new java.awt.Color(22, 163, 74));
-        jLabel24.setText("active");
-        jPanel6.add(jLabel24);
-        jLabel24.setBounds(460, 10, 43, 20);
-
-        jPanel4.add(jPanel6);
-        jPanel6.setBounds(20, 150, 530, 50);
-
-        jPanel16.setBackground(new java.awt.Color(248, 250, 252));
-        jPanel16.setLayout(null);
-
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon_water.png"))); // NOI18N
-        jLabel26.setText("Water Supply");
-        jPanel16.add(jLabel26);
-        jLabel26.setBounds(10, 0, 260, 40);
-
-        jLabel27.setBackground(new java.awt.Color(240, 253, 244));
-        jLabel27.setForeground(new java.awt.Color(217, 119, 6));
-        jLabel27.setText("inactive");
-        jPanel16.add(jLabel27);
-        jLabel27.setBounds(460, 10, 60, 20);
-
-        jPanel4.add(jPanel16);
-        jPanel16.setBounds(20, 310, 530, 50);
-
-        jPanel3.setBackground(new java.awt.Color(248, 250, 252));
-        jPanel3.setLayout(null);
-
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel23.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon_lightning.png"))); // NOI18N
-        jLabel23.setText("Power Outlets");
-        jPanel3.add(jLabel23);
-        jLabel23.setBounds(10, 10, 260, 40);
-
-        jLabel29.setBackground(new java.awt.Color(240, 253, 244));
-        jLabel29.setForeground(new java.awt.Color(22, 163, 74));
-        jLabel29.setText("active");
-        jPanel3.add(jLabel29);
-        jLabel29.setBounds(460, 10, 43, 20);
-
-        jPanel4.add(jPanel3);
-        jPanel3.setBounds(20, 230, 530, 50);
-
-        getContentPane().add(jPanel4);
-        jPanel4.setBounds(320, 360, 580, 390);
-
-        Background.setBackground(new java.awt.Color(255, 255, 255));
-        Background.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Background.setForeground(new java.awt.Color(255, 255, 255));
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.png"))); // NOI18N
-        Background.setMinimumSize(new java.awt.Dimension(850, 90));
-        Background.setPreferredSize(new java.awt.Dimension(950, 90));
-        getContentPane().add(Background);
-        Background.setBounds(0, -10, 1550, 860);
+        getContentPane().add(BackgroundPanel);
+        BackgroundPanel.setBounds(0, 0, 1550, 840);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void NotificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NotificationActionPerformed
 
     /**
      * @param args the command line arguments
@@ -522,74 +326,45 @@ public class roomallocation extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new roomallocation().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new RoomAllocation().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Admindashboard;
+    private javax.swing.JLabel Administration;
+    private javax.swing.JButton Adminprofile;
     private javax.swing.JLabel Background;
-    private javax.swing.JButton Dashboard;
-    private javax.swing.JButton Dashboard1;
+    private javax.swing.JPanel BackgroundPanel;
+    private javax.swing.JLabel Cityscape;
+    private javax.swing.JButton Complaints;
     private javax.swing.JButton MealRoutine;
-    private javax.swing.JButton MyComplaints;
-    private javax.swing.JButton Myprofile;
-    private javax.swing.JLabel Navigation;
     private javax.swing.JButton Notice;
     private javax.swing.JButton Notification;
+    private javax.swing.JButton RoomAllocation;
     private javax.swing.JButton RoomDetails;
-    private javax.swing.JLabel Studentportal;
+    private javax.swing.JLabel Roomcount;
+    private javax.swing.JButton SignOut;
+    private javax.swing.JLabel Studentcount;
+    private javax.swing.JButton Students;
+    private javax.swing.JPanel Studentspendingroom;
+    private javax.swing.JLabel Totalstudents;
     private javax.swing.JLabel Welcomeback;
+    private javax.swing.JLabel allocation;
+    private javax.swing.JLabel allocationcount;
+    private javax.swing.JLabel assignroomdesc;
+    private javax.swing.JLabel availablerooms;
+    private javax.swing.JPanel card2;
+    private javax.swing.JPanel card3;
+    private javax.swing.JPanel card4;
+    private javax.swing.JPanel currentallocation;
+    private javax.swing.JButton dashboard;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JLabel logo;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel pendingroom;
+    private javax.swing.JLabel roomallocate;
+    private javax.swing.JLabel roomallocation;
+    private javax.swing.JPanel rooms;
+    private javax.swing.JLabel totalallocation;
     // End of variables declaration//GEN-END:variables
 }
