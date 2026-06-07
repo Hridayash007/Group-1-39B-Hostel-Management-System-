@@ -280,7 +280,7 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel13.setText("2nd Floor");
         jPanel2.add(jLabel13);
-        jLabel13.setBounds(370, 30, 160, 32);
+        jLabel13.setBounds(380, 30, 160, 32);
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(153, 161, 175));
@@ -489,7 +489,7 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         Background.setMinimumSize(new java.awt.Dimension(850, 90));
         Background.setPreferredSize(new java.awt.Dimension(950, 90));
         getContentPane().add(Background);
-        Background.setBounds(0, -10, 1550, 860);
+        Background.setBounds(0, 0, 1550, 840);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
