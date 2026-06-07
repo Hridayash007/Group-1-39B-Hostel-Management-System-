@@ -115,7 +115,7 @@ public class LogIn extends javax.swing.JFrame {
 
         Text.setText("Enter your credentials to access your dashboard");
         LogIN.add(Text);
-        Text.setBounds(20, 64, 263, 16);
+        Text.setBounds(20, 64, 340, 16);
 
         forgetpasswordbutton.setForeground(new java.awt.Color(5, 13, 153));
         forgetpasswordbutton.setText("Forget password?");

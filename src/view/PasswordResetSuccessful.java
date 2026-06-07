@@ -48,12 +48,12 @@ public class PasswordResetSuccessful extends javax.swing.JFrame {
         resetsuccessful.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         resetsuccessful.setText("Password Update Successful");
         resetsuccessfulpanel.add(resetsuccessful);
-        resetsuccessful.setBounds(130, 160, 270, 27);
+        resetsuccessful.setBounds(130, 160, 290, 40);
 
         successfuldesc.setForeground(new java.awt.Color(153, 161, 175));
         successfuldesc.setText("<html><center>\n    Your password has been updated successfully.<br>\n    You can now log in with your new password.\n</center></html>");
         resetsuccessfulpanel.add(successfuldesc);
-        successfuldesc.setBounds(130, 200, 250, 30);
+        successfuldesc.setBounds(130, 190, 300, 60);
 
         gotologin.setBackground(new java.awt.Color(47, 91, 255));
         gotologin.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -113,4 +113,8 @@ public class PasswordResetSuccessful extends javax.swing.JFrame {
     private javax.swing.JPanel resetsuccessfulpanel;
     private javax.swing.JLabel successfuldesc;
     // End of variables declaration//GEN-END:variables
+
+public void GoToLoginListener(java.awt.event.ActionListener listener) {
+    gotologin.addActionListener(listener);
+}
 }
