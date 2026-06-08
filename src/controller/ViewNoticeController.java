@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import model.NoticeData;
 import model.UserData;
+import view.IssueComplaints;
 import view.LogIn;
 import view.StudentDashboard;
 import view.StudentProfile;
@@ -48,6 +49,14 @@ public class ViewNoticeController {
         view.NoticeListener(e -> {
             loadPinnedNotices();
             loadAllNotices();
+        });
+        
+        
+        // ── My Complaints ────────────────────────────────────────────────────
+        view.MyComplaintsListener(e -> {
+            close();
+            IssueComplaints complaintsView = new IssueComplaints();
+            new IssueComplaintsController(complaintsView, user).open();
         });
 
         // ── Sign Out ─────────────────────────────────────────────────────────

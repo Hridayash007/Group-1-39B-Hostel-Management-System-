@@ -174,7 +174,7 @@ public class UserRegistration extends javax.swing.JFrame {
         jPanel1.add(SignUp);
         SignUp.setBounds(760, 180, 590, 540);
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/WhatsApp Image 2026-05-20 at 5.01.07 PM.jpeg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/WhatsApp Image 2026-05-20 at 5.01.07 PM.jpeg"))); // NOI18N
         Background.setText("jLabel1");
         jPanel1.add(Background);
         Background.setBounds(0, 0, 1550, 840);

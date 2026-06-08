@@ -85,7 +85,7 @@ public class IssueNotice extends javax.swing.JFrame {
         publishbutton.setBackground(new java.awt.Color(99, 102, 255));
         publishbutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         publishbutton.setForeground(new java.awt.Color(255, 255, 255));
-        publishbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/publish.png"))); // NOI18N
+        publishbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/publish.png"))); // NOI18N
         publishbutton.setText("Publish");
         publishbutton.addActionListener(this::publishbuttonActionPerformed);
         issuenoticepanel.add(publishbutton);

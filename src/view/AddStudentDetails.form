@@ -42,7 +42,7 @@
         <Component class="javax.swing.JButton" name="notification">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/notification.png"/>
+              <Image iconType="3" name="/images/notification.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -59,7 +59,7 @@
         <Component class="javax.swing.JButton" name="profile">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/profile.png"/>
+              <Image iconType="3" name="/images/profile.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -102,7 +102,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/dashboard.png"/>
+              <Image iconType="3" name="/images/dashboard.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Dashboard"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -126,7 +126,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/my complaints.png"/>
+              <Image iconType="3" name="/images/my complaints.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="My Complaints&#xa;"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -147,7 +147,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/meal routine.png"/>
+              <Image iconType="3" name="/images/meal routine.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Meal Routine"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -168,7 +168,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/notice.png"/>
+              <Image iconType="3" name="/images/notice.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Notice"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -189,7 +189,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/roomdetails.png"/>
+              <Image iconType="3" name="/images/roomdetails.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Room Details"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -210,7 +210,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/myprofile.png"/>
+              <Image iconType="3" name="/images/myprofile.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="My Profile"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -231,7 +231,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/logo.png"/>
+              <Image iconType="3" name="/images/logo.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cityscape"/>
           </Properties>
@@ -266,7 +266,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/sign out.png"/>
+              <Image iconType="3" name="/images/sign out.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Sign Out"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -287,7 +287,7 @@
               <Color blue="ff" green="a2" red="51" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/arrow.png"/>
+              <Image iconType="3" name="/images/arrow.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Back to Profile"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -353,7 +353,7 @@
                   <Font name="Segoe UI" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/additionalinfo.png"/>
+                  <Image iconType="3" name="/images/additionalinfo.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Additional Information"/>
               </Properties>
@@ -407,7 +407,7 @@
                   <Font name="Segoe UI" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/accountsecurity.png"/>
+                  <Image iconType="3" name="/images/accountsecurity.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Account Security"/>
               </Properties>
@@ -488,7 +488,7 @@
                   <Font name="Segoe UI" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/emergencycontact.png"/>
+                  <Image iconType="3" name="/images/emergencycontact.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Emergency Contact"/>
               </Properties>
@@ -585,7 +585,7 @@
                   <Font name="Segoe UI" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/academic.png"/>
+                  <Image iconType="3" name="/images/academic.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Academic Details"/>
               </Properties>
@@ -709,7 +709,7 @@
                   <Font name="Segoe UI" size="12" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/user.png"/>
+                  <Image iconType="3" name="/images/user.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Personal Information"/>
               </Properties>
@@ -856,7 +856,7 @@
         <Component class="javax.swing.JLabel" name="background">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/background.png"/>
+              <Image iconType="3" name="/images/background.png"/>
             </Property>
           </Properties>
           <Constraints>

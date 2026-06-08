@@ -88,7 +88,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         logo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         logo.setForeground(new java.awt.Color(255, 255, 255));
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         logo.setText("Cityscape");
         backgroundpanel.add(logo);
         logo.setBounds(20, 10, 150, 36);
@@ -101,7 +101,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         MealRoutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MealRoutine.setForeground(new java.awt.Color(255, 255, 255));
-        MealRoutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/meal routine.png"))); // NOI18N
+        MealRoutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/meal routine.png"))); // NOI18N
         MealRoutine.setText("Meal Routine");
         MealRoutine.setBorderPainted(false);
         MealRoutine.setContentAreaFilled(false);
@@ -110,7 +110,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         MyComplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MyComplaints.setForeground(new java.awt.Color(255, 255, 255));
-        MyComplaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/my complaints.png"))); // NOI18N
+        MyComplaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/my complaints.png"))); // NOI18N
         MyComplaints.setText("My Complaints");
         MyComplaints.setBorderPainted(false);
         MyComplaints.setContentAreaFilled(false);
@@ -120,7 +120,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         Notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Notice.setForeground(new java.awt.Color(255, 255, 255));
-        Notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notice.png"))); // NOI18N
+        Notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notice.png"))); // NOI18N
         Notice.setText("Notice");
         Notice.setBorderPainted(false);
         Notice.setContentAreaFilled(false);
@@ -130,7 +130,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         RoomDetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         RoomDetails.setForeground(new java.awt.Color(255, 255, 255));
-        RoomDetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomdetails.png"))); // NOI18N
+        RoomDetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomdetails.png"))); // NOI18N
         RoomDetails.setText("Room Details");
         RoomDetails.setBorderPainted(false);
         RoomDetails.setContentAreaFilled(false);
@@ -139,7 +139,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         Myprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Myprofile.setForeground(new java.awt.Color(255, 255, 255));
-        Myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
+        Myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/myprofile.png"))); // NOI18N
         Myprofile.setText("My Profile");
         Myprofile.setBorderPainted(false);
         Myprofile.setContentAreaFilled(false);
@@ -148,7 +148,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         Dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Dashboard.setForeground(new java.awt.Color(255, 255, 255));
-        Dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dashboard.png"))); // NOI18N
+        Dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         Dashboard.setText("Dashboard");
         Dashboard.setBorderPainted(false);
         Dashboard.setContentAreaFilled(false);
@@ -158,7 +158,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         signout.setForeground(new java.awt.Color(255, 255, 255));
-        signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/sign out.png"))); // NOI18N
+        signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign out.png"))); // NOI18N
         signout.setText("Sign out");
         signout.setBorderPainted(false);
         signout.setContentAreaFilled(false);
@@ -174,13 +174,13 @@ public class StudentDashboard extends javax.swing.JFrame {
         backgroundpanel.add(Welcomeback);
         Welcomeback.setBounds(300, 30, 220, 16);
 
-        Notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notification.png"))); // NOI18N
+        Notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notification.png"))); // NOI18N
         Notification.setBorderPainted(false);
         Notification.setContentAreaFilled(false);
         backgroundpanel.add(Notification);
         Notification.setBounds(1440, 10, 30, 40);
 
-        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
+        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
         profile.setBorderPainted(false);
         profile.setContentAreaFilled(false);
         backgroundpanel.add(profile);
@@ -232,7 +232,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         card1.add(floor);
         floor.setBounds(10, 60, 100, 30);
 
-        roomicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAroomdetails .png"))); // NOI18N
+        roomicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/QAroomdetails .png"))); // NOI18N
         card1.add(roomicon);
         roomicon.setBounds(230, 10, 24, 24);
 
@@ -252,7 +252,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         card2.add(mealsnumber);
         mealsnumber.setBounds(10, 40, 70, 30);
 
-        mealicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAmealroutine.png"))); // NOI18N
+        mealicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/QAmealroutine.png"))); // NOI18N
         card2.add(mealicon);
         mealicon.setBounds(260, 10, 24, 24);
 
@@ -262,7 +262,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         card3.setBackground(new java.awt.Color(255, 255, 255));
         card3.setLayout(null);
 
-        complaintsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAcomplaints.png"))); // NOI18N
+        complaintsicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/QAcomplaints.png"))); // NOI18N
         card3.add(complaintsicon);
         complaintsicon.setBounds(230, 10, 24, 24);
 
@@ -281,7 +281,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         card4.setBackground(new java.awt.Color(255, 255, 255));
         card4.setLayout(null);
 
-        noticeicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAchecknotice.png"))); // NOI18N
+        noticeicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/QAchecknotice.png"))); // NOI18N
         card4.add(noticeicon);
         noticeicon.setBounds(230, 10, 24, 24);
 
@@ -308,7 +308,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         breakfastpanel.setBackground(new java.awt.Color(248, 250, 252));
         breakfastpanel.setLayout(null);
 
-        breakfastlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/breakfast.png"))); // NOI18N
+        breakfastlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/breakfast.png"))); // NOI18N
         breakfastlabel.setText("<html>\n<b><font size=\"4\">Breakfast</font></b><br>\n<font color=\"#6b7280\" size=\"3\">7:00 – 9:00 AM</font>\n</html>\n");
         breakfastpanel.add(breakfastlabel);
         breakfastlabel.setBounds(10, 0, 230, 57);
@@ -319,7 +319,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         lunchpanel.setBackground(new java.awt.Color(248, 250, 252));
         lunchpanel.setLayout(null);
 
-        lunchlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/lunch.png"))); // NOI18N
+        lunchlabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/lunch.png"))); // NOI18N
         lunchlabel.setText("<html>\n<b><font size=\"4\">Lunch</font></b><br>\n<font color=\"#6b7280\" size=\"3\">12:00 – 2:00 PM</font>\n</html>");
         lunchpanel.add(lunchlabel);
         lunchlabel.setBounds(10, 10, 190, 45);
@@ -330,7 +330,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(248, 250, 252));
         jPanel3.setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dinner.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dinner.png"))); // NOI18N
         jLabel1.setText("<html>\n<b><font size=\"4\">Dinner</font></b><br>\n<font color=\"#6b7280\" size=\"3\">7:00 – 9:00 PM</font>\n</html>");
         jPanel3.add(jLabel1);
         jLabel1.setBounds(10, 10, 120, 40);
@@ -351,7 +351,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         viewroomdetails.setBackground(new java.awt.Color(248, 250, 252));
         viewroomdetails.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        viewroomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAroomdetails .png"))); // NOI18N
+        viewroomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/QAroomdetails .png"))); // NOI18N
         viewroomdetails.setText("View Room Details");
         viewroomdetails.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         quickactions.add(viewroomdetails);
@@ -359,14 +359,14 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         checknotice.setBackground(new java.awt.Color(248, 250, 252));
         checknotice.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        checknotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAchecknotice.png"))); // NOI18N
+        checknotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/QAchecknotice.png"))); // NOI18N
         checknotice.setText("Check Notice");
         checknotice.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         quickactions.add(checknotice);
         checknotice.setBounds(20, 210, 400, 40);
 
         mealroutine.setBackground(new java.awt.Color(248, 250, 252));
-        mealroutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAmealroutine.png"))); // NOI18N
+        mealroutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/QAmealroutine.png"))); // NOI18N
         mealroutine.setText("Meal Routine");
         mealroutine.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         quickactions.add(mealroutine);
@@ -374,7 +374,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         filecomplaint.setBackground(new java.awt.Color(248, 250, 252));
         filecomplaint.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        filecomplaint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAcomplaints.png"))); // NOI18N
+        filecomplaint.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/QAcomplaints.png"))); // NOI18N
         filecomplaint.setText("File a Complaint");
         filecomplaint.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         quickactions.add(filecomplaint);
@@ -385,7 +385,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         Background.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Background.setForeground(new java.awt.Color(255, 255, 255));
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.png"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.png"))); // NOI18N
         backgroundpanel.add(Background);
         Background.setBounds(0, 0, 1550, 840);
 

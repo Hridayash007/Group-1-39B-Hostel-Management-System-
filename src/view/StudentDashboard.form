@@ -45,7 +45,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/logo.png"/>
+              <Image iconType="3" name="/images/logo.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Cityscape"/>
           </Properties>
@@ -80,7 +80,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/meal routine.png"/>
+              <Image iconType="3" name="/images/meal routine.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Meal Routine"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -101,7 +101,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/my complaints.png"/>
+              <Image iconType="3" name="/images/my complaints.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="My Complaints"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -125,7 +125,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/notice.png"/>
+              <Image iconType="3" name="/images/notice.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Notice"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -149,7 +149,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/roomdetails.png"/>
+              <Image iconType="3" name="/images/roomdetails.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Room Details"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -170,7 +170,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/myprofile.png"/>
+              <Image iconType="3" name="/images/myprofile.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="My Profile"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -191,7 +191,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/dashboard.png"/>
+              <Image iconType="3" name="/images/dashboard.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Dashboard"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -215,7 +215,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/sign out.png"/>
+              <Image iconType="3" name="/images/sign out.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Sign out"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -253,7 +253,7 @@
         <Component class="javax.swing.JButton" name="Notification">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/notification.png"/>
+              <Image iconType="3" name="/images/notification.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -267,7 +267,7 @@
         <Component class="javax.swing.JButton" name="profile">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/profile.png"/>
+              <Image iconType="3" name="/images/profile.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -412,7 +412,7 @@
             <Component class="javax.swing.JLabel" name="roomicon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/QAroomdetails .png"/>
+                  <Image iconType="3" name="/images/QAroomdetails .png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -468,7 +468,7 @@
             <Component class="javax.swing.JLabel" name="mealicon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/QAmealroutine.png"/>
+                  <Image iconType="3" name="/images/QAmealroutine.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -498,7 +498,7 @@
             <Component class="javax.swing.JLabel" name="complaintsicon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/QAcomplaints.png"/>
+                  <Image iconType="3" name="/images/QAcomplaints.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -551,7 +551,7 @@
             <Component class="javax.swing.JLabel" name="noticeicon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/QAchecknotice.png"/>
+                  <Image iconType="3" name="/images/QAchecknotice.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -633,7 +633,7 @@
                 <Component class="javax.swing.JLabel" name="breakfastlabel">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/view/breakfast.png"/>
+                      <Image iconType="3" name="/images/breakfast.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;b&gt;&lt;font size=&quot;4&quot;&gt;Breakfast&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&#xa;&lt;font color=&quot;#6b7280&quot; size=&quot;3&quot;&gt;7:00 &#x2013; 9:00 AM&lt;/font&gt;&#xa;&lt;/html&gt;&#xa;"/>
                   </Properties>
@@ -664,7 +664,7 @@
                 <Component class="javax.swing.JLabel" name="lunchlabel">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/view/lunch.png"/>
+                      <Image iconType="3" name="/images/lunch.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;b&gt;&lt;font size=&quot;4&quot;&gt;Lunch&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&#xa;&lt;font color=&quot;#6b7280&quot; size=&quot;3&quot;&gt;12:00 &#x2013; 2:00 PM&lt;/font&gt;&#xa;&lt;/html&gt;"/>
                   </Properties>
@@ -695,7 +695,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/view/dinner.png"/>
+                      <Image iconType="3" name="/images/dinner.png"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;b&gt;&lt;font size=&quot;4&quot;&gt;Dinner&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&#xa;&lt;font color=&quot;#6b7280&quot; size=&quot;3&quot;&gt;7:00 &#x2013; 9:00 PM&lt;/font&gt;&#xa;&lt;/html&gt;"/>
                   </Properties>
@@ -747,7 +747,7 @@
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/QAroomdetails .png"/>
+                  <Image iconType="3" name="/images/QAroomdetails .png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="View Room Details"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -767,7 +767,7 @@
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/QAchecknotice.png"/>
+                  <Image iconType="3" name="/images/QAchecknotice.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Check Notice"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -784,7 +784,7 @@
                   <Color blue="fc" green="fa" red="f8" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/QAmealroutine.png"/>
+                  <Image iconType="3" name="/images/QAmealroutine.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Meal Routine"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -804,7 +804,7 @@
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/QAcomplaints.png"/>
+                  <Image iconType="3" name="/images/QAcomplaints.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="File a Complaint"/>
                 <Property name="horizontalAlignment" type="int" value="2"/>
@@ -826,7 +826,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/background.png"/>
+              <Image iconType="3" name="/images/background.png"/>
             </Property>
           </Properties>
           <Constraints>

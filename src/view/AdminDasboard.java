@@ -106,9 +106,9 @@ public class AdminDasboard extends javax.swing.JFrame {
         backgroundpanel.add(admindashboard);
         admindashboard.setBounds(300, 0, 160, 20);
 
-        welcomeback.setText("Welcome back, Admin Warden");
+        welcomeback.setText("Welcome back");
         backgroundpanel.add(welcomeback);
-        welcomeback.setBounds(300, 20, 170, 16);
+        welcomeback.setBounds(340, 20, 170, 16);
 
         adminoverviewpanel.setBackground(new java.awt.Color(39, 0, 117));
         adminoverviewpanel.setLayout(null);
@@ -122,7 +122,7 @@ public class AdminDasboard extends javax.swing.JFrame {
         desc.setForeground(new java.awt.Color(255, 255, 255));
         desc.setText("Cityscape Hostel Wednesday, April 29, 2025");
         adminoverviewpanel.add(desc);
-        desc.setBounds(23, 52, 231, 16);
+        desc.setBounds(23, 52, 360, 16);
 
         backgroundpanel.add(adminoverviewpanel);
         adminoverviewpanel.setBounds(290, 90, 1240, 120);
@@ -201,7 +201,7 @@ public class AdminDasboard extends javax.swing.JFrame {
         viewallbtn.setBorderPainted(false);
         viewallbtn.setContentAreaFilled(false);
         recentcheckinspanel.add(viewallbtn);
-        viewallbtn.setBounds(490, 10, 72, 23);
+        viewallbtn.setBounds(472, 10, 90, 23);
 
         studentpanel.setLayout(null);
 
@@ -243,7 +243,7 @@ public class AdminDasboard extends javax.swing.JFrame {
         viewbtn.setBorderPainted(false);
         viewbtn.setContentAreaFilled(false);
         urgentcomplaint.add(viewbtn);
-        viewbtn.setBounds(500, 10, 72, 23);
+        viewbtn.setBounds(482, 10, 90, 23);
 
         jPanel12.setBackground(new java.awt.Color(255, 204, 204));
         jPanel12.setLayout(null);
@@ -384,7 +384,7 @@ public class AdminDasboard extends javax.swing.JFrame {
         backgroundpanel.add(title);
         title.setBounds(70, 20, 90, 30);
 
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/logo.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         backgroundpanel.add(logo);
         logo.setBounds(20, 20, 37, 30);
 
@@ -396,7 +396,7 @@ public class AdminDasboard extends javax.swing.JFrame {
 
         dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
-        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dashboard.png"))); // NOI18N
+        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         dashboard.setText("Dashboard");
         dashboard.setBorderPainted(false);
         dashboard.setContentAreaFilled(false);
@@ -405,7 +405,7 @@ public class AdminDasboard extends javax.swing.JFrame {
 
         students.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         students.setForeground(new java.awt.Color(255, 255, 255));
-        students.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/students.png"))); // NOI18N
+        students.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/students.png"))); // NOI18N
         students.setText("Students");
         students.setBorderPainted(false);
         students.setContentAreaFilled(false);
@@ -414,7 +414,7 @@ public class AdminDasboard extends javax.swing.JFrame {
 
         complaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         complaints.setForeground(new java.awt.Color(255, 255, 255));
-        complaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/my complaints.png"))); // NOI18N
+        complaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/my complaints.png"))); // NOI18N
         complaints.setText("Complaints");
         complaints.setBorderPainted(false);
         complaints.setContentAreaFilled(false);
@@ -422,7 +422,7 @@ public class AdminDasboard extends javax.swing.JFrame {
         backgroundpanel.add(complaints);
         complaints.setBounds(-20, 320, 230, 40);
 
-        notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notification.png"))); // NOI18N
+        notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notification.png"))); // NOI18N
         notification.setBorderPainted(false);
         notification.setContentAreaFilled(false);
         notification.addActionListener(this::notificationActionPerformed);
@@ -431,7 +431,7 @@ public class AdminDasboard extends javax.swing.JFrame {
 
         mealroutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         mealroutine.setForeground(new java.awt.Color(255, 255, 255));
-        mealroutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/meal routine.png"))); // NOI18N
+        mealroutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/meal routine.png"))); // NOI18N
         mealroutine.setText("Meal Routine");
         mealroutine.setBorderPainted(false);
         mealroutine.setContentAreaFilled(false);
@@ -440,7 +440,7 @@ public class AdminDasboard extends javax.swing.JFrame {
 
         notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         notice.setForeground(new java.awt.Color(255, 255, 255));
-        notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notice.png"))); // NOI18N
+        notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notice.png"))); // NOI18N
         notice.setText("Notice");
         notice.setBorderPainted(false);
         notice.setContentAreaFilled(false);
@@ -449,7 +449,7 @@ public class AdminDasboard extends javax.swing.JFrame {
 
         roomdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         roomdetails.setForeground(new java.awt.Color(255, 255, 255));
-        roomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomdetails.png"))); // NOI18N
+        roomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomdetails.png"))); // NOI18N
         roomdetails.setText("Room Details");
         roomdetails.setBorderPainted(false);
         roomdetails.setContentAreaFilled(false);
@@ -458,7 +458,7 @@ public class AdminDasboard extends javax.swing.JFrame {
 
         adminprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         adminprofile.setForeground(new java.awt.Color(255, 255, 255));
-        adminprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
+        adminprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/myprofile.png"))); // NOI18N
         adminprofile.setText("Admin Profile");
         adminprofile.setBorderPainted(false);
         adminprofile.setContentAreaFilled(false);
@@ -468,15 +468,15 @@ public class AdminDasboard extends javax.swing.JFrame {
 
         signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         signout.setForeground(new java.awt.Color(255, 255, 255));
-        signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/sign out.png"))); // NOI18N
+        signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign out.png"))); // NOI18N
         signout.setText("Sign Out");
         signout.setBorderPainted(false);
         signout.setContentAreaFilled(false);
         signout.addActionListener(this::signoutActionPerformed);
         backgroundpanel.add(signout);
-        signout.setBounds(30, 780, 180, 40);
+        signout.setBounds(0, 780, 180, 40);
 
-        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
+        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
         profile.setBorderPainted(false);
         profile.setContentAreaFilled(false);
         profile.addActionListener(this::profileActionPerformed);
@@ -485,14 +485,14 @@ public class AdminDasboard extends javax.swing.JFrame {
 
         roomallocation.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         roomallocation.setForeground(new java.awt.Color(255, 255, 255));
-        roomallocation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomallocation.png"))); // NOI18N
+        roomallocation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomallocation.png"))); // NOI18N
         roomallocation.setText("Room Allocation");
         roomallocation.setBorderPainted(false);
         roomallocation.setContentAreaFilled(false);
         backgroundpanel.add(roomallocation);
         roomallocation.setBounds(-20, 560, 280, 43);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/adminbackground.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adminbackground.png"))); // NOI18N
         backgroundpanel.add(background);
         background.setBounds(0, 0, 1550, 840);
 
@@ -616,4 +616,25 @@ public class AdminDasboard extends javax.swing.JFrame {
     private javax.swing.JButton viewbtn;
     private javax.swing.JLabel welcomeback;
     // End of variables declaration//GEN-END:variables
+
+public void setTotalStudents(int n)   { totalstudentsvariable.setText(String.valueOf(n)); }
+public void setTotalComplaints(int n) { totalcomplaintvariable.setText(String.valueOf(n)); }
+public void setActiveNotices(int n)   { noticevariable.setText(String.valueOf(n)); }
+ 
+// ── Sidebar navigation listeners ─────────────────────────────────────────────
+public void DashboardListener(java.awt.event.ActionListener l)        { dashboard.addActionListener(l); }
+public void StudentsListener(java.awt.event.ActionListener l)         { students.addActionListener(l); }
+public void ComplaintsListener(java.awt.event.ActionListener l)       { complaints.addActionListener(l); }
+public void NoticeListener(java.awt.event.ActionListener l)           { notice.addActionListener(l); }
+public void SignOutListener(java.awt.event.ActionListener l)          { signout.addActionListener(l); }
+public void RoomDetailsListener(java.awt.event.ActionListener listener) {
+    roomdetails.addActionListener(listener);
+}
+ 
+public void RoomAllocationListener(java.awt.event.ActionListener listener) {
+    roomallocation.addActionListener(listener);
+}
+// ── Dashboard panel "View all" button listeners ───────────────────────────────
+public void ViewAllComplaintsListener(java.awt.event.ActionListener l){ viewbtn.addActionListener(l); }
+public void ViewAllStudentsListener(java.awt.event.ActionListener l)  { viewallbtn.addActionListener(l); }
 }

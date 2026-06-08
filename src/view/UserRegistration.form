@@ -249,7 +249,7 @@
         <Component class="javax.swing.JLabel" name="Background">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/WhatsApp Image 2026-05-20 at 5.01.07 PM.jpeg"/>
+              <Image iconType="3" name="/images/WhatsApp Image 2026-05-20 at 5.01.07 PM.jpeg"/>
             </Property>
             <Property name="text" type="java.lang.String" value="jLabel1"/>
           </Properties>

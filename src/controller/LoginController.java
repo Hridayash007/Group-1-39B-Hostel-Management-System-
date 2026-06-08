@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import model.AdminCredentials;
 import model.UserData;
+import view.AdminDasboard;
 import view.ForgetPassword;
 import view.LogIn;
-import view.NoticeAdmin;
 import view.StudentDashboard;
 
 public class LoginController {
@@ -34,22 +34,23 @@ public class LoginController {
                 String email    = userView.getEmailField().getText().trim();
                 String password = new String(userView.getPasswordField().getPassword()).trim();
 
-                if (username.isEmpty()||email.isEmpty() || password.isEmpty()
+                if (username.isEmpty() || email.isEmpty() || password.isEmpty()
                         || password.equals("**********") || password.equals("8888888888")) {
-                    JOptionPane.showMessageDialog(userView, "Please enter your username,email and password.");
+                    JOptionPane.showMessageDialog(userView,
+                            "Please enter your username, email and password.");
                     return;
                 }
 
-                // ── Check admin first ────────────────────────────────────────
+                // ── Admin login → AdminDashboard ─────────────────────────────
                 if (AdminCredentials.isAdmin(email, password)) {
                     close();
-                    NoticeAdmin adminView = new NoticeAdmin();
-                    new NoticeAdminController(adminView).open();
+                    AdminDasboard adminDash = new AdminDasboard();
+                    new AdminDashboardController(adminDash).open();
                     return;
                 }
 
-                // ── Regular student login ────────────────────────────────────
-                UserData loggedInUser = userDao.loginUser(username,email, password);
+                // ── Student login → StudentDashboard ─────────────────────────
+                UserData loggedInUser = userDao.loginUser(username, email, password);
 
                 if (loggedInUser != null) {
                     close();
@@ -57,7 +58,7 @@ public class LoginController {
                     new StudentDashboardController(dashboardView, loggedInUser).open();
                 } else {
                     JOptionPane.showMessageDialog(userView,
-                            "Invalid username or email or password. Please try again.",
+                            "Invalid username, email or password. Please try again.",
                             "Login Failed", JOptionPane.ERROR_MESSAGE);
                 }
 

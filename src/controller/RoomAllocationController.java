@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import model.RoomData;
 import model.UserData;
+import view.AdminDasboard;
 import view.LogIn;
 import view.NoticeAdmin;
 import view.RoomAllocation;
@@ -34,7 +35,7 @@ public class RoomAllocationController {
         });
         view.DashboardListener(e -> {
             close();
-            new NoticeAdminController(new NoticeAdmin()).open();
+            new AdminDashboardController(new AdminDasboard()).open();
         });
         view.NoticeListener(e -> {
             close();

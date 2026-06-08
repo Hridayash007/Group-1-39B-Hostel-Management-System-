@@ -91,11 +91,11 @@ public class RoomDetailsExpand extends javax.swing.JFrame {
 
         ficility1.setText("Wi-Fi");
         backgroundpanel.add(ficility1);
-        ficility1.setBounds(10, 200, 51, 20);
+        ficility1.setBounds(10, 200, 170, 20);
 
         facility2.setText("AC/Heater");
         backgroundpanel.add(facility2);
-        facility2.setBounds(220, 200, 160, 20);
+        facility2.setBounds(220, 200, 170, 20);
 
         facility3.setText("Power Outlet");
         backgroundpanel.add(facility3);
@@ -103,7 +103,7 @@ public class RoomDetailsExpand extends javax.swing.JFrame {
 
         facility4.setText("Water Supply");
         backgroundpanel.add(facility4);
-        facility4.setBounds(220, 230, 140, 20);
+        facility4.setBounds(220, 230, 170, 20);
 
         cancelbtn.setText("Cancel");
         backgroundpanel.add(cancelbtn);

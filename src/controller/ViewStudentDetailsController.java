@@ -18,6 +18,7 @@ import view.NoticeAdmin;
 import view.ViewStudentDetails;
 import view.ViewStudentExpand;
 import javax.swing.ImageIcon;
+import view.AdminDasboard;
 
 public class ViewStudentDetailsController {
 
@@ -29,20 +30,42 @@ public class ViewStudentDetailsController {
 
         loadStudents();
 
+        // ── Navigation: Dashboard ────────────────────────────────────────────
+         view.DashboardListener(e -> {
+            close();
+            new AdminDashboardController(new AdminDasboard()).open();
+        });
+         
+        
+        // ── Complaints button (sidebar) ───────────────────────────────────────
+        view.ComplaintsListener(e -> {
+            close();
+            new ViewComplaintController(new view.ViewComplaint()).open();
+        });
+        
+        
         // ── Navigation: Notice ───────────────────────────────────────────────
         view.NoticeListener(e -> {
             close();
             NoticeAdmin adminView = new NoticeAdmin();
             new NoticeAdminController(adminView).open();
         });
-
-        // ── Navigation: Dashboard ────────────────────────────────────────────
-        view.DashboardListener(e -> {
+        
+        
+        // ── Room Details button ─────────────────────────────────────────────────
+        view.RoomDetailsListener(e -> {
             close();
-            NoticeAdmin adminView = new NoticeAdmin();
-            new NoticeAdminController(adminView).open();
-        });
+            new RoomDetailsController(new view.RoomDetails()).open();
+        }
+);
 
+        // ── Room Allocation button ─────────────────────────────────────────────
+        view.RoomAllocationListener(e -> {
+            close();
+            new RoomAllocationController(new view.RoomAllocation()).open();
+        });
+        
+        
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(view,
@@ -106,8 +129,8 @@ public class ViewStudentDetailsController {
 
         ActionRenderer() {
             panel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 4, 4));
-            viewBtn.setIcon(new ImageIcon(getClass().getResource("/view/viewnotice.png")));
-            deleteBtn.setIcon(new ImageIcon(getClass().getResource("/view/deletenotice.png")));
+            viewBtn.setIcon(new ImageIcon(getClass().getResource("/images/viewnotice.png")));
+            deleteBtn.setIcon(new ImageIcon(getClass().getResource("/images/deletenotice.png")));
 
             viewBtn.setBorderPainted(false);
             viewBtn.setContentAreaFilled(false);
@@ -141,8 +164,8 @@ public class ViewStudentDetailsController {
             this.table    = table;
 
             panel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 4, 4));
-            viewBtn.setIcon(new ImageIcon(getClass().getResource("/view/viewnotice.png")));
-        deleteBtn.setIcon(new ImageIcon(getClass().getResource("/view/deletenotice.png")));
+            viewBtn.setIcon(new ImageIcon(getClass().getResource("/images/viewnotice.png")));
+        deleteBtn.setIcon(new ImageIcon(getClass().getResource("/images/deletenotice.png")));
 
         viewBtn.setBorderPainted(false);
         viewBtn.setContentAreaFilled(false);

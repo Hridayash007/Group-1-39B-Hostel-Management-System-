@@ -277,7 +277,7 @@
         <Component class="javax.swing.JLabel" name="Logo">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/View/logo.png"/>
+              <Image iconType="3" name="/images/logo.png"/>
             </Property>
           </Properties>
           <Constraints>
@@ -327,7 +327,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/dashboard.png"/>
+              <Image iconType="3" name="/images/dashboard.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Dashboard"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -351,7 +351,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/students.png"/>
+              <Image iconType="3" name="/images/students.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Students"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -375,7 +375,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/my complaints.png"/>
+              <Image iconType="3" name="/images/my complaints.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Complaints"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -399,7 +399,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/meal routine.png"/>
+              <Image iconType="3" name="/images/meal routine.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Meal Routine"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -420,7 +420,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/notice.png"/>
+              <Image iconType="3" name="/images/notice.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Notice"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -441,7 +441,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/roomdetails.png"/>
+              <Image iconType="3" name="/images/roomdetails.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Room Details"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -462,7 +462,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/roomallocation.png"/>
+              <Image iconType="3" name="/images/roomallocation.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Room Allocation"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -483,7 +483,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/myprofile.png"/>
+              <Image iconType="3" name="/images/myprofile.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Admin Profile"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -507,7 +507,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/sign out.png"/>
+              <Image iconType="3" name="/images/sign out.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Sign Out"/>
             <Property name="borderPainted" type="boolean" value="false"/>
@@ -534,18 +534,18 @@
         </Component>
         <Component class="javax.swing.JLabel" name="welcomeback">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Welcome back, Admin Warden"/>
+            <Property name="text" type="java.lang.String" value="Welcome back"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="310" y="30" width="170" height="-1"/>
+              <AbsoluteConstraints x="350" y="30" width="170" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
         <Component class="javax.swing.JButton" name="Notification">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/notification.png"/>
+              <Image iconType="3" name="/images/notification.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -773,7 +773,7 @@
         <Component class="javax.swing.JButton" name="profilebtn">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/profile.png"/>
+              <Image iconType="3" name="/images/profile.png"/>
             </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -787,13 +787,13 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="addroom">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="63" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/addnotice.png"/>
+              <Image iconType="3" name="/images/addnotice.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Add Room"/>
           </Properties>
@@ -806,7 +806,7 @@
         <Component class="javax.swing.JLabel" name="Background">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/View/adminbackground.png"/>
+              <Image iconType="3" name="/images/adminbackground.png"/>
             </Property>
           </Properties>
           <Constraints>

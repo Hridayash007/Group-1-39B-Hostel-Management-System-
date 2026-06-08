@@ -71,14 +71,14 @@ public class ViewNotice extends javax.swing.JFrame {
 
         backgroundpanel.setLayout(null);
 
-        notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notification.png"))); // NOI18N
+        notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notification.png"))); // NOI18N
         notification.setBorderPainted(false);
         notification.setContentAreaFilled(false);
         notification.addActionListener(this::notificationActionPerformed);
         backgroundpanel.add(notification);
         notification.setBounds(1440, 10, 30, 40);
 
-        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
+        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
         profile.setBorderPainted(false);
         profile.setContentAreaFilled(false);
         backgroundpanel.add(profile);
@@ -95,7 +95,7 @@ public class ViewNotice extends javax.swing.JFrame {
 
         dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
-        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dashboard.png"))); // NOI18N
+        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         dashboard.setText("Dashboard");
         dashboard.setBorderPainted(false);
         dashboard.setContentAreaFilled(false);
@@ -105,7 +105,7 @@ public class ViewNotice extends javax.swing.JFrame {
 
         mycomplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         mycomplaints.setForeground(new java.awt.Color(255, 255, 255));
-        mycomplaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/my complaints.png"))); // NOI18N
+        mycomplaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/my complaints.png"))); // NOI18N
         mycomplaints.setText("My Complaints\n");
         mycomplaints.setBorderPainted(false);
         mycomplaints.setContentAreaFilled(false);
@@ -114,7 +114,7 @@ public class ViewNotice extends javax.swing.JFrame {
 
         mealroutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         mealroutine.setForeground(new java.awt.Color(255, 255, 255));
-        mealroutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/meal routine.png"))); // NOI18N
+        mealroutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/meal routine.png"))); // NOI18N
         mealroutine.setText("Meal Routine");
         mealroutine.setBorderPainted(false);
         mealroutine.setContentAreaFilled(false);
@@ -123,7 +123,7 @@ public class ViewNotice extends javax.swing.JFrame {
 
         notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         notice.setForeground(new java.awt.Color(255, 255, 255));
-        notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notice.png"))); // NOI18N
+        notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notice.png"))); // NOI18N
         notice.setText("Notice");
         notice.setBorderPainted(false);
         notice.setContentAreaFilled(false);
@@ -132,25 +132,25 @@ public class ViewNotice extends javax.swing.JFrame {
 
         roomdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         roomdetails.setForeground(new java.awt.Color(255, 255, 255));
-        roomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomdetails.png"))); // NOI18N
+        roomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomdetails.png"))); // NOI18N
         roomdetails.setText("Room Details");
         roomdetails.setBorderPainted(false);
         roomdetails.setContentAreaFilled(false);
         backgroundpanel.add(roomdetails);
         roomdetails.setBounds(-20, 490, 230, 43);
 
-        myprofile.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        myprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         myprofile.setForeground(new java.awt.Color(255, 255, 255));
-        myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
+        myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/myprofile.png"))); // NOI18N
         myprofile.setText("My Profile");
         myprofile.setBorderPainted(false);
         myprofile.setContentAreaFilled(false);
         backgroundpanel.add(myprofile);
-        myprofile.setBounds(0, 560, 160, 43);
+        myprofile.setBounds(-30, 560, 230, 43);
 
         cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cityscape.setForeground(new java.awt.Color(255, 255, 255));
-        cityscape.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        cityscape.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         cityscape.setText("Cityscape");
         backgroundpanel.add(cityscape);
         cityscape.setBounds(20, 10, 150, 36);
@@ -163,7 +163,7 @@ public class ViewNotice extends javax.swing.JFrame {
 
         signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         signout.setForeground(new java.awt.Color(255, 255, 255));
-        signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/sign out.png"))); // NOI18N
+        signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign out.png"))); // NOI18N
         signout.setText("Sign Out");
         signout.setBorderPainted(false);
         signout.setContentAreaFilled(false);
@@ -186,7 +186,7 @@ public class ViewNotice extends javax.swing.JFrame {
         pinnednoticepanel.setBackground(new java.awt.Color(255, 255, 255));
         pinnednoticepanel.setLayout(null);
 
-        pinnednotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/pinnedmessage.png"))); // NOI18N
+        pinnednotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pinnedmessage.png"))); // NOI18N
         pinnednotice.setText("Pinned Notice");
         pinnednoticepanel.add(pinnednotice);
         pinnednotice.setBounds(10, 10, 110, 24);
@@ -214,7 +214,7 @@ public class ViewNotice extends javax.swing.JFrame {
         allnotice.setBackground(new java.awt.Color(255, 255, 255));
         allnotice.setLayout(null);
 
-        viewnotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/viewnotice.png"))); // NOI18N
+        viewnotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/viewnotice.png"))); // NOI18N
         viewnotice.setBorderPainted(false);
         viewnotice.setContentAreaFilled(false);
         allnotice.add(viewnotice);
@@ -259,7 +259,7 @@ public class ViewNotice extends javax.swing.JFrame {
         backgroundpanel.add(allnotices);
         allnotices.setBounds(310, 430, 1210, 370);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.png"))); // NOI18N
         backgroundpanel.add(background);
         background.setBounds(0, 0, 1550, 840);
 
@@ -350,7 +350,7 @@ public javax.swing.JPanel getAllNoticePanel() {
 
 // ── Welcome label ─────────────────────────────────────────────────────────────
 public void setWelcomeUser(String username) {
-    welcomeback.setText("Welcome Back, " + username);
+    welcomeback.setText("Welcome Back, " + username+"!");
 }
 
 // ── Button listeners ─────────────────────────────────────────────────────────
@@ -376,5 +376,9 @@ public void SignOutListener(java.awt.event.ActionListener listener) {
 
 public void NotificationListener(java.awt.event.ActionListener listener) {
     notification.addActionListener(listener);
+}
+
+public void MyComplaintsListener(java.awt.event.ActionListener listener) {
+    mycomplaints.addActionListener(listener);
 }
 }

@@ -4,9 +4,11 @@ import dao.UserDao;
 import javax.swing.JOptionPane;
 import model.UserData;
 import view.AddStudentDetails;
+import view.IssueComplaints;
 import view.LogIn;
 import view.StudentDashboard;
 import view.StudentProfile;
+import view.ViewNotice;
 
 public class AddStudentDetailsController {
 
@@ -62,7 +64,19 @@ public class AddStudentDetailsController {
             StudentProfile profileView = new StudentProfile();
             new StudentProfileController(profileView, user).open();
         });
+        
+        // ── My Complaints ────────────────────────────────────────────────────
+        view.MyComplaintsListener(e -> {
+            close();
+            IssueComplaints complaintsView = new IssueComplaints();
+            new IssueComplaintsController(complaintsView, user).open();
+        });
 
+        // ── Notice ───────────────────────────────────────────────────────────
+        view.NoticeListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(

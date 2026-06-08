@@ -76,9 +76,10 @@ public class RoomDao {
             }
 
             // Increment occupied and update status
+            // Update occupied first, then derive status from the NEW occupied value
             String upd = "UPDATE rooms SET occupied = occupied + 1, "
-                       + "status = CASE WHEN occupied + 1 >= capacity THEN 'Full' "
-                       + "              WHEN occupied + 1 > 0           THEN 'Partial' "
+                       + "status = CASE WHEN (occupied + 1) >= capacity THEN 'Full' "
+                       + "              WHEN (occupied + 1) > 0          THEN 'Partial' "
                        + "              ELSE 'Vacant' END "
                        + "WHERE room_id = ?";
             try (PreparedStatement ps = conn.prepareStatement(upd)) {

@@ -15,7 +15,8 @@ import view.LogIn;
 import view.NoticeAdmin;
 import view.ViewStudentDetails;
 import view.viewnoticeexpand;
-
+import view.AdminDasboard;
+        
 public class NoticeAdminController {
 
     private final NoticeDao noticeDao = new NoticeDao();
@@ -37,8 +38,15 @@ public class NoticeAdminController {
         view.RoomDetailsListener(e -> {
             close();
             new RoomDetailsController(new view.RoomDetails()).open();
+        }
+);
+         // --Dashboard   
+         view.DashboardListener(e -> {
+            close();
+            new AdminDashboardController(new AdminDasboard()).open();
         });
-
+         
+         
         // ── Room Allocation button ─────────────────────────────────────────────
         view.RoomAllocationListener(e -> {
             close();
@@ -68,7 +76,11 @@ public class NoticeAdminController {
                 new LoginController(new LogIn()).open();
             }
         });
+        
+     
     }
+    
+       
 
     /** Called by IssueNoticeController after a notice is published. */
     public void refresh() {
@@ -183,7 +195,7 @@ public class NoticeAdminController {
         // ── View button — icon with text fallback ─────────────────────────────
         JButton viewBtn = new JButton();
         try {
-            viewBtn.setIcon(new ImageIcon(getClass().getResource("/view/viewnotice.png")));
+            viewBtn.setIcon(new ImageIcon(getClass().getResource("/images/viewnotice.png")));
         } catch (Exception ex) {
             viewBtn.setText("👁");
         }
@@ -205,7 +217,7 @@ public class NoticeAdminController {
         // ── Delete button — icon with text fallback ───────────────────────────
         JButton deleteBtn = new JButton();
         try {
-            deleteBtn.setIcon(new ImageIcon(getClass().getResource("/view/deletenotice.png")));
+            deleteBtn.setIcon(new ImageIcon(getClass().getResource("/images/deletenotice.png")));
         } catch (Exception ex) {
             deleteBtn.setText("🗑");
         }

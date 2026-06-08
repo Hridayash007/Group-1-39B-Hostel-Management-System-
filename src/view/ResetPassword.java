@@ -50,7 +50,7 @@ public class ResetPassword extends javax.swing.JFrame {
         resetpasswordpanel.setBackground(new java.awt.Color(255, 255, 255));
         resetpasswordpanel.setLayout(null);
 
-        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/arrow.png"))); // NOI18N
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrow.png"))); // NOI18N
         back.setText("Back");
         back.setBorderPainted(false);
         back.setContentAreaFilled(false);
@@ -94,14 +94,14 @@ public class ResetPassword extends javax.swing.JFrame {
         resetpasswordpanel.add(resetpasswordbutton);
         resetpasswordbutton.setBounds(30, 380, 440, 40);
 
-        resetpasswordicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/forgotpasswordicon.png"))); // NOI18N
+        resetpasswordicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/forgotpasswordicon.png"))); // NOI18N
         resetpasswordpanel.add(resetpasswordicon);
         resetpasswordicon.setBounds(230, 0, 64, 64);
 
         backdroundpanel.add(resetpasswordpanel);
         resetpasswordpanel.setBounds(790, 160, 500, 480);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/forgetpasswordbg.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/forgetpasswordbg.png"))); // NOI18N
         backdroundpanel.add(background);
         background.setBounds(0, 0, 1550, 840);
 

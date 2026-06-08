@@ -49,6 +49,20 @@ public class ViewComplaintController {
             close();
             new ViewStudentDetailsController(new view.ViewStudentDetails()).open();
         });
+        
+        
+        // ── Room Details button ─────────────────────────────────────────────────
+        view.RoomDetailsListener(e -> {
+            close();
+            new RoomDetailsController(new view.RoomDetails()).open();
+        }
+);
+
+        // ── Room Allocation button ─────────────────────────────────────────────
+        view.RoomAllocationListener(e -> {
+            close();
+            new RoomAllocationController(new view.RoomAllocation()).open();
+        });
 
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
@@ -153,10 +167,10 @@ public class ViewComplaintController {
         this.list = list;
         this.table = table;
 
-        viewBtn.setIcon(new ImageIcon(getClass().getResource("/view/viewnotice.png")));
-        resolveBtn.setIcon(new ImageIcon(getClass().getResource("/view/resolved.png")));
-        rejectBtn.setIcon(new ImageIcon(getClass().getResource("/view/rejected.png")));
-        deleteBtn.setIcon(new ImageIcon(getClass().getResource("/view/deletenotice.png")));
+        viewBtn.setIcon(new ImageIcon(getClass().getResource("/images/viewnotice.png")));
+        resolveBtn.setIcon(new ImageIcon(getClass().getResource("/images/resolved.png")));
+        rejectBtn.setIcon(new ImageIcon(getClass().getResource("/images/rejected.png")));
+        deleteBtn.setIcon(new ImageIcon(getClass().getResource("/images/deletenotice.png")));
 
         styleBtn(viewBtn, new java.awt.Color(99, 102, 241));
         styleBtn(resolveBtn, new java.awt.Color(34, 197, 94));

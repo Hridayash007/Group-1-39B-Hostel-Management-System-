@@ -178,7 +178,7 @@ public class IssueComplaintsController {
         // ── VIEW button ───────────────────────────────────────────────────────
                JButton viewBtn = new JButton();
         try {
-            viewBtn.setIcon(new ImageIcon(getClass().getResource("/view/viewnotice.png")));
+            viewBtn.setIcon(new ImageIcon(getClass().getResource("/images/viewnotice.png")));
         } catch (Exception ex) {
             viewBtn.setText("👁");
         }
@@ -196,7 +196,7 @@ public class IssueComplaintsController {
         // ── DELETE button ─────────────────────────────────────────────────────
         JButton deleteBtn = new JButton();
         try {
-            deleteBtn.setIcon(new ImageIcon(getClass().getResource("/view/deletenotice.png")));
+            deleteBtn.setIcon(new ImageIcon(getClass().getResource("/images/deletenotice.png")));
         } catch (Exception ex) {
             deleteBtn.setText("🗑");
         }

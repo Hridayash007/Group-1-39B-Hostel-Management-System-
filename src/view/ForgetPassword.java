@@ -76,21 +76,21 @@ public class ForgetPassword extends javax.swing.JFrame {
         sendotp.setBounds(30, 300, 450, 40);
 
         backtologin.setForeground(new java.awt.Color(47, 91, 255));
-        backtologin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/arrow.png"))); // NOI18N
+        backtologin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrow.png"))); // NOI18N
         backtologin.setText("Back to Login");
         backtologin.setBorderPainted(false);
         backtologin.setContentAreaFilled(false);
         forgetpasspanel.add(backtologin);
         backtologin.setBounds(190, 380, 160, 31);
 
-        forgetpasswordicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/forgotpasswordicon.png"))); // NOI18N
+        forgetpasswordicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/forgotpasswordicon.png"))); // NOI18N
         forgetpasspanel.add(forgetpasswordicon);
         forgetpasswordicon.setBounds(210, 0, 64, 64);
 
         backgroundpanel.add(forgetpasspanel);
         forgetpasspanel.setBounds(790, 160, 500, 480);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/forgetpasswordbg.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/forgetpasswordbg.png"))); // NOI18N
         backgroundpanel.add(background);
         background.setBounds(0, 0, 1550, 840);
 
