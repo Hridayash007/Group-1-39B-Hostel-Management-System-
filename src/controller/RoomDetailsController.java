@@ -84,10 +84,15 @@ public class RoomDetailsController {
 
     public void refresh() {
         // Stats
-        int total = roomDao.countTotalRooms();
-        int vacant = roomDao.countVacantRooms();
-        view.setTotalRooms(total);
-        view.setVacantBeds(vacant);
+        int totalRooms = roomDao.countTotalRooms();
+        int totalCapacity = roomDao.countTotalCapacity();
+        int occupiedBeds = roomDao.countOccupiedBeds();
+        int vacantBeds = totalCapacity - occupiedBeds;
+
+        view.setTotalRooms(totalRooms);
+        view.setTotalCapacity(totalCapacity);
+        view.setOccupied(occupiedBeds);
+        view.setVacantBeds(vacantBeds);
 
         // Table
         List<RoomData> rooms = switch (currentFilter) {

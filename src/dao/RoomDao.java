@@ -291,4 +291,62 @@ public class RoomDao {
         try { String v = rs.getString(col); return v != null ? v : ""; }
         catch (SQLException e) { return ""; }
     }
+    
+    
+   public int countTotalCapacity() {
+    String sql = "SELECT COALESCE(SUM(capacity),0) FROM rooms";
+
+    Connection conn = mysql.openConnection();
+
+    try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            return rs.getInt(1);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        mysql.closeConnection(conn);
+    }
+
+    return 0;
+}
+
+public int countOccupiedBeds() {
+    String sql = "SELECT COALESCE(SUM(occupied),0) FROM rooms";
+
+    Connection conn = mysql.openConnection();
+
+    try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        ResultSet rs = ps.executeQuery();
+
+        if (rs.next()) {
+            return rs.getInt(1);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        mysql.closeConnection(conn);
+    }
+
+    return 0;
+}
+
+public int countRoomsWithVacantBeds() {
+    String sql = "SELECT COUNT(*) FROM rooms WHERE occupied < capacity";
+
+    Connection conn = mysql.openConnection();
+    try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            return rs.getInt(1);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        mysql.closeConnection(conn);
+    }
+    return 0;
+}
 }

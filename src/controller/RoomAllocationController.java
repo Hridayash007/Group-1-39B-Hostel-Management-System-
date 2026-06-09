@@ -65,7 +65,7 @@ public class RoomAllocationController {
     public void refresh() {
         // Stats
         view.setStudentCount(roomDao.countUnallocatedStudents());
-        view.setRoomCount(roomDao.countTotalRooms());
+        view.setRoomCount(roomDao.countRoomsWithVacantBeds());
         view.setAllocationCount(roomDao.countAllocations());
 
         // Students pending room (left panel)

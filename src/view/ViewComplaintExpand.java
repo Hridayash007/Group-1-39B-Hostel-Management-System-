@@ -41,7 +41,8 @@ public class ViewComplaintExpand extends javax.swing.JFrame {
         datevariable = new javax.swing.JLabel();
         descpanel = new javax.swing.JPanel();
         desc = new javax.swing.JLabel();
-        complaintdesc = new javax.swing.JLabel();
+        descscrollpanel = new javax.swing.JScrollPane();
+        desctextarea = new javax.swing.JTextArea();
         studentpanel = new javax.swing.JPanel();
         student = new javax.swing.JLabel();
         studentnamevariable = new javax.swing.JLabel();
@@ -112,9 +113,16 @@ public class ViewComplaintExpand extends javax.swing.JFrame {
         descpanel.add(desc);
         desc.setBounds(0, 0, 60, 14);
 
-        complaintdesc.setText("the complain is about .....");
-        descpanel.add(complaintdesc);
-        complaintdesc.setBounds(0, 10, 120, 30);
+        desctextarea.setEditable(false);
+        desctextarea.setColumns(20);
+        desctextarea.setLineWrap(true);
+        desctextarea.setRows(5);
+        desctextarea.setWrapStyleWord(true);
+        desctextarea.setFocusable(false);
+        descscrollpanel.setViewportView(desctextarea);
+
+        descpanel.add(descscrollpanel);
+        descscrollpanel.setBounds(0, 20, 320, 50);
 
         viewcomplaint.add(descpanel);
         descpanel.setBounds(10, 200, 320, 70);
@@ -171,11 +179,12 @@ public class ViewComplaintExpand extends javax.swing.JFrame {
     private javax.swing.JPanel categorypanel;
     private javax.swing.JLabel categoryvariable;
     private javax.swing.JButton closebutton;
-    private javax.swing.JLabel complaintdesc;
     private javax.swing.JLabel complaintdetail;
     private javax.swing.JLabel datevariable;
     private javax.swing.JLabel desc;
     private javax.swing.JPanel descpanel;
+    private javax.swing.JScrollPane descscrollpanel;
+    private javax.swing.JTextArea desctextarea;
     private javax.swing.JLabel fileddate;
     private javax.swing.JPanel fileddatepanel;
     private javax.swing.JLabel priority;
@@ -193,8 +202,8 @@ public void setComplaintData(model.ComplaintData c) {
             ? c.getUsername() : "—");
     categoryvariable.setText(c.getCategory());
     datevariable.setText(c.getFormattedDate());
-    complaintdesc.setText("<html><body style='width:280px'>"
-            + c.getDescription() + "</body></html>");
+    desctextarea.setText(c.getDescription());
+    desctextarea.setCaretPosition(0);
 }
  
 public void CloseListener(java.awt.event.ActionListener listener) {

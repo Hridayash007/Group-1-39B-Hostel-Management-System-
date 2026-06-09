@@ -110,12 +110,14 @@ public class ViewComplaintController {
 
         JTable table = view.getComplaintTable();
         table.setModel(model);
-        table.setRowHeight(36);
+        table.setRowHeight(40);
 
         // Action column (index 6)
         table.getColumnModel().getColumn(6).setCellRenderer(new ActionRenderer());
         table.getColumnModel().getColumn(6).setCellEditor(new ActionEditor(list, table));
-        table.getColumnModel().getColumn(6).setPreferredWidth(240);
+        table.getColumnModel().getColumn(6).setPreferredWidth(180);
+        table.getColumnModel().getColumn(6).setMinWidth(180);
+        table.getColumnModel().getColumn(6).setMaxWidth(200);
     }
 
     public void open()  { view.setVisible(true); }
@@ -123,36 +125,51 @@ public class ViewComplaintController {
 
     // ── Action column renderer — View + Resolve + Reject + Delete ────────────
     private class ActionRenderer implements TableCellRenderer {
-        private final JPanel p = new JPanel(new FlowLayout(FlowLayout.CENTER, 3, 4));
 
-        ActionRenderer() {
-            p.add(styledBtn("👁",  new java.awt.Color(99, 102, 241)));
-            p.add(styledBtn("✅", new java.awt.Color(34, 197, 94)));
-            p.add(styledBtn("❌", new java.awt.Color(220, 38, 38)));
-            p.add(styledBtn("🗑", new java.awt.Color(107, 114, 128)));
-        }
+    private final JPanel p = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 2));
 
-        private JButton styledBtn(String text, java.awt.Color fg) {
-            JButton b = new JButton(text);
-            b.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 11));
-            b.setForeground(fg);
-            b.setBorderPainted(false);
-            b.setContentAreaFilled(false);
-            return b;
-        }
+    ActionRenderer() {
+        JButton viewBtn = new JButton(new ImageIcon(getClass().getResource("/images/viewnotice.png")));
+        JButton resolveBtn = new JButton(new ImageIcon(getClass().getResource("/images/resolved.png")));
+        JButton rejectBtn = new JButton(new ImageIcon(getClass().getResource("/images/rejected.png")));
+        JButton deleteBtn = new JButton(new ImageIcon(getClass().getResource("/images/deletenotice.png")));
 
-        @Override
-        public Component getTableCellRendererComponent(JTable t, Object v,
-                boolean sel, boolean foc, int r, int c) {
-            p.setBackground(sel ? t.getSelectionBackground() : t.getBackground());
-            return p;
-        }
+        style(viewBtn);
+        style(resolveBtn);
+        style(rejectBtn);
+        style(deleteBtn);
+
+        p.add(viewBtn);
+        p.add(resolveBtn);
+        p.add(rejectBtn);
+        p.add(deleteBtn);
     }
+
+    private void style(JButton b) {
+        b.setBorderPainted(false);
+        b.setContentAreaFilled(false);
+        b.setFocusPainted(false);
+        b.setPreferredSize(new java.awt.Dimension(32, 32));
+    }
+
+    @Override
+    public Component getTableCellRendererComponent(
+            JTable table, Object value,
+            boolean isSelected, boolean hasFocus,
+            int row, int column) {
+
+        p.setBackground(isSelected
+                ? table.getSelectionBackground()
+                : table.getBackground());
+
+        return p;
+    }
+}
 
     // ── Action column editor ──────────────────────────────────────────────────
     private class ActionEditor extends AbstractCellEditor implements TableCellEditor {
 
-    private final JPanel p = new JPanel(new FlowLayout(FlowLayout.CENTER, 3, 4));
+    private final JPanel p = new JPanel(new FlowLayout(FlowLayout.CENTER, 8, 2));
 
     private final JButton viewBtn = new JButton();
     private final JButton resolveBtn = new JButton();
@@ -232,14 +249,15 @@ public class ViewComplaintController {
             });
         }
 
-        private void styleBtn(JButton b, java.awt.Color fg) {
-            b.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12));
-            b.setForeground(fg);
-            b.setBorderPainted(false);
-            b.setContentAreaFilled(false);
-            b.setFocusPainted(false);
-            b.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        }
+       private void styleBtn(JButton b, java.awt.Color fg) {
+    b.setForeground(fg);
+    b.setBorderPainted(false);
+    b.setContentAreaFilled(false);
+    b.setFocusPainted(false);
+    b.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
+    b.setPreferredSize(new java.awt.Dimension(32, 32));
+}
 
         @Override
         public Component getTableCellEditorComponent(JTable t, Object v,

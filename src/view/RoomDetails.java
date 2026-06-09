@@ -39,7 +39,6 @@ public class RoomDetails extends javax.swing.JFrame {
         blockc = new javax.swing.JButton();
         blockd = new javax.swing.JButton();
         occupiedpanel = new javax.swing.JPanel();
-        allbtn = new javax.swing.JButton();
         vacant = new javax.swing.JButton();
         partial = new javax.swing.JButton();
         roomdetailstablescrollpane = new javax.swing.JScrollPane();
@@ -142,26 +141,20 @@ public class RoomDetails extends javax.swing.JFrame {
         occupiedpanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         occupiedpanel.setLayout(null);
 
-        allbtn.setText("All");
-        allbtn.setBorderPainted(false);
-        allbtn.setContentAreaFilled(false);
-        occupiedpanel.add(allbtn);
-        allbtn.setBounds(2, 2, 46, 23);
-
         vacant.setText("Vacant");
         vacant.setBorderPainted(false);
         vacant.setContentAreaFilled(false);
         occupiedpanel.add(vacant);
-        vacant.setBounds(54, 2, 72, 23);
+        vacant.setBounds(0, 0, 72, 30);
 
         partial.setText("Partial");
         partial.setBorderPainted(false);
         partial.setContentAreaFilled(false);
         occupiedpanel.add(partial);
-        partial.setBounds(132, 2, 72, 23);
+        partial.setBounds(90, 0, 72, 30);
 
         roomdetailspanel.add(occupiedpanel);
-        occupiedpanel.setBounds(970, 10, 224, 27);
+        occupiedpanel.setBounds(1014, 10, 170, 27);
 
         roomdetailstable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -471,7 +464,6 @@ public class RoomDetails extends javax.swing.JFrame {
     private javax.swing.JButton addroom;
     private javax.swing.JLabel admindashboard;
     private javax.swing.JButton all;
-    private javax.swing.JButton allbtn;
     private javax.swing.JPanel backgroundpanel;
     private javax.swing.JButton blocka;
     private javax.swing.JButton blockb;
@@ -521,7 +513,7 @@ public void PartialListener(java.awt.event.ActionListener l)       { partial.add
 public void DashboardListener(java.awt.event.ActionListener l)     { dashboard.addActionListener(l); }
 public void NoticeListener(java.awt.event.ActionListener l)        { Notice.addActionListener(l); }
 public void RoomAllocationListener(java.awt.event.ActionListener l){ RoomAllocation.addActionListener(l); }
-public void StudentsListener(java.awt.event.ActionListener l)      { dashboard.addActionListener(l); }
+public void StudentsListener(java.awt.event.ActionListener l)      { Students.addActionListener(l); }
 public void ComplaintsListener(java.awt.event.ActionListener l)    { Complaints.addActionListener(l); }
 public void AdminProfileListener(java.awt.event.ActionListener l)  { AdminProfile.addActionListener(l); }
 public void ProfileListener(java.awt.event.ActionListener l)       { profilebtn.addActionListener(l); }

@@ -14,7 +14,7 @@ public class viewnoticeexpand extends javax.swing.JFrame {
 
     /**
      * Creates new form viewnoticeexpand
-     */
+     **/
     public viewnoticeexpand() {
         initComponents();
     }
@@ -33,8 +33,9 @@ public class viewnoticeexpand extends javax.swing.JFrame {
         Title = new javax.swing.JLabel();
         date = new javax.swing.JLabel();
         category = new javax.swing.JLabel();
-        description = new javax.swing.JLabel();
         close = new javax.swing.JButton();
+        description = new javax.swing.JScrollPane();
+        descriptiontextarea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -59,15 +60,22 @@ public class viewnoticeexpand extends javax.swing.JFrame {
         expandnotice.add(category);
         category.setBounds(130, 80, 110, 16);
 
-        description.setText("Description");
-        expandnotice.add(description);
-        description.setBounds(10, 110, 370, 70);
-
         close.setBackground(new java.awt.Color(99, 102, 255));
         close.setForeground(new java.awt.Color(255, 255, 255));
         close.setText("Close");
         expandnotice.add(close);
         close.setBounds(10, 230, 380, 23);
+
+        descriptiontextarea.setEditable(false);
+        descriptiontextarea.setColumns(20);
+        descriptiontextarea.setLineWrap(true);
+        descriptiontextarea.setRows(5);
+        descriptiontextarea.setWrapStyleWord(true);
+        descriptiontextarea.setFocusable(false);
+        description.setViewportView(descriptiontextarea);
+
+        expandnotice.add(description);
+        description.setBounds(10, 130, 380, 70);
 
         getContentPane().add(expandnotice);
         expandnotice.setBounds(-1, -1, 400, 300);
@@ -105,7 +113,8 @@ public class viewnoticeexpand extends javax.swing.JFrame {
     private javax.swing.JLabel category;
     private javax.swing.JButton close;
     private javax.swing.JLabel date;
-    private javax.swing.JLabel description;
+    private javax.swing.JScrollPane description;
+    private javax.swing.JTextArea descriptiontextarea;
     private javax.swing.JPanel expandnotice;
     private javax.swing.JLabel priority;
     // End of variables declaration//GEN-END:variables
@@ -116,9 +125,8 @@ public void setNoticeData(model.NoticeData n) {
     category.setText(n.getCategory());
     priority.setText(n.getPriority());
    
-    description.setText("<html><body style='width:300px'>"
-            + n.getDescription().replace("\n", "<br>")
-            + "</body></html>");
+    descriptiontextarea.setText(n.getDescription());
+    descriptiontextarea.setCaretPosition(0);
 }
  
 /** Wires the Close button */

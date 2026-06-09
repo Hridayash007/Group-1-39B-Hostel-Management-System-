@@ -188,7 +188,8 @@ public class IssueComplaintsController {
         viewBtn.setContentAreaFilled(false);
         viewBtn.setFocusPainted(false);
         viewBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        viewBtn.setBounds(1040, 28, 76, 32);
+        viewBtn.setBounds(1010, 28, 50, 32);
+
         card.add(viewBtn);
 
         viewBtn.addActionListener(e -> openExpandView(c));
@@ -206,7 +207,7 @@ public class IssueComplaintsController {
         deleteBtn.setContentAreaFilled(false);
         deleteBtn.setFocusPainted(false);
         deleteBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        deleteBtn.setBounds(1090, 28, 36, 32);
+        deleteBtn.setBounds(1060, 28, 50, 32);
         card.add(deleteBtn);
 
         deleteBtn.addActionListener(e -> {
