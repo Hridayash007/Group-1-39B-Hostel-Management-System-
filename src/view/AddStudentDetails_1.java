@@ -10,14 +10,14 @@ import java.awt.Color;
  *
  * @author Hridayash
  */
-public class AddStudentDetails_1 extends javax.swing.JFrame {
+public class AddStudentDetails extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AddStudentDetails.class.getName());
 
     /**
      * Creates new form AddStudentDetails
      */
-    public AddStudentDetails_1() {
+    public AddStudentDetails() {
         initComponents();
         setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
     }

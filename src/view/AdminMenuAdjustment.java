@@ -28,30 +28,28 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        backgroundpanel = new javax.swing.JPanel();
-        notification = new javax.swing.JButton();
-        profile = new javax.swing.JButton();
-        studentportal = new javax.swing.JLabel();
-        welcomeback = new javax.swing.JLabel();
+        BackgroundPanel = new javax.swing.JPanel();
+        Cityscape = new javax.swing.JLabel();
+        Administration = new javax.swing.JLabel();
         dashboard = new javax.swing.JButton();
-        mycomplaints = new javax.swing.JButton();
-        mealroutine = new javax.swing.JButton();
-        notice = new javax.swing.JButton();
-        roomdetails = new javax.swing.JButton();
-        myprofile = new javax.swing.JButton();
-        cityscape = new javax.swing.JLabel();
-        navigation = new javax.swing.JLabel();
-        signout = new javax.swing.JButton();
-        editprofile = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        Students = new javax.swing.JButton();
+        Complaints = new javax.swing.JButton();
+        SignOut = new javax.swing.JButton();
+        MealRoutine = new javax.swing.JButton();
+        Notice = new javax.swing.JButton();
+        RoomDetails = new javax.swing.JButton();
+        RoomAllocation = new javax.swing.JButton();
+        Adminprofile = new javax.swing.JButton();
+        Admindashboard = new javax.swing.JLabel();
+        Welcomeback = new javax.swing.JLabel();
+        Notification = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Meal = new javax.swing.JPanel();
         Wednesday = new javax.swing.JPanel();
@@ -150,35 +148,28 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
         jLabel94 = new javax.swing.JLabel();
         jLabel95 = new javax.swing.JLabel();
         jLabel96 = new javax.swing.JLabel();
-        background = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        editprofile = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        backgroundpanel.setLayout(null);
+        BackgroundPanel.setLayout(null);
 
-        notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notification.png"))); // NOI18N
-        notification.setBorderPainted(false);
-        notification.setContentAreaFilled(false);
-        notification.addActionListener(this::notificationActionPerformed);
-        backgroundpanel.add(notification);
-        notification.setBounds(1440, 10, 30, 40);
+        Cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Cityscape.setForeground(new java.awt.Color(255, 255, 255));
+        Cityscape.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        Cityscape.setText("Cityscape");
+        BackgroundPanel.add(Cityscape);
+        Cityscape.setBounds(20, 20, 170, 36);
 
-        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
-        profile.setBorderPainted(false);
-        profile.setContentAreaFilled(false);
-        backgroundpanel.add(profile);
-        profile.setBounds(1480, 10, 41, 40);
-
-        studentportal.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        studentportal.setText("Admin Portal");
-        backgroundpanel.add(studentportal);
-        studentportal.setBounds(300, 0, 170, 30);
-
-        welcomeback.setText("Welcome Back");
-        backgroundpanel.add(welcomeback);
-        welcomeback.setBounds(340, 30, 90, 16);
+        Administration.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        Administration.setForeground(new java.awt.Color(194, 122, 255));
+        Administration.setText("Administration");
+        BackgroundPanel.add(Administration);
+        Administration.setBounds(20, 180, 70, 16);
 
         dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
@@ -186,118 +177,101 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
         dashboard.setText("Dashboard");
         dashboard.setBorderPainted(false);
         dashboard.setContentAreaFilled(false);
-        dashboard.addActionListener(this::dashboardActionPerformed);
-        backgroundpanel.add(dashboard);
+        BackgroundPanel.add(dashboard);
         dashboard.setBounds(10, 210, 160, 43);
 
-        mycomplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        mycomplaints.setForeground(new java.awt.Color(255, 255, 255));
-        mycomplaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/my complaints.png"))); // NOI18N
-        mycomplaints.setText("My Complaints\n");
-        mycomplaints.setBorderPainted(false);
-        mycomplaints.setContentAreaFilled(false);
-        mycomplaints.addActionListener(this::mycomplaintsActionPerformed);
-        backgroundpanel.add(mycomplaints);
-        mycomplaints.setBounds(-10, 280, 230, 43);
+        Students.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Students.setForeground(new java.awt.Color(255, 255, 255));
+        Students.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/students.png"))); // NOI18N
+        Students.setText("Students");
+        Students.setBorderPainted(false);
+        Students.setContentAreaFilled(false);
+        BackgroundPanel.add(Students);
+        Students.setBounds(0, 280, 160, 43);
 
-        mealroutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        mealroutine.setForeground(new java.awt.Color(255, 255, 255));
-        mealroutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/meal routine.png"))); // NOI18N
-        mealroutine.setText("Meal Routine");
-        mealroutine.setBorderPainted(false);
-        mealroutine.setContentAreaFilled(false);
-        backgroundpanel.add(mealroutine);
-        mealroutine.setBounds(10, 350, 180, 43);
+        Complaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Complaints.setForeground(new java.awt.Color(255, 255, 255));
+        Complaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/my complaints.png"))); // NOI18N
+        Complaints.setText("Complaints");
+        Complaints.setBorderPainted(false);
+        Complaints.setContentAreaFilled(false);
+        BackgroundPanel.add(Complaints);
+        Complaints.setBounds(10, 350, 160, 43);
 
-        notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        notice.setForeground(new java.awt.Color(255, 255, 255));
-        notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notice.png"))); // NOI18N
-        notice.setText("Notice");
-        notice.setBorderPainted(false);
-        notice.setContentAreaFilled(false);
-        backgroundpanel.add(notice);
-        notice.setBounds(0, 420, 140, 43);
+        SignOut.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        SignOut.setForeground(new java.awt.Color(255, 255, 255));
+        SignOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/sign out.png"))); // NOI18N
+        SignOut.setText("Sign Out");
+        SignOut.setBorderPainted(false);
+        SignOut.setContentAreaFilled(false);
+        BackgroundPanel.add(SignOut);
+        SignOut.setBounds(0, 780, 170, 43);
 
-        roomdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        roomdetails.setForeground(new java.awt.Color(255, 255, 255));
-        roomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomdetails.png"))); // NOI18N
-        roomdetails.setText("Room Details");
-        roomdetails.setBorderPainted(false);
-        roomdetails.setContentAreaFilled(false);
-        backgroundpanel.add(roomdetails);
-        roomdetails.setBounds(0, 490, 200, 43);
+        MealRoutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        MealRoutine.setForeground(new java.awt.Color(255, 255, 255));
+        MealRoutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/meal routine.png"))); // NOI18N
+        MealRoutine.setText("Meal Routine");
+        MealRoutine.setBorderPainted(false);
+        MealRoutine.setContentAreaFilled(false);
+        BackgroundPanel.add(MealRoutine);
+        MealRoutine.setBounds(0, 420, 190, 43);
 
-        myprofile.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        myprofile.setForeground(new java.awt.Color(255, 255, 255));
-        myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
-        myprofile.setText("My Profile");
-        myprofile.setBorderPainted(false);
-        myprofile.setContentAreaFilled(false);
-        backgroundpanel.add(myprofile);
-        myprofile.setBounds(0, 560, 160, 43);
+        Notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Notice.setForeground(new java.awt.Color(255, 255, 255));
+        Notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notice.png"))); // NOI18N
+        Notice.setText("Notice");
+        Notice.setBorderPainted(false);
+        Notice.setContentAreaFilled(false);
+        BackgroundPanel.add(Notice);
+        Notice.setBounds(-20, 490, 180, 43);
 
-        cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        cityscape.setForeground(new java.awt.Color(255, 255, 255));
-        cityscape.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
-        cityscape.setText("Cityscape");
-        backgroundpanel.add(cityscape);
-        cityscape.setBounds(20, 10, 150, 36);
+        RoomDetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        RoomDetails.setForeground(new java.awt.Color(255, 255, 255));
+        RoomDetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomdetails.png"))); // NOI18N
+        RoomDetails.setText("Room Details");
+        RoomDetails.setBorderPainted(false);
+        RoomDetails.setContentAreaFilled(false);
+        BackgroundPanel.add(RoomDetails);
+        RoomDetails.setBounds(10, 560, 180, 43);
 
-        navigation.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        navigation.setForeground(new java.awt.Color(81, 162, 255));
-        navigation.setText("NAVIGATION");
-        backgroundpanel.add(navigation);
-        navigation.setBounds(20, 180, 70, 16);
+        RoomAllocation.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        RoomAllocation.setForeground(new java.awt.Color(255, 255, 255));
+        RoomAllocation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomallocation.png"))); // NOI18N
+        RoomAllocation.setText("Room Allocation");
+        RoomAllocation.setBorderPainted(false);
+        RoomAllocation.setContentAreaFilled(false);
+        BackgroundPanel.add(RoomAllocation);
+        RoomAllocation.setBounds(10, 630, 210, 43);
 
-        signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        signout.setForeground(new java.awt.Color(255, 255, 255));
-        signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/sign out.png"))); // NOI18N
-        signout.setText("Sign Out");
-        signout.setBorderPainted(false);
-        signout.setContentAreaFilled(false);
-        backgroundpanel.add(signout);
-        signout.setBounds(0, 780, 170, 43);
+        Adminprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Adminprofile.setForeground(new java.awt.Color(255, 255, 255));
+        Adminprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
+        Adminprofile.setText("Admin Profile");
+        Adminprofile.setBorderPainted(false);
+        Adminprofile.setContentAreaFilled(false);
+        BackgroundPanel.add(Adminprofile);
+        Adminprofile.setBounds(10, 700, 190, 43);
 
-        editprofile.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        editprofile.setText("Weekly Meal Routine");
-        backgroundpanel.add(editprofile);
-        editprofile.setBounds(310, 70, 200, 25);
+        Admindashboard.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        Admindashboard.setText("Admin Dashboard");
+        BackgroundPanel.add(Admindashboard);
+        Admindashboard.setBounds(300, 0, 204, 32);
 
-        jPanel1.setBackground(new java.awt.Color(221, 214, 254));
-        jPanel1.setLayout(null);
+        Welcomeback.setText("Welcome Back");
+        BackgroundPanel.add(Welcomeback);
+        Welcomeback.setBounds(300, 30, 78, 16);
 
-        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(109, 40, 217));
-        jLabel2.setText("Dinner");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(40, 10, 90, 16);
+        Notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notification.png"))); // NOI18N
+        Notification.setBorderPainted(false);
+        Notification.setContentAreaFilled(false);
+        BackgroundPanel.add(Notification);
+        Notification.setBounds(1440, 10, 30, 40);
 
-        jLabel7.setForeground(new java.awt.Color(109, 40, 217));
-        jLabel7.setText("7:00 – 9:00 PM");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(40, 30, 90, 16);
-
-        backgroundpanel.add(jPanel1);
-        jPanel1.setBounds(1160, 110, 340, 60);
-
-        jPanel2.setBackground(new java.awt.Color(254, 215, 170));
-        jPanel2.setLayout(null);
-
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(194, 65, 12));
-        jLabel3.setText("Breakfast");
-        jPanel2.add(jLabel3);
-        jLabel3.setBounds(50, 10, 90, 16);
-
-        jLabel5.setForeground(new java.awt.Color(194, 65, 12));
-        jLabel5.setText("7:00 – 9:00 AM");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(50, 30, 80, 16);
-
-        backgroundpanel.add(jPanel2);
-        jPanel2.setBounds(320, 110, 340, 60);
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
+        jButton1.setBorderPainted(false);
+        jButton1.setContentAreaFilled(false);
+        BackgroundPanel.add(jButton1);
+        jButton1.setBounds(1480, 10, 41, 40);
 
         jPanel3.setBackground(new java.awt.Color(191, 219, 254));
         jPanel3.setLayout(null);
@@ -314,8 +288,26 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
         jPanel3.add(jLabel6);
         jLabel6.setBounds(20, 30, 90, 16);
 
-        backgroundpanel.add(jPanel3);
+        BackgroundPanel.add(jPanel3);
         jPanel3.setBounds(740, 110, 340, 60);
+
+        jPanel2.setBackground(new java.awt.Color(254, 215, 170));
+        jPanel2.setLayout(null);
+
+        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(194, 65, 12));
+        jLabel3.setText("Breakfast");
+        jPanel2.add(jLabel3);
+        jLabel3.setBounds(50, 10, 90, 16);
+
+        jLabel5.setForeground(new java.awt.Color(194, 65, 12));
+        jLabel5.setText("7:00 – 9:00 AM");
+        jPanel2.add(jLabel5);
+        jLabel5.setBounds(50, 30, 80, 16);
+
+        BackgroundPanel.add(jPanel2);
+        jPanel2.setBounds(320, 110, 340, 60);
 
         Meal.setBackground(new java.awt.Color(204, 204, 204));
         Meal.setToolTipText("");
@@ -815,22 +807,36 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(Meal);
 
-        backgroundpanel.add(jScrollPane1);
+        BackgroundPanel.add(jScrollPane1);
         jScrollPane1.setBounds(320, 190, 1180, 630);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.png"))); // NOI18N
-        backgroundpanel.add(background);
-        background.setBounds(0, 0, 1550, 840);
+        editprofile.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        editprofile.setText("Meal Routine Management");
+        BackgroundPanel.add(editprofile);
+        editprofile.setBounds(310, 70, 250, 25);
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(jList1);
+        jPanel1.setBackground(new java.awt.Color(221, 214, 254));
+        jPanel1.setLayout(null);
 
-        backgroundpanel.add(jScrollPane2);
-        jScrollPane2.setBounds(570, 80, 48, 146);
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(109, 40, 217));
+        jLabel2.setText("Dinner");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(40, 10, 90, 16);
+
+        jLabel7.setForeground(new java.awt.Color(109, 40, 217));
+        jLabel7.setText("7:00 – 9:00 PM");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(40, 30, 90, 16);
+
+        BackgroundPanel.add(jPanel1);
+        jPanel1.setBounds(1160, 110, 340, 60);
+
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/adminbackground.png"))); // NOI18N
+        Background.setText("Background");
+        BackgroundPanel.add(Background);
+        Background.setBounds(0, 0, 1550, 840);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -840,7 +846,7 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(backgroundpanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BackgroundPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 1550, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -849,24 +855,12 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(backgroundpanel, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BackgroundPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 840, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void notificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_notificationActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_notificationActionPerformed
-
-    private void dashboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dashboardActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dashboardActionPerformed
-
-    private void mycomplaintsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mycomplaintsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mycomplaintsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -894,15 +888,28 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Admindashboard;
+    private javax.swing.JLabel Administration;
+    private javax.swing.JButton Adminprofile;
+    private javax.swing.JLabel Background;
+    private javax.swing.JPanel BackgroundPanel;
+    private javax.swing.JLabel Cityscape;
+    private javax.swing.JButton Complaints;
     private javax.swing.JPanel Meal;
+    private javax.swing.JButton MealRoutine;
     private javax.swing.JPanel Monday;
+    private javax.swing.JButton Notice;
+    private javax.swing.JButton Notification;
+    private javax.swing.JButton RoomAllocation;
+    private javax.swing.JButton RoomDetails;
+    private javax.swing.JButton SignOut;
+    private javax.swing.JButton Students;
     private javax.swing.JPanel Tuesday;
     private javax.swing.JPanel Wednesday;
-    private javax.swing.JLabel background;
-    private javax.swing.JPanel backgroundpanel;
-    private javax.swing.JLabel cityscape;
+    private javax.swing.JLabel Welcomeback;
     private javax.swing.JButton dashboard;
     private javax.swing.JLabel editprofile;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -999,7 +1006,6 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel94;
     private javax.swing.JLabel jLabel95;
     private javax.swing.JLabel jLabel96;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1007,17 +1013,5 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JButton mealroutine;
-    private javax.swing.JButton mycomplaints;
-    private javax.swing.JButton myprofile;
-    private javax.swing.JLabel navigation;
-    private javax.swing.JButton notice;
-    private javax.swing.JButton notification;
-    private javax.swing.JButton profile;
-    private javax.swing.JButton roomdetails;
-    private javax.swing.JButton signout;
-    private javax.swing.JLabel studentportal;
-    private javax.swing.JLabel welcomeback;
     // End of variables declaration//GEN-END:variables
 }

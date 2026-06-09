@@ -44,21 +44,6 @@ public class RoomAllocation extends javax.swing.JFrame {
         Welcomeback = new javax.swing.JLabel();
         Notification = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        roomallocation = new javax.swing.JLabel();
-        assignroomdesc = new javax.swing.JLabel();
-        card2 = new javax.swing.JPanel();
-        totalallocation = new javax.swing.JLabel();
-        allocationcount = new javax.swing.JLabel();
-        card4 = new javax.swing.JPanel();
-        availablerooms = new javax.swing.JLabel();
-        Roomcount = new javax.swing.JLabel();
-        card3 = new javax.swing.JPanel();
-        Totalstudents = new javax.swing.JLabel();
-        Studentcount = new javax.swing.JLabel();
-        Studentspendingroom = new javax.swing.JPanel();
-        pendingroom = new javax.swing.JLabel();
-        rooms = new javax.swing.JPanel();
-        roomallocate = new javax.swing.JLabel();
         currentallocation = new javax.swing.JPanel();
         allocation = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -167,7 +152,7 @@ public class RoomAllocation extends javax.swing.JFrame {
         Admindashboard.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Admindashboard.setText("Admin Dashboard");
         BackgroundPanel.add(Admindashboard);
-        Admindashboard.setBounds(300, 0, 207, 32);
+        Admindashboard.setBounds(300, 0, 204, 32);
 
         Welcomeback.setText("Welcome Back");
         BackgroundPanel.add(Welcomeback);
@@ -184,87 +169,6 @@ public class RoomAllocation extends javax.swing.JFrame {
         jButton1.setContentAreaFilled(false);
         BackgroundPanel.add(jButton1);
         jButton1.setBounds(1480, 10, 41, 40);
-
-        roomallocation.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        roomallocation.setText("Room Allocation");
-        BackgroundPanel.add(roomallocation);
-        roomallocation.setBounds(300, 70, 220, 32);
-
-        assignroomdesc.setText("Assign rooms to students and manage allocation.");
-        BackgroundPanel.add(assignroomdesc);
-        assignroomdesc.setBounds(300, 100, 270, 16);
-
-        card2.setBackground(new java.awt.Color(255, 255, 255));
-        card2.setLayout(null);
-
-        totalallocation.setForeground(new java.awt.Color(153, 161, 175));
-        totalallocation.setText("Total Allocation");
-        card2.add(totalallocation);
-        totalallocation.setBounds(20, 10, 110, 16);
-
-        allocationcount.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        allocationcount.setText("32");
-        card2.add(allocationcount);
-        allocationcount.setBounds(30, 40, 37, 20);
-
-        BackgroundPanel.add(card2);
-        card2.setBounds(1200, 160, 310, 100);
-
-        card4.setBackground(new java.awt.Color(255, 255, 255));
-        card4.setLayout(null);
-
-        availablerooms.setForeground(new java.awt.Color(153, 161, 175));
-        availablerooms.setText("Available Rooms");
-        card4.add(availablerooms);
-        availablerooms.setBounds(10, 10, 90, 16);
-
-        Roomcount.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        Roomcount.setText("155");
-        card4.add(Roomcount);
-        Roomcount.setBounds(10, 40, 90, 27);
-
-        BackgroundPanel.add(card4);
-        card4.setBounds(750, 160, 310, 100);
-
-        card3.setBackground(new java.awt.Color(255, 255, 255));
-        card3.setLayout(null);
-
-        Totalstudents.setForeground(new java.awt.Color(153, 161, 175));
-        Totalstudents.setText("Pending Allocation");
-        card3.add(Totalstudents);
-        Totalstudents.setBounds(10, 10, 120, 16);
-
-        Studentcount.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        Studentcount.setText("155");
-        card3.add(Studentcount);
-        Studentcount.setBounds(10, 40, 36, 30);
-
-        BackgroundPanel.add(card3);
-        card3.setBounds(300, 160, 300, 100);
-
-        Studentspendingroom.setBackground(new java.awt.Color(255, 255, 255));
-        Studentspendingroom.setLayout(null);
-
-        pendingroom.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        pendingroom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/adstudents.png"))); // NOI18N
-        pendingroom.setText("Students Pending Room");
-        Studentspendingroom.add(pendingroom);
-        pendingroom.setBounds(10, 10, 240, 25);
-
-        BackgroundPanel.add(Studentspendingroom);
-        Studentspendingroom.setBounds(300, 320, 580, 340);
-
-        rooms.setBackground(new java.awt.Color(255, 255, 255));
-        rooms.setLayout(null);
-
-        roomallocate.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        roomallocate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/QAroomdetails.png"))); // NOI18N
-        roomallocate.setText("Available Rooms");
-        rooms.add(roomallocate);
-        roomallocate.setBounds(10, 0, 180, 30);
-
-        BackgroundPanel.add(rooms);
-        rooms.setBounds(930, 320, 580, 340);
 
         currentallocation.setBackground(new java.awt.Color(255, 255, 255));
         currentallocation.setLayout(null);
@@ -342,29 +246,14 @@ public class RoomAllocation extends javax.swing.JFrame {
     private javax.swing.JButton Notification;
     private javax.swing.JButton RoomAllocation;
     private javax.swing.JButton RoomDetails;
-    private javax.swing.JLabel Roomcount;
     private javax.swing.JButton SignOut;
-    private javax.swing.JLabel Studentcount;
     private javax.swing.JButton Students;
-    private javax.swing.JPanel Studentspendingroom;
-    private javax.swing.JLabel Totalstudents;
     private javax.swing.JLabel Welcomeback;
     private javax.swing.JLabel allocation;
-    private javax.swing.JLabel allocationcount;
-    private javax.swing.JLabel assignroomdesc;
-    private javax.swing.JLabel availablerooms;
-    private javax.swing.JPanel card2;
-    private javax.swing.JPanel card3;
-    private javax.swing.JPanel card4;
     private javax.swing.JPanel currentallocation;
     private javax.swing.JButton dashboard;
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JLabel pendingroom;
-    private javax.swing.JLabel roomallocate;
-    private javax.swing.JLabel roomallocation;
-    private javax.swing.JPanel rooms;
-    private javax.swing.JLabel totalallocation;
     // End of variables declaration//GEN-END:variables
 }
