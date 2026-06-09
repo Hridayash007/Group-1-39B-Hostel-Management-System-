@@ -84,6 +84,12 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
         jLabel36 = new javax.swing.JLabel();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jButton9 = new javax.swing.JButton();
+        jButton10 = new javax.swing.JButton();
+        jButton11 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
         Monday = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         jLabel37 = new javax.swing.JLabel();
@@ -116,6 +122,12 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
         jLabel64 = new javax.swing.JLabel();
         jLabel65 = new javax.swing.JLabel();
         jLabel66 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton13 = new javax.swing.JButton();
+        jButton14 = new javax.swing.JButton();
+        jButton15 = new javax.swing.JButton();
         Tuesday = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
         jLabel67 = new javax.swing.JLabel();
@@ -148,6 +160,12 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
         jLabel94 = new javax.swing.JLabel();
         jLabel95 = new javax.swing.JLabel();
         jLabel96 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton12 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton17 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
         editprofile = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
@@ -474,6 +492,30 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
         Wednesday.add(jLabel36);
         jLabel36.setBounds(860, 60, 10, 16);
 
+        jButton7.setText("jButton2");
+        Wednesday.add(jButton7);
+        jButton7.setBounds(360, 50, 30, 23);
+
+        jButton8.setText("jButton2");
+        Wednesday.add(jButton8);
+        jButton8.setBounds(320, 50, 30, 23);
+
+        jButton9.setText("jButton2");
+        Wednesday.add(jButton9);
+        jButton9.setBounds(750, 50, 30, 23);
+
+        jButton10.setText("jButton2");
+        Wednesday.add(jButton10);
+        jButton10.setBounds(790, 50, 30, 23);
+
+        jButton11.setText("jButton2");
+        Wednesday.add(jButton11);
+        jButton11.setBounds(1120, 40, 30, 23);
+
+        jButton19.setText("jButton2");
+        Wednesday.add(jButton19);
+        jButton19.setBounds(1080, 40, 30, 23);
+
         Meal.add(Wednesday);
         Wednesday.setBounds(0, 420, 1180, 190);
 
@@ -637,6 +679,31 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
         jLabel66.setText("-");
         Monday.add(jLabel66);
         jLabel66.setBounds(860, 60, 10, 16);
+
+        jButton2.setText("jButton2");
+        Monday.add(jButton2);
+        jButton2.setBounds(360, 40, 30, 23);
+
+        jButton4.setText("jButton2");
+        Monday.add(jButton4);
+        jButton4.setBounds(320, 40, 30, 23);
+
+        jButton3.setText("jButton2");
+        Monday.add(jButton3);
+        jButton3.setBounds(1080, 50, 30, 23);
+
+        jButton13.setText("jButton2");
+        jButton13.addActionListener(this::jButton13ActionPerformed);
+        Monday.add(jButton13);
+        jButton13.setBounds(740, 50, 30, 23);
+
+        jButton14.setText("jButton2");
+        Monday.add(jButton14);
+        jButton14.setBounds(780, 50, 30, 23);
+
+        jButton15.setText("jButton2");
+        Monday.add(jButton15);
+        jButton15.setBounds(1120, 50, 30, 23);
 
         Meal.add(Monday);
         Monday.setBounds(0, 0, 1180, 190);
@@ -802,6 +869,30 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
         Tuesday.add(jLabel96);
         jLabel96.setBounds(860, 60, 10, 16);
 
+        jButton5.setText("jButton2");
+        Tuesday.add(jButton5);
+        jButton5.setBounds(320, 50, 30, 23);
+
+        jButton6.setText("jButton2");
+        Tuesday.add(jButton6);
+        jButton6.setBounds(360, 50, 30, 23);
+
+        jButton12.setText("jButton2");
+        Tuesday.add(jButton12);
+        jButton12.setBounds(750, 50, 30, 23);
+
+        jButton16.setText("jButton2");
+        Tuesday.add(jButton16);
+        jButton16.setBounds(790, 50, 30, 23);
+
+        jButton17.setText("jButton2");
+        Tuesday.add(jButton17);
+        jButton17.setBounds(1120, 50, 30, 23);
+
+        jButton18.setText("jButton2");
+        Tuesday.add(jButton18);
+        jButton18.setBounds(1080, 50, 30, 23);
+
         Meal.add(Tuesday);
         Tuesday.setBounds(0, 210, 1180, 190);
 
@@ -862,6 +953,10 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -910,6 +1005,24 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
     private javax.swing.JButton dashboard;
     private javax.swing.JLabel editprofile;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton10;
+    private javax.swing.JButton jButton11;
+    private javax.swing.JButton jButton12;
+    private javax.swing.JButton jButton13;
+    private javax.swing.JButton jButton14;
+    private javax.swing.JButton jButton15;
+    private javax.swing.JButton jButton16;
+    private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
