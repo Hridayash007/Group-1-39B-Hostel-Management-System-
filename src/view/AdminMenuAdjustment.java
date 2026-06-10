@@ -695,7 +695,7 @@ public class AdminMenuAdjustment extends javax.swing.JFrame {
         jButton13.setText("jButton2");
         jButton13.addActionListener(this::jButton13ActionPerformed);
         Monday.add(jButton13);
-        jButton13.setBounds(740, 90, 30, 23);
+        jButton13.setBounds(740, 50, 30, 23);
 
         jButton14.setText("jButton2");
         Monday.add(jButton14);
