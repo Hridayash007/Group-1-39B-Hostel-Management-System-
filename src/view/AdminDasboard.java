@@ -178,7 +178,7 @@ public class AdminDasboard extends javax.swing.JFrame {
 
         noticelabel.setText("Active Notices");
         noticespanel.add(noticelabel);
-        noticelabel.setBounds(70, 10, 76, 16);
+        noticelabel.setBounds(70, 10, 120, 16);
 
         noticevariable.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         noticevariable.setText("12");

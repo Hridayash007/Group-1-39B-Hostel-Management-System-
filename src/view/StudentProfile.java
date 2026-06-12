@@ -80,6 +80,7 @@ public class StudentProfile extends javax.swing.JFrame {
         doblabel = new javax.swing.JLabel();
         nationalitylabel = new javax.swing.JLabel();
         fullnamelabe = new javax.swing.JLabel();
+        profilepicture = new javax.swing.JLabel();
         details = new javax.swing.JPanel();
         namedetails = new javax.swing.JLabel();
         id = new javax.swing.JLabel();
@@ -374,6 +375,8 @@ public class StudentProfile extends javax.swing.JFrame {
         fullnamelabe.setText("hridayash");
         personalinformation.add(fullnamelabe);
         fullnamelabe.setBounds(10, 80, 320, 16);
+        personalinformation.add(profilepicture);
+        profilepicture.setBounds(420, 50, 170, 130);
 
         backgroundpanel.add(personalinformation);
         personalinformation.setBounds(310, 320, 620, 360);
@@ -484,6 +487,7 @@ public class StudentProfile extends javax.swing.JFrame {
     private javax.swing.JLabel phone;
     private javax.swing.JLabel phonelabel;
     private javax.swing.JButton profile;
+    private javax.swing.JLabel profilepicture;
     private javax.swing.JLabel profiletitle;
     private javax.swing.JLabel program;
     private javax.swing.JLabel programlabel;
@@ -549,6 +553,11 @@ public void setIdLabel(String studentId) {
 public void setYearsLabel(String yearSemester) {
     years.setText(yearSemester);
 }
+
+/** Returns the profile picture label so the controller can render the image into it */
+public javax.swing.JLabel getProfilePicLabel() {
+    return profilepicture;
+}
  
 // Personal Information — black value labels
 public void setFullNameLabel(String name)   { fullnamelabe.setText(name); }
@@ -567,6 +576,8 @@ public void setStudentIdLabel(String sid)   { studentidlabel.setText(sid); }
 public void setEmergencyContactLabel(String nameAndRelation) { relation.setText(nameAndRelation); }
 public void setEmergencyNumberLabel(String number)           { contact.setText(number); }
  
+
+
 public void setWelcomeUser(String username) {
     welcomeback.setText("Welcome back, " + username + "!");
 }

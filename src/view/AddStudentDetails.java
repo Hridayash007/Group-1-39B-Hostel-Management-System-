@@ -85,6 +85,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         dateofbirth = new javax.swing.JTextField();
         nationality = new javax.swing.JLabel();
         country = new javax.swing.JTextField();
+        userimage = new javax.swing.JTextField();
         savechanges = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
         background = new javax.swing.JLabel();
@@ -384,6 +385,10 @@ public class AddStudentDetails extends javax.swing.JFrame {
         backgroundpanel.add(personalinfo);
         personalinfo.setBounds(310, 190, 590, 270);
 
+        userimage.setText("Add Image");
+        backgroundpanel.add(userimage);
+        userimage.setBounds(1380, 70, 130, 100);
+
         savechanges.setBackground(new java.awt.Color(47, 91, 255));
         savechanges.setForeground(new java.awt.Color(255, 255, 255));
         savechanges.setText("Save Changes");
@@ -505,6 +510,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
     private javax.swing.JButton signout;
     private javax.swing.JLabel studentportal;
     private javax.swing.JLabel updateinfo;
+    private javax.swing.JTextField userimage;
     private javax.swing.JLabel welcomeback;
     private javax.swing.JLabel yearofstudy;
     private javax.swing.JComboBox<String> yosCB;
@@ -607,6 +613,98 @@ public javax.swing.JTextField getContactNumberField() {
 public javax.swing.JTextField getAddressField() {
     return adress;
 }
+
+public javax.swing.JTextField getUserImage() {
+    return userimage;
+}
+
+// ============================================================
+// PASTE THESE METHODS at the bottom of AddStudentDetails.java
+// (above the final closing brace, replacing the existing getUserImage() method)
+//
+// The userimage JTextField already exists in GEN-BEGIN — we hide it and
+// place a JLabel on top of it that acts as the clickable image picker.
+// ============================================================
+
+// ── Profile image label (lives on top of the userimage text field) ────────────
+private javax.swing.JLabel profileImageLabel;
+
+/**
+ * Call this once from the controller after the form is shown.
+ * Hides the raw JTextField and replaces it with a circular image label.
+ */
+public void initProfileImageLabel() {
+    userimage.setVisible(false);          // hide the raw text field
+
+    profileImageLabel = new javax.swing.JLabel() {
+        @Override
+        protected void paintComponent(java.awt.Graphics g) {
+            java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
+            g2.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING,
+                                java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.setClip(new java.awt.geom.Ellipse2D.Float(0, 0, getWidth(), getHeight()));
+
+            if (getIcon() instanceof javax.swing.ImageIcon icon) {
+                g2.drawImage(icon.getImage(), 0, 0, getWidth(), getHeight(), null);
+            } else {
+                // Default grey avatar with camera icon hint
+                g2.setColor(new java.awt.Color(209, 213, 219));
+                g2.fillOval(0, 0, getWidth(), getHeight());
+                g2.setColor(new java.awt.Color(107, 114, 128));
+                g2.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 11));
+                java.awt.FontMetrics fm = g2.getFontMetrics();
+                String text = "📷 Add Photo";
+                int tx = (getWidth()  - fm.stringWidth(text)) / 2;
+                int ty = getHeight() / 2 + fm.getAscent() / 2;
+                g2.drawString(text, tx, ty);
+            }
+
+            // Draw a subtle border ring
+            g2.setClip(null);
+            g2.setColor(new java.awt.Color(99, 102, 241, 180));
+            g2.setStroke(new java.awt.BasicStroke(2));
+            g2.drawOval(1, 1, getWidth() - 2, getHeight() - 2);
+            g2.dispose();
+        }
+    };
+
+    // Place it exactly over the userimage text field bounds
+    profileImageLabel.setBounds(userimage.getBounds());
+    profileImageLabel.setSize(120, 120);
+    // Centre it at the same X position
+    java.awt.Rectangle b = userimage.getBounds();
+    profileImageLabel.setBounds(b.x, b.y, 120, 120);
+
+    profileImageLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    profileImageLabel.setToolTipText("Click to upload profile picture");
+
+    // Add on top in the same parent panel as userimage
+    backgroundpanel.add(profileImageLabel);
+    backgroundpanel.setComponentZOrder(profileImageLabel, 0); // bring to front
+    backgroundpanel.revalidate();
+    backgroundpanel.repaint();
+}
+
+/** Renders the given image path into the profile image label (circular). */
+public void setProfileImagePreview(String imagePath) {
+    util.ProfileImageHelper.applyCircularImage(profileImageLabel, imagePath, 120);
+    profileImageLabel.repaint();
+}
+
+/** Returns the label — controller attaches the click listener to this. */
+public javax.swing.JLabel getProfileImageLabel() {
+    return profileImageLabel;
+}
+
+/** Still exposed so the controller can read/write the stored path value. */
+public String getImagePath() {
+    return userimage.getText();
+}
+
+public void setImagePath(String path) {
+    userimage.setText(path);
+}
+
 public void setWelcomeUser(String username) {
     welcomeback.setText("Welcome back, " + username + "!");
 }

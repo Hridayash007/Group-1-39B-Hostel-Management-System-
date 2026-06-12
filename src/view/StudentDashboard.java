@@ -38,6 +38,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         RoomDetails = new javax.swing.JButton();
         Myprofile = new javax.swing.JButton();
         Dashboard = new javax.swing.JButton();
+        makepayment = new javax.swing.JButton();
         signout = new javax.swing.JButton();
         Studentportal = new javax.swing.JLabel();
         Welcomeback = new javax.swing.JLabel();
@@ -144,7 +145,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         Myprofile.setBorderPainted(false);
         Myprofile.setContentAreaFilled(false);
         backgroundpanel.add(Myprofile);
-        Myprofile.setBounds(10, 560, 160, 43);
+        Myprofile.setBounds(10, 620, 160, 43);
 
         Dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Dashboard.setForeground(new java.awt.Color(255, 255, 255));
@@ -155,6 +156,15 @@ public class StudentDashboard extends javax.swing.JFrame {
         Dashboard.setPreferredSize(new java.awt.Dimension(200, 43));
         backgroundpanel.add(Dashboard);
         Dashboard.setBounds(-50, 220, 280, 43);
+
+        makepayment.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        makepayment.setForeground(new java.awt.Color(255, 255, 255));
+        makepayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/myprofile.png"))); // NOI18N
+        makepayment.setText("Make Payment");
+        makepayment.setBorderPainted(false);
+        makepayment.setContentAreaFilled(false);
+        backgroundpanel.add(makepayment);
+        makepayment.setBounds(0, 560, 210, 43);
 
         signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         signout.setForeground(new java.awt.Color(255, 255, 255));
@@ -465,6 +475,7 @@ public class StudentDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel logo;
     private javax.swing.JLabel lunchlabel;
     private javax.swing.JPanel lunchpanel;
+    private javax.swing.JButton makepayment;
     private javax.swing.JLabel mealicon;
     private javax.swing.JButton mealroutine;
     private javax.swing.JLabel meals;
@@ -532,6 +543,11 @@ public void CheckNoticeListener(java.awt.event.ActionListener listener) {
 
 public void MyMealRoutineListener(java.awt.event.ActionListener listener) {
     mealroutine.addActionListener(listener);
+}
+
+
+public void MakePaymentListener(java.awt.event.ActionListener listener) {
+    makepayment.addActionListener(listener);
 }
 
 public void setWelcomeUser(String username) {

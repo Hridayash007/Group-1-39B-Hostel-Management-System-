@@ -14,8 +14,7 @@ public class RoomDao {
     // ── Room CRUD ─────────────────────────────────────────────────────────────
 
     public boolean addRoom(RoomData r) {
-        String sql = "INSERT INTO rooms (room_number, block, floor, type, capacity, facilities, status) "
-                   + "VALUES (?, ?, ?, ?, ?, ?, 'Vacant')";
+        String sql = "INSERT INTO rooms(room_number, block, floor, type, capacity, facilities, fee)VALUES (?, ?, ?, ?, ?, ?, ?)";
         Connection conn = mysql.openConnection();
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, r.getRoomNumber());
@@ -24,6 +23,7 @@ public class RoomDao {
             ps.setString(4, r.getType());
             ps.setInt(5,    r.getCapacity());
             ps.setString(6, r.getFacilities());
+            ps.setDouble(7, r.getFee());
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -56,8 +56,10 @@ public class RoomDao {
     }
 
     public List<RoomData> getVacantRooms() {
-        return fetchRoomsWhere("WHERE r.status != 'Full' ORDER BY r.block, r.room_number");
-    }
+    return fetchRoomsWhere(
+        "WHERE r.occupied < r.capacity ORDER BY r.block, r.room_number"
+    );
+}
 
     // ── Room Allocation ───────────────────────────────────────────────────────
 
@@ -66,7 +68,25 @@ public class RoomDao {
         Connection conn = mysql.openConnection();
         try {
             conn.setAutoCommit(false);
+            
+            //check
+            String checkSql = "SELECT occupied, capacity FROM rooms WHERE room_id = ?";
 
+            try (PreparedStatement ps = conn.prepareStatement(checkSql)) {
+                ps.setInt(1, roomId);
+                ResultSet rs = ps.executeQuery();
+
+                if (rs.next()) {
+                    int occupied = rs.getInt("occupied");
+                    int capacity = rs.getInt("capacity");
+
+                    if (occupied >= capacity) {
+                        conn.rollback();
+                        return false; // room is full
+                    }
+                }
+            }
+            
             // Insert allocation
             String ins = "INSERT INTO room_allocations (room_id, user_id) VALUES (?, ?)";
             try (PreparedStatement ps = conn.prepareStatement(ins)) {
@@ -77,16 +97,38 @@ public class RoomDao {
 
             // Increment occupied and update status
             // Update occupied first, then derive status from the NEW occupied value
-            String upd = "UPDATE rooms SET occupied = occupied + 1, "
-                       + "status = CASE WHEN (occupied + 1) >= capacity THEN 'Full' "
-                       + "              WHEN (occupied + 1) > 0          THEN 'Partial' "
-                       + "              ELSE 'Vacant' END "
-                       + "WHERE room_id = ?";
+            String upd =
+                "UPDATE rooms SET " +
+                "occupied = occupied + 1, " +
+                "status = CASE " +
+                "WHEN occupied + 1 >= capacity THEN 'Full' " +
+                "WHEN occupied + 1 > 0 THEN 'Partial' " +
+                "ELSE 'Vacant' END " +
+                "WHERE room_id = ?";
             try (PreparedStatement ps = conn.prepareStatement(upd)) {
                 ps.setInt(1, roomId);
                 ps.executeUpdate();
             }
+            
+            String feeSql =
+            "INSERT INTO fees(user_id, room_id, student_name, room_number, amount, fee_month, status) "
+            +
+            "SELECT u.user_id, r.room_id, u.full_name, r.room_number, r.fee, "
+            +
+            "DATE_FORMAT(NOW(),'%M %Y'), 'Pending' "
+            +
+            "FROM users u, rooms r "
+            +
+            "WHERE u.user_id=? AND r.room_id=?";
 
+
+            try(PreparedStatement ps = conn.prepareStatement(feeSql)){
+
+                ps.setInt(1, userId);
+                ps.setInt(2, roomId);
+
+                ps.executeUpdate();
+            }
             conn.commit();
             return true;
         } catch (SQLException e) {
@@ -274,18 +316,21 @@ public class RoomDao {
     }
 
     private RoomData mapRoom(ResultSet rs) throws SQLException {
-        RoomData r = new RoomData();
-        r.setRoomId(    rs.getInt("room_id"));
-        r.setRoomNumber(rs.getString("room_number"));
-        r.setBlock(     rs.getString("block"));
-        r.setFloor(     rs.getString("floor"));
-        r.setType(      rs.getString("type"));
-        r.setCapacity(  rs.getInt("capacity"));
-        r.setOccupied(  rs.getInt("occupied"));
-        r.setFacilities(safe(rs, "facilities"));
-        r.setStatus(    rs.getString("status"));
-        return r;
-    }
+    RoomData r = new RoomData();
+
+    r.setRoomId(rs.getInt("room_id"));
+    r.setRoomNumber(rs.getString("room_number"));
+    r.setBlock(rs.getString("block"));
+    r.setFloor(rs.getString("floor"));
+    r.setType(rs.getString("type"));
+    r.setCapacity(rs.getInt("capacity"));
+    r.setOccupied(rs.getInt("occupied"));
+    r.setFacilities(safe(rs, "facilities"));
+    r.setStatus(rs.getString("status"));
+    r.setFee(rs.getDouble("fee"));
+
+    return r;
+}
 
     private String safe(ResultSet rs, String col) {
         try { String v = rs.getString(col); return v != null ? v : ""; }

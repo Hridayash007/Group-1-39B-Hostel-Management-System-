@@ -7,6 +7,7 @@ import view.StudentDashboard;
 import view.StudentProfile;
 import view.ViewNotice;
 
+
 public class StudentDashboardController {
 
     private final StudentDashboard view;
@@ -30,7 +31,8 @@ public class StudentDashboardController {
             close();
             new ViewNoticeController(new ViewNotice(), user).open();
         });
-
+        
+        
         // ── My Profile ───────────────────────────────────────────────────────
         view.MyProfileListener(e -> {
             close();

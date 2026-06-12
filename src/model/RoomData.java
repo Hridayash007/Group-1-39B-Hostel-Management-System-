@@ -10,6 +10,7 @@ public class RoomData {
     private int    occupied;
     private String facilities;
     private String status;
+    private double fee;
 
     // Allocated student info (populated via JOIN in allocation queries)
     private int    allocatedUserId;
@@ -50,7 +51,9 @@ public class RoomData {
 
     public String getAllocatedUsername()             { return allocatedUsername; }
     public void   setAllocatedUsername(String u)    { this.allocatedUsername = u; }
-
-    /** Returns occupancy string like "1/2" */
+    
+    public double getFee() {return fee;}
+    public void setFee(double fee) {this.fee = fee;}
+        /** Returns occupancy string like "1/2" */
     public String getOccupancyString()               { return occupied + "/" + capacity; }
 }

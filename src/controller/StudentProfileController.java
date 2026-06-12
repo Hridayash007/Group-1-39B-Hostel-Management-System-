@@ -2,11 +2,9 @@ package controller;
 
 import model.UserData;
 import view.AddStudentDetails;
-import view.IssueComplaints;
 import view.LogIn;
 import view.StudentDashboard;
 import view.StudentProfile;
-import view.ViewNotice;
 
 public class StudentProfileController {
 
@@ -16,9 +14,7 @@ public class StudentProfileController {
     public StudentProfileController(StudentProfile view, UserData user) {
         this.view = view;
         this.user = user;
-        
-        // Display the logged-in user's name on the dashboard
-        view.setWelcomeUser(user.getUsername());
+
         populateProfile();
 
         // ── "edit Profile" button top-right → open AddStudentDetails ────────
@@ -41,20 +37,19 @@ public class StudentProfileController {
             StudentDashboard dashView = new StudentDashboard();
             new StudentDashboardController(dashView, user).open();
         });
-        
-        // ── My Complaints ────────────────────────────────────────────────────
-        view.MyComplaintsListener(e -> {
+
+        view.MyProfileListener(e -> {
             close();
-            IssueComplaints complaintsView = new IssueComplaints();
-            new IssueComplaintsController(complaintsView, user).open();
+            StudentProfile freshView = new StudentProfile();
+            new StudentProfileController(freshView, user).open();
         });
 
-        // ── Notice ───────────────────────────────────────────────────────────
-        view.NoticeListener(e -> {
+        view.ProfileListener(e -> {
             close();
-            new ViewNoticeController(new ViewNotice(), user).open();
+            StudentProfile freshView = new StudentProfile();
+            new StudentProfileController(freshView, user).open();
         });
-        
+
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = javax.swing.JOptionPane.showConfirmDialog(
@@ -77,6 +72,9 @@ public class StudentProfileController {
      * already set in initComponents() and are never touched here.
      */
     private void populateProfile() {
+        // Load profile picture into the label (circular crop)
+        util.ProfileImageHelper.applyCircularImage(
+                view.getProfilePicLabel(), user.getUserImage(), 120);
         String displayName = notEmpty(user.getFullName()) ? user.getFullName() : user.getUsername();
         String studentId   = "Student id-" + user.getId();
         String yearSem     = orDash(user.getYearOfStudy()) + ", " + orDash(user.getSemester()) + " Semester";

@@ -45,6 +45,8 @@ public class RoomDetailsExpand extends javax.swing.JFrame {
         facility4 = new javax.swing.JCheckBox();
         cancelbtn = new javax.swing.JButton();
         addbtn = new javax.swing.JButton();
+        feeslabel = new javax.swing.JLabel();
+        feestextfield = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -107,16 +109,22 @@ public class RoomDetailsExpand extends javax.swing.JFrame {
 
         cancelbtn.setText("Cancel");
         backgroundpanel.add(cancelbtn);
-        cancelbtn.setBounds(10, 280, 170, 30);
+        cancelbtn.setBounds(10, 330, 170, 30);
 
         addbtn.setBackground(new java.awt.Color(99, 102, 255));
         addbtn.setForeground(new java.awt.Color(255, 255, 255));
         addbtn.setText("Add room");
         backgroundpanel.add(addbtn);
-        addbtn.setBounds(220, 280, 170, 30);
+        addbtn.setBounds(220, 330, 170, 30);
+
+        feeslabel.setText("Fees");
+        backgroundpanel.add(feeslabel);
+        feeslabel.setBounds(10, 270, 37, 16);
+        backgroundpanel.add(feestextfield);
+        feestextfield.setBounds(10, 290, 180, 22);
 
         getContentPane().add(backgroundpanel);
-        backgroundpanel.setBounds(0, 0, 400, 330);
+        backgroundpanel.setBounds(0, 0, 400, 380);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -155,6 +163,8 @@ public class RoomDetailsExpand extends javax.swing.JFrame {
     private javax.swing.JCheckBox facility2;
     private javax.swing.JCheckBox facility3;
     private javax.swing.JCheckBox facility4;
+    private javax.swing.JLabel feeslabel;
+    private javax.swing.JTextField feestextfield;
     private javax.swing.JCheckBox ficility1;
     private javax.swing.JLabel floorlabel;
     private javax.swing.JTextField floortextfield;
@@ -170,6 +180,7 @@ public String getRoomNumber()     { return roomnumbertextfield.getText().trim();
 public String getBlock()          { return blockcombobox.getSelectedItem().toString(); }
 public String getFloor()          { return floortextfield.getText().trim(); }
 public String getRoomType()           { return typecombobox.getSelectedItem().toString(); }
+public String getFee()              {return feestextfield.getText().trim();}
  
 public java.util.List<String> getFacilities() {
     java.util.List<String> f = new java.util.ArrayList<>();

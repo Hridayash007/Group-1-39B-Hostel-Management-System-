@@ -31,6 +31,8 @@ public class RoomDetailsExpandController {
         String block   = view.getBlock();
         String floor   = view.getFloor();
         String type    = view.getRoomType();
+        String feeText = view.getFee();
+
 
         if (roomNum.isEmpty()) {
             JOptionPane.showMessageDialog(dialog, "Please enter a room number.");
@@ -40,7 +42,21 @@ public class RoomDetailsExpandController {
             JOptionPane.showMessageDialog(dialog, "Please enter a floor.");
             return;
         }
+        if(feeText.isEmpty()){
+            JOptionPane.showMessageDialog(dialog,
+                "Please enter room fee.");
+            return;
+        }
 
+        double fee;
+
+        try{
+            fee = Double.parseDouble(feeText);
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(dialog,
+                "Fee must be a number.");
+            return;
+        }
         int capacity = switch (type) {
             case "Double" -> 2;
             case "Triple" -> 3;
@@ -56,6 +72,7 @@ public class RoomDetailsExpandController {
         r.setType(type);
         r.setCapacity(capacity);
         r.setFacilities(facilities);
+        r.setFee(fee);
 
         boolean saved = roomDao.addRoom(r);
         if (saved) {
@@ -74,7 +91,7 @@ public class RoomDetailsExpandController {
     public void open(JFrame parentFrame) {
         dialog = new JDialog(parentFrame, "Add New Room", true);
         dialog.setContentPane(view.getContentPane());
-        dialog.setSize(420, 355);
+        dialog.setSize(420, 425);
         dialog.setLocationRelativeTo(parentFrame);
         dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         dialog.setResizable(false);
