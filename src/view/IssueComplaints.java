@@ -222,7 +222,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/adminbackground.png"))); // NOI18N
         Background.setText("jLabel1");
         backgroundpanel.add(Background);
-        Background.setBounds(0, 0, 1550, 680);
+        Background.setBounds(0, 0, 1550, 840);
 
         getContentPane().add(backgroundpanel);
         backgroundpanel.setBounds(0, 0, 1550, 840);
