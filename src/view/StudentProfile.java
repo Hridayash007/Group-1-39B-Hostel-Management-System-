@@ -44,8 +44,10 @@ public class StudentProfile extends javax.swing.JFrame {
         myprofile = new javax.swing.JButton();
         cityscape = new javax.swing.JLabel();
         navigation = new javax.swing.JLabel();
+        makepayment = new javax.swing.JButton();
         signout = new javax.swing.JButton();
         profiletitle = new javax.swing.JLabel();
+        paymenthistory = new javax.swing.JButton();
         desc = new javax.swing.JLabel();
         editprofilebutton = new javax.swing.JButton();
         emergencycontact = new javax.swing.JPanel();
@@ -169,7 +171,7 @@ public class StudentProfile extends javax.swing.JFrame {
         myprofile.setBorderPainted(false);
         myprofile.setContentAreaFilled(false);
         backgroundpanel.add(myprofile);
-        myprofile.setBounds(-20, 560, 220, 43);
+        myprofile.setBounds(-20, 680, 220, 43);
 
         cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cityscape.setForeground(new java.awt.Color(255, 255, 255));
@@ -184,6 +186,15 @@ public class StudentProfile extends javax.swing.JFrame {
         backgroundpanel.add(navigation);
         navigation.setBounds(20, 180, 70, 16);
 
+        makepayment.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        makepayment.setForeground(new java.awt.Color(255, 255, 255));
+        makepayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/makepayment.png"))); // NOI18N
+        makepayment.setText("Make Payment");
+        makepayment.setBorderPainted(false);
+        makepayment.setContentAreaFilled(false);
+        backgroundpanel.add(makepayment);
+        makepayment.setBounds(-20, 560, 260, 43);
+
         signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         signout.setForeground(new java.awt.Color(255, 255, 255));
         signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign out.png"))); // NOI18N
@@ -197,6 +208,15 @@ public class StudentProfile extends javax.swing.JFrame {
         profiletitle.setText("My Profile");
         backgroundpanel.add(profiletitle);
         profiletitle.setBounds(310, 90, 110, 25);
+
+        paymenthistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymenthistory.setForeground(new java.awt.Color(255, 255, 255));
+        paymenthistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymenthistory.png"))); // NOI18N
+        paymenthistory.setText("Payment History");
+        paymenthistory.setBorderPainted(false);
+        paymenthistory.setContentAreaFilled(false);
+        backgroundpanel.add(paymenthistory);
+        paymenthistory.setBounds(-30, 620, 290, 43);
 
         desc.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         desc.setForeground(new java.awt.Color(153, 161, 175));
@@ -473,6 +493,7 @@ public class StudentProfile extends javax.swing.JFrame {
     private javax.swing.JLabel fullname;
     private javax.swing.JLabel fullnamelabe;
     private javax.swing.JLabel id;
+    private javax.swing.JButton makepayment;
     private javax.swing.JButton mealroutine;
     private javax.swing.JButton mycomplaints;
     private javax.swing.JButton myprofile;
@@ -482,6 +503,7 @@ public class StudentProfile extends javax.swing.JFrame {
     private javax.swing.JLabel navigation;
     private javax.swing.JButton notice;
     private javax.swing.JButton notification;
+    private javax.swing.JButton paymenthistory;
     private javax.swing.JLabel personalinfo;
     private javax.swing.JPanel personalinformation;
     private javax.swing.JLabel phone;
@@ -576,6 +598,13 @@ public void setStudentIdLabel(String sid)   { studentidlabel.setText(sid); }
 public void setEmergencyContactLabel(String nameAndRelation) { relation.setText(nameAndRelation); }
 public void setEmergencyNumberLabel(String number)           { contact.setText(number); }
  
+public void MakePaymentListener(java.awt.event.ActionListener listener) {
+    makepayment.addActionListener(listener);
+}
+
+public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
+    paymenthistory.addActionListener(listener);
+}
 
 
 public void setWelcomeUser(String username) {

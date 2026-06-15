@@ -19,7 +19,7 @@ import model.RoomData;
 import view.AdminDasboard;
 import view.LogIn;
 import view.NoticeAdmin;
-import view.RoomAllocation;
+import view.RoomAllocation1;
 import view.RoomDetails;
 import view.RoomDetailsExpand;
 
@@ -51,7 +51,7 @@ public class RoomDetailsController {
         // ── Navigation ───────────────────────────────────────────────────────
         view.RoomAllocationListener(e -> {
             close();
-            new RoomAllocationController(new RoomAllocation()).open();
+            new RoomAllocationController(new RoomAllocation1()).open();
         });
         view.DashboardListener(e -> {
             close();

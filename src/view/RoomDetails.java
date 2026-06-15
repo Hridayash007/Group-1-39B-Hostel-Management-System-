@@ -53,7 +53,6 @@ public class RoomDetails extends javax.swing.JFrame {
         Notice = new javax.swing.JButton();
         RoomDetails = new javax.swing.JButton();
         RoomAllocation = new javax.swing.JButton();
-        AdminProfile = new javax.swing.JButton();
         SignOut = new javax.swing.JButton();
         admindashboard = new javax.swing.JLabel();
         welcomeback = new javax.swing.JLabel();
@@ -72,7 +71,6 @@ public class RoomDetails extends javax.swing.JFrame {
         occupancypanel = new javax.swing.JPanel();
         occupiedlabel = new javax.swing.JLabel();
         occupiedvariable = new javax.swing.JLabel();
-        profilebtn = new javax.swing.JButton();
         addroom = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
@@ -259,16 +257,6 @@ public class RoomDetails extends javax.swing.JFrame {
         backgroundpanel.add(RoomAllocation);
         RoomAllocation.setBounds(-20, 590, 280, 43);
 
-        AdminProfile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        AdminProfile.setForeground(new java.awt.Color(255, 255, 255));
-        AdminProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/myprofile.png"))); // NOI18N
-        AdminProfile.setText("Admin Profile");
-        AdminProfile.setBorderPainted(false);
-        AdminProfile.setContentAreaFilled(false);
-        AdminProfile.addActionListener(this::AdminProfileActionPerformed);
-        backgroundpanel.add(AdminProfile);
-        AdminProfile.setBounds(-20, 650, 260, 43);
-
         SignOut.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         SignOut.setForeground(new java.awt.Color(255, 255, 255));
         SignOut.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign out.png"))); // NOI18N
@@ -371,13 +359,6 @@ public class RoomDetails extends javax.swing.JFrame {
         backgroundpanel.add(occupancypanel);
         occupancypanel.setBounds(930, 130, 270, 80);
 
-        profilebtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
-        profilebtn.setBorderPainted(false);
-        profilebtn.setContentAreaFilled(false);
-        profilebtn.addActionListener(this::profilebtnActionPerformed);
-        backgroundpanel.add(profilebtn);
-        profilebtn.setBounds(1470, 0, 49, 50);
-
         addroom.setBackground(new java.awt.Color(99, 102, 255));
         addroom.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/addnotice.png"))); // NOI18N
         addroom.setText("Add Room");
@@ -406,10 +387,6 @@ public class RoomDetails extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dashboardActionPerformed
 
-    private void profilebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profilebtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_profilebtnActionPerformed
-
     private void NotificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NotificationActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NotificationActionPerformed
@@ -417,10 +394,6 @@ public class RoomDetails extends javax.swing.JFrame {
     private void blockdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_blockdActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_blockdActionPerformed
-
-    private void AdminProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminProfileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AdminProfileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -448,7 +421,6 @@ public class RoomDetails extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AdminProfile;
     private javax.swing.JLabel Administration;
     private javax.swing.JLabel Background;
     private javax.swing.JButton Complaints;
@@ -478,7 +450,6 @@ public class RoomDetails extends javax.swing.JFrame {
     private javax.swing.JPanel occupiedpanel;
     private javax.swing.JLabel occupiedvariable;
     private javax.swing.JButton partial;
-    private javax.swing.JButton profilebtn;
     private javax.swing.JLabel roomdetails;
     private javax.swing.JPanel roomdetailspanel;
     private javax.swing.JTable roomdetailstable;
@@ -515,7 +486,5 @@ public void NoticeListener(java.awt.event.ActionListener l)        { Notice.addA
 public void RoomAllocationListener(java.awt.event.ActionListener l){ RoomAllocation.addActionListener(l); }
 public void StudentsListener(java.awt.event.ActionListener l)      { Students.addActionListener(l); }
 public void ComplaintsListener(java.awt.event.ActionListener l)    { Complaints.addActionListener(l); }
-public void AdminProfileListener(java.awt.event.ActionListener l)  { AdminProfile.addActionListener(l); }
-public void ProfileListener(java.awt.event.ActionListener l)       { profilebtn.addActionListener(l); }
 public void SignOutListener(java.awt.event.ActionListener l)       { SignOut.addActionListener(l); }
 }

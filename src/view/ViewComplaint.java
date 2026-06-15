@@ -40,11 +40,9 @@ public class ViewComplaint extends javax.swing.JFrame {
         Notice = new javax.swing.JButton();
         RoomDetails = new javax.swing.JButton();
         RoomAllocation = new javax.swing.JButton();
-        Adminprofile = new javax.swing.JButton();
         Admindashboard = new javax.swing.JLabel();
         Welcomeback = new javax.swing.JLabel();
         Notification = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         roomallocation = new javax.swing.JLabel();
         assignroomdesc = new javax.swing.JLabel();
         currentallocation = new javax.swing.JPanel();
@@ -155,15 +153,6 @@ public class ViewComplaint extends javax.swing.JFrame {
         BackgroundPanel.add(RoomAllocation);
         RoomAllocation.setBounds(10, 570, 210, 43);
 
-        Adminprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Adminprofile.setForeground(new java.awt.Color(255, 255, 255));
-        Adminprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/myprofile.png"))); // NOI18N
-        Adminprofile.setText("Admin Profile");
-        Adminprofile.setBorderPainted(false);
-        Adminprofile.setContentAreaFilled(false);
-        BackgroundPanel.add(Adminprofile);
-        Adminprofile.setBounds(0, 630, 190, 43);
-
         Admindashboard.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Admindashboard.setText("Admin Dashboard");
         BackgroundPanel.add(Admindashboard);
@@ -178,12 +167,6 @@ public class ViewComplaint extends javax.swing.JFrame {
         Notification.setContentAreaFilled(false);
         BackgroundPanel.add(Notification);
         Notification.setBounds(1440, 10, 30, 40);
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        BackgroundPanel.add(jButton1);
-        jButton1.setBounds(1480, 10, 41, 40);
 
         roomallocation.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         roomallocation.setText("Complaint Management");
@@ -326,7 +309,6 @@ public class ViewComplaint extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Admindashboard;
     private javax.swing.JLabel Administration;
-    private javax.swing.JButton Adminprofile;
     private javax.swing.JLabel Background;
     private javax.swing.JPanel BackgroundPanel;
     private javax.swing.JPanel Card1;
@@ -353,7 +335,6 @@ public class ViewComplaint extends javax.swing.JFrame {
     private javax.swing.JPanel buttonpanel;
     private javax.swing.JPanel currentallocation;
     private javax.swing.JButton dashboard;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton pendingbtn;
     private javax.swing.JButton resolvedbtn;
     private javax.swing.JLabel roomallocation;
@@ -373,7 +354,6 @@ public void DashboardListener(java.awt.event.ActionListener l) { dashboard.addAc
 public void NoticeListener(java.awt.event.ActionListener l)    { Notice.addActionListener(l); }
 public void StudentsListener(java.awt.event.ActionListener l)  { Students.addActionListener(l); }
 public void SignOutListener(java.awt.event.ActionListener l)   { SignOut.addActionListener(l); }
-public void ProfileListener(java.awt.event.ActionListener l)   { Adminprofile.addActionListener(l); }
 public void RoomDetailsListener(java.awt.event.ActionListener listener) {
     RoomDetails.addActionListener(listener);
 }

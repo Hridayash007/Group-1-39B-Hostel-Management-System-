@@ -16,15 +16,15 @@ import model.UserData;
 import view.AdminDasboard;
 import view.LogIn;
 import view.NoticeAdmin;
-import view.RoomAllocation;
+import view.RoomAllocation1;
 import view.RoomDetails;
 
 public class RoomAllocationController {
 
     private final RoomDao roomDao = new RoomDao();
-    private final RoomAllocation view;
+    private final RoomAllocation1 view;
 
-    public RoomAllocationController(RoomAllocation view) {
+    public RoomAllocationController(RoomAllocation1 view) {
         this.view = view;
         refresh();
 

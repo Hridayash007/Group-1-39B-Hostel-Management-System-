@@ -32,7 +32,6 @@ public class NoticeAdmin extends javax.swing.JFrame {
         admindashboard = new javax.swing.JLabel();
         welcomeback = new javax.swing.JLabel();
         notification = new javax.swing.JButton();
-        profile = new javax.swing.JButton();
         cityscape = new javax.swing.JLabel();
         administration = new javax.swing.JLabel();
         signout = new javax.swing.JButton();
@@ -46,7 +45,6 @@ public class NoticeAdmin extends javax.swing.JFrame {
         notice = new javax.swing.JButton();
         roomdetails = new javax.swing.JButton();
         roomallocation = new javax.swing.JButton();
-        adminprofile = new javax.swing.JButton();
         pinnednoticepanel = new javax.swing.JPanel();
         pinnednotice = new javax.swing.JLabel();
         pinnednoticenumber = new javax.swing.JLabel();
@@ -83,12 +81,6 @@ public class NoticeAdmin extends javax.swing.JFrame {
         notification.addActionListener(this::notificationActionPerformed);
         getContentPane().add(notification);
         notification.setBounds(1440, 10, 30, 40);
-
-        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
-        profile.setBorderPainted(false);
-        profile.setContentAreaFilled(false);
-        getContentPane().add(profile);
-        profile.setBounds(1480, 10, 41, 40);
 
         cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cityscape.setForeground(new java.awt.Color(255, 255, 255));
@@ -196,15 +188,6 @@ public class NoticeAdmin extends javax.swing.JFrame {
         roomallocation.addActionListener(this::roomallocationActionPerformed);
         getContentPane().add(roomallocation);
         roomallocation.setBounds(-20, 570, 280, 43);
-
-        adminprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        adminprofile.setForeground(new java.awt.Color(255, 255, 255));
-        adminprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/myprofile.png"))); // NOI18N
-        adminprofile.setText("Admin Profile");
-        adminprofile.setBorderPainted(false);
-        adminprofile.setContentAreaFilled(false);
-        getContentPane().add(adminprofile);
-        adminprofile.setBounds(-40, 630, 290, 43);
 
         pinnednoticepanel.setBackground(new java.awt.Color(255, 255, 255));
         pinnednoticepanel.setLayout(null);
@@ -344,7 +327,6 @@ public class NoticeAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel admindashboard;
     private javax.swing.JLabel administration;
-    private javax.swing.JButton adminprofile;
     private javax.swing.JPanel allnoticepanel;
     private javax.swing.JScrollPane allnoticescrollpane;
     private javax.swing.JLabel background;
@@ -364,7 +346,6 @@ public class NoticeAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel pinnednotice;
     private javax.swing.JLabel pinnednoticenumber;
     private javax.swing.JPanel pinnednoticepanel;
-    private javax.swing.JButton profile;
     private javax.swing.JButton roomallocation;
     private javax.swing.JButton roomdetails;
     private javax.swing.JButton signout;
@@ -415,9 +396,6 @@ public void DashboardListener(java.awt.event.ActionListener listener) {
     dashboard.addActionListener(listener);
 }
 
-public void ProfileListener(java.awt.event.ActionListener listener) {
-    profile.addActionListener(listener);
-}
 
 public void StudentsListener(java.awt.event.ActionListener listener) {
     students.addActionListener(listener); 

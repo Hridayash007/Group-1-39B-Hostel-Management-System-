@@ -1,175 +1,154 @@
 package controller;
 
-
 import dao.FeeDao;
+import dao.PaymentDao;
+import model.PaymentData;
 import model.UserData;
 import view.*;
 
 import javax.swing.JOptionPane;
 import java.util.List;
-import dao.PaymentDao;
-import java.awt.Desktop;
-import java.net.URI;
-import model.PaymentData;
-
 
 public class MakePaymentController {
     private final MakePayment view;
     private final FeeDao dao = new FeeDao();
+    private final PaymentDao paymentDao = new PaymentDao();
     private final UserData user;
     private final int userId;
-    private int feeId;
 
-    public MakePaymentController(
-            MakePayment view,
-            UserData user) {
-
+    public MakePaymentController(MakePayment view, UserData user) {
         this.view = view;
         this.user = user;
         this.userId = user.getId();
 
-        // welcome text
-        view.setWelcomeUser(
-                user.getUsername()
-        );
-
-        // load pending fees
+        view.setWelcomeUser(user.getUsername());
         loadFees();
+        loadPaymentHistory();
 
-        // pay button
-        view.PayNowListener(
-                e -> payHostelFee(userId, view.getCurrentAmount(), view.getCurrentFeeId())
-        );
+        view.PayNowListener(e -> pay());
+
+        // ==========================
+        // Navigation
+        // ==========================
 
 
-        // Dashboard
-        view.DashboardListener(e -> {
+       view.DashboardListener(e -> {
             close();
-            StudentDashboard dashboard =new StudentDashboard();
-            new StudentDashboardController(dashboard,user).open();
+            new StudentDashboardController(new StudentDashboard(), user).open();
         });
-
-        // Complaints
-        view.MyComplaintsListener(e -> {
-            close();
-            IssueComplaints complaints =new IssueComplaints();
-            new IssueComplaintsController(complaints,user).open();
-        });
-
-        // Notice
-        view.NoticeListener(e -> {
-            close();
-            ViewNotice notice =new ViewNotice();
-            new ViewNoticeController(notice,user).open();
-        });
-
-        // My Profile
         view.MyProfileListener(e -> {
             close();
-            StudentProfile profile =new StudentProfile();
-            new StudentProfileController(profile,user).open();
+            new StudentProfileController(new StudentProfile(), user).open();
         });
-
-        // Profile icon
         view.ProfileListener(e -> {
             close();
-            StudentProfile profile =new StudentProfile();
-            new StudentProfileController(profile,user).open();
+            new StudentProfileController(new StudentProfile(), user).open();
+        });
+        view.MyComplaintsListener(e -> {
+            close();
+            new IssueComplaintsController(new IssueComplaints(), user).open();
+        });
+        view.NoticeListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
+        
+        //--Room Details
+        view.RoomDetailsListener(e -> {
+            close();
+            new RoomDetailsStudentController(new RoomDetailsStudent(), user).open();
         });
 
-        // Sign out
+        // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
-            int confirm =
-                    JOptionPane.showConfirmDialog(
-                            view,
-                            "Are you sure you want to sign out?",
-                            "Sign Out",
-                            JOptionPane.YES_NO_OPTION
-                    );
-            if(confirm ==JOptionPane.YES_OPTION){
+            int confirm = JOptionPane.showConfirmDialog(view,
+                    "Are you sure you want to sign out?", "Sign Out",
+                    JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if (confirm == JOptionPane.YES_OPTION) {
                 close();
-                LogIn login =new LogIn();
-                new LoginController(login).open();
+                new LoginController(new LogIn()).open();
             }
         });
     }
 
-    private void loadFees(){
-        List<Object[]> fees =
-                dao.getPendingFees(userId);
-        for(Object[] f : fees){
-            feeId = Integer.parseInt(f[0].toString());
+    // ==========================
+    // Load Pending Fees
+    // ==========================
 
-            String studentName = f[1].toString();
-            String room = f[2].toString();
-            double amount = Double.parseDouble(f[3].toString());
 
-            view.addPendingFee(studentName, room, amount, feeId);
+    private void loadFees() {
+        view.clearPendingPanel();
+
+        List<Object[]> fees = dao.getPendingFees(userId);
+        if (fees.isEmpty()) return;
+
+        for (Object[] f : fees) {
+            int id = Integer.parseInt(f[0].toString());
+            String studentName = String.valueOf(f[1]);
+            String room = String.valueOf(f[2]);
+            double amount = f[3] != null ? Double.parseDouble(f[3].toString()) : 0;
+            view.addPendingFee(studentName, room, amount, id);
         }
     }
 
-    private final PaymentDao paymentDao =
-            new PaymentDao();
+    // Payment
 
-    public void payHostelFee(
-            int userId,
-            double amount,
-            int feeId) {
+    private void pay() {
+        // Read the current fee from the view — never from a stale instance field.
+        int feeId = view.getCurrentFeeId();
+        double amount = view.getCurrentAmount();
 
-        if (feeId <= 0) {
-            JOptionPane.showMessageDialog(view, "Please select a valid pending fee before paying.");
+        if (feeId == 0) {
+            JOptionPane.showMessageDialog(view, "No pending fee to pay.");
             return;
         }
 
-        if (amount <= 0) {
-            JOptionPane.showMessageDialog(view, "The selected fee amount is invalid.");
-            return;
-        }
+        // Disable the button immediately to prevent double-clicks firing twice.
+        view.setPayNowEnabled(false);
 
-        try {
+        boolean marked = dao.markPaid(feeId);
+        if (marked) {
+            PaymentData p = new PaymentData();
+            p.setUserId(userId);
+            p.setFeeId(feeId);
+            p.setAmount(amount);
+            p.setStripeSessionId("");
+            p.setStatus("Paid");
+            paymentDao.savePayment(p);
 
-            var session =
-                StripeService.createCheckoutSession(
-                        "Hostel Fee",
-                        (long)(amount * 100));
-
-            PaymentData payment =
-                new PaymentData();
-
-            payment.setUserId(userId);
-            payment.setFeeId(feeId);
-            payment.setAmount(amount);
-            payment.setStripeSessionId(
-                    session.getId());
-
-            payment.setStatus("PENDING");
-
-            paymentDao.savePayment(payment);
-
-            if (feeId > 0) {
-                dao.markPaid(feeId);
-            }
-
-            Desktop.getDesktop()
-                    .browse(
-                        new URI(
-                            session.getUrl()));
-
-            JOptionPane.showMessageDialog(view, "Stripe checkout opened successfully.");
-
-        } catch (Exception ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(view, "Unable to start Stripe payment: " + ex.getMessage());
+            JOptionPane.showMessageDialog(view, "Payment successful!");
+            view.clearPendingPanel();   // also resets currentFeeId → 0
+            loadFees();
+            loadPaymentHistory();
+        } else {
+            JOptionPane.showMessageDialog(view, "Payment failed. Please try again.");
+            view.setPayNowEnabled(true);  // re-enable only on failure
         }
     }
 
+    private void loadPaymentHistory() {
+        List<Object[]> history = dao.getPaidFees(userId);
+        String[] cols = {"Payment ID", "Payment Date", "Amount", "Status"};
+        javax.swing.table.DefaultTableModel model =
+                new javax.swing.table.DefaultTableModel(cols, 0) {
+                    @Override public boolean isCellEditable(int r, int c) { return false; }
+                };
+        for (Object[] row : history) model.addRow(row);
+        view.getPaymentHistoryTable().setModel(model);
+        view.getPaymentHistoryTable().setRowHeight(28);
+    }
 
     public void open(){
-        view.setVisible(true);
-    }
 
+        view.setVisible(true);
+
+    }
 
     private void close(){
+
         view.dispose();
+
     }
+
+
 }

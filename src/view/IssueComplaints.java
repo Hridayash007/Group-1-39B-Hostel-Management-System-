@@ -38,6 +38,8 @@ public class IssueComplaints extends javax.swing.JFrame {
         Notice = new javax.swing.JButton();
         RoomDetails = new javax.swing.JButton();
         Myprofile = new javax.swing.JButton();
+        makepayment = new javax.swing.JButton();
+        paymenthistory = new javax.swing.JButton();
         SignOut = new javax.swing.JButton();
         Card1 = new javax.swing.JPanel();
         Totalcomplaintscount = new javax.swing.JLabel();
@@ -139,7 +141,25 @@ public class IssueComplaints extends javax.swing.JFrame {
         Myprofile.setBorderPainted(false);
         Myprofile.setContentAreaFilled(false);
         backgroundpanel.add(Myprofile);
-        Myprofile.setBounds(0, 540, 170, 43);
+        Myprofile.setBounds(0, 660, 170, 43);
+
+        makepayment.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        makepayment.setForeground(new java.awt.Color(255, 255, 255));
+        makepayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/makepayment.png"))); // NOI18N
+        makepayment.setText("Make Payment");
+        makepayment.setBorderPainted(false);
+        makepayment.setContentAreaFilled(false);
+        backgroundpanel.add(makepayment);
+        makepayment.setBounds(-30, 540, 270, 43);
+
+        paymenthistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymenthistory.setForeground(new java.awt.Color(255, 255, 255));
+        paymenthistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymenthistory.png"))); // NOI18N
+        paymenthistory.setText("Payment History");
+        paymenthistory.setBorderPainted(false);
+        paymenthistory.setContentAreaFilled(false);
+        backgroundpanel.add(paymenthistory);
+        paymenthistory.setBounds(-30, 600, 280, 43);
 
         SignOut.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         SignOut.setForeground(new java.awt.Color(255, 255, 255));
@@ -368,9 +388,11 @@ public class IssueComplaints extends javax.swing.JFrame {
     private javax.swing.JScrollPane complaintsscrollpanel;
     private javax.swing.JLabel dateofissue;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton makepayment;
     private javax.swing.JLabel noticetitle;
     private javax.swing.JButton notification;
     private javax.swing.JPanel particularcomplaintpanel;
+    private javax.swing.JButton paymenthistory;
     private javax.swing.JButton pendingbtn;
     private javax.swing.JLabel priority;
     private javax.swing.JButton profile;
@@ -395,4 +417,15 @@ public void NoticeListener(java.awt.event.ActionListener l)        { Notice.addA
 public void MyProfileListener(java.awt.event.ActionListener l)     { Myprofile.addActionListener(l); }
 public void SignOutListener(java.awt.event.ActionListener l)       { SignOut.addActionListener(l); }
 public void ProfileListener(java.awt.event.ActionListener l)       { profile.addActionListener(l); }
+public void RoomDetailsListener(java.awt.event.ActionListener listener) {
+    RoomDetails.addActionListener(listener);
+}
+public void MakePaymentListener(java.awt.event.ActionListener listener) {
+    makepayment.addActionListener(listener);
+}
+
+public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
+    paymenthistory.addActionListener(listener);
+}
+
 }

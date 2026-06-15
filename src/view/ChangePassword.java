@@ -41,8 +41,10 @@ public class ChangePassword extends javax.swing.JFrame {
         myprofile = new javax.swing.JButton();
         cityscape = new javax.swing.JLabel();
         navigation = new javax.swing.JLabel();
+        makepayment = new javax.swing.JButton();
         signout = new javax.swing.JButton();
         backtoprofile = new javax.swing.JButton();
+        paymenthistory = new javax.swing.JButton();
         changepassword = new javax.swing.JLabel();
         updatepassword = new javax.swing.JLabel();
         resetpasswordpanel = new javax.swing.JPanel();
@@ -136,7 +138,7 @@ public class ChangePassword extends javax.swing.JFrame {
         myprofile.setBorderPainted(false);
         myprofile.setContentAreaFilled(false);
         backgroundpanel.add(myprofile);
-        myprofile.setBounds(0, 560, 180, 43);
+        myprofile.setBounds(0, 680, 180, 43);
 
         cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cityscape.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,6 +152,15 @@ public class ChangePassword extends javax.swing.JFrame {
         navigation.setText("NAVIGATION");
         backgroundpanel.add(navigation);
         navigation.setBounds(20, 180, 70, 16);
+
+        makepayment.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        makepayment.setForeground(new java.awt.Color(255, 255, 255));
+        makepayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/makepayment.png"))); // NOI18N
+        makepayment.setText("Make Payment");
+        makepayment.setBorderPainted(false);
+        makepayment.setContentAreaFilled(false);
+        backgroundpanel.add(makepayment);
+        makepayment.setBounds(-30, 560, 270, 43);
 
         signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         signout.setForeground(new java.awt.Color(255, 255, 255));
@@ -169,6 +180,15 @@ public class ChangePassword extends javax.swing.JFrame {
         backtoprofile.addActionListener(this::backtoprofileActionPerformed);
         backgroundpanel.add(backtoprofile);
         backtoprofile.setBounds(280, 80, 130, 31);
+
+        paymenthistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymenthistory.setForeground(new java.awt.Color(255, 255, 255));
+        paymenthistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymenthistory.png"))); // NOI18N
+        paymenthistory.setText("Payment History");
+        paymenthistory.setBorderPainted(false);
+        paymenthistory.setContentAreaFilled(false);
+        backgroundpanel.add(paymenthistory);
+        paymenthistory.setBounds(-20, 620, 270, 43);
 
         changepassword.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         changepassword.setText("Change Password");
@@ -321,6 +341,7 @@ public class ChangePassword extends javax.swing.JFrame {
     private javax.swing.JButton dashboard;
     private javax.swing.JLabel desc;
     private javax.swing.JPanel info;
+    private javax.swing.JButton makepayment;
     private javax.swing.JButton mealroutine;
     private javax.swing.JButton mycomplaints;
     private javax.swing.JButton myprofile;
@@ -329,6 +350,7 @@ public class ChangePassword extends javax.swing.JFrame {
     private javax.swing.JTextField newpasswordtext;
     private javax.swing.JButton notice;
     private javax.swing.JButton notification;
+    private javax.swing.JButton paymenthistory;
     private javax.swing.JButton profile;
     private javax.swing.JPanel resetpasswordpanel;
     private javax.swing.JButton roomdetails;
@@ -381,6 +403,14 @@ public void BackToProfileListener(java.awt.event.ActionListener listener) {
     backtoprofile.addActionListener(listener);
 }
 
+public void MakePaymentListener(java.awt.event.ActionListener listener) {
+    makepayment.addActionListener(listener);
+}
+
+public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
+    paymenthistory.addActionListener(listener);
+}
+
 public void setWelcomeUser(String username) {
     welcomeback.setText("Welcome back, " + username + "!");
 }
@@ -392,6 +422,7 @@ public javax.swing.JTextField getCurrentPasswordField() {
 public javax.swing.JTextField getNewPasswordField() {
     return newpasswordtext;
 }
+
 
 public javax.swing.JTextField getConfirmNewPasswordField() {
     return confirmnewpasswordtext;

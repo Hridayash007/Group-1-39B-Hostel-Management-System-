@@ -97,12 +97,14 @@ public class RoomDao {
 
             // Increment occupied and update status
             // Update occupied first, then derive status from the NEW occupied value
+            // BUG FIX: CASE must compare occupied+1 (the new value), not the old occupied.
+            // Using the old value means a room that just became full is still marked 'Partial'.
             String upd =
                 "UPDATE rooms SET " +
                 "occupied = occupied + 1, " +
                 "status = CASE " +
                 "WHEN occupied + 1 >= capacity THEN 'Full' " +
-                "WHEN occupied + 1 > 0 THEN 'Partial' " +
+                "WHEN occupied + 1 > 0         THEN 'Partial' " +
                 "ELSE 'Vacant' END " +
                 "WHERE room_id = ?";
             try (PreparedStatement ps = conn.prepareStatement(upd)) {
@@ -110,10 +112,14 @@ public class RoomDao {
                 ps.executeUpdate();
             }
             
+            // BUG FIX: was inserting u.username into student_name.
+            // FeeDao.getPendingFees already does COALESCE(f.student_name, u.username),
+            // so storing the raw username makes full_name never appear.
+            // Store COALESCE(u.full_name, u.username) so the correct name is persisted.
             String feeSql =
             "INSERT INTO fees(user_id, room_id, student_name, room_number, amount, fee_month, status) "
             +
-            "SELECT u.user_id, r.room_id, u.full_name, r.room_number, r.fee, "
+            "SELECT u.user_id, r.room_id, COALESCE(NULLIF(u.full_name,''), u.username), r.room_number, r.fee, "
             +
             "DATE_FORMAT(NOW(),'%M %Y'), 'Pending' "
             +
@@ -164,12 +170,18 @@ public class RoomDao {
                 ps.executeUpdate();
             }
 
-            // Decrement occupied and update status
-            String upd = "UPDATE rooms SET occupied = GREATEST(occupied - 1, 0), "
-                       + "status = CASE WHEN GREATEST(occupied - 1, 0) = 0            THEN 'Vacant' "
-                       + "              WHEN GREATEST(occupied - 1, 0) >= capacity     THEN 'Full' "
-                       + "              ELSE 'Partial' END "
-                       + "WHERE room_id = ?";
+            // BUG FIX: MySQL evaluates the CASE using the column's OLD value before the SET
+            // takes effect, so status was always one step behind after a de-allocation.
+            // Wrapping the decrement in a subquery forces MySQL to compute the new value first.
+            String upd =
+                "UPDATE rooms r2 "
+                + "JOIN (SELECT GREATEST(occupied - 1, 0) AS new_occ, capacity, room_id "
+                + "      FROM rooms WHERE room_id = ?) sub ON r2.room_id = sub.room_id "
+                + "SET r2.occupied = sub.new_occ, "
+                + "    r2.status = CASE "
+                + "        WHEN sub.new_occ = 0               THEN 'Vacant' "
+                + "        WHEN sub.new_occ >= sub.capacity   THEN 'Full' "
+                + "        ELSE 'Partial' END";
             try (PreparedStatement ps = conn.prepareStatement(upd)) {
                 ps.setInt(1, roomId);
                 ps.executeUpdate();
@@ -394,4 +406,61 @@ public int countRoomsWithVacantBeds() {
     }
     return 0;
 }
+
+    /**
+     * Returns all students sharing the same room as the given user,
+     * excluding the user themselves.
+     */
+    public List<UserData> getRoommatesForRoom(int roomId, int excludeUserId) {
+        List<UserData> list = new ArrayList<>();
+        String sql = "SELECT u.user_id, u.username, u.full_name, u.program "
+                   + "FROM users u "
+                   + "JOIN room_allocations ra ON u.user_id = ra.user_id "
+                   + "WHERE ra.room_id = ? AND u.user_id != ? "
+                   + "ORDER BY u.user_id";
+        Connection conn = mysql.openConnection();
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, roomId);
+            ps.setInt(2, excludeUserId);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                UserData u = new UserData();
+                u.setId(rs.getInt("user_id"));
+                u.setUsername(rs.getString("username"));
+                u.setFullName(safe(rs, "full_name"));
+                u.setProgram(safe(rs, "program"));
+                list.add(u);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            mysql.closeConnection(conn);
+        }
+        return list;
+    }
+
+    /**
+     * Returns the check-in date (date_assigned) for a student's allocation,
+     * formatted as "MMM dd, yyyy". Returns empty string if not found.
+     */
+    public String getCheckInDate(int userId) {
+        String sql = "SELECT date_assigned FROM room_allocations WHERE user_id = ?";
+        Connection conn = mysql.openConnection();
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, userId);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                Timestamp ts = rs.getTimestamp("date_assigned");
+                if (ts != null) {
+                    return ts.toLocalDateTime()
+                            .format(java.time.format.DateTimeFormatter.ofPattern("MMM dd, yyyy"));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            mysql.closeConnection(conn);
+        }
+        return "";
+    }
 }

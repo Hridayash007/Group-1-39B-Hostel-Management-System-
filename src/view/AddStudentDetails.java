@@ -46,7 +46,9 @@ public class AddStudentDetails extends javax.swing.JFrame {
         navigation = new javax.swing.JLabel();
         signout = new javax.swing.JButton();
         backtoprofile = new javax.swing.JButton();
+        makepayment = new javax.swing.JButton();
         editprofile = new javax.swing.JLabel();
+        paymenthistory = new javax.swing.JButton();
         updateinfo = new javax.swing.JLabel();
         additionalinfo = new javax.swing.JPanel();
         additionalinformation = new javax.swing.JLabel();
@@ -171,7 +173,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         myprofile.setBorderPainted(false);
         myprofile.setContentAreaFilled(false);
         backgroundpanel.add(myprofile);
-        myprofile.setBounds(-20, 560, 210, 43);
+        myprofile.setBounds(-20, 680, 220, 43);
 
         cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cityscape.setForeground(new java.awt.Color(255, 255, 255));
@@ -205,10 +207,28 @@ public class AddStudentDetails extends javax.swing.JFrame {
         backgroundpanel.add(backtoprofile);
         backtoprofile.setBounds(280, 80, 130, 31);
 
+        makepayment.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        makepayment.setForeground(new java.awt.Color(255, 255, 255));
+        makepayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/makepayment.png"))); // NOI18N
+        makepayment.setText("Make Payment");
+        makepayment.setBorderPainted(false);
+        makepayment.setContentAreaFilled(false);
+        backgroundpanel.add(makepayment);
+        makepayment.setBounds(-20, 553, 250, 50);
+
         editprofile.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         editprofile.setText("Edit Profile");
         backgroundpanel.add(editprofile);
         editprofile.setBounds(310, 110, 110, 25);
+
+        paymenthistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymenthistory.setForeground(new java.awt.Color(255, 255, 255));
+        paymenthistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymenthistory.png"))); // NOI18N
+        paymenthistory.setText("Payment History");
+        paymenthistory.setBorderPainted(false);
+        paymenthistory.setContentAreaFilled(false);
+        backgroundpanel.add(paymenthistory);
+        paymenthistory.setBounds(-20, 620, 270, 43);
 
         updateinfo.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         updateinfo.setForeground(new java.awt.Color(153, 161, 175));
@@ -485,6 +505,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
     private javax.swing.JPanel emergencycontact;
     private javax.swing.JLabel fullname;
     private javax.swing.JTextField mail;
+    private javax.swing.JButton makepayment;
     private javax.swing.JButton mealroutine;
     private javax.swing.JButton mycomplaints;
     private javax.swing.JButton myprofile;
@@ -496,6 +517,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
     private javax.swing.JTextField number;
     private javax.swing.JLabel pass;
     private javax.swing.JPanel password;
+    private javax.swing.JButton paymenthistory;
     private javax.swing.JPanel personalinfo;
     private javax.swing.JLabel personalinformation;
     private javax.swing.JLabel phone;
@@ -564,6 +586,14 @@ public void CancelListener(java.awt.event.ActionListener listener) {
 
 public void BackToProfileListener(java.awt.event.ActionListener listener) {
     backtoprofile.addActionListener(listener);
+}
+
+public void MakePaymentListener(java.awt.event.ActionListener listener) {
+    makepayment.addActionListener(listener);
+}
+
+public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
+    paymenthistory.addActionListener(listener);
 }
 
 public javax.swing.JTextField getFullNameField() {

@@ -6,6 +6,8 @@ import model.UserData;
 import view.AddStudentDetails;
 import view.IssueComplaints;
 import view.LogIn;
+import view.MakePayment;
+import view.RoomDetailsStudent;
 import view.StudentDashboard;
 import view.StudentProfile;
 import view.ViewNotice;
@@ -89,7 +91,19 @@ public class AddStudentDetailsController {
             close();
             new ViewNoticeController(new ViewNotice(), user).open();
         });
-
+        
+        //--Room Details
+        view.RoomDetailsListener(e -> {
+            close();
+            new RoomDetailsStudentController(new RoomDetailsStudent(), user).open();
+        });
+        
+        //--Make Payment
+        view.MakePaymentListener(e -> {
+            close();
+            new MakePaymentController(new MakePayment(), user).open();
+        });
+        
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(view,

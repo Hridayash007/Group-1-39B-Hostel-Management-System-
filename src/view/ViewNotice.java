@@ -33,7 +33,6 @@ public class ViewNotice extends javax.swing.JFrame {
 
         backgroundpanel = new javax.swing.JPanel();
         notification = new javax.swing.JButton();
-        profile = new javax.swing.JButton();
         studentportal = new javax.swing.JLabel();
         welcomeback = new javax.swing.JLabel();
         dashboard = new javax.swing.JButton();
@@ -42,9 +41,12 @@ public class ViewNotice extends javax.swing.JFrame {
         notice = new javax.swing.JButton();
         roomdetails = new javax.swing.JButton();
         myprofile = new javax.swing.JButton();
+        makepayment = new javax.swing.JButton();
+        paymenthistory = new javax.swing.JButton();
         cityscape = new javax.swing.JLabel();
         navigation = new javax.swing.JLabel();
         signout = new javax.swing.JButton();
+        profile = new javax.swing.JButton();
         noticeboard = new javax.swing.JLabel();
         noticedesc = new javax.swing.JLabel();
         pinnednotices = new javax.swing.JScrollPane();
@@ -77,12 +79,6 @@ public class ViewNotice extends javax.swing.JFrame {
         notification.addActionListener(this::notificationActionPerformed);
         backgroundpanel.add(notification);
         notification.setBounds(1440, 10, 30, 40);
-
-        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
-        profile.setBorderPainted(false);
-        profile.setContentAreaFilled(false);
-        backgroundpanel.add(profile);
-        profile.setBounds(1480, 10, 41, 40);
 
         studentportal.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         studentportal.setText("Student Portal");
@@ -146,7 +142,25 @@ public class ViewNotice extends javax.swing.JFrame {
         myprofile.setBorderPainted(false);
         myprofile.setContentAreaFilled(false);
         backgroundpanel.add(myprofile);
-        myprofile.setBounds(-30, 560, 230, 43);
+        myprofile.setBounds(-30, 680, 230, 43);
+
+        makepayment.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        makepayment.setForeground(new java.awt.Color(255, 255, 255));
+        makepayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/makepayment.png"))); // NOI18N
+        makepayment.setText("Make Payment");
+        makepayment.setBorderPainted(false);
+        makepayment.setContentAreaFilled(false);
+        backgroundpanel.add(makepayment);
+        makepayment.setBounds(-30, 560, 270, 43);
+
+        paymenthistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymenthistory.setForeground(new java.awt.Color(255, 255, 255));
+        paymenthistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymenthistory.png"))); // NOI18N
+        paymenthistory.setText("Payment History");
+        paymenthistory.setBorderPainted(false);
+        paymenthistory.setContentAreaFilled(false);
+        backgroundpanel.add(paymenthistory);
+        paymenthistory.setBounds(-40, 620, 300, 43);
 
         cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cityscape.setForeground(new java.awt.Color(255, 255, 255));
@@ -169,6 +183,12 @@ public class ViewNotice extends javax.swing.JFrame {
         signout.setContentAreaFilled(false);
         backgroundpanel.add(signout);
         signout.setBounds(0, 780, 170, 43);
+
+        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
+        profile.setBorderPainted(false);
+        profile.setContentAreaFilled(false);
+        backgroundpanel.add(profile);
+        profile.setBounds(1480, 10, 36, 36);
 
         noticeboard.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         noticeboard.setText("Notice Board");
@@ -315,6 +335,7 @@ public class ViewNotice extends javax.swing.JFrame {
     private javax.swing.JLabel dateofissue;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JButton makepayment;
     private javax.swing.JButton mealroutine;
     private javax.swing.JButton mycomplaints;
     private javax.swing.JButton myprofile;
@@ -324,6 +345,7 @@ public class ViewNotice extends javax.swing.JFrame {
     private javax.swing.JLabel noticedesc;
     private javax.swing.JLabel noticetitle;
     private javax.swing.JButton notification;
+    private javax.swing.JButton paymenthistory;
     private javax.swing.JLabel pinnednotice;
     private javax.swing.JPanel pinnednotice1;
     private javax.swing.JPanel pinnednotice2;
@@ -381,4 +403,17 @@ public void NotificationListener(java.awt.event.ActionListener listener) {
 public void MyComplaintsListener(java.awt.event.ActionListener listener) {
     mycomplaints.addActionListener(listener);
 }
+
+public void RoomDetailsListener(java.awt.event.ActionListener listener) {
+    roomdetails.addActionListener(listener);
+}
+
+public void MakePaymentListener(java.awt.event.ActionListener listener) {
+    makepayment.addActionListener(listener);
+}
+
+public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
+    paymenthistory.addActionListener(listener);
+}
+
 }

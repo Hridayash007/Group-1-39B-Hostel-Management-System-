@@ -35,11 +35,13 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         Notice = new javax.swing.JButton();
         RoomDetails = new javax.swing.JButton();
         Myprofile = new javax.swing.JButton();
-        Dashboard1 = new javax.swing.JButton();
+        signout = new javax.swing.JButton();
         Studentportal = new javax.swing.JLabel();
         Welcomeback = new javax.swing.JLabel();
         Notification = new javax.swing.JButton();
+        makepayment = new javax.swing.JButton();
         profile = new javax.swing.JButton();
+        paymenthistory = new javax.swing.JButton();
         roomdetailstitle = new javax.swing.JLabel();
         desc = new javax.swing.JLabel();
         roomnopanel = new javax.swing.JPanel();
@@ -111,7 +113,7 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         Dashboard.setBorderPainted(false);
         Dashboard.setContentAreaFilled(false);
         getContentPane().add(Dashboard);
-        Dashboard.setBounds(10, 220, 160, 43);
+        Dashboard.setBounds(-20, 220, 220, 43);
 
         MyComplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MyComplaints.setForeground(new java.awt.Color(255, 255, 255));
@@ -129,7 +131,7 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         MealRoutine.setBorderPainted(false);
         MealRoutine.setContentAreaFilled(false);
         getContentPane().add(MealRoutine);
-        MealRoutine.setBounds(10, 350, 180, 43);
+        MealRoutine.setBounds(-10, 350, 220, 43);
 
         Notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Notice.setForeground(new java.awt.Color(255, 255, 255));
@@ -156,16 +158,16 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         Myprofile.setBorderPainted(false);
         Myprofile.setContentAreaFilled(false);
         getContentPane().add(Myprofile);
-        Myprofile.setBounds(10, 560, 160, 43);
+        Myprofile.setBounds(10, 690, 160, 43);
 
-        Dashboard1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        Dashboard1.setForeground(new java.awt.Color(255, 255, 255));
-        Dashboard1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign out.png"))); // NOI18N
-        Dashboard1.setText("Sign out");
-        Dashboard1.setBorderPainted(false);
-        Dashboard1.setContentAreaFilled(false);
-        getContentPane().add(Dashboard1);
-        Dashboard1.setBounds(0, 780, 170, 43);
+        signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        signout.setForeground(new java.awt.Color(255, 255, 255));
+        signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign out.png"))); // NOI18N
+        signout.setText("Sign out");
+        signout.setBorderPainted(false);
+        signout.setContentAreaFilled(false);
+        getContentPane().add(signout);
+        signout.setBounds(0, 780, 170, 43);
 
         Studentportal.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Studentportal.setText("Student Portal");
@@ -183,11 +185,29 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         getContentPane().add(Notification);
         Notification.setBounds(1440, 10, 30, 40);
 
+        makepayment.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        makepayment.setForeground(new java.awt.Color(255, 255, 255));
+        makepayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/makepayment.png"))); // NOI18N
+        makepayment.setText("Make Payment");
+        makepayment.setBorderPainted(false);
+        makepayment.setContentAreaFilled(false);
+        getContentPane().add(makepayment);
+        makepayment.setBounds(-20, 560, 250, 43);
+
         profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
         profile.setBorderPainted(false);
         profile.setContentAreaFilled(false);
         getContentPane().add(profile);
         profile.setBounds(1480, 10, 41, 40);
+
+        paymenthistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymenthistory.setForeground(new java.awt.Color(255, 255, 255));
+        paymenthistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymenthistory.png"))); // NOI18N
+        paymenthistory.setText("Payment History");
+        paymenthistory.setBorderPainted(false);
+        paymenthistory.setContentAreaFilled(false);
+        getContentPane().add(paymenthistory);
+        paymenthistory.setBounds(-20, 630, 270, 43);
 
         roomdetailstitle.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         roomdetailstitle.setText("Room Details");
@@ -197,7 +217,7 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         desc.setForeground(new java.awt.Color(106, 114, 130));
         desc.setText("Your room information and facilities.");
         getContentPane().add(desc);
-        desc.setBounds(320, 120, 200, 50);
+        desc.setBounds(320, 120, 540, 50);
 
         roomnopanel.setBackground(new java.awt.Color(37, 99, 235));
         roomnopanel.setPreferredSize(new java.awt.Dimension(50, 50));
@@ -223,7 +243,6 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         active.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         active.setForeground(new java.awt.Color(255, 255, 255));
         active.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        active.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/hariyo circle.png"))); // NOI18N
         active.setText("Active");
         active.setIconTextGap(8);
         active.setMinimumSize(new java.awt.Dimension(110, 36));
@@ -263,9 +282,9 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         roomtypelabel.setBounds(100, 10, 100, 20);
 
         type.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        type.setText("Triple Sharing");
+        type.setText("Triple ");
         detailspanel.add(type);
-        type.setBounds(90, 30, 160, 32);
+        type.setBounds(120, 30, 160, 32);
 
         floorlabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         floorlabel.setForeground(new java.awt.Color(153, 161, 175));
@@ -274,9 +293,9 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         floorlabel.setBounds(390, 10, 100, 20);
 
         floorno.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        floorno.setText("2nd Floor");
+        floorno.setText("2");
         detailspanel.add(floorno);
-        floorno.setBounds(380, 30, 160, 32);
+        floorno.setBounds(400, 30, 160, 32);
 
         blocklabel.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         blocklabel.setForeground(new java.awt.Color(153, 161, 175));
@@ -287,7 +306,7 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         blockvariable.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         blockvariable.setText("Block A");
         detailspanel.add(blockvariable);
-        blockvariable.setBounds(660, 30, 160, 32);
+        blockvariable.setBounds(670, 30, 160, 32);
 
         roomtypeicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icon_users.png"))); // NOI18N
         detailspanel.add(roomtypeicon);
@@ -388,7 +407,7 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         status1.setForeground(new java.awt.Color(22, 163, 74));
         status1.setText("active");
         wifipanel.add(status1);
-        status1.setBounds(460, 10, 50, 20);
+        status1.setBounds(430, 10, 100, 20);
 
         roomfacilitypanel.add(wifipanel);
         wifipanel.setBounds(20, 70, 530, 50);
@@ -406,7 +425,7 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         status2.setForeground(new java.awt.Color(22, 163, 74));
         status2.setText("active");
         acpanel.add(status2);
-        status2.setBounds(460, 10, 43, 20);
+        status2.setBounds(433, 10, 90, 20);
 
         roomfacilitypanel.add(acpanel);
         acpanel.setBounds(20, 150, 530, 50);
@@ -424,7 +443,7 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         status4.setForeground(new java.awt.Color(217, 119, 6));
         status4.setText("inactive");
         watersupplypanel.add(status4);
-        status4.setBounds(460, 10, 60, 20);
+        status4.setBounds(440, 10, 80, 20);
 
         roomfacilitypanel.add(watersupplypanel);
         watersupplypanel.setBounds(20, 310, 530, 50);
@@ -442,7 +461,7 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
         status3.setForeground(new java.awt.Color(22, 163, 74));
         status3.setText("active");
         powerpanel.add(status3);
-        status3.setBounds(460, 10, 43, 20);
+        status3.setBounds(433, 10, 90, 20);
 
         roomfacilitypanel.add(powerpanel);
         powerpanel.setBounds(20, 230, 530, 50);
@@ -494,7 +513,6 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
     private javax.swing.JButton Dashboard;
-    private javax.swing.JButton Dashboard1;
     private javax.swing.JButton MealRoutine;
     private javax.swing.JButton MyComplaints;
     private javax.swing.JButton Myprofile;
@@ -524,9 +542,11 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
     private javax.swing.JLabel id2;
     private javax.swing.JLabel id3;
     private javax.swing.JLabel logo;
+    private javax.swing.JButton makepayment;
     private javax.swing.JLabel name1;
     private javax.swing.JLabel name2;
     private javax.swing.JLabel name3;
+    private javax.swing.JButton paymenthistory;
     private javax.swing.JLabel powerlabel;
     private javax.swing.JPanel powerpanel;
     private javax.swing.JButton profile;
@@ -543,6 +563,7 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
     private javax.swing.JPanel roomnopanel;
     private javax.swing.JLabel roomtypeicon;
     private javax.swing.JLabel roomtypelabel;
+    private javax.swing.JButton signout;
     private javax.swing.JLabel status1;
     private javax.swing.JLabel status2;
     private javax.swing.JLabel status3;
@@ -553,4 +574,96 @@ public class RoomDetailsStudent extends javax.swing.JFrame {
     private javax.swing.JLabel wifilabel;
     private javax.swing.JPanel wifipanel;
     // End of variables declaration//GEN-END:variables
+
+// ── Paste these lines AFTER the "End of variables declaration                            
+
+// ── Data setters ──────────────────────────────────────────────────────────────
+
+/** Top banner: "Room 204" */
+public void setRoomNumber(String n)             { roomno.setText("Room " + n); }
+
+/** Top banner: "Block A  ·  Floor 2" */
+public void setBlockAndFloor(String block, String floor) {
+    blockandfloor.setText(block + "  ·  Floor " + floor);
+}
+
+/** Top banner: "Since Sep 1, 2024" */
+public void setAllocationDate(String d)         { date.setText("Since " + d); }
+
+/** Details panel ─ Room Type */
+public void setRoomType(String t)               { type.setText(t); }
+
+/** Details panel ─ Floor */
+public void setFloorNo(String f)                { floorno.setText(f); }
+
+/** Details panel ─ Block */
+public void setBlockVariable(String b)          { blockvariable.setText(b); }
+
+/** Details panel ─ Check-in date */
+public void setCheckinDate(String d)            { checkindate.setText(d); }
+
+/**
+ * Fills the three roommate cards.
+ * Pass up to 3 entries; unused cards are hidden.
+ * Each String[]: [0] = display name, [1] = "ID · Program" subtitle.
+ */
+public void setRoommates(java.util.List<String[]> list) {
+    javax.swing.JLabel[] names  = { name1,     name2,     name3     };
+    javax.swing.JLabel[] subs   = { id1,       id2,       id3       };
+    javax.swing.JPanel[] cards  = { roommate1, roommate2, roommate3 };
+    for (int i = 0; i < cards.length; i++) {
+        if (i < list.size()) {
+            names[i].setText(list.get(i)[0]);
+            subs[i].setText(list.get(i)[1]);
+            cards[i].setVisible(true);
+        } else {
+            cards[i].setVisible(false);
+        }
+    }
+}
+
+/**
+ * Sets a facility status label.
+ * Index: 1 = WiFi (status1), 2 = AC (status2),
+ *        3 = Power (status3), 4 = Water Supply (status4).
+ * Green "Available" / Red "Not Available" — matches the colour style used in the project.
+ */
+public void setFacilityStatus(int index, boolean available) {
+    javax.swing.JLabel[] arr = { null, status1, status2, status3, status4 };
+    if (index < 1 || index > 4) return;
+    arr[index].setText(available ? "Available" : "Not Available");
+    arr[index].setForeground(available
+            ? new java.awt.Color(22, 163, 74)
+            : new java.awt.Color(220, 38, 38));
+}
+
+/** Call when the student has no room yet — hides content panels, updates desc. */
+public void showNoRoomAllocated() {
+    roomnopanel.setVisible(false);
+    detailspanel.setVisible(false);
+    roommatespanel.setVisible(false);
+    roomfacilitypanel.setVisible(false);
+    desc.setText("No room has been allocated to you yet. Please contact the hostel admin.");
+}
+
+// ── Navigation listeners ──────────────────────────────────────────────────────
+// Same pattern as RoomDetails.java and RoomAllocation1.java
+
+public void DashboardListener(java.awt.event.ActionListener l)    { Dashboard.addActionListener(l); }
+public void MyComplaintsListener(java.awt.event.ActionListener l) { MyComplaints.addActionListener(l); }
+public void MealRoutineListener(java.awt.event.ActionListener l)  { MealRoutine.addActionListener(l); }
+public void NoticeListener(java.awt.event.ActionListener l)       { Notice.addActionListener(l); }
+public void RoomDetailsListener(java.awt.event.ActionListener l)  { RoomDetails.addActionListener(l); }
+public void MyProfileListener(java.awt.event.ActionListener l)    { Myprofile.addActionListener(l); }
+public void SignOutListener(java.awt.event.ActionListener l)      { signout.addActionListener(l); }
+public void ProfileListener(java.awt.event.ActionListener listener) {
+    profile.addActionListener(listener);
+}
+public void MakePaymentListener(java.awt.event.ActionListener listener) {
+    makepayment.addActionListener(listener);
+}
+public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
+    paymenthistory.addActionListener(listener);
+}
+
 }

@@ -42,8 +42,9 @@ public class MakePayment extends javax.swing.JFrame {
         roomdetails = new javax.swing.JButton();
         myprofile = new javax.swing.JButton();
         cityscape = new javax.swing.JLabel();
+        paymenthistory = new javax.swing.JButton();
         navigation = new javax.swing.JLabel();
-        roomdetails1 = new javax.swing.JButton();
+        makepayment = new javax.swing.JButton();
         signout = new javax.swing.JButton();
         makepaymenttitle = new javax.swing.JLabel();
         makepaymentdesc = new javax.swing.JLabel();
@@ -141,7 +142,7 @@ public class MakePayment extends javax.swing.JFrame {
         myprofile.setBorderPainted(false);
         myprofile.setContentAreaFilled(false);
         backgroundpanel.add(myprofile);
-        myprofile.setBounds(0, 630, 180, 43);
+        myprofile.setBounds(0, 690, 180, 43);
 
         cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cityscape.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,20 +151,29 @@ public class MakePayment extends javax.swing.JFrame {
         backgroundpanel.add(cityscape);
         cityscape.setBounds(20, 10, 150, 36);
 
+        paymenthistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymenthistory.setForeground(new java.awt.Color(255, 255, 255));
+        paymenthistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymenthistory.png"))); // NOI18N
+        paymenthistory.setText("Payment History");
+        paymenthistory.setBorderPainted(false);
+        paymenthistory.setContentAreaFilled(false);
+        backgroundpanel.add(paymenthistory);
+        paymenthistory.setBounds(-30, 630, 290, 43);
+
         navigation.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         navigation.setForeground(new java.awt.Color(81, 162, 255));
         navigation.setText("NAVIGATION");
         backgroundpanel.add(navigation);
         navigation.setBounds(20, 180, 70, 16);
 
-        roomdetails1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        roomdetails1.setForeground(new java.awt.Color(255, 255, 255));
-        roomdetails1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomdetails.png"))); // NOI18N
-        roomdetails1.setText("Make Payment");
-        roomdetails1.setBorderPainted(false);
-        roomdetails1.setContentAreaFilled(false);
-        backgroundpanel.add(roomdetails1);
-        roomdetails1.setBounds(-30, 560, 270, 43);
+        makepayment.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        makepayment.setForeground(new java.awt.Color(255, 255, 255));
+        makepayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/makepayment.png"))); // NOI18N
+        makepayment.setText("Make Payment");
+        makepayment.setBorderPainted(false);
+        makepayment.setContentAreaFilled(false);
+        backgroundpanel.add(makepayment);
+        makepayment.setBounds(-30, 560, 270, 43);
 
         signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         signout.setForeground(new java.awt.Color(255, 255, 255));
@@ -319,6 +329,7 @@ public class MakePayment extends javax.swing.JFrame {
     private javax.swing.JLabel cityscape;
     private javax.swing.JButton dashboard;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton makepayment;
     private javax.swing.JLabel makepaymentdesc;
     private javax.swing.JLabel makepaymenttitle;
     private javax.swing.JButton mealroutine;
@@ -329,6 +340,7 @@ public class MakePayment extends javax.swing.JFrame {
     private javax.swing.JButton notice;
     private javax.swing.JButton notification;
     private javax.swing.JTable payenthistorytable;
+    private javax.swing.JButton paymenthistory;
     private javax.swing.JLabel paymenthistorylabel;
     private javax.swing.JScrollPane paymenthistoryscrollpane;
     private javax.swing.JButton paynowbtn;
@@ -337,13 +349,13 @@ public class MakePayment extends javax.swing.JFrame {
     private javax.swing.JButton profile;
     private javax.swing.JPanel recentaymentspanel;
     private javax.swing.JButton roomdetails;
-    private javax.swing.JButton roomdetails1;
     private javax.swing.JButton signout;
     private javax.swing.JLabel studentid;
     private javax.swing.JLabel studentname;
     private javax.swing.JLabel studentportal;
     private javax.swing.JLabel welcomeback;
     // End of variables declaration//GEN-END:variables
+public javax.swing.JTable getPaymentHistoryTable() { return payenthistorytable; }
 
 public void DashboardListener(java.awt.event.ActionListener listener) {
     dashboard.addActionListener(listener);
@@ -381,28 +393,95 @@ public void ProfileListener(java.awt.event.ActionListener listener) {
     profile.addActionListener(listener);
 }
 
-public void PayNowListener(java.awt.event.ActionListener listener) {
-    paynowbtn.addActionListener(listener);
+
+public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
+    paymenthistory.addActionListener(listener);
 }
 
 public void setWelcomeUser(String username) {
     welcomeback.setText("Welcome back, " + username + "!");
 }
 
+
+private javax.swing.JButton activePayBtn;
+
 public void addPendingFee(String name, String room, double amount, int feeId) {
     this.currentAmount = amount;
     this.currentFeeId = feeId;
 
-    studentname.setText(name);
-    studentid.setText("Room " + room);
-    amounttopay.setText("Rs " + amount);
+    javax.swing.JPanel card = new javax.swing.JPanel();
+    card.setLayout(null);
+    card.setBackground(java.awt.Color.WHITE);
+    card.setBounds(20, 10 + pendingpaymentpanel.getComponentCount() * 80, 1150, 70);
+
+    javax.swing.JLabel nameLabel = new javax.swing.JLabel(name);
+    nameLabel.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 12));
+    nameLabel.setBounds(10, 10, 300, 16);
+    card.add(nameLabel);
+
+    javax.swing.JLabel roomLabel = new javax.swing.JLabel("Room " + room);
+    roomLabel.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12));
+    roomLabel.setBounds(10, 30, 200, 16);
+    card.add(roomLabel);
+
+    javax.swing.JLabel feeLabel = new javax.swing.JLabel("Pending monthly hostel fee");
+    feeLabel.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12));
+    feeLabel.setBounds(10, 50, 200, 16);
+    card.add(feeLabel);
+
+    javax.swing.JLabel amountLbl = new javax.swing.JLabel("Amount:");
+    amountLbl.setBounds(1010, 10, 60, 16);
+    card.add(amountLbl);
+
+    javax.swing.JLabel amountVal = new javax.swing.JLabel("Rs " + amount);
+    amountVal.setBounds(1070, 10, 90, 16);
+    card.add(amountVal);
+
+    // Pay Now button lives inside the card, not in jPanel1
+    activePayBtn = new javax.swing.JButton("Pay Now");
+    activePayBtn.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 11));
+    activePayBtn.setBackground(new java.awt.Color(99, 102, 241));
+    activePayBtn.setForeground(java.awt.Color.WHITE);
+    activePayBtn.setFocusPainted(false);
+    activePayBtn.setBounds(1020, 38, 110, 26);
+    card.add(activePayBtn);
+
+    // Re-attach any listener already registered via PayNowListener()
+    if (pendingPayListener != null) {
+        activePayBtn.addActionListener(pendingPayListener);
+    }
+
+    pendingpaymentpanel.add(card);
+    pendingpaymentpanel.setPreferredSize(new java.awt.Dimension(
+            1150, pendingpaymentpanel.getComponentCount() * 80 + 20));
+    pendingpaymentpanel.revalidate();
+    pendingpaymentpanel.repaint();
 }
 
-public double getCurrentAmount() {
-    return currentAmount;
+// Holds the listener set by the controller so it can be attached to
+// each newly built card button.
+private java.awt.event.ActionListener pendingPayListener;
+
+public void PayNowListener(java.awt.event.ActionListener listener) {
+    this.pendingPayListener = listener;
+    // Also wire it to the active button if a card is already showing
+    if (activePayBtn != null) activePayBtn.addActionListener(listener);
 }
 
-public int getCurrentFeeId() {
-    return currentFeeId;
+public void setPayNowEnabled(boolean enabled) {
+    if (activePayBtn != null) activePayBtn.setEnabled(enabled);
 }
+
+public void clearPendingPanel() {
+    currentFeeId = 0;
+    currentAmount = 0;
+    activePayBtn = null;
+    pendingpaymentpanel.removeAll();
+    pendingpaymentpanel.revalidate();
+    pendingpaymentpanel.repaint();
 }
+
+public int getCurrentFeeId()    { return currentFeeId; }
+public double getCurrentAmount() { return currentAmount; }
+}
+

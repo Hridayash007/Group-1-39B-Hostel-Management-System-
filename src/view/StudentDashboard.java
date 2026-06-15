@@ -43,6 +43,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         Studentportal = new javax.swing.JLabel();
         Welcomeback = new javax.swing.JLabel();
         Notification = new javax.swing.JButton();
+        paymenthistory = new javax.swing.JButton();
         profile = new javax.swing.JButton();
         hello = new javax.swing.JPanel();
         hellolabel = new javax.swing.JLabel();
@@ -145,7 +146,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         Myprofile.setBorderPainted(false);
         Myprofile.setContentAreaFilled(false);
         backgroundpanel.add(Myprofile);
-        Myprofile.setBounds(10, 620, 160, 43);
+        Myprofile.setBounds(10, 680, 160, 43);
 
         Dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Dashboard.setForeground(new java.awt.Color(255, 255, 255));
@@ -159,7 +160,7 @@ public class StudentDashboard extends javax.swing.JFrame {
 
         makepayment.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         makepayment.setForeground(new java.awt.Color(255, 255, 255));
-        makepayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/myprofile.png"))); // NOI18N
+        makepayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/makepayment.png"))); // NOI18N
         makepayment.setText("Make Payment");
         makepayment.setBorderPainted(false);
         makepayment.setContentAreaFilled(false);
@@ -189,6 +190,15 @@ public class StudentDashboard extends javax.swing.JFrame {
         Notification.setContentAreaFilled(false);
         backgroundpanel.add(Notification);
         Notification.setBounds(1440, 10, 30, 40);
+
+        paymenthistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymenthistory.setForeground(new java.awt.Color(255, 255, 255));
+        paymenthistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymenthistory.png"))); // NOI18N
+        paymenthistory.setText("Payment History");
+        paymenthistory.setBorderPainted(false);
+        paymenthistory.setContentAreaFilled(false);
+        backgroundpanel.add(paymenthistory);
+        paymenthistory.setBounds(-20, 620, 270, 43);
 
         profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
         profile.setBorderPainted(false);
@@ -484,6 +494,7 @@ public class StudentDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel mealsnumber;
     private javax.swing.JLabel noticeicon;
     private javax.swing.JLabel opencomplaints;
+    private javax.swing.JButton paymenthistory;
     private javax.swing.JButton profile;
     private javax.swing.JPanel quickactions;
     private javax.swing.JLabel roomicon;
@@ -507,9 +518,7 @@ public void MealRoutineListener(java.awt.event.ActionListener listener) {
 
 public void NoticeListener(java.awt.event.ActionListener listener) {
     Notice.addActionListener(listener);
-}
-
-public void RoomDetailsListener(java.awt.event.ActionListener listener) {
+}public void RoomDetailsListener(java.awt.event.ActionListener listener) {
     RoomDetails.addActionListener(listener);
 }
 
@@ -545,9 +554,12 @@ public void MyMealRoutineListener(java.awt.event.ActionListener listener) {
     mealroutine.addActionListener(listener);
 }
 
-
 public void MakePaymentListener(java.awt.event.ActionListener listener) {
     makepayment.addActionListener(listener);
+}
+
+public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
+    paymenthistory.addActionListener(listener);
 }
 
 public void setWelcomeUser(String username) {

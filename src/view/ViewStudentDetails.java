@@ -32,7 +32,6 @@ public class ViewStudentDetails extends javax.swing.JFrame {
         admindashboard = new javax.swing.JLabel();
         welcomeback = new javax.swing.JLabel();
         notification = new javax.swing.JButton();
-        profile = new javax.swing.JButton();
         cityscape = new javax.swing.JLabel();
         administration = new javax.swing.JLabel();
         signout = new javax.swing.JButton();
@@ -45,7 +44,6 @@ public class ViewStudentDetails extends javax.swing.JFrame {
         notice = new javax.swing.JButton();
         roomdetails = new javax.swing.JButton();
         roomallocation = new javax.swing.JButton();
-        adminprofile = new javax.swing.JButton();
         totalstudentspanel = new javax.swing.JPanel();
         totalstudentslabel = new javax.swing.JLabel();
         totalstudentsnumber = new javax.swing.JLabel();
@@ -82,12 +80,6 @@ public class ViewStudentDetails extends javax.swing.JFrame {
         notification.addActionListener(this::notificationActionPerformed);
         getContentPane().add(notification);
         notification.setBounds(1440, 10, 30, 40);
-
-        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
-        profile.setBorderPainted(false);
-        profile.setContentAreaFilled(false);
-        getContentPane().add(profile);
-        profile.setBounds(1480, 10, 41, 40);
 
         cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cityscape.setForeground(new java.awt.Color(255, 255, 255));
@@ -187,15 +179,6 @@ public class ViewStudentDetails extends javax.swing.JFrame {
         roomallocation.addActionListener(this::roomallocationActionPerformed);
         getContentPane().add(roomallocation);
         roomallocation.setBounds(-30, 580, 290, 43);
-
-        adminprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        adminprofile.setForeground(new java.awt.Color(255, 255, 255));
-        adminprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/myprofile.png"))); // NOI18N
-        adminprofile.setText("Admin Profile");
-        adminprofile.setBorderPainted(false);
-        adminprofile.setContentAreaFilled(false);
-        getContentPane().add(adminprofile);
-        adminprofile.setBounds(-40, 640, 290, 43);
 
         totalstudentspanel.setBackground(new java.awt.Color(255, 255, 255));
         totalstudentspanel.setLayout(null);
@@ -332,7 +315,6 @@ public class ViewStudentDetails extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel admindashboard;
     private javax.swing.JLabel administration;
-    private javax.swing.JButton adminprofile;
     private javax.swing.JLabel allocationicon;
     private javax.swing.JLabel allocationlabel;
     private javax.swing.JLabel allocationnumber;
@@ -353,7 +335,6 @@ public class ViewStudentDetails extends javax.swing.JFrame {
     private javax.swing.JButton notification;
     private javax.swing.JPanel pendingallocationpanel;
     private javax.swing.JPanel pendingfeespanel;
-    private javax.swing.JButton profile;
     private javax.swing.JButton roomallocation;
     private javax.swing.JButton roomdetails;
     private javax.swing.JButton signout;
@@ -388,15 +369,11 @@ public void RoomDetailsListener(java.awt.event.ActionListener listener) {
 public void RoomAllocationListener(java.awt.event.ActionListener listener) {
     roomallocation.addActionListener(listener);
 }
-public void AdminProfileListener(java.awt.event.ActionListener listener) {
-    adminprofile.addActionListener(listener);
-}
+
 public void SignOutListener(java.awt.event.ActionListener listener) {
     signout.addActionListener(listener);
 }
-public void ProfileListener(java.awt.event.ActionListener listener) {
-    profile.addActionListener(listener);
-}
+
 
 public void ComplaintsListener(java.awt.event.ActionListener listener) {
     complaints.addActionListener(listener);

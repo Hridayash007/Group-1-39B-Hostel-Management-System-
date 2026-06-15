@@ -87,9 +87,7 @@ public class AdminDasboard extends javax.swing.JFrame {
         mealroutine = new javax.swing.JButton();
         notice = new javax.swing.JButton();
         roomdetails = new javax.swing.JButton();
-        adminprofile = new javax.swing.JButton();
         signout = new javax.swing.JButton();
-        profile = new javax.swing.JButton();
         roomallocation = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
@@ -456,16 +454,6 @@ public class AdminDasboard extends javax.swing.JFrame {
         backgroundpanel.add(roomdetails);
         roomdetails.setBounds(-20, 500, 250, 40);
 
-        adminprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        adminprofile.setForeground(new java.awt.Color(255, 255, 255));
-        adminprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/myprofile.png"))); // NOI18N
-        adminprofile.setText("Admin Profile");
-        adminprofile.setBorderPainted(false);
-        adminprofile.setContentAreaFilled(false);
-        adminprofile.addActionListener(this::adminprofileActionPerformed);
-        backgroundpanel.add(adminprofile);
-        adminprofile.setBounds(-40, 620, 290, 43);
-
         signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         signout.setForeground(new java.awt.Color(255, 255, 255));
         signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign out.png"))); // NOI18N
@@ -475,13 +463,6 @@ public class AdminDasboard extends javax.swing.JFrame {
         signout.addActionListener(this::signoutActionPerformed);
         backgroundpanel.add(signout);
         signout.setBounds(0, 780, 180, 40);
-
-        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
-        profile.setBorderPainted(false);
-        profile.setContentAreaFilled(false);
-        profile.addActionListener(this::profileActionPerformed);
-        backgroundpanel.add(profile);
-        profile.setBounds(1480, 0, 40, 50);
 
         roomallocation.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         roomallocation.setForeground(new java.awt.Color(255, 255, 255));
@@ -518,14 +499,6 @@ public class AdminDasboard extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_notificationActionPerformed
 
-    private void profileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_profileActionPerformed
-
-    private void adminprofileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminprofileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminprofileActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -556,7 +529,6 @@ public class AdminDasboard extends javax.swing.JFrame {
     private javax.swing.JLabel administration;
     private javax.swing.JLabel adminoverviewlabel;
     private javax.swing.JPanel adminoverviewpanel;
-    private javax.swing.JButton adminprofile;
     private javax.swing.JLabel allocationdate;
     private javax.swing.JLabel allocationstatus;
     private javax.swing.JLabel background;
@@ -591,7 +563,6 @@ public class AdminDasboard extends javax.swing.JFrame {
     private javax.swing.JPanel noticespanel;
     private javax.swing.JLabel noticevariable;
     private javax.swing.JButton notification;
-    private javax.swing.JButton profile;
     private javax.swing.JLabel recentcheckins;
     private javax.swing.JPanel recentcheckinspanel;
     private javax.swing.JButton roomallocation;

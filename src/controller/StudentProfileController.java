@@ -2,9 +2,13 @@ package controller;
 
 import model.UserData;
 import view.AddStudentDetails;
+import view.IssueComplaints;
 import view.LogIn;
+import view.MakePayment;
+import view.RoomDetailsStudent;
 import view.StudentDashboard;
 import view.StudentProfile;
+import view.ViewNotice;
 
 public class StudentProfileController {
 
@@ -38,18 +42,27 @@ public class StudentProfileController {
             new StudentDashboardController(dashView, user).open();
         });
 
-        view.MyProfileListener(e -> {
+        
+        view.MyComplaintsListener(e -> {
             close();
-            StudentProfile freshView = new StudentProfile();
-            new StudentProfileController(freshView, user).open();
+            new IssueComplaintsController(new IssueComplaints(), user).open();
         });
-
-        view.ProfileListener(e -> {
+        view.NoticeListener(e -> {
             close();
-            StudentProfile freshView = new StudentProfile();
-            new StudentProfileController(freshView, user).open();
+            new ViewNoticeController(new ViewNotice(), user).open();
         });
-
+        //--Room Details
+        view.RoomDetailsListener(e -> {
+            close();
+            new RoomDetailsStudentController(new RoomDetailsStudent(), user).open();
+        });
+        
+        //--Make Payment
+        view.MakePaymentListener(e -> {
+            close();
+            new MakePaymentController(new MakePayment(), user).open();
+        });
+        
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = javax.swing.JOptionPane.showConfirmDialog(

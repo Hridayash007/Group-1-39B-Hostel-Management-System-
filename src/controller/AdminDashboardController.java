@@ -79,7 +79,7 @@ public class AdminDashboardController {
         // ── Room Allocation button ─────────────────────────────────────────────
         view.RoomAllocationListener(e -> {
             close();
-            new RoomAllocationController(new view.RoomAllocation()).open();
+            new RoomAllocationController(new view.RoomAllocation1()).open();
         });
         // Sign Out
         view.SignOutListener(e -> {

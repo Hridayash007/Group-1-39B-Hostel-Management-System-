@@ -62,7 +62,7 @@ public class ViewStudentDetailsController {
         // ── Room Allocation button ─────────────────────────────────────────────
         view.RoomAllocationListener(e -> {
             close();
-            new RoomAllocationController(new view.RoomAllocation()).open();
+            new RoomAllocationController(new view.RoomAllocation1()).open();
         });
         
         
