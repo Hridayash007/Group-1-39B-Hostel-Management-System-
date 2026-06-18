@@ -428,4 +428,7 @@ public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
     paymenthistory.addActionListener(listener);
 }
 
+public void MealRoutineListener(java.awt.event.ActionListener listener) {
+    MealRoutine.addActionListener(listener);
+}
 }

@@ -45,6 +45,7 @@ public class NoticeAdmin extends javax.swing.JFrame {
         notice = new javax.swing.JButton();
         roomdetails = new javax.swing.JButton();
         roomallocation = new javax.swing.JButton();
+        paymentdetails = new javax.swing.JButton();
         pinnednoticepanel = new javax.swing.JPanel();
         pinnednotice = new javax.swing.JLabel();
         pinnednoticenumber = new javax.swing.JLabel();
@@ -187,7 +188,17 @@ public class NoticeAdmin extends javax.swing.JFrame {
         roomallocation.setContentAreaFilled(false);
         roomallocation.addActionListener(this::roomallocationActionPerformed);
         getContentPane().add(roomallocation);
-        roomallocation.setBounds(-20, 570, 280, 43);
+        roomallocation.setBounds(-20, 570, 270, 43);
+
+        paymentdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymentdetails.setForeground(new java.awt.Color(255, 255, 255));
+        paymentdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomallocation.png"))); // NOI18N
+        paymentdetails.setText("Payment Details");
+        paymentdetails.setBorderPainted(false);
+        paymentdetails.setContentAreaFilled(false);
+        paymentdetails.addActionListener(this::paymentdetailsActionPerformed);
+        getContentPane().add(paymentdetails);
+        paymentdetails.setBounds(-20, 630, 270, 43);
 
         pinnednoticepanel.setBackground(new java.awt.Color(255, 255, 255));
         pinnednoticepanel.setLayout(null);
@@ -299,6 +310,10 @@ public class NoticeAdmin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_mealroutineActionPerformed
 
+    private void paymentdetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paymentdetailsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paymentdetailsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -343,6 +358,7 @@ public class NoticeAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel noticelist;
     private javax.swing.JLabel noticemanagement;
     private javax.swing.JButton notification;
+    private javax.swing.JButton paymentdetails;
     private javax.swing.JLabel pinnednotice;
     private javax.swing.JLabel pinnednoticenumber;
     private javax.swing.JPanel pinnednoticepanel;
@@ -412,5 +428,7 @@ public void RoomDetailsListener(java.awt.event.ActionListener listener) {
 public void RoomAllocationListener(java.awt.event.ActionListener listener) {
     roomallocation.addActionListener(listener);
 }
- 
+public void MealRoutineListener(java.awt.event.ActionListener l)          { mealroutine.addActionListener(l); }
+
+public void PaymentDetailsListener(java.awt.event.ActionListener l)          { paymentdetails.addActionListener(l); }
 }

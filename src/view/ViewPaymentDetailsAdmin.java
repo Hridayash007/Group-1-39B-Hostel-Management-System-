@@ -8,14 +8,14 @@ package view;
  *
  * @author User
  */
-public class AdminDasboard extends javax.swing.JFrame {
+public class ViewPaymentDetailsAdmin extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(AdminDasboard.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ViewPaymentDetailsAdmin.class.getName());
 
     /**
      * Creates new form AdminDasboard
      */
-    public AdminDasboard() {
+    public ViewPaymentDetailsAdmin() {
         initComponents();
         setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
     }
@@ -36,47 +36,6 @@ public class AdminDasboard extends javax.swing.JFrame {
         adminoverviewpanel = new javax.swing.JPanel();
         adminoverviewlabel = new javax.swing.JLabel();
         desc = new javax.swing.JLabel();
-        totalstudentspanel = new javax.swing.JPanel();
-        totalstudentslabel = new javax.swing.JLabel();
-        totalstudentsvariable = new javax.swing.JLabel();
-        roomoccupiedpanel = new javax.swing.JPanel();
-        roomoccupiedlabel = new javax.swing.JLabel();
-        roomoccupiedvariable = new javax.swing.JLabel();
-        totalcomplaintpanel = new javax.swing.JPanel();
-        totalcomplaintlabel = new javax.swing.JLabel();
-        totalcomplaintvariable = new javax.swing.JLabel();
-        noticespanel = new javax.swing.JPanel();
-        noticelabel = new javax.swing.JLabel();
-        noticevariable = new javax.swing.JLabel();
-        recentcheckinspanel = new javax.swing.JPanel();
-        recentcheckins = new javax.swing.JLabel();
-        viewallbtn = new javax.swing.JButton();
-        studentpanel = new javax.swing.JPanel();
-        studentname = new javax.swing.JLabel();
-        idandroomno = new javax.swing.JLabel();
-        allocationstatus = new javax.swing.JLabel();
-        allocationdate = new javax.swing.JLabel();
-        urgentcomplaint = new javax.swing.JPanel();
-        urgentcomplaintlabel = new javax.swing.JLabel();
-        viewbtn = new javax.swing.JButton();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel42 = new javax.swing.JLabel();
-        jLabel43 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
-        jPanel15 = new javax.swing.JPanel();
-        jLabel46 = new javax.swing.JLabel();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel44 = new javax.swing.JLabel();
-        jLabel45 = new javax.swing.JLabel();
-        jPanel16 = new javax.swing.JPanel();
-        jLabel47 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jPanel14 = new javax.swing.JPanel();
-        jPanel17 = new javax.swing.JPanel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
-        jLabel50 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
         title = new javax.swing.JLabel();
         logo = new javax.swing.JLabel();
         administration = new javax.swing.JLabel();
@@ -89,6 +48,15 @@ public class AdminDasboard extends javax.swing.JFrame {
         roomdetails = new javax.swing.JButton();
         signout = new javax.swing.JButton();
         roomallocation = new javax.swing.JButton();
+        paymentdetails = new javax.swing.JButton();
+        alltransactionpanel = new javax.swing.JPanel();
+        alltransactionlabel = new javax.swing.JLabel();
+        statusbutton = new javax.swing.JPanel();
+        allbtn = new javax.swing.JButton();
+        pendingbtn = new javax.swing.JButton();
+        paidbtn = new javax.swing.JButton();
+        paymenttablescrollpane = new javax.swing.JScrollPane();
+        paymenttable = new javax.swing.JTable();
         background = new javax.swing.JLabel();
 
         jButton21.setText("jButton21");
@@ -118,263 +86,12 @@ public class AdminDasboard extends javax.swing.JFrame {
         adminoverviewlabel.setBounds(23, 21, 170, 25);
 
         desc.setForeground(new java.awt.Color(255, 255, 255));
-        desc.setText("Cityscape Hostel Wednesday, April 29, 2025");
+        desc.setText("Monitor all student payments, dues, and collection status");
         adminoverviewpanel.add(desc);
         desc.setBounds(23, 52, 360, 16);
 
         backgroundpanel.add(adminoverviewpanel);
         adminoverviewpanel.setBounds(290, 90, 1240, 120);
-
-        totalstudentspanel.setBackground(new java.awt.Color(255, 255, 255));
-        totalstudentspanel.setLayout(null);
-
-        totalstudentslabel.setText("Total Students");
-        totalstudentspanel.add(totalstudentslabel);
-        totalstudentslabel.setBounds(90, 10, 87, 29);
-
-        totalstudentsvariable.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        totalstudentsvariable.setText("155");
-        totalstudentsvariable.setToolTipText("");
-        totalstudentspanel.add(totalstudentsvariable);
-        totalstudentsvariable.setBounds(100, 30, 58, 41);
-
-        backgroundpanel.add(totalstudentspanel);
-        totalstudentspanel.setBounds(290, 250, 260, 90);
-
-        roomoccupiedpanel.setBackground(new java.awt.Color(255, 255, 255));
-        roomoccupiedpanel.setLayout(null);
-
-        roomoccupiedlabel.setText("Rooms Occupied");
-        roomoccupiedpanel.add(roomoccupiedlabel);
-        roomoccupiedlabel.setBounds(70, 10, 114, 16);
-
-        roomoccupiedvariable.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        roomoccupiedvariable.setText("155/190");
-        roomoccupiedpanel.add(roomoccupiedvariable);
-        roomoccupiedvariable.setBounds(70, 30, 94, 40);
-
-        backgroundpanel.add(roomoccupiedpanel);
-        roomoccupiedpanel.setBounds(610, 250, 260, 90);
-
-        totalcomplaintpanel.setBackground(new java.awt.Color(255, 255, 255));
-        totalcomplaintpanel.setLayout(null);
-
-        totalcomplaintlabel.setText("Total Complaints");
-        totalcomplaintpanel.add(totalcomplaintlabel);
-        totalcomplaintlabel.setBounds(80, 10, 118, 16);
-
-        totalcomplaintvariable.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        totalcomplaintvariable.setText("32");
-        totalcomplaintpanel.add(totalcomplaintvariable);
-        totalcomplaintvariable.setBounds(110, 20, 46, 41);
-
-        backgroundpanel.add(totalcomplaintpanel);
-        totalcomplaintpanel.setBounds(930, 250, 270, 90);
-
-        noticespanel.setBackground(new java.awt.Color(255, 255, 255));
-        noticespanel.setLayout(null);
-
-        noticelabel.setText("Active Notices");
-        noticespanel.add(noticelabel);
-        noticelabel.setBounds(70, 10, 120, 16);
-
-        noticevariable.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        noticevariable.setText("12");
-        noticespanel.add(noticevariable);
-        noticevariable.setBounds(90, 20, 41, 44);
-
-        backgroundpanel.add(noticespanel);
-        noticespanel.setBounds(1270, 250, 250, 90);
-
-        recentcheckinspanel.setBackground(new java.awt.Color(255, 255, 255));
-        recentcheckinspanel.setLayout(null);
-
-        recentcheckins.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        recentcheckins.setText("Recent Check-ins");
-        recentcheckinspanel.add(recentcheckins);
-        recentcheckins.setBounds(16, 15, 128, 20);
-
-        viewallbtn.setForeground(new java.awt.Color(102, 0, 102));
-        viewallbtn.setText("View all");
-        viewallbtn.setBorderPainted(false);
-        viewallbtn.setContentAreaFilled(false);
-        recentcheckinspanel.add(viewallbtn);
-        viewallbtn.setBounds(472, 10, 90, 23);
-
-        studentpanel.setLayout(null);
-
-        studentname.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        studentname.setText("Sarah Williams");
-        studentpanel.add(studentname);
-        studentname.setBounds(20, 10, 96, 16);
-
-        idandroomno.setText("Student_id       Room 105A");
-        studentpanel.add(idandroomno);
-        idandroomno.setBounds(20, 30, 153, 16);
-
-        allocationstatus.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        allocationstatus.setForeground(new java.awt.Color(102, 255, 102));
-        allocationstatus.setText("In");
-        studentpanel.add(allocationstatus);
-        allocationstatus.setBounds(520, 10, 18, 20);
-
-        allocationdate.setText("Apr 29");
-        studentpanel.add(allocationdate);
-        allocationdate.setBounds(500, 30, 43, 16);
-
-        recentcheckinspanel.add(studentpanel);
-        studentpanel.setBounds(10, 50, 560, 60);
-
-        backgroundpanel.add(recentcheckinspanel);
-        recentcheckinspanel.setBounds(290, 380, 580, 400);
-
-        urgentcomplaint.setBackground(new java.awt.Color(255, 255, 255));
-        urgentcomplaint.setLayout(null);
-
-        urgentcomplaintlabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        urgentcomplaintlabel.setText("Urgent Complaints");
-        urgentcomplaint.add(urgentcomplaintlabel);
-        urgentcomplaintlabel.setBounds(30, 10, 142, 20);
-
-        viewbtn.setForeground(new java.awt.Color(102, 0, 102));
-        viewbtn.setText("View all");
-        viewbtn.setBorderPainted(false);
-        viewbtn.setContentAreaFilled(false);
-        urgentcomplaint.add(viewbtn);
-        viewbtn.setBounds(482, 10, 90, 23);
-
-        jPanel12.setBackground(new java.awt.Color(255, 204, 204));
-        jPanel12.setLayout(null);
-
-        jLabel42.setText("C-005");
-        jPanel12.add(jLabel42);
-        jLabel42.setBounds(19, 10, 43, 16);
-
-        jLabel43.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel43.setText("Gas leak report in Block B kitchen");
-        jPanel12.add(jLabel43);
-        jLabel43.setBounds(19, 37, 187, 16);
-
-        jButton3.setBackground(new java.awt.Color(204, 204, 255));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(0, 0, 204));
-        jButton3.setText("Assign");
-        jPanel12.add(jButton3);
-        jButton3.setBounds(452, 7, 72, 23);
-
-        jPanel15.setBackground(new java.awt.Color(255, 153, 153));
-
-        jLabel46.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel46.setForeground(new java.awt.Color(255, 51, 51));
-        jLabel46.setText("Critical");
-        jLabel46.setToolTipText("");
-
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel46, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-        );
-
-        jPanel12.add(jPanel15);
-        jPanel15.setBounds(68, 6, 55, 24);
-
-        urgentcomplaint.add(jPanel12);
-        jPanel12.setBounds(31, 59, 530, 0);
-
-        jPanel13.setBackground(new java.awt.Color(255, 255, 204));
-        jPanel13.setLayout(null);
-
-        jLabel44.setText("C-054");
-        jPanel13.add(jLabel44);
-        jLabel44.setBounds(18, 15, 43, 16);
-
-        jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel45.setText("Elevator malfunction Block C");
-        jPanel13.add(jLabel45);
-        jLabel45.setBounds(18, 49, 171, 16);
-
-        jPanel16.setBackground(new java.awt.Color(255, 255, 51));
-
-        jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(204, 51, 0));
-        jLabel47.setText("   High");
-
-        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
-        jPanel16.setLayout(jPanel16Layout);
-        jPanel16Layout.setHorizontalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
-        );
-        jPanel16Layout.setVerticalGroup(
-            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-        );
-
-        jPanel13.add(jPanel16);
-        jPanel16.setBounds(73, 7, 58, 24);
-
-        jButton4.setBackground(new java.awt.Color(204, 204, 255));
-        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(0, 0, 204));
-        jButton4.setText("Assign");
-        jPanel13.add(jButton4);
-        jButton4.setBounds(451, 8, 72, 23);
-
-        urgentcomplaint.add(jPanel13);
-        jPanel13.setBounds(31, 146, 530, 0);
-
-        jPanel14.setBackground(new java.awt.Color(255, 255, 204));
-        jPanel14.setLayout(null);
-
-        jPanel17.setBackground(new java.awt.Color(255, 255, 0));
-
-        jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(204, 51, 0));
-        jLabel48.setText("   High");
-
-        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
-        jPanel17.setLayout(jPanel17Layout);
-        jPanel17Layout.setHorizontalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel48, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-        );
-        jPanel17Layout.setVerticalGroup(
-            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel48, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
-        );
-
-        jPanel14.add(jPanel17);
-        jPanel17.setBounds(76, 7, 54, 27);
-
-        jLabel49.setText("C-052");
-        jPanel14.add(jLabel49);
-        jLabel49.setBounds(21, 18, 43, 16);
-
-        jLabel50.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel50.setText("Power outage in rooms 401-410");
-        jPanel14.add(jLabel50);
-        jLabel50.setBounds(21, 40, 182, 16);
-
-        jButton5.setBackground(new java.awt.Color(204, 204, 255));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton5.setForeground(new java.awt.Color(0, 0, 153));
-        jButton5.setText("Assign");
-        jPanel14.add(jButton5);
-        jButton5.setBounds(451, 11, 72, 23);
-
-        urgentcomplaint.add(jPanel14);
-        jPanel14.setBounds(31, 233, 530, 0);
-
-        backgroundpanel.add(urgentcomplaint);
-        urgentcomplaint.setBounds(940, 380, 580, 400);
 
         title.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         title.setForeground(new java.awt.Color(255, 255, 255));
@@ -473,6 +190,59 @@ public class AdminDasboard extends javax.swing.JFrame {
         backgroundpanel.add(roomallocation);
         roomallocation.setBounds(-20, 560, 280, 43);
 
+        paymentdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymentdetails.setForeground(new java.awt.Color(255, 255, 255));
+        paymentdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomallocation.png"))); // NOI18N
+        paymentdetails.setText("Payment Details");
+        paymentdetails.setBorderPainted(false);
+        paymentdetails.setContentAreaFilled(false);
+        backgroundpanel.add(paymentdetails);
+        paymentdetails.setBounds(-20, 620, 280, 43);
+
+        alltransactionpanel.setBackground(new java.awt.Color(255, 255, 255));
+        alltransactionpanel.setLayout(null);
+
+        alltransactionlabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        alltransactionlabel.setText("All Transactions");
+        alltransactionpanel.add(alltransactionlabel);
+        alltransactionlabel.setBounds(6, 6, 220, 20);
+
+        statusbutton.setLayout(null);
+
+        allbtn.setText("All");
+        statusbutton.add(allbtn);
+        allbtn.setBounds(0, 0, 50, 30);
+
+        pendingbtn.setText("Pending");
+        statusbutton.add(pendingbtn);
+        pendingbtn.setBounds(70, 0, 100, 30);
+
+        paidbtn.setText("Paid");
+        statusbutton.add(paidbtn);
+        paidbtn.setBounds(190, 0, 70, 30);
+
+        alltransactionpanel.add(statusbutton);
+        statusbutton.setBounds(950, 10, 260, 30);
+
+        paymenttable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Payment id", "Student", "Room", "Date", "Amount", "Status"
+            }
+        ));
+        paymenttablescrollpane.setViewportView(paymenttable);
+
+        alltransactionpanel.add(paymenttablescrollpane);
+        paymenttablescrollpane.setBounds(10, 60, 1200, 470);
+
+        backgroundpanel.add(alltransactionpanel);
+        alltransactionpanel.setBounds(300, 260, 1230, 550);
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adminbackground.png"))); // NOI18N
         backgroundpanel.add(background);
         background.setBounds(0, 0, 1550, 840);
@@ -521,7 +291,7 @@ public class AdminDasboard extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new AdminDasboard().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new ViewPaymentDetailsAdmin().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -529,68 +299,34 @@ public class AdminDasboard extends javax.swing.JFrame {
     private javax.swing.JLabel administration;
     private javax.swing.JLabel adminoverviewlabel;
     private javax.swing.JPanel adminoverviewpanel;
-    private javax.swing.JLabel allocationdate;
-    private javax.swing.JLabel allocationstatus;
+    private javax.swing.JButton allbtn;
+    private javax.swing.JLabel alltransactionlabel;
+    private javax.swing.JPanel alltransactionpanel;
     private javax.swing.JLabel background;
     private javax.swing.JPanel backgroundpanel;
     private javax.swing.JButton complaints;
     private javax.swing.JButton dashboard;
     private javax.swing.JLabel desc;
-    private javax.swing.JLabel idandroomno;
     private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
     private javax.swing.JLabel logo;
     private javax.swing.JButton mealroutine;
     private javax.swing.JButton notice;
-    private javax.swing.JLabel noticelabel;
-    private javax.swing.JPanel noticespanel;
-    private javax.swing.JLabel noticevariable;
     private javax.swing.JButton notification;
-    private javax.swing.JLabel recentcheckins;
-    private javax.swing.JPanel recentcheckinspanel;
+    private javax.swing.JButton paidbtn;
+    private javax.swing.JButton paymentdetails;
+    private javax.swing.JTable paymenttable;
+    private javax.swing.JScrollPane paymenttablescrollpane;
+    private javax.swing.JButton pendingbtn;
     private javax.swing.JButton roomallocation;
     private javax.swing.JButton roomdetails;
-    private javax.swing.JLabel roomoccupiedlabel;
-    private javax.swing.JPanel roomoccupiedpanel;
-    private javax.swing.JLabel roomoccupiedvariable;
     private javax.swing.JButton signout;
-    private javax.swing.JLabel studentname;
-    private javax.swing.JPanel studentpanel;
+    private javax.swing.JPanel statusbutton;
     private javax.swing.JButton students;
     private javax.swing.JLabel title;
-    private javax.swing.JLabel totalcomplaintlabel;
-    private javax.swing.JPanel totalcomplaintpanel;
-    private javax.swing.JLabel totalcomplaintvariable;
-    private javax.swing.JLabel totalstudentslabel;
-    private javax.swing.JPanel totalstudentspanel;
-    private javax.swing.JLabel totalstudentsvariable;
-    private javax.swing.JPanel urgentcomplaint;
-    private javax.swing.JLabel urgentcomplaintlabel;
-    private javax.swing.JButton viewallbtn;
-    private javax.swing.JButton viewbtn;
     private javax.swing.JLabel welcomeback;
     // End of variables declaration//GEN-END:variables
 
-public void setTotalStudents(int n)   { totalstudentsvariable.setText(String.valueOf(n)); }
-public void setTotalComplaints(int n) { totalcomplaintvariable.setText(String.valueOf(n)); }
-public void setActiveNotices(int n)   { noticevariable.setText(String.valueOf(n)); }
+
  
 // ── Sidebar navigation listeners ─────────────────────────────────────────────
 public void DashboardListener(java.awt.event.ActionListener l)        { dashboard.addActionListener(l); }
@@ -601,11 +337,14 @@ public void SignOutListener(java.awt.event.ActionListener l)          { signout.
 public void RoomDetailsListener(java.awt.event.ActionListener listener) {
     roomdetails.addActionListener(listener);
 }
- 
+public void MealRoutineListener(java.awt.event.ActionListener l)          { mealroutine.addActionListener(l); }
+public void PaymentDetailsListener(java.awt.event.ActionListener l)          { paymentdetails.addActionListener(l); }
+
 public void RoomAllocationListener(java.awt.event.ActionListener listener) {
     roomallocation.addActionListener(listener);
 }
-// ── Dashboard panel "View all" button listeners ───────────────────────────────
-public void ViewAllComplaintsListener(java.awt.event.ActionListener l){ viewbtn.addActionListener(l); }
-public void ViewAllStudentsListener(java.awt.event.ActionListener l)  { viewallbtn.addActionListener(l); }
+public void AllBtnListener(java.awt.event.ActionListener l)     { allbtn.addActionListener(l); }
+public void PendingBtnListener(java.awt.event.ActionListener l) { pendingbtn.addActionListener(l); }
+public void PaidBtnListener(java.awt.event.ActionListener l)    { paidbtn.addActionListener(l); }
+public javax.swing.JTable getPaymentHistoryTable() { return paymenttable; }
 }

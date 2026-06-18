@@ -9,6 +9,7 @@ import view.LogIn;
 import view.MakePayment;
 import view.RoomDetailsStudent;
 import view.StudentDashboard;
+import view.StudentMealRoutine;
 import view.StudentProfile;
 import view.ViewNotice;
 
@@ -67,6 +68,12 @@ public class ChangePasswordController {
             new ViewNoticeController(new ViewNotice(), user).open();
         });
         
+         //meal routine
+        view.MealRoutineListener(e -> {
+            close();
+            new StudentMealRoutineController(new StudentMealRoutine(),user).open();
+        });
+        
         //--Room Details
         view.RoomDetailsListener(e -> {
             close();
@@ -77,6 +84,11 @@ public class ChangePasswordController {
         view.MakePaymentListener(e -> {
             close();
             new MakePaymentController(new MakePayment(), user).open();
+        });
+        
+        view.PaymentHistoryListener(e -> {
+            close();
+            new ViewPaymentDetailsController(new view.ViewPaymentDetails(), user).open();
         });
         
         // ── Sign Out ─────────────────────────────────────────────────────────

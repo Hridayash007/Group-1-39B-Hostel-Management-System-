@@ -16,6 +16,7 @@ import view.NoticeAdmin;
 import view.ViewStudentDetails;
 import view.viewnoticeexpand;
 import view.AdminDasboard;
+import view.AdminMenuAdjustment;
         
 public class NoticeAdminController {
 
@@ -65,7 +66,19 @@ public class NoticeAdminController {
             ViewStudentDetails studView = new ViewStudentDetails();
             new ViewStudentDetailsController(studView).open();
         });
-
+        
+        //Payment Details
+        view.PaymentDetailsListener(e -> {
+            close();
+            new ViewPaymentDetailsAdminController(new view.ViewPaymentDetailsAdmin()).open();
+        });
+        
+         //meal routine
+        view.MealRoutineListener(e -> {
+            close();
+            new AdminMenuAdjustmentController(new AdminMenuAdjustment()).open();
+        });
+        
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(view,

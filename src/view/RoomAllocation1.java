@@ -45,6 +45,7 @@ public class RoomAllocation1 extends javax.swing.JFrame {
         Notification = new javax.swing.JButton();
         roomallocation = new javax.swing.JLabel();
         assignroomdesc = new javax.swing.JLabel();
+        paymentdetails = new javax.swing.JButton();
         card2 = new javax.swing.JPanel();
         totalallocation = new javax.swing.JLabel();
         allocationcount = new javax.swing.JLabel();
@@ -190,6 +191,16 @@ public class RoomAllocation1 extends javax.swing.JFrame {
         assignroomdesc.setText("Assign rooms to students and manage allocation.");
         BackgroundPanel.add(assignroomdesc);
         assignroomdesc.setBounds(300, 100, 370, 16);
+
+        paymentdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymentdetails.setForeground(new java.awt.Color(255, 255, 255));
+        paymentdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomallocation.png"))); // NOI18N
+        paymentdetails.setText("Payment Details");
+        paymentdetails.setBorderPainted(false);
+        paymentdetails.setContentAreaFilled(false);
+        paymentdetails.addActionListener(this::paymentdetailsActionPerformed);
+        BackgroundPanel.add(paymentdetails);
+        paymentdetails.setBounds(-20, 630, 260, 43);
 
         card2.setBackground(new java.awt.Color(255, 255, 255));
         card2.setLayout(null);
@@ -358,6 +369,10 @@ public class RoomAllocation1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void paymentdetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paymentdetailsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paymentdetailsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -422,6 +437,7 @@ public class RoomAllocation1 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel name;
+    private javax.swing.JButton paymentdetails;
     private javax.swing.JLabel pendingroom;
     private javax.swing.JLabel roomallocate;
     private javax.swing.JLabel roomallocation;
@@ -446,4 +462,6 @@ public void RoomDetailsListener(java.awt.event.ActionListener l)   { RoomDetails
 public void StudentsListener(java.awt.event.ActionListener l)      { Students.addActionListener(l); }
 public void ComplaintsListener(java.awt.event.ActionListener l)    { Complaints.addActionListener(l); }
 public void SignOutListener(java.awt.event.ActionListener l)       { SignOut.addActionListener(l); }
+public void PaymentDetailsListener(java.awt.event.ActionListener l)          { paymentdetails.addActionListener(l); }
+public void MealRoutineListener(java.awt.event.ActionListener l)          { MealRoutine.addActionListener(l); }
 }

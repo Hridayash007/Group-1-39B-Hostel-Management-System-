@@ -9,6 +9,7 @@ import view.StudentProfile;
 import view.ViewNotice;
 import view.RoomDetailsStudent;
 import view.MakePayment;
+import view.StudentMealRoutine;
 
 public class StudentDashboardController {
 
@@ -45,6 +46,12 @@ public class StudentDashboardController {
             new ViewNoticeController(new ViewNotice(), user).open();
         });
         
+        //meal routine
+        view.MealRoutineListener(e -> {
+            close();
+            new StudentMealRoutineController(new StudentMealRoutine(),user).open();
+        });
+        
         
         // ── My Profile ───────────────────────────────────────────────────────
         view.MyProfileListener(e -> {
@@ -62,6 +69,11 @@ public class StudentDashboardController {
         view.MakePaymentListener(e -> {
             close();
             new MakePaymentController(new MakePayment(), user).open();
+        });
+
+        view.PaymentHistoryListener(e -> {
+            close();
+            new ViewPaymentDetailsController(new view.ViewPaymentDetails(), user).open();
         });
         
         //QARoomDetails

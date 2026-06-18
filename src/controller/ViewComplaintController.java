@@ -19,6 +19,7 @@ import view.NoticeAdmin;
 import view.ViewComplaint;
 import view.ViewComplaintExpand;
 import javax.swing.ImageIcon;
+import view.AdminMenuAdjustment;
 
 public class ViewComplaintController {
 
@@ -50,6 +51,11 @@ public class ViewComplaintController {
             new ViewStudentDetailsController(new view.ViewStudentDetails()).open();
         });
         
+        //meal routine
+        view.MealRoutineListener(e -> {
+            close();
+            new AdminMenuAdjustmentController(new AdminMenuAdjustment()).open();
+        });
         
         // ── Room Details button ─────────────────────────────────────────────────
         view.RoomDetailsListener(e -> {
@@ -63,7 +69,13 @@ public class ViewComplaintController {
             close();
             new RoomAllocationController(new view.RoomAllocation1()).open();
         });
-
+        
+        //Payment Details
+        view.PaymentDetailsListener(e -> {
+            close();
+            new ViewPaymentDetailsAdminController(new view.ViewPaymentDetailsAdmin()).open();
+        });
+        
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(view,

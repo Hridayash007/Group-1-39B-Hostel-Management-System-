@@ -8,15 +8,16 @@ package view;
  *
  * @author pralo
  */
-public class PayemntD extends javax.swing.JFrame {
+public class ViewPaymentDetails extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PayemntD.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ViewPaymentDetails.class.getName());
 
     /**
      * Creates new form PayemntD
      */
-    public PayemntD() {
+    public ViewPaymentDetails() {
         initComponents();
+        setExtendedState(javax.swing.JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -37,39 +38,19 @@ public class PayemntD extends javax.swing.JFrame {
         RoomDetails = new javax.swing.JButton();
         Myprofile = new javax.swing.JButton();
         Dashboard1 = new javax.swing.JButton();
+        makepayment = new javax.swing.JButton();
         Studentportal = new javax.swing.JLabel();
         Welcomeback = new javax.swing.JLabel();
         Notification = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        jLabel28 = new javax.swing.JLabel();
+        profile = new javax.swing.JButton();
+        paymenthistory = new javax.swing.JButton();
+        paymenthistorypanel = new javax.swing.JPanel();
+        transactionhistorylabel = new javax.swing.JLabel();
+        paymenthistorytablescrollpanel = new javax.swing.JScrollPane();
+        paymenthistorytable = new javax.swing.JTable();
+        descriptionpanel = new javax.swing.JPanel();
+        paymentdetailslabel = new javax.swing.JLabel();
+        desc = new javax.swing.JLabel();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,7 +58,7 @@ public class PayemntD extends javax.swing.JFrame {
 
         logo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         logo.setForeground(new java.awt.Color(255, 255, 255));
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         logo.setText("Cityscape");
         getContentPane().add(logo);
         logo.setBounds(20, 10, 150, 36);
@@ -90,66 +71,75 @@ public class PayemntD extends javax.swing.JFrame {
 
         Dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Dashboard.setForeground(new java.awt.Color(255, 255, 255));
-        Dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dashboard.png"))); // NOI18N
+        Dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         Dashboard.setText("Dashbaord");
         Dashboard.setBorderPainted(false);
         Dashboard.setContentAreaFilled(false);
         getContentPane().add(Dashboard);
-        Dashboard.setBounds(10, 220, 160, 43);
+        Dashboard.setBounds(-20, 220, 220, 43);
 
         MyComplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MyComplaints.setForeground(new java.awt.Color(255, 255, 255));
-        MyComplaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/my complaints.png"))); // NOI18N
+        MyComplaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/my complaints.png"))); // NOI18N
         MyComplaints.setText("My Complaints");
         MyComplaints.setBorderPainted(false);
         MyComplaints.setContentAreaFilled(false);
         getContentPane().add(MyComplaints);
-        MyComplaints.setBounds(-10, 280, 230, 43);
+        MyComplaints.setBounds(-30, 280, 270, 43);
 
         MealRoutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MealRoutine.setForeground(new java.awt.Color(255, 255, 255));
-        MealRoutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/meal routine.png"))); // NOI18N
+        MealRoutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/meal routine.png"))); // NOI18N
         MealRoutine.setText("Meal Routine");
         MealRoutine.setBorderPainted(false);
         MealRoutine.setContentAreaFilled(false);
         getContentPane().add(MealRoutine);
-        MealRoutine.setBounds(10, 350, 180, 43);
+        MealRoutine.setBounds(-40, 340, 280, 43);
 
         Notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Notice.setForeground(new java.awt.Color(255, 255, 255));
-        Notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notice.png"))); // NOI18N
+        Notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notice.png"))); // NOI18N
         Notice.setText("Notice");
         Notice.setBorderPainted(false);
         Notice.setContentAreaFilled(false);
         getContentPane().add(Notice);
-        Notice.setBounds(0, 420, 140, 43);
+        Notice.setBounds(-30, 410, 210, 43);
 
         RoomDetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         RoomDetails.setForeground(new java.awt.Color(255, 255, 255));
-        RoomDetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomdetails.png"))); // NOI18N
+        RoomDetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomdetails.png"))); // NOI18N
         RoomDetails.setText("Room Details");
         RoomDetails.setBorderPainted(false);
         RoomDetails.setContentAreaFilled(false);
         getContentPane().add(RoomDetails);
-        RoomDetails.setBounds(0, 490, 200, 43);
+        RoomDetails.setBounds(-20, 470, 240, 43);
 
         Myprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Myprofile.setForeground(new java.awt.Color(255, 255, 255));
-        Myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
+        Myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/myprofile.png"))); // NOI18N
         Myprofile.setText("My Profile");
         Myprofile.setBorderPainted(false);
         Myprofile.setContentAreaFilled(false);
         getContentPane().add(Myprofile);
-        Myprofile.setBounds(10, 560, 160, 43);
+        Myprofile.setBounds(-20, 660, 220, 43);
 
         Dashboard1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Dashboard1.setForeground(new java.awt.Color(255, 255, 255));
-        Dashboard1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/sign out.png"))); // NOI18N
+        Dashboard1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign out.png"))); // NOI18N
         Dashboard1.setText("Sign out");
         Dashboard1.setBorderPainted(false);
         Dashboard1.setContentAreaFilled(false);
         getContentPane().add(Dashboard1);
         Dashboard1.setBounds(0, 780, 170, 43);
+
+        makepayment.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        makepayment.setForeground(new java.awt.Color(255, 255, 255));
+        makepayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/makepayment.png"))); // NOI18N
+        makepayment.setText("Make Payment");
+        makepayment.setBorderPainted(false);
+        makepayment.setContentAreaFilled(false);
+        getContentPane().add(makepayment);
+        makepayment.setBounds(-20, 540, 260, 43);
 
         Studentportal.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         Studentportal.setText("Student Portal");
@@ -158,294 +148,79 @@ public class PayemntD extends javax.swing.JFrame {
 
         Welcomeback.setText("Welcome Back");
         getContentPane().add(Welcomeback);
-        Welcomeback.setBounds(340, 30, 90, 16);
+        Welcomeback.setBounds(300, 30, 210, 16);
 
-        Notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notification.png"))); // NOI18N
+        Notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notification.png"))); // NOI18N
         Notification.setBorderPainted(false);
         Notification.setContentAreaFilled(false);
         Notification.addActionListener(this::NotificationActionPerformed);
         getContentPane().add(Notification);
         Notification.setBounds(1440, 10, 30, 40);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        getContentPane().add(jButton1);
-        jButton1.setBounds(1480, 10, 41, 40);
+        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
+        profile.setBorderPainted(false);
+        profile.setContentAreaFilled(false);
+        getContentPane().add(profile);
+        profile.setBounds(1470, 10, 50, 40);
 
-        jPanel2.setBackground(new java.awt.Color(37, 99, 235));
-        jPanel2.setLayout(null);
+        paymenthistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymenthistory.setForeground(new java.awt.Color(255, 255, 255));
+        paymenthistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymenthistory.png"))); // NOI18N
+        paymenthistory.setText("Payment History");
+        paymenthistory.setBorderPainted(false);
+        paymenthistory.setContentAreaFilled(false);
+        getContentPane().add(paymenthistory);
+        paymenthistory.setBounds(-20, 600, 270, 43);
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Payement Details");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(30, 31, 216, 40);
+        paymenthistorypanel.setBackground(new java.awt.Color(255, 255, 255));
+        paymenthistorypanel.setLayout(null);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(190, 219, 255));
-        jLabel5.setText("Monitor all student payments,dues and collection status.");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(30, 83, 350, 20);
+        transactionhistorylabel.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        transactionhistorylabel.setText("Transaction History");
+        paymenthistorypanel.add(transactionhistorylabel);
+        transactionhistorylabel.setBounds(21, 15, 290, 20);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(190, 219, 255));
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/icon_users.png"))); // NOI18N
-        jLabel6.setText("10 Transcation");
-        jPanel2.add(jLabel6);
-        jLabel6.setBounds(30, 121, 120, 24);
+        paymenthistorytable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Payment Id", "Date", "Amount", "Status"
+            }
+        ));
+        paymenthistorytablescrollpanel.setViewportView(paymenthistorytable);
 
-        jLabel7.setForeground(new java.awt.Color(190, 219, 255));
-        jLabel7.setText("May 2025");
-        jPanel2.add(jLabel7);
-        jLabel7.setBounds(210, 120, 110, 30);
+        paymenthistorypanel.add(paymenthistorytablescrollpanel);
+        paymenthistorytablescrollpanel.setBounds(20, 70, 1160, 450);
 
-        jPanel3.setBackground(new java.awt.Color(82, 113, 236));
-        jPanel3.setForeground(new java.awt.Color(165, 180, 252));
-        jPanel3.setPreferredSize(new java.awt.Dimension(180, 130));
+        getContentPane().add(paymenthistorypanel);
+        paymenthistorypanel.setBounds(310, 260, 1200, 550);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Rs. 45K");
+        descriptionpanel.setBackground(new java.awt.Color(37, 99, 235));
+        descriptionpanel.setLayout(null);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(190, 219, 255));
-        jLabel3.setText("Collected");
-        jLabel3.setToolTipText("");
+        paymentdetailslabel.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        paymentdetailslabel.setForeground(new java.awt.Color(255, 255, 255));
+        paymentdetailslabel.setText("Payement Details");
+        descriptionpanel.add(paymentdetailslabel);
+        paymentdetailslabel.setBounds(30, 20, 216, 40);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1)
-                .addContainerGap(35, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
+        desc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        desc.setForeground(new java.awt.Color(190, 219, 255));
+        desc.setText("Monitor your payments and dues.");
+        descriptionpanel.add(desc);
+        desc.setBounds(30, 70, 430, 20);
 
-        jPanel2.add(jPanel3);
-        jPanel3.setBounds(782, 15, 180, 130);
-
-        jPanel4.setBackground(new java.awt.Color(255, 102, 102));
-        jPanel4.setForeground(new java.awt.Color(165, 180, 252));
-        jPanel4.setPreferredSize(new java.awt.Dimension(180, 130));
-        jPanel4.setLayout(null);
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Rs. 15.7K");
-        jPanel4.add(jLabel2);
-        jLabel2.setBounds(10, 20, 170, 48);
-
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(190, 219, 255));
-        jLabel8.setText("Outstanding");
-        jLabel8.setToolTipText("");
-        jPanel4.add(jLabel8);
-        jLabel8.setBounds(42, 72, 123, 26);
-
-        jPanel2.add(jPanel4);
-        jPanel4.setBounds(988, 15, 180, 130);
-
-        getContentPane().add(jPanel2);
-        jPanel2.setBounds(310, 80, 1200, 160);
-
-        jPanel1.setBackground(java.awt.Color.white);
-
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(74, 85, 101));
-        jLabel15.setText("Overdue Amount");
-
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(54, 65, 83));
-        jLabel16.setText("Rs. 11K");
-
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(74, 85, 101));
-        jLabel17.setText("2 students overdue");
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel15)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel16)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel17)
-                .addContainerGap(11, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(960, 290, 170, 130);
-
-        jPanel5.setBackground(java.awt.Color.white);
-
-        jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(74, 85, 101));
-        jLabel18.setText("Total Collected");
-
-        jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(54, 65, 83));
-        jLabel19.setText("Rs. 45K");
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(74, 85, 101));
-        jLabel20.setText("6 transcations");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(24, Short.MAX_VALUE))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel18)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel19)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel20)
-                .addContainerGap(11, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel5);
-        jPanel5.setBounds(390, 300, 180, 130);
-
-        jPanel6.setBackground(java.awt.Color.white);
-
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(74, 85, 101));
-        jLabel21.setText("Collection Rate");
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(54, 65, 83));
-        jLabel22.setText("76 %");
-
-        jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel23.setForeground(new java.awt.Color(74, 85, 101));
-        jLabel23.setText("+4 % vs last month");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel21)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel22)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel23)
-                .addContainerGap(11, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel6);
-        jPanel6.setBounds(1260, 280, 170, 130);
-
-        jPanel7.setBackground(java.awt.Color.white);
-
-        jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(74, 85, 101));
-        jLabel24.setText("Pending Payments");
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(54, 65, 83));
-        jLabel25.setText("Rs. 4000");
-
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(74, 85, 101));
-        jLabel26.setText("2 students");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel24)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel25)
-                .addGap(28, 28, 28)
-                .addComponent(jLabel26)
-                .addContainerGap(11, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel7);
-        jPanel7.setBounds(690, 290, 170, 130);
-
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel27.setText("All Transactions");
-        getContentPane().add(jLabel27);
-        jLabel27.setBounds(310, 510, 230, 32);
-
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(74, 85, 101));
-        jLabel28.setText("Total Collected");
-        getContentPane().add(jLabel28);
-        jLabel28.setBounds(310, 570, 100, 20);
+        getContentPane().add(descriptionpanel);
+        descriptionpanel.setBounds(310, 80, 1200, 120);
 
         Background.setBackground(new java.awt.Color(255, 255, 255));
         Background.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Background.setForeground(new java.awt.Color(255, 255, 255));
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.png"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.png"))); // NOI18N
         Background.setMinimumSize(new java.awt.Dimension(850, 90));
         Background.setPreferredSize(new java.awt.Dimension(950, 90));
         getContentPane().add(Background);
@@ -480,7 +255,7 @@ public class PayemntD extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new PayemntD().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new ViewPaymentDetails().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -496,36 +271,32 @@ public class PayemntD extends javax.swing.JFrame {
     private javax.swing.JButton RoomDetails;
     private javax.swing.JLabel Studentportal;
     private javax.swing.JLabel Welcomeback;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
+    private javax.swing.JLabel desc;
+    private javax.swing.JPanel descriptionpanel;
     private javax.swing.JLabel logo;
+    private javax.swing.JButton makepayment;
+    private javax.swing.JLabel paymentdetailslabel;
+    private javax.swing.JButton paymenthistory;
+    private javax.swing.JPanel paymenthistorypanel;
+    private javax.swing.JTable paymenthistorytable;
+    private javax.swing.JScrollPane paymenthistorytablescrollpanel;
+    private javax.swing.JButton profile;
+    private javax.swing.JLabel transactionhistorylabel;
     // End of variables declaration//GEN-END:variables
+
+ public void setWelcomeUser(String username) { Welcomeback.setText("Welcome back, " + username + "!"); }
+    public javax.swing.JTable getPaymentHistoryTable() { return paymenthistorytable; }
+
+    public void DashboardListener(java.awt.event.ActionListener l)    { Dashboard.addActionListener(l); }
+    public void MyComplaintsListener(java.awt.event.ActionListener l) { MyComplaints.addActionListener(l); }
+    public void MealRoutineListener(java.awt.event.ActionListener l)  { MealRoutine.addActionListener(l); }
+    public void NoticeListener(java.awt.event.ActionListener l)       { Notice.addActionListener(l); }
+    public void RoomDetailsListener(java.awt.event.ActionListener l)  { RoomDetails.addActionListener(l); }
+    public void MakePaymentListener(java.awt.event.ActionListener l)  { makepayment.addActionListener(l); }
+    public void PaymentHistoryListener(java.awt.event.ActionListener l){ paymenthistory.addActionListener(l); }
+    public void MyProfileListener(java.awt.event.ActionListener l)    { Myprofile.addActionListener(l); }
+    public void ProfileListener(java.awt.event.ActionListener l)      { profile.addActionListener(l); }
+    public void SignOutListener(java.awt.event.ActionListener l)      { Dashboard1.addActionListener(l); }
+
 }
+

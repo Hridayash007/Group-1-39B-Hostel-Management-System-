@@ -182,5 +182,49 @@ public class FeeDao {
         }
 
     }
+/**
+ * Returns fee rows for the admin payment table.
+ * @param statusFilter  null → all rows, "Pending" or "Paid" → filtered
+ *
+ * Columns: [0] payment_id, [1] student_name, [2] room_number,
+ *          [3] paid_date,  [4] amount,        [5] status
+ */
+public List<Object[]> getAllPayments(String statusFilter) {
+    List<Object[]> list = new ArrayList<>();
 
+    String sql =
+        "SELECT " +
+        "    p.payment_id, " +
+        "    COALESCE(f.student_name, u.username) AS student_name, " +
+        "    f.room_number, " +
+        "    COALESCE(DATE_FORMAT(f.paid_date, '%M %d, %Y'), '—') AS paid_date, " +
+        "    f.amount, " +
+        "    f.status " +
+        "FROM fees f " +
+        "INNER JOIN users u ON f.user_id = u.user_id " +
+        "LEFT  JOIN payments p ON p.fee_id = f.fee_id " +
+        (statusFilter != null ? "WHERE f.status = ? " : "") +
+        "ORDER BY f.paid_date DESC, f.fee_id DESC";
+
+    Connection conn = mysql.openConnection();
+    try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        if (statusFilter != null) ps.setString(1, statusFilter);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            list.add(new Object[]{
+                rs.getInt("payment_id"),        // [0] Payment ID
+                rs.getString("student_name"),   // [1] Student
+                rs.getString("room_number"),    // [2] Room
+                rs.getString("paid_date"),      // [3] Date
+                "Rs " + rs.getDouble("amount"), // [4] Amount
+                rs.getString("status")          // [5] Status
+            });
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        mysql.closeConnection(conn);
+    }
+    return list;
+}
 }

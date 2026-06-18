@@ -7,6 +7,7 @@ import view.LogIn;
 import view.MakePayment;
 import view.RoomDetailsStudent;
 import view.StudentDashboard;
+import view.StudentMealRoutine;
 import view.StudentProfile;
 import view.ViewNotice;
 
@@ -57,10 +58,21 @@ public class StudentProfileController {
             new RoomDetailsStudentController(new RoomDetailsStudent(), user).open();
         });
         
+         //meal routine
+        view.MealRoutineListener(e -> {
+            close();
+            new StudentMealRoutineController(new StudentMealRoutine(),user).open();
+        });
+        
         //--Make Payment
         view.MakePaymentListener(e -> {
             close();
             new MakePaymentController(new MakePayment(), user).open();
+        });
+        
+        view.PaymentHistoryListener(e -> {
+            close();
+            new ViewPaymentDetailsController(new view.ViewPaymentDetails(), user).open();
         });
         
         // ── Sign Out ─────────────────────────────────────────────────────────

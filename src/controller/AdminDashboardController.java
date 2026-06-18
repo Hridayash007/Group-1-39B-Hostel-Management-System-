@@ -9,6 +9,7 @@ import view.LogIn;
 import view.NoticeAdmin;
 import view.ViewComplaint;
 import view.ViewStudentDetails;
+import view.AdminMenuAdjustment;
 
 public class AdminDashboardController {
 
@@ -68,6 +69,11 @@ public class AdminDashboardController {
             new ViewStudentDetailsController(new ViewStudentDetails()).open();
         });
         
+        //meal routine
+        view.MealRoutineListener(e -> {
+            close();
+            new AdminMenuAdjustmentController(new AdminMenuAdjustment()).open();
+        });
         
         // ── Room Details button ─────────────────────────────────────────────────
         view.RoomDetailsListener(e -> {
@@ -80,6 +86,11 @@ public class AdminDashboardController {
         view.RoomAllocationListener(e -> {
             close();
             new RoomAllocationController(new view.RoomAllocation1()).open();
+        });
+        
+        view.PaymentDetailsListener(e -> {
+            close();
+            new ViewPaymentDetailsAdminController(new view.ViewPaymentDetailsAdmin()).open();
         });
         // Sign Out
         view.SignOutListener(e -> {

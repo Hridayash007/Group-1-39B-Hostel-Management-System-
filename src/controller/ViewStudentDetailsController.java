@@ -19,6 +19,7 @@ import view.ViewStudentDetails;
 import view.ViewStudentExpand;
 import javax.swing.ImageIcon;
 import view.AdminDasboard;
+import view.AdminMenuAdjustment;
 
 public class ViewStudentDetailsController {
 
@@ -65,6 +66,17 @@ public class ViewStudentDetailsController {
             new RoomAllocationController(new view.RoomAllocation1()).open();
         });
         
+        //Payment Details
+        view.PaymentDetailsListener(e -> {
+            close();
+            new ViewPaymentDetailsAdminController(new view.ViewPaymentDetailsAdmin()).open();
+        });
+        
+        //meal routine
+        view.MealRoutineListener(e -> {
+            close();
+            new AdminMenuAdjustmentController(new AdminMenuAdjustment()).open();
+        });
         
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {

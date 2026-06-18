@@ -7,7 +7,14 @@ import model.UserData;
 import view.*;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingWorker;
+import java.awt.Desktop;
+import java.net.URI;
 import java.util.List;
+
+import com.stripe.Stripe;
+import com.stripe.model.checkout.Session;
+import com.stripe.param.checkout.SessionCreateParams;
 
 public class MakePaymentController {
     private final MakePayment view;
@@ -21,45 +28,27 @@ public class MakePaymentController {
         this.user = user;
         this.userId = user.getId();
 
+        // TODO: move this to an environment variable or config file before
+        // committing to version control or deploying — hardcoding a live
+        // secret key here means anyone with access to this source file
+        // can use it to make charges against this Stripe account.
+        String stripeKey = System.getenv("STRIPE_SECRET_KEY");
+Stripe.apiKey = stripeKey;
         view.setWelcomeUser(user.getUsername());
         loadFees();
         loadPaymentHistory();
 
         view.PayNowListener(e -> pay());
 
-        // ==========================
-        // Navigation
-        // ==========================
+        view.DashboardListener(e -> { close(); new StudentDashboardController(new StudentDashboard(), user).open(); });
+        view.MyProfileListener(e -> { close(); new StudentProfileController(new StudentProfile(), user).open(); });
+        view.ProfileListener(e -> { close(); new StudentProfileController(new StudentProfile(), user).open(); });
+        view.MyComplaintsListener(e -> { close(); new IssueComplaintsController(new IssueComplaints(), user).open(); });
+        view.NoticeListener(e -> { close(); new ViewNoticeController(new ViewNotice(), user).open(); });
+        view.RoomDetailsListener(e -> { close(); new RoomDetailsStudentController(new RoomDetailsStudent(), user).open(); });
+        view.MealRoutineListener(e -> { close(); new StudentMealRoutineController(new StudentMealRoutine(), user).open(); });
+        view.PaymentHistoryListener(e -> { close(); new ViewPaymentDetailsController(new ViewPaymentDetails(), user).open(); });
 
-
-       view.DashboardListener(e -> {
-            close();
-            new StudentDashboardController(new StudentDashboard(), user).open();
-        });
-        view.MyProfileListener(e -> {
-            close();
-            new StudentProfileController(new StudentProfile(), user).open();
-        });
-        view.ProfileListener(e -> {
-            close();
-            new StudentProfileController(new StudentProfile(), user).open();
-        });
-        view.MyComplaintsListener(e -> {
-            close();
-            new IssueComplaintsController(new IssueComplaints(), user).open();
-        });
-        view.NoticeListener(e -> {
-            close();
-            new ViewNoticeController(new ViewNotice(), user).open();
-        });
-        
-        //--Room Details
-        view.RoomDetailsListener(e -> {
-            close();
-            new RoomDetailsStudentController(new RoomDetailsStudent(), user).open();
-        });
-
-        // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(view,
                     "Are you sure you want to sign out?", "Sign Out",
@@ -71,58 +60,166 @@ public class MakePaymentController {
         });
     }
 
-    // ==========================
-    // Load Pending Fees
-    // ==========================
+    private void pay() {
+        int feeId = view.getCurrentFeeId();
+        double amount = view.getCurrentAmount();
 
+        if (feeId == 0 || amount <= 0) {
+            JOptionPane.showMessageDialog(view, "Please select a valid fee to pay.");
+            return;
+        }
+
+        view.setPayNowEnabled(false);
+
+        try {
+            long amountInCents = (long) (amount * 100);
+
+            SessionCreateParams params = SessionCreateParams.builder()
+                .setMode(SessionCreateParams.Mode.PAYMENT)
+                .setSuccessUrl("https://checkout.stripe.dev/success")
+                .setCancelUrl("https://checkout.stripe.dev/cancel")
+                .addLineItem(
+                    SessionCreateParams.LineItem.builder()
+                        .setQuantity(1L)
+                        .setPriceData(
+                            SessionCreateParams.LineItem.PriceData.builder()
+                                .setCurrency("npr") // BUG FIX: app displays "Rs" (NPR) everywhere
+                                                     // else; charging in USD meant the student
+                                                     // would be billed a completely different
+                                                     // amount than what was shown on screen.
+                                .setUnitAmount(amountInCents)
+                                .setProductData(
+                                    SessionCreateParams.LineItem.PriceData.ProductData.builder()
+                                        .setName("Hostel Fee Payment (ID: " + feeId + ")")
+                                        .setDescription("Room charge for Student ID: " + userId)
+                                        .build()
+                                )
+                                .build()
+                        )
+                        .build()
+                )
+                .build();
+
+            Session session = Session.create(params);
+            String checkoutUrl = session.getUrl();
+            String stripeSessionId = session.getId();
+
+            // Open browser for payment
+            if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) {
+                Desktop.getDesktop().browse(new URI(checkoutUrl));
+            } else {
+                throw new Exception("Desktop browsing is not supported.");
+            }
+
+            // ── Ask the student to confirm after completing payment ────────────
+            // Then poll Stripe to verify — do NOT mark paid based on browser open alone
+            int confirm = JOptionPane.showConfirmDialog(view,
+                    "Click YES once you've completed payment in the browser tab.\n\n" +
+                    "We will then verify the payment with Stripe directly.\n" +
+                    "(If you already paid but click NO, your fee will still show as " +
+                    "pending here — use 'Payment History' or contact admin to resolve.)",
+                    "Confirm Payment",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE);
+
+            if (confirm != JOptionPane.YES_OPTION) {
+                // Student said No or closed dialog — do NOT mark paid
+                view.setPayNowEnabled(true);
+                return;
+            }
+
+            // ── Poll Stripe to verify payment status (runs off EDT) ──────────
+            view.setPayNowEnabled(false);
+
+            SwingWorker<Boolean, Void> worker = new SwingWorker<>() {
+                String verifiedStatus = "unknown";
+
+                @Override
+                protected Boolean doInBackground() throws Exception {
+                    // Poll Stripe up to 10 times (20 seconds) waiting for "paid"
+                    for (int i = 0; i < 10; i++) {
+                        Session latest = Session.retrieve(stripeSessionId);
+                        verifiedStatus = latest.getPaymentStatus(); // "paid", "unpaid", "no_payment_required"
+
+                        if ("paid".equals(verifiedStatus)) return true;
+
+                        Thread.sleep(2000); // wait 2 seconds between polls
+                    }
+                    return false;
+                }
+
+                @Override
+                protected void done() {
+                    try {
+                        boolean paid = get();
+
+                        if (paid) {
+                            // ── Payment confirmed by Stripe ───────────────────
+                            boolean marked = dao.markPaid(feeId);
+                            if (marked) {
+                                PaymentData p = new PaymentData();
+                                p.setUserId(userId);
+                                p.setFeeId(feeId);
+                                p.setAmount(amount);
+                                p.setStripeSessionId(stripeSessionId);
+                                p.setStatus("Paid"); // BUG FIX: was "Completed" — the admin
+                                                      // payment table renderer (FeeDao.getAllPayments)
+                                                      // specifically checks for "Paid" to color rows
+                                                      // green; "Completed" would render as unpaid/red.
+                                paymentDao.savePayment(p);
+
+                                JOptionPane.showMessageDialog(view,
+                                        "✅ Payment verified and recorded successfully!",
+                                        "Payment Successful", JOptionPane.INFORMATION_MESSAGE);
+
+                                new ReportAfterPaymentController(
+                                        new ReportAfterPayment(), user, feeId, amount).open(view);
+
+                                view.clearPendingPanel();
+                                loadFees();
+                                loadPaymentHistory();
+                            }
+                        } else {
+                            // ── Stripe did NOT confirm payment ────────────────
+                            JOptionPane.showMessageDialog(view,
+                                    "⚠️ Payment not confirmed by Stripe.\n\n" +
+                                    "Status: " + verifiedStatus + "\n\n" +
+                                    "The fee remains pending. Please try again.",
+                                    "Payment Not Confirmed", JOptionPane.WARNING_MESSAGE);
+                        }
+
+                    } catch (Exception ex) {
+                        ex.printStackTrace();
+                        JOptionPane.showMessageDialog(view,
+                                "Error verifying payment: " + ex.getMessage(),
+                                "Verification Error", JOptionPane.ERROR_MESSAGE);
+                    } finally {
+                        view.setPayNowEnabled(true);
+                    }
+                }
+            };
+
+            worker.execute();
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            JOptionPane.showMessageDialog(view,
+                    "Error initiating payment: " + ex.getMessage(),
+                    "Payment Error", JOptionPane.ERROR_MESSAGE);
+            view.setPayNowEnabled(true);
+        }
+    }
 
     private void loadFees() {
         view.clearPendingPanel();
-
         List<Object[]> fees = dao.getPendingFees(userId);
         if (fees.isEmpty()) return;
-
         for (Object[] f : fees) {
             int id = Integer.parseInt(f[0].toString());
             String studentName = String.valueOf(f[1]);
             String room = String.valueOf(f[2]);
-            double amount = f[3] != null ? Double.parseDouble(f[3].toString()) : 0;
-            view.addPendingFee(studentName, room, amount, id);
-        }
-    }
-
-    // Payment
-
-    private void pay() {
-        // Read the current fee from the view — never from a stale instance field.
-        int feeId = view.getCurrentFeeId();
-        double amount = view.getCurrentAmount();
-
-        if (feeId == 0) {
-            JOptionPane.showMessageDialog(view, "No pending fee to pay.");
-            return;
-        }
-
-        // Disable the button immediately to prevent double-clicks firing twice.
-        view.setPayNowEnabled(false);
-
-        boolean marked = dao.markPaid(feeId);
-        if (marked) {
-            PaymentData p = new PaymentData();
-            p.setUserId(userId);
-            p.setFeeId(feeId);
-            p.setAmount(amount);
-            p.setStripeSessionId("");
-            p.setStatus("Paid");
-            paymentDao.savePayment(p);
-
-            JOptionPane.showMessageDialog(view, "Payment successful!");
-            view.clearPendingPanel();   // also resets currentFeeId → 0
-            loadFees();
-            loadPaymentHistory();
-        } else {
-            JOptionPane.showMessageDialog(view, "Payment failed. Please try again.");
-            view.setPayNowEnabled(true);  // re-enable only on failure
+            double amt = f[3] != null ? Double.parseDouble(f[3].toString()) : 0;
+            view.addPendingFee(studentName, room, amt, id);
         }
     }
 
@@ -138,17 +235,6 @@ public class MakePaymentController {
         view.getPaymentHistoryTable().setRowHeight(28);
     }
 
-    public void open(){
-
-        view.setVisible(true);
-
-    }
-
-    private void close(){
-
-        view.dispose();
-
-    }
-
-
+    public void open()  { view.setVisible(true); }
+    public void close() { view.dispose(); }
 }

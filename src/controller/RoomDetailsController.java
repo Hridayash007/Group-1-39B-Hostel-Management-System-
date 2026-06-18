@@ -17,6 +17,7 @@ import javax.swing.table.TableCellEditor;
 import javax.swing.table.TableCellRenderer;
 import model.RoomData;
 import view.AdminDasboard;
+import view.AdminMenuAdjustment;
 import view.LogIn;
 import view.NoticeAdmin;
 import view.RoomAllocation1;
@@ -69,7 +70,19 @@ public class RoomDetailsController {
             close();
             new ViewComplaintController(new view.ViewComplaint()).open();
         });
-
+        
+        //meal routine
+        view.MealRoutineListener(e -> {
+            close();
+            new AdminMenuAdjustmentController(new AdminMenuAdjustment()).open();
+        });
+        
+        //Payment Details
+        view.PaymentDetailsListener(e -> {
+            close();
+            new ViewPaymentDetailsAdminController(new view.ViewPaymentDetailsAdmin()).open();
+        });
+        
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(view,

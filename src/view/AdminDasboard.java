@@ -89,6 +89,7 @@ public class AdminDasboard extends javax.swing.JFrame {
         roomdetails = new javax.swing.JButton();
         signout = new javax.swing.JButton();
         roomallocation = new javax.swing.JButton();
+        paymentdetails = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
         jButton21.setText("jButton21");
@@ -473,6 +474,15 @@ public class AdminDasboard extends javax.swing.JFrame {
         backgroundpanel.add(roomallocation);
         roomallocation.setBounds(-20, 560, 280, 43);
 
+        paymentdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymentdetails.setForeground(new java.awt.Color(255, 255, 255));
+        paymentdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomallocation.png"))); // NOI18N
+        paymentdetails.setText("Payment Details");
+        paymentdetails.setBorderPainted(false);
+        paymentdetails.setContentAreaFilled(false);
+        backgroundpanel.add(paymentdetails);
+        paymentdetails.setBounds(-20, 620, 280, 43);
+
         background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adminbackground.png"))); // NOI18N
         backgroundpanel.add(background);
         background.setBounds(0, 0, 1550, 840);
@@ -563,6 +573,7 @@ public class AdminDasboard extends javax.swing.JFrame {
     private javax.swing.JPanel noticespanel;
     private javax.swing.JLabel noticevariable;
     private javax.swing.JButton notification;
+    private javax.swing.JButton paymentdetails;
     private javax.swing.JLabel recentcheckins;
     private javax.swing.JPanel recentcheckinspanel;
     private javax.swing.JButton roomallocation;
@@ -601,7 +612,8 @@ public void SignOutListener(java.awt.event.ActionListener l)          { signout.
 public void RoomDetailsListener(java.awt.event.ActionListener listener) {
     roomdetails.addActionListener(listener);
 }
- 
+public void PaymentDetailsListener(java.awt.event.ActionListener l)          { paymentdetails.addActionListener(l); }
+public void MealRoutineListener(java.awt.event.ActionListener l)          { mealroutine.addActionListener(l); }
 public void RoomAllocationListener(java.awt.event.ActionListener listener) {
     roomallocation.addActionListener(listener);
 }

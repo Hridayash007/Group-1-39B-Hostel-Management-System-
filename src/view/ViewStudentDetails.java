@@ -44,6 +44,7 @@ public class ViewStudentDetails extends javax.swing.JFrame {
         notice = new javax.swing.JButton();
         roomdetails = new javax.swing.JButton();
         roomallocation = new javax.swing.JButton();
+        paymentdetails = new javax.swing.JButton();
         totalstudentspanel = new javax.swing.JPanel();
         totalstudentslabel = new javax.swing.JLabel();
         totalstudentsnumber = new javax.swing.JLabel();
@@ -180,6 +181,16 @@ public class ViewStudentDetails extends javax.swing.JFrame {
         getContentPane().add(roomallocation);
         roomallocation.setBounds(-30, 580, 290, 43);
 
+        paymentdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymentdetails.setForeground(new java.awt.Color(255, 255, 255));
+        paymentdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomallocation.png"))); // NOI18N
+        paymentdetails.setText("Payment Details");
+        paymentdetails.setBorderPainted(false);
+        paymentdetails.setContentAreaFilled(false);
+        paymentdetails.addActionListener(this::paymentdetailsActionPerformed);
+        getContentPane().add(paymentdetails);
+        paymentdetails.setBounds(-20, 640, 270, 43);
+
         totalstudentspanel.setBackground(new java.awt.Color(255, 255, 255));
         totalstudentspanel.setLayout(null);
 
@@ -287,6 +298,10 @@ public class ViewStudentDetails extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_roomallocationActionPerformed
 
+    private void paymentdetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paymentdetailsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paymentdetailsActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -333,6 +348,7 @@ public class ViewStudentDetails extends javax.swing.JFrame {
     private javax.swing.JButton notice;
     private javax.swing.JPanel noticelist;
     private javax.swing.JButton notification;
+    private javax.swing.JButton paymentdetails;
     private javax.swing.JPanel pendingallocationpanel;
     private javax.swing.JPanel pendingfeespanel;
     private javax.swing.JButton roomallocation;
@@ -373,9 +389,10 @@ public void RoomAllocationListener(java.awt.event.ActionListener listener) {
 public void SignOutListener(java.awt.event.ActionListener listener) {
     signout.addActionListener(listener);
 }
-
+public void PaymentDetailsListener(java.awt.event.ActionListener l)          { paymentdetails.addActionListener(l); }
 
 public void ComplaintsListener(java.awt.event.ActionListener listener) {
     complaints.addActionListener(listener);
 }
+public void MealRoutineListener(java.awt.event.ActionListener l)          { mealroutine.addActionListener(l); }
 }

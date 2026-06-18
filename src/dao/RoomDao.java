@@ -103,8 +103,8 @@ public class RoomDao {
                 "UPDATE rooms SET " +
                 "occupied = occupied + 1, " +
                 "status = CASE " +
-                "WHEN occupied + 1 >= capacity THEN 'Full' " +
-                "WHEN occupied + 1 > 0         THEN 'Partial' " +
+                "WHEN occupied  >= capacity THEN 'Full' " +
+                "WHEN occupied  > 0         THEN 'Partial' " +
                 "ELSE 'Vacant' END " +
                 "WHERE room_id = ?";
             try (PreparedStatement ps = conn.prepareStatement(upd)) {
