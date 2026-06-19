@@ -648,13 +648,6 @@ public javax.swing.JTextField getUserImage() {
     return userimage;
 }
 
-// ============================================================
-// PASTE THESE METHODS at the bottom of AddStudentDetails.java
-// (above the final closing brace, replacing the existing getUserImage() method)
-//
-// The userimage JTextField already exists in GEN-BEGIN — we hide it and
-// place a JLabel on top of it that acts as the clickable image picker.
-// ============================================================
 
 // ── Profile image label (lives on top of the userimage text field) ────────────
 private javax.swing.JLabel profileImageLabel;

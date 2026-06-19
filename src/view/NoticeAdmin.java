@@ -192,7 +192,7 @@ public class NoticeAdmin extends javax.swing.JFrame {
 
         paymentdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         paymentdetails.setForeground(new java.awt.Color(255, 255, 255));
-        paymentdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomallocation.png"))); // NOI18N
+        paymentdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymentdetails.png"))); // NOI18N
         paymentdetails.setText("Payment Details");
         paymentdetails.setBorderPainted(false);
         paymentdetails.setContentAreaFilled(false);
@@ -424,7 +424,9 @@ public void ComplaintsListener(java.awt.event.ActionListener listener) {
 public void RoomDetailsListener(java.awt.event.ActionListener listener) {
     roomdetails.addActionListener(listener);
 }
- 
+public void NotificationListener(java.awt.event.ActionListener listener) {
+    notification.addActionListener(listener);
+}
 public void RoomAllocationListener(java.awt.event.ActionListener listener) {
     roomallocation.addActionListener(listener);
 }

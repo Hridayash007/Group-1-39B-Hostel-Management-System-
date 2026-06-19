@@ -133,10 +133,8 @@ public class NoticeAdminController {
         container.repaint();
     }
 
-    /**
-     * Builds a notice card with View and Delete icon buttons on the right.
-     * All logic stays in the controller — view is passive.
-     */
+    // Builds a notice card with View and Delete icon buttons on the right.
+   
     private JPanel buildAdminNoticeCard(NoticeData n) {
         JPanel card = new JPanel();
         card.setLayout(null);

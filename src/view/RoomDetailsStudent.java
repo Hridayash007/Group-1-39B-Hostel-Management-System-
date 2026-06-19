@@ -665,5 +665,7 @@ public void MakePaymentListener(java.awt.event.ActionListener listener) {
 public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
     paymenthistory.addActionListener(listener);
 }
-
+public void NotificatinListener(java.awt.event.ActionListener listener) {
+    Notification.addActionListener(listener);
+}
 }

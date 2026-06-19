@@ -52,6 +52,11 @@ public class StudentDashboardController {
             new StudentMealRoutineController(new StudentMealRoutine(),user).open();
         });
         
+        //QA meal routine
+        view.QAMealRoutineListener(e -> {
+            close();
+            new StudentMealRoutineController(new StudentMealRoutine(),user).open();
+        });
         
         // ── My Profile ───────────────────────────────────────────────────────
         view.MyProfileListener(e -> {
@@ -87,6 +92,13 @@ public class StudentDashboardController {
             close();
             new ViewNoticeController(new ViewNotice(), user).open();
         });
+        
+        //top right notice
+        view.NotificatinListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
+        
         // ── Profile icon (top-right) ─────────────────────────────────────────
         view.ProfileListener(e -> {
             close();

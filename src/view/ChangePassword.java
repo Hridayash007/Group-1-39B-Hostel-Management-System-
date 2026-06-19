@@ -427,4 +427,5 @@ public javax.swing.JTextField getNewPasswordField() {
 public javax.swing.JTextField getConfirmNewPasswordField() {
     return confirmnewpasswordtext;
 }
+
 }

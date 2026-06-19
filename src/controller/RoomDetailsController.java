@@ -71,6 +71,12 @@ public class RoomDetailsController {
             new ViewComplaintController(new view.ViewComplaint()).open();
         });
         
+        // top right Notice
+        view.NotificationListener(e -> {
+            close();
+            new NoticeAdminController(new NoticeAdmin()).open();
+        });
+        
         //meal routine
         view.MealRoutineListener(e -> {
             close();

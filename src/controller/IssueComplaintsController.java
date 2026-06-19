@@ -65,6 +65,12 @@ public class IssueComplaintsController {
             new StudentProfileController(new StudentProfile(), user).open();
         });
         
+        //top right notice
+        view.NotificatinListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
+        
         //--Room Details
         view.RoomDetailsListener(e -> {
             close();

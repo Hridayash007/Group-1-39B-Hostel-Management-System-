@@ -57,6 +57,12 @@ public class ViewComplaintController {
             new AdminMenuAdjustmentController(new AdminMenuAdjustment()).open();
         });
         
+        // top right Notice
+        view.NotificationListener(e -> {
+            close();
+            new NoticeAdminController(new NoticeAdmin()).open();
+        });
+        
         // ── Room Details button ─────────────────────────────────────────────────
         view.RoomDetailsListener(e -> {
             close();

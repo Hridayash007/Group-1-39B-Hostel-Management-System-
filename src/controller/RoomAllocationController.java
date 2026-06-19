@@ -57,6 +57,12 @@ public class RoomAllocationController {
             new AdminMenuAdjustmentController(new AdminMenuAdjustment()).open();
         });
         
+        // top right Notice
+        view.NotificationListener(e -> {
+            close();
+            new NoticeAdminController(new NoticeAdmin()).open();
+        });
+        
         //Payment Details
         view.PaymentDetailsListener(e -> {
             close();

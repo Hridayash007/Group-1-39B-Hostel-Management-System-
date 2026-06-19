@@ -5,10 +5,8 @@ import javax.swing.JFrame;
 import model.UserData;
 import view.ViewStudentExpand;
 
-/**
- * Opens ViewStudentExpand as a modal dialog centered over the parent window.
- * MVC-compliant: view only exposes setStudentData() and CloseListener().
- */
+//Opens ViewStudentExpand as a modal dialog centered over the parent window.
+ 
 public class ViewStudentExpandController {
 
     private final ViewStudentExpand view;

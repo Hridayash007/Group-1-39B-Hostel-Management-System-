@@ -28,12 +28,14 @@ public class MakePaymentController {
         this.user = user;
         this.userId = user.getId();
 
-        // TODO: move this to an environment variable or config file before
-        // committing to version control or deploying — hardcoding a live
-        // secret key here means anyone with access to this source file
-        // can use it to make charges against this Stripe account.
-        String stripeKey = System.getenv("STRIPE_SECRET_KEY");
-Stripe.apiKey = stripeKey;
+ String stripeKey = System.getenv("STRIPE_SECRET_KEY");
+        if (stripeKey == null || stripeKey.isBlank()) {
+            JOptionPane.showMessageDialog(view,
+                    "Payment system is not configured (missing STRIPE_SECRET_KEY).\n" +
+                    "Please contact the system administrator.",
+                    "Configuration Error", JOptionPane.ERROR_MESSAGE);
+        }
+        Stripe.apiKey = stripeKey;
         view.setWelcomeUser(user.getUsername());
         loadFees();
         loadPaymentHistory();
@@ -48,7 +50,11 @@ Stripe.apiKey = stripeKey;
         view.RoomDetailsListener(e -> { close(); new RoomDetailsStudentController(new RoomDetailsStudent(), user).open(); });
         view.MealRoutineListener(e -> { close(); new StudentMealRoutineController(new StudentMealRoutine(), user).open(); });
         view.PaymentHistoryListener(e -> { close(); new ViewPaymentDetailsController(new ViewPaymentDetails(), user).open(); });
-
+        //top right notice
+        view.NotificatinListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(view,
                     "Are you sure you want to sign out?", "Sign Out",
@@ -83,10 +89,7 @@ Stripe.apiKey = stripeKey;
                         .setQuantity(1L)
                         .setPriceData(
                             SessionCreateParams.LineItem.PriceData.builder()
-                                .setCurrency("npr") // BUG FIX: app displays "Rs" (NPR) everywhere
-                                                     // else; charging in USD meant the student
-                                                     // would be billed a completely different
-                                                     // amount than what was shown on screen.
+                                .setCurrency("npr") 
                                 .setUnitAmount(amountInCents)
                                 .setProductData(
                                     SessionCreateParams.LineItem.PriceData.ProductData.builder()
@@ -162,10 +165,7 @@ Stripe.apiKey = stripeKey;
                                 p.setFeeId(feeId);
                                 p.setAmount(amount);
                                 p.setStripeSessionId(stripeSessionId);
-                                p.setStatus("Paid"); // BUG FIX: was "Completed" — the admin
-                                                      // payment table renderer (FeeDao.getAllPayments)
-                                                      // specifically checks for "Paid" to color rows
-                                                      // green; "Completed" would render as unpaid/red.
+                                p.setStatus("Paid"); 
                                 paymentDao.savePayment(p);
 
                                 JOptionPane.showMessageDialog(view,

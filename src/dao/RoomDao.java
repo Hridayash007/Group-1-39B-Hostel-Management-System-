@@ -112,10 +112,7 @@ public class RoomDao {
                 ps.executeUpdate();
             }
             
-            // BUG FIX: was inserting u.username into student_name.
-            // FeeDao.getPendingFees already does COALESCE(f.student_name, u.username),
-            // so storing the raw username makes full_name never appear.
-            // Store COALESCE(u.full_name, u.username) so the correct name is persisted.
+          
             String feeSql =
             "INSERT INTO fees(user_id, room_id, student_name, room_number, amount, fee_month, status) "
             +
@@ -170,9 +167,7 @@ public class RoomDao {
                 ps.executeUpdate();
             }
 
-            // BUG FIX: MySQL evaluates the CASE using the column's OLD value before the SET
-            // takes effect, so status was always one step behind after a de-allocation.
-            // Wrapping the decrement in a subquery forces MySQL to compute the new value first.
+            
             String upd =
                 "UPDATE rooms r2 "
                 + "JOIN (SELECT GREATEST(occupied - 1, 0) AS new_occ, capacity, room_id "

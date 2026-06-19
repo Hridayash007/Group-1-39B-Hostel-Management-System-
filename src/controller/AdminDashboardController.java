@@ -10,6 +10,7 @@ import view.NoticeAdmin;
 import view.ViewComplaint;
 import view.ViewStudentDetails;
 import view.AdminMenuAdjustment;
+import view.ViewNotice;
 
 public class AdminDashboardController {
 
@@ -87,6 +88,13 @@ public class AdminDashboardController {
             close();
             new RoomAllocationController(new view.RoomAllocation1()).open();
         });
+        
+        // top right Notice
+        view.NotificationListener(e -> {
+            close();
+            new NoticeAdminController(new NoticeAdmin()).open();
+        });
+        
         
         view.PaymentDetailsListener(e -> {
             close();

@@ -128,6 +128,12 @@ public class RoomDetailsStudentController {
             new StudentMealRoutineController(new StudentMealRoutine(),user).open();
         });
         
+        //top right notice
+        view.NotificatinListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
+        
         //--Make Payment
         view.MakePaymentListener(e -> {
             close();

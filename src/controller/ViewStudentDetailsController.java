@@ -52,6 +52,11 @@ public class ViewStudentDetailsController {
             new NoticeAdminController(adminView).open();
         });
         
+        // top right Notice
+        view.NotificationListener(e -> {
+            close();
+            new NoticeAdminController(new NoticeAdmin()).open();
+        });
         
         // ── Room Details button ─────────────────────────────────────────────────
         view.RoomDetailsListener(e -> {

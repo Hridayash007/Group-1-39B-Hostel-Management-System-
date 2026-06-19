@@ -5,6 +5,7 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import view.AdminMenuAdjustment;
+import view.NoticeAdmin;
 
 public class AdminMenuAdjustmentController {
 
@@ -256,6 +257,13 @@ public class AdminMenuAdjustmentController {
             close();
             new ViewPaymentDetailsAdminController(new view.ViewPaymentDetailsAdmin()).open();
         });
+        
+        // top right Notice
+        view.NotificationListener(e -> {
+            close();
+            new NoticeAdminController(new NoticeAdmin()).open();
+        });
+        
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(view,
                     "Are you sure you want to sign out?", "Sign Out",

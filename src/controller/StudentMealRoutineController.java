@@ -184,7 +184,13 @@ public class StudentMealRoutineController {
             close();
             new ViewPaymentDetailsController(new ViewPaymentDetails(),user).open();
         });
-
+        
+        //top right notice
+        view.NotificatinListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
+        
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(view,

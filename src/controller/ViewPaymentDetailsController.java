@@ -60,6 +60,12 @@ public class ViewPaymentDetailsController {
             new StudentProfileController(new StudentProfile(), user).open();
         });
         
+        //top right notice
+        view.NotificatinListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
+        
          //meal routine
         view.MealRoutineListener(e -> {
             close();

@@ -5,10 +5,8 @@ import javax.swing.JFrame;
 import model.ComplaintData;
 import view.ViewComplaintExpand;
 
-/**
- * Opens ViewComplaintExpand as a modal dialog centered over the parent window.
- * Used by both IssueComplaintsController (student) and ViewComplaintController (admin).
- */
+//Opens ViewComplaintExpand as a modal dialog centered over the parent window.
+ 
 public class ViewComplaintExpandController {
 
     private final ViewComplaintExpand view;

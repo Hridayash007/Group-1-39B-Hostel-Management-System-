@@ -75,6 +75,12 @@ public class StudentProfileController {
             new ViewPaymentDetailsController(new view.ViewPaymentDetails(), user).open();
         });
         
+        //top right notice
+        view.NotificatinListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
+        
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = javax.swing.JOptionPane.showConfirmDialog(

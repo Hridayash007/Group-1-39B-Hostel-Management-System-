@@ -552,4 +552,7 @@ public void MyComplaintsListener(java.awt.event.ActionListener listener) {
 public void ProfileListener(java.awt.event.ActionListener listener) {
     profile.addActionListener(listener);
 }
+public void NotificatinListener(java.awt.event.ActionListener listener) {
+    notification.addActionListener(listener);
+}
 }

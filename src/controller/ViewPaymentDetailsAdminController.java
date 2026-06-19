@@ -57,6 +57,12 @@ public class ViewPaymentDetailsAdminController {
         });
         view.PaymentDetailsListener(e -> loadPayments(null)); // refresh in place
         
+        // top right Notice
+        view.NotificationListener(e -> {
+            close();
+            new NoticeAdminController(new NoticeAdmin()).open();
+        });
+        
         //meal routine
         view.MealRoutineListener(e -> {
             close();
@@ -74,9 +80,7 @@ public class ViewPaymentDetailsAdminController {
         });
     }
 
-    /**
-     * @param statusFilter  null = all, "Pending" = pending only, "Paid" = paid only
-     */
+    
     private void loadPayments(String statusFilter) {
         List<Object[]> rows = feeDao.getAllPayments(statusFilter);
         String[] cols = {"Payment ID", "Student", "Room", "Date", "Amount", "Status"};

@@ -182,13 +182,7 @@ public class FeeDao {
         }
 
     }
-/**
- * Returns fee rows for the admin payment table.
- * @param statusFilter  null → all rows, "Pending" or "Paid" → filtered
- *
- * Columns: [0] payment_id, [1] student_name, [2] room_number,
- *          [3] paid_date,  [4] amount,        [5] status
- */
+
 public List<Object[]> getAllPayments(String statusFilter) {
     List<Object[]> list = new ArrayList<>();
 

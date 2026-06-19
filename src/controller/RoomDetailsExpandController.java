@@ -7,10 +7,8 @@ import javax.swing.JOptionPane;
 import model.RoomData;
 import view.RoomDetailsExpand;
 
-/**
- * Opens RoomDetailsExpand as a modal dialog.
- * Collects form data and saves a new room to DB.
- */
+//Opens RoomDetailsExpand as a modal dialog.Collects form data and saves a new room to DB.
+ 
 public class RoomDetailsExpandController {
 
     private final RoomDao roomDao = new RoomDao();

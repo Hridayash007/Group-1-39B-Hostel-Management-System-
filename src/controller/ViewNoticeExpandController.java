@@ -16,17 +16,14 @@ public class ViewNoticeExpandController {
         view.CloseListener(e -> close());
     }
 
-    /**
-     * Call this to populate the view before opening.
-     */
+    //Call this to populate the view before opening.
+
     public void setNotice(NoticeData notice) {
         view.setNoticeData(notice);
     }
 
-    /**
-     * Opens the expand view as a centered modal dialog over the given parent.
-     * @param parent  the window to center over (NoticeAdmin or ViewNotice)
-     */
+    // Opens the expand view as a centered modal dialog over the given parent.
+     
     public void open(JFrame parent) {
         dialog = new JDialog(parent, "Notice Details", true);
         dialog.setContentPane(view.getContentPane());

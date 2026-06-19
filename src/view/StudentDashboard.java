@@ -542,6 +542,9 @@ public void FileComplaintListener(java.awt.event.ActionListener listener) {
     filecomplaint.addActionListener(listener);
 }
 
+public void QAMealRoutineListener(java.awt.event.ActionListener listener) {
+    mealroutine.addActionListener(listener);
+}
 public void ViewRoomDetailsListener(java.awt.event.ActionListener listener) {
     viewroomdetails.addActionListener(listener);
 }

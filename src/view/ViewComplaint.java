@@ -171,7 +171,7 @@ public class ViewComplaint extends javax.swing.JFrame {
 
         paymentdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         paymentdetails.setForeground(new java.awt.Color(255, 255, 255));
-        paymentdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomallocation.png"))); // NOI18N
+        paymentdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymentdetails.png"))); // NOI18N
         paymentdetails.setText("Payment Details");
         paymentdetails.setBorderPainted(false);
         paymentdetails.setContentAreaFilled(false);
@@ -376,6 +376,9 @@ public void RoomDetailsListener(java.awt.event.ActionListener listener) {
 public void PaymentDetailsListener(java.awt.event.ActionListener l)          { paymentdetails.addActionListener(l); }
 public void RoomAllocationListener(java.awt.event.ActionListener listener) {
     RoomAllocation.addActionListener(listener);
+}
+public void NotificationListener(java.awt.event.ActionListener listener) {
+    Notification.addActionListener(listener);
 }
 public void MealRoutineListener(java.awt.event.ActionListener l)          { MealRoutine.addActionListener(l); }
 }

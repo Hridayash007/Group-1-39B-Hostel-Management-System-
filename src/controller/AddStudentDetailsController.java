@@ -25,9 +25,7 @@ public class AddStudentDetailsController {
 
         view.setWelcomeUser(user.getUsername());
 
-        // ── Init circular image label (must run after the view is visible) ───
-        // We call it immediately; the label is added programmatically on top of
-        // the hidden userimage JTextField.
+        
         view.initProfileImageLabel();
 
         // ── Pre-fill all form fields ─────────────────────────────────────────
@@ -89,6 +87,12 @@ public class AddStudentDetailsController {
             new IssueComplaintsController(new IssueComplaints(), user).open();
         });
         view.NoticeListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
+        
+        //top right notice
+        view.NotificatinListener(e -> {
             close();
             new ViewNoticeController(new ViewNotice(), user).open();
         });

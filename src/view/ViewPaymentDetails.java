@@ -297,6 +297,8 @@ public class ViewPaymentDetails extends javax.swing.JFrame {
     public void MyProfileListener(java.awt.event.ActionListener l)    { Myprofile.addActionListener(l); }
     public void ProfileListener(java.awt.event.ActionListener l)      { profile.addActionListener(l); }
     public void SignOutListener(java.awt.event.ActionListener l)      { Dashboard1.addActionListener(l); }
-
+    public void NotificatinListener(java.awt.event.ActionListener listener) {
+    Notification.addActionListener(listener);
+}
 }
 

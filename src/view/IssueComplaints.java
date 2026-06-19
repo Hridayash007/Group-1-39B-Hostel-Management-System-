@@ -431,4 +431,8 @@ public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
 public void MealRoutineListener(java.awt.event.ActionListener listener) {
     MealRoutine.addActionListener(listener);
 }
+
+public void NotificatinListener(java.awt.event.ActionListener listener) {
+    notification.addActionListener(listener);
+}
 }
