@@ -144,7 +144,7 @@ public class AdminDasboard extends javax.swing.JFrame {
 
         jLabel3.setText("Welcome back, Admin Warden");
         jPanel18.add(jLabel3);
-        jLabel3.setBounds(280, 30, 170, 16);
+        jLabel3.setBounds(290, 30, 170, 16);
 
         jPanel1.setBackground(new java.awt.Color(39, 0, 117));
         jPanel1.setLayout(null);
