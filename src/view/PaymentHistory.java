@@ -713,12 +713,13 @@ public class PaymentHistory extends javax.swing.JFrame {
 
         jButton15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton15.setForeground(new java.awt.Color(255, 255, 255));
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2026-06-20 125133.png"))); // NOI18N
         jButton15.setText("Sign Out");
         jButton15.setBorderPainted(false);
         jButton15.setContentAreaFilled(false);
         jButton15.addActionListener(this::jButton15ActionPerformed);
         jPanel1.add(jButton15);
-        jButton15.setBounds(60, 800, 110, 23);
+        jButton15.setBounds(50, 783, 150, 40);
 
         jPanel17.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
