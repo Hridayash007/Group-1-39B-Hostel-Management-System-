@@ -282,7 +282,7 @@ public class PaymentHistory extends javax.swing.JFrame {
         jPanel1.add(Notification);
         Notification.setBounds(980, 0, 40, 50);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel1.setText("Room Details");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(310, 60, 130, 30);
