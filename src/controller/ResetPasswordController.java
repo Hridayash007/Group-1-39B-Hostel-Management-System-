@@ -62,7 +62,7 @@ public class ResetPasswordController {
                 return;
             }
 
-            boolean updated = userDao.updatePassword(email, newPassword, confirmPassword);
+            boolean updated = userDao.updatePassword(email, newPassword);
 
             if (updated) {
                 // Clear session data

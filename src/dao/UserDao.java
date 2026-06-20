@@ -11,12 +11,11 @@ public class UserDao {
     // ── Registration ──────────────────────────────────────────────────────────
     public void createUser(UserData user) {
         Connection conn = mysql.openConnection();
-        String sql = "INSERT INTO users (username, email, password, confirm_password) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
         try (PreparedStatement pstm = conn.prepareStatement(sql)) {
             pstm.setString(1, user.getUsername());
             pstm.setString(2, user.getEmail());
             pstm.setString(3, user.getPassword());
-            pstm.setString(4, user.getConfirmPassword());
             pstm.executeUpdate();
         } catch (Exception e) {
             System.out.print(e);
@@ -42,12 +41,12 @@ public class UserDao {
     }
 
     // ── Login ─────────────────────────────────────────────────────────────────
-    public UserData loginUser(String username, String email, String password) {
+    public UserData loginUser(String username, String password) {
         Connection conn = mysql.openConnection();
-        String sql = "SELECT * FROM users WHERE username = ? AND email = ? AND password = ?";
+        String sql = "SELECT * FROM users WHERE (username = ? OR email = ?) AND password = ?";
         try (PreparedStatement pstm = conn.prepareStatement(sql)) {
             pstm.setString(1, username);
-            pstm.setString(2, email);
+            pstm.setString(2, username);
             pstm.setString(3, password);
             ResultSet rs = pstm.executeQuery();
             if (rs.next()) return mapFullRow(rs);
@@ -138,13 +137,12 @@ public class UserDao {
         }
     }
 
-    public boolean updatePassword(String email, String newPassword, String confirmPassword) {
+    public boolean updatePassword(String email, String newPassword) {
         Connection conn = mysql.openConnection();
-        String query = "UPDATE users SET password=?, confirm_password=? WHERE email=?";
+        String query = "UPDATE users SET password=? WHERE email=?";
         try (PreparedStatement ps = conn.prepareStatement(query)) {
             ps.setString(1, newPassword);
-            ps.setString(2, confirmPassword);
-            ps.setString(3, email);
+            ps.setString(2, email);
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();

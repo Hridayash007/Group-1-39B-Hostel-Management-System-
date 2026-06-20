@@ -31,18 +31,17 @@ public class LoginController {
         public void actionPerformed(ActionEvent e) {
             try {
                 String username = userView.getUsernameField().getText().trim();
-                String email    = userView.getEmailField().getText().trim();
                 String password = new String(userView.getPasswordField().getPassword()).trim();
 
-                if (username.isEmpty() || email.isEmpty() || password.isEmpty()
+                if (username.isEmpty() ||  password.isEmpty()
                         || password.equals("**********") || password.equals("8888888888")) {
                     JOptionPane.showMessageDialog(userView,
-                            "Please enter your username, email and password.");
+                            "Please enter your username and password.");
                     return;
                 }
 
                 // ── Admin login → AdminDashboard ─────────────────────────────
-                if (AdminCredentials.isAdmin(email, password)) {
+                if (AdminCredentials.isAdmin(username, password)) {
                     close();
                     AdminDasboard adminDash = new AdminDasboard();
                     new AdminDashboardController(adminDash).open();
@@ -50,7 +49,7 @@ public class LoginController {
                 }
 
                 // ── Student login → StudentDashboard ─────────────────────────
-                UserData loggedInUser = userDao.loginUser(username, email, password);
+                UserData loggedInUser = userDao.loginUser(username, password);
 
                 if (loggedInUser != null) {
                     close();

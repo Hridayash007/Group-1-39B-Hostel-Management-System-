@@ -154,7 +154,7 @@ public class ChangePasswordController {
         }
 
         // ── Save to DB ───────────────────────────────────────────────────────
-        boolean updated = userDao.updatePassword(user.getEmail(), newPw, newPw);
+        boolean updated = userDao.updatePassword(user.getEmail(), newPw);
 
         if (updated) {
             // Update the in-memory user object so current session reflects change

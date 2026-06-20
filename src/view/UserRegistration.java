@@ -56,6 +56,7 @@ public class UserRegistration extends javax.swing.JFrame {
 
         Password_data.setBackground(new java.awt.Color(171, 186, 255));
         Password_data.setText("********");
+        Password_data.setToolTipText("");
         Password_data.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 Password_dataFocusGained(evt);
