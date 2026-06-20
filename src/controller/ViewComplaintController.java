@@ -19,6 +19,7 @@ import view.NoticeAdmin;
 import view.ViewComplaint;
 import view.ViewComplaintExpand;
 import javax.swing.ImageIcon;
+import view.AdminDasboard;
 import view.AdminMenuAdjustment;
 
 public class ViewComplaintController {
@@ -44,7 +45,7 @@ public class ViewComplaintController {
         });
         view.DashboardListener(e -> {
             close();
-            new NoticeAdminController(new NoticeAdmin()).open();
+            new AdminDashboardController(new AdminDasboard()).open();
         });
         view.StudentsListener(e -> {
             close();

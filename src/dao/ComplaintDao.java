@@ -127,4 +127,39 @@ public class ComplaintDao {
         if (ts != null) c.setDateFiled(ts.toLocalDateTime());
         return c;
     }
+    
+    public java.util.List<Object[]> getUrgentComplaints(int limit) {
+    java.util.List<Object[]> list = new java.util.ArrayList<>();
+ 
+    String sql =
+        "SELECT complaint_id, description, severity " +
+        "FROM complaints " +
+        "WHERE status != 'Resolved' " +
+        "ORDER BY " +
+        "  CASE severity " +
+        "    WHEN 'Critical' THEN 1 " +
+        "    WHEN 'High'     THEN 2 " +
+        "    ELSE 3 " +
+        "  END, " +
+        "  date_filed DESC " +
+        "LIMIT ?";
+ 
+    Connection conn = mysql.openConnection();
+    try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setInt(1, limit);
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            list.add(new Object[]{
+                "C-" + String.format("%03d", rs.getInt("complaint_id")),
+                rs.getString("description"),
+                rs.getString("severity")
+            });
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        mysql.closeConnection(conn);
+    }
+    return list;
+}
 }

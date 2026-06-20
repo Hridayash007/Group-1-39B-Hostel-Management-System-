@@ -602,7 +602,23 @@ public class AdminDasboard extends javax.swing.JFrame {
 public void setTotalStudents(int n)   { totalstudentsvariable.setText(String.valueOf(n)); }
 public void setTotalComplaints(int n) { totalcomplaintvariable.setText(String.valueOf(n)); }
 public void setActiveNotices(int n)   { noticevariable.setText(String.valueOf(n)); }
- 
+public void setRoomOccupied(int occupied, int capacity) {
+    roomoccupiedvariable.setText(occupied + "/" + capacity);
+}
+
+
+public javax.swing.JPanel getCheckInsContainer()   { return recentcheckinspanel; }
+public javax.swing.JPanel getComplaintsContainer() { return urgentcomplaint; }
+
+
+public void removeStaticCheckInPlaceholder() { recentcheckinspanel.remove(studentpanel); }
+
+
+public void removeStaticComplaintPlaceholders() {
+    urgentcomplaint.remove(jPanel12);
+    urgentcomplaint.remove(jPanel13);
+    urgentcomplaint.remove(jPanel14);
+}
 // ── Sidebar navigation listeners ─────────────────────────────────────────────
 public void DashboardListener(java.awt.event.ActionListener l)        { dashboard.addActionListener(l); }
 public void StudentsListener(java.awt.event.ActionListener l)         { students.addActionListener(l); }
@@ -623,4 +639,12 @@ public void NotificationListener(java.awt.event.ActionListener listener) {
 // ── Dashboard panel "View all" button listeners ───────────────────────────────
 public void ViewAllComplaintsListener(java.awt.event.ActionListener l){ viewbtn.addActionListener(l); }
 public void ViewAllStudentsListener(java.awt.event.ActionListener l)  { viewallbtn.addActionListener(l); }
+public javax.swing.JPanel getRecentCheckInPanel(){
+    return recentcheckinspanel;
+}
+
+
+public javax.swing.JPanel getUrgentComplaintPanel(){
+    return urgentcomplaint;
+}
 }
