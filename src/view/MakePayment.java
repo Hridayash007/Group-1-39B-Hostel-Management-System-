@@ -98,60 +98,60 @@ public class MakePayment extends javax.swing.JFrame {
         Dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dashboard.png"))); // NOI18N
         Dashboard.setText("Dashboard");
         backgroundpanel.add(Dashboard);
-        Dashboard.setBounds(10, 210, 270, 36);
+        Dashboard.setBounds(0, 210, 270, 36);
 
         Mycomplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Mycomplaints.setForeground(new java.awt.Color(255, 255, 255));
         Mycomplaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/my complaints.png"))); // NOI18N
         Mycomplaints.setText("My Complaints");
         backgroundpanel.add(Mycomplaints);
-        Mycomplaints.setBounds(10, 260, 270, 36);
+        Mycomplaints.setBounds(0, 270, 270, 36);
 
         MealRoutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MealRoutine.setForeground(new java.awt.Color(255, 255, 255));
         MealRoutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/meal routine.png"))); // NOI18N
         MealRoutine.setText("Meal Routine");
         backgroundpanel.add(MealRoutine);
-        MealRoutine.setBounds(20, 320, 260, 36);
+        MealRoutine.setBounds(0, 330, 260, 36);
 
         Notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Notice.setForeground(new java.awt.Color(255, 255, 255));
         Notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notice.png"))); // NOI18N
         Notice.setText("Notice");
         backgroundpanel.add(Notice);
-        Notice.setBounds(20, 370, 260, 36);
+        Notice.setBounds(0, 380, 260, 36);
 
         RoomDetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         RoomDetails.setForeground(new java.awt.Color(255, 255, 255));
         RoomDetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomdetails.png"))); // NOI18N
         RoomDetails.setText("Room Details");
         backgroundpanel.add(RoomDetails);
-        RoomDetails.setBounds(30, 420, 250, 36);
+        RoomDetails.setBounds(0, 430, 250, 36);
 
         MyProfile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MyProfile.setForeground(new java.awt.Color(255, 255, 255));
         MyProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
         MyProfile.setText("My Profile");
         backgroundpanel.add(MyProfile);
-        MyProfile.setBounds(30, 480, 250, 36);
+        MyProfile.setBounds(0, 480, 250, 36);
 
         PaymentHistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         PaymentHistory.setForeground(new java.awt.Color(255, 255, 255));
         PaymentHistory.setText("Payment History");
         backgroundpanel.add(PaymentHistory);
-        PaymentHistory.setBounds(30, 550, 250, 25);
+        PaymentHistory.setBounds(0, 540, 250, 25);
 
         MakePayment.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MakePayment.setForeground(new java.awt.Color(255, 255, 255));
         MakePayment.setText("Make Payment");
         backgroundpanel.add(MakePayment);
-        MakePayment.setBounds(30, 600, 250, 25);
+        MakePayment.setBounds(0, 580, 250, 25);
 
         Reports.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Reports.setForeground(new java.awt.Color(255, 255, 255));
         Reports.setText("Reports");
         backgroundpanel.add(Reports);
-        Reports.setBounds(30, 640, 250, 25);
+        Reports.setBounds(0, 620, 250, 25);
 
         Signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Signout.setForeground(new java.awt.Color(255, 255, 255));
