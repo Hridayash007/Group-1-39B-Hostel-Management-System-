@@ -9,8 +9,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import model.NoticeData;
 import model.UserData;
+import view.IssueComplaints;
 import view.LogIn;
+import view.MakePayment;
+import view.RoomDetailsStudent;
 import view.StudentDashboard;
+import view.StudentMealRoutine;
 import view.StudentProfile;
 import view.ViewNotice;
 import view.viewnoticeexpand;
@@ -44,10 +48,41 @@ public class ViewNoticeController {
             close();
             new StudentProfileController(new StudentProfile(), user).open();
         });
-
+        
+        //--Room Details
+        view.RoomDetailsListener(e -> {
+            close();
+            new RoomDetailsStudentController(new RoomDetailsStudent(), user).open();
+        });
+        
+         //meal routine
+        view.MealRoutineListener(e -> {
+            close();
+            new StudentMealRoutineController(new StudentMealRoutine(),user).open();
+        });
+        
+        //--Make Payment
+        view.MakePaymentListener(e -> {
+            close();
+            new MakePaymentController(new MakePayment(), user).open();
+        });
+        
+        view.PaymentHistoryListener(e -> {
+            close();
+            new ViewPaymentDetailsController(new view.ViewPaymentDetails(), user).open();
+        });
+        
         view.NoticeListener(e -> {
             loadPinnedNotices();
             loadAllNotices();
+        });
+        
+        
+        // ── My Complaints ────────────────────────────────────────────────────
+        view.MyComplaintsListener(e -> {
+            close();
+            IssueComplaints complaintsView = new IssueComplaints();
+            new IssueComplaintsController(complaintsView, user).open();
         });
 
         // ── Sign Out ─────────────────────────────────────────────────────────

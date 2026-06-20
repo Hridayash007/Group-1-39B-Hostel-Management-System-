@@ -4,9 +4,14 @@ import dao.UserDao;
 import javax.swing.JOptionPane;
 import model.UserData;
 import view.ChangePassword;
+import view.IssueComplaints;
 import view.LogIn;
+import view.MakePayment;
+import view.RoomDetailsStudent;
 import view.StudentDashboard;
+import view.StudentMealRoutine;
 import view.StudentProfile;
+import view.ViewNotice;
 
 public class ChangePasswordController {
 
@@ -49,7 +54,49 @@ public class ChangePasswordController {
             StudentProfile profileView = new StudentProfile();
             new StudentProfileController(profileView, user).open();
         });
+        
+        // ── My Complaints ────────────────────────────────────────────────────
+        view.MyComplaintsListener(e -> {
+            close();
+            IssueComplaints complaintsView = new IssueComplaints();
+            new IssueComplaintsController(complaintsView, user).open();
+        });
 
+        // ── Notice ───────────────────────────────────────────────────────────
+        view.NoticeListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
+        
+        //top right notice
+        view.NotificatinListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
+        
+         //meal routine
+        view.MealRoutineListener(e -> {
+            close();
+            new StudentMealRoutineController(new StudentMealRoutine(),user).open();
+        });
+        
+        //--Room Details
+        view.RoomDetailsListener(e -> {
+            close();
+            new RoomDetailsStudentController(new RoomDetailsStudent(), user).open();
+        });
+        
+        //--Make Payment
+        view.MakePaymentListener(e -> {
+            close();
+            new MakePaymentController(new MakePayment(), user).open();
+        });
+        
+        view.PaymentHistoryListener(e -> {
+            close();
+            new ViewPaymentDetailsController(new view.ViewPaymentDetails(), user).open();
+        });
+        
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(
@@ -107,7 +154,7 @@ public class ChangePasswordController {
         }
 
         // ── Save to DB ───────────────────────────────────────────────────────
-        boolean updated = userDao.updatePassword(user.getEmail(), newPw, newPw);
+        boolean updated = userDao.updatePassword(user.getEmail(), newPw);
 
         if (updated) {
             // Update the in-memory user object so current session reflects change

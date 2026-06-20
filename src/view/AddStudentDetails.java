@@ -46,7 +46,9 @@ public class AddStudentDetails extends javax.swing.JFrame {
         navigation = new javax.swing.JLabel();
         signout = new javax.swing.JButton();
         backtoprofile = new javax.swing.JButton();
+        makepayment = new javax.swing.JButton();
         editprofile = new javax.swing.JLabel();
+        paymenthistory = new javax.swing.JButton();
         updateinfo = new javax.swing.JLabel();
         additionalinfo = new javax.swing.JPanel();
         additionalinformation = new javax.swing.JLabel();
@@ -85,6 +87,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         dateofbirth = new javax.swing.JTextField();
         nationality = new javax.swing.JLabel();
         country = new javax.swing.JTextField();
+        userimage = new javax.swing.JTextField();
         savechanges = new javax.swing.JButton();
         cancel = new javax.swing.JButton();
         background = new javax.swing.JLabel();
@@ -95,14 +98,14 @@ public class AddStudentDetails extends javax.swing.JFrame {
 
         backgroundpanel.setLayout(null);
 
-        notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notification.png"))); // NOI18N
+        notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notification.png"))); // NOI18N
         notification.setBorderPainted(false);
         notification.setContentAreaFilled(false);
         notification.addActionListener(this::notificationActionPerformed);
         backgroundpanel.add(notification);
         notification.setBounds(1440, 10, 30, 40);
 
-        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
+        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/profile.png"))); // NOI18N
         profile.setBorderPainted(false);
         profile.setContentAreaFilled(false);
         backgroundpanel.add(profile);
@@ -119,7 +122,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
 
         dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
-        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dashboard.png"))); // NOI18N
+        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         dashboard.setText("Dashboard");
         dashboard.setBorderPainted(false);
         dashboard.setContentAreaFilled(false);
@@ -129,7 +132,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
 
         mycomplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         mycomplaints.setForeground(new java.awt.Color(255, 255, 255));
-        mycomplaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/my complaints.png"))); // NOI18N
+        mycomplaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/my complaints.png"))); // NOI18N
         mycomplaints.setText("My Complaints\n");
         mycomplaints.setBorderPainted(false);
         mycomplaints.setContentAreaFilled(false);
@@ -138,7 +141,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
 
         mealroutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         mealroutine.setForeground(new java.awt.Color(255, 255, 255));
-        mealroutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/meal routine.png"))); // NOI18N
+        mealroutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/meal routine.png"))); // NOI18N
         mealroutine.setText("Meal Routine");
         mealroutine.setBorderPainted(false);
         mealroutine.setContentAreaFilled(false);
@@ -147,7 +150,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
 
         notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         notice.setForeground(new java.awt.Color(255, 255, 255));
-        notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notice.png"))); // NOI18N
+        notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notice.png"))); // NOI18N
         notice.setText("Notice");
         notice.setBorderPainted(false);
         notice.setContentAreaFilled(false);
@@ -156,7 +159,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
 
         roomdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         roomdetails.setForeground(new java.awt.Color(255, 255, 255));
-        roomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomdetails.png"))); // NOI18N
+        roomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomdetails.png"))); // NOI18N
         roomdetails.setText("Room Details");
         roomdetails.setBorderPainted(false);
         roomdetails.setContentAreaFilled(false);
@@ -165,16 +168,16 @@ public class AddStudentDetails extends javax.swing.JFrame {
 
         myprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         myprofile.setForeground(new java.awt.Color(255, 255, 255));
-        myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
+        myprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/myprofile.png"))); // NOI18N
         myprofile.setText("My Profile");
         myprofile.setBorderPainted(false);
         myprofile.setContentAreaFilled(false);
         backgroundpanel.add(myprofile);
-        myprofile.setBounds(-20, 560, 210, 43);
+        myprofile.setBounds(-20, 680, 220, 43);
 
         cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cityscape.setForeground(new java.awt.Color(255, 255, 255));
-        cityscape.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        cityscape.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         cityscape.setText("Cityscape");
         backgroundpanel.add(cityscape);
         cityscape.setBounds(20, 10, 150, 36);
@@ -187,7 +190,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
 
         signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         signout.setForeground(new java.awt.Color(255, 255, 255));
-        signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/sign out.png"))); // NOI18N
+        signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign out.png"))); // NOI18N
         signout.setText("Sign Out");
         signout.setBorderPainted(false);
         signout.setContentAreaFilled(false);
@@ -196,7 +199,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
 
         backtoprofile.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         backtoprofile.setForeground(new java.awt.Color(81, 162, 255));
-        backtoprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/arrow.png"))); // NOI18N
+        backtoprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrow.png"))); // NOI18N
         backtoprofile.setText("Back to Profile");
         backtoprofile.setBorderPainted(false);
         backtoprofile.setContentAreaFilled(false);
@@ -204,10 +207,28 @@ public class AddStudentDetails extends javax.swing.JFrame {
         backgroundpanel.add(backtoprofile);
         backtoprofile.setBounds(280, 80, 130, 31);
 
+        makepayment.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        makepayment.setForeground(new java.awt.Color(255, 255, 255));
+        makepayment.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/makepayment.png"))); // NOI18N
+        makepayment.setText("Make Payment");
+        makepayment.setBorderPainted(false);
+        makepayment.setContentAreaFilled(false);
+        backgroundpanel.add(makepayment);
+        makepayment.setBounds(-20, 553, 250, 50);
+
         editprofile.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         editprofile.setText("Edit Profile");
         backgroundpanel.add(editprofile);
         editprofile.setBounds(310, 110, 110, 25);
+
+        paymenthistory.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymenthistory.setForeground(new java.awt.Color(255, 255, 255));
+        paymenthistory.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymenthistory.png"))); // NOI18N
+        paymenthistory.setText("Payment History");
+        paymenthistory.setBorderPainted(false);
+        paymenthistory.setContentAreaFilled(false);
+        backgroundpanel.add(paymenthistory);
+        paymenthistory.setBounds(-20, 620, 270, 43);
 
         updateinfo.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         updateinfo.setForeground(new java.awt.Color(153, 161, 175));
@@ -219,7 +240,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         additionalinfo.setLayout(null);
 
         additionalinformation.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        additionalinformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/additionalinfo.png"))); // NOI18N
+        additionalinformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/additionalinfo.png"))); // NOI18N
         additionalinformation.setText("Additional Information");
         additionalinfo.add(additionalinformation);
         additionalinformation.setBounds(20, 0, 170, 30);
@@ -238,7 +259,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         accountsecurity.setLayout(null);
 
         account.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        account.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/accountsecurity.png"))); // NOI18N
+        account.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/accountsecurity.png"))); // NOI18N
         account.setText("Account Security");
         accountsecurity.add(account);
         account.setBounds(10, 4, 130, 30);
@@ -267,7 +288,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         emergencycontact.setLayout(null);
 
         contact.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        contact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/emergencycontact.png"))); // NOI18N
+        contact.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/emergencycontact.png"))); // NOI18N
         contact.setText("Emergency Contact");
         emergencycontact.add(contact);
         contact.setBounds(10, 10, 150, 24);
@@ -302,7 +323,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         academic.setLayout(null);
 
         academicdetails.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        academicdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/academic.png"))); // NOI18N
+        academicdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/academic.png"))); // NOI18N
         academicdetails.setText("Academic Details");
         academic.add(academicdetails);
         academicdetails.setBounds(10, 10, 140, 30);
@@ -339,7 +360,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         personalinfo.setLayout(null);
 
         personalinformation.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        personalinformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/user.png"))); // NOI18N
+        personalinformation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user.png"))); // NOI18N
         personalinformation.setText("Personal Information");
         personalinfo.add(personalinformation);
         personalinformation.setBounds(10, 10, 150, 30);
@@ -384,6 +405,10 @@ public class AddStudentDetails extends javax.swing.JFrame {
         backgroundpanel.add(personalinfo);
         personalinfo.setBounds(310, 190, 590, 270);
 
+        userimage.setText("Add Image");
+        backgroundpanel.add(userimage);
+        userimage.setBounds(1380, 70, 130, 100);
+
         savechanges.setBackground(new java.awt.Color(47, 91, 255));
         savechanges.setForeground(new java.awt.Color(255, 255, 255));
         savechanges.setText("Save Changes");
@@ -395,7 +420,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
         backgroundpanel.add(cancel);
         cancel.setBounds(1310, 800, 75, 23);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/background.png"))); // NOI18N
         backgroundpanel.add(background);
         background.setBounds(0, 0, 1550, 840);
 
@@ -480,6 +505,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
     private javax.swing.JPanel emergencycontact;
     private javax.swing.JLabel fullname;
     private javax.swing.JTextField mail;
+    private javax.swing.JButton makepayment;
     private javax.swing.JButton mealroutine;
     private javax.swing.JButton mycomplaints;
     private javax.swing.JButton myprofile;
@@ -491,6 +517,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
     private javax.swing.JTextField number;
     private javax.swing.JLabel pass;
     private javax.swing.JPanel password;
+    private javax.swing.JButton paymenthistory;
     private javax.swing.JPanel personalinfo;
     private javax.swing.JLabel personalinformation;
     private javax.swing.JLabel phone;
@@ -505,6 +532,7 @@ public class AddStudentDetails extends javax.swing.JFrame {
     private javax.swing.JButton signout;
     private javax.swing.JLabel studentportal;
     private javax.swing.JLabel updateinfo;
+    private javax.swing.JTextField userimage;
     private javax.swing.JLabel welcomeback;
     private javax.swing.JLabel yearofstudy;
     private javax.swing.JComboBox<String> yosCB;
@@ -560,6 +588,14 @@ public void BackToProfileListener(java.awt.event.ActionListener listener) {
     backtoprofile.addActionListener(listener);
 }
 
+public void MakePaymentListener(java.awt.event.ActionListener listener) {
+    makepayment.addActionListener(listener);
+}
+
+public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
+    paymenthistory.addActionListener(listener);
+}
+
 public javax.swing.JTextField getFullNameField() {
     return name;
 }
@@ -607,6 +643,91 @@ public javax.swing.JTextField getContactNumberField() {
 public javax.swing.JTextField getAddressField() {
     return adress;
 }
+
+public javax.swing.JTextField getUserImage() {
+    return userimage;
+}
+
+
+// ── Profile image label (lives on top of the userimage text field) ────────────
+private javax.swing.JLabel profileImageLabel;
+
+/**
+ * Call this once from the controller after the form is shown.
+ * Hides the raw JTextField and replaces it with a circular image label.
+ */
+public void initProfileImageLabel() {
+    userimage.setVisible(false);          // hide the raw text field
+
+    profileImageLabel = new javax.swing.JLabel() {
+        @Override
+        protected void paintComponent(java.awt.Graphics g) {
+            java.awt.Graphics2D g2 = (java.awt.Graphics2D) g.create();
+            g2.setRenderingHint(java.awt.RenderingHints.KEY_ANTIALIASING,
+                                java.awt.RenderingHints.VALUE_ANTIALIAS_ON);
+            g2.setClip(new java.awt.geom.Ellipse2D.Float(0, 0, getWidth(), getHeight()));
+
+            if (getIcon() instanceof javax.swing.ImageIcon icon) {
+                g2.drawImage(icon.getImage(), 0, 0, getWidth(), getHeight(), null);
+            } else {
+                // Default grey avatar with camera icon hint
+                g2.setColor(new java.awt.Color(209, 213, 219));
+                g2.fillOval(0, 0, getWidth(), getHeight());
+                g2.setColor(new java.awt.Color(107, 114, 128));
+                g2.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 11));
+                java.awt.FontMetrics fm = g2.getFontMetrics();
+                String text = "📷 Add Photo";
+                int tx = (getWidth()  - fm.stringWidth(text)) / 2;
+                int ty = getHeight() / 2 + fm.getAscent() / 2;
+                g2.drawString(text, tx, ty);
+            }
+
+            // Draw a subtle border ring
+            g2.setClip(null);
+            g2.setColor(new java.awt.Color(99, 102, 241, 180));
+            g2.setStroke(new java.awt.BasicStroke(2));
+            g2.drawOval(1, 1, getWidth() - 2, getHeight() - 2);
+            g2.dispose();
+        }
+    };
+
+    // Place it exactly over the userimage text field bounds
+    profileImageLabel.setBounds(userimage.getBounds());
+    profileImageLabel.setSize(120, 120);
+    // Centre it at the same X position
+    java.awt.Rectangle b = userimage.getBounds();
+    profileImageLabel.setBounds(b.x, b.y, 120, 120);
+
+    profileImageLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    profileImageLabel.setToolTipText("Click to upload profile picture");
+
+    // Add on top in the same parent panel as userimage
+    backgroundpanel.add(profileImageLabel);
+    backgroundpanel.setComponentZOrder(profileImageLabel, 0); // bring to front
+    backgroundpanel.revalidate();
+    backgroundpanel.repaint();
+}
+
+/** Renders the given image path into the profile image label (circular). */
+public void setProfileImagePreview(String imagePath) {
+    util.ProfileImageHelper.applyCircularImage(profileImageLabel, imagePath, 120);
+    profileImageLabel.repaint();
+}
+
+/** Returns the label — controller attaches the click listener to this. */
+public javax.swing.JLabel getProfileImageLabel() {
+    return profileImageLabel;
+}
+
+/** Still exposed so the controller can read/write the stored path value. */
+public String getImagePath() {
+    return userimage.getText();
+}
+
+public void setImagePath(String path) {
+    userimage.setText(path);
+}
+
 public void setWelcomeUser(String username) {
     welcomeback.setText("Welcome back, " + username + "!");
 }

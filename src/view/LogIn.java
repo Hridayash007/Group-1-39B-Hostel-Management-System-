@@ -34,8 +34,6 @@ public class LogIn extends javax.swing.JFrame {
         Password_data = new javax.swing.JPasswordField();
         Dont_have_acc = new javax.swing.JLabel();
         LOGIN = new javax.swing.JLabel();
-        Email = new javax.swing.JLabel();
-        Email_data = new javax.swing.JTextField();
         password = new javax.swing.JLabel();
         loginbutton = new javax.swing.JButton();
         registerbutton = new javax.swing.JButton();
@@ -68,41 +66,30 @@ public class LogIn extends javax.swing.JFrame {
         });
         Password_data.addActionListener(this::Password_dataActionPerformed);
         LogIN.add(Password_data);
-        Password_data.setBounds(20, 240, 516, 22);
+        Password_data.setBounds(20, 180, 516, 22);
 
         Dont_have_acc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         Dont_have_acc.setText("Don't have an account?");
         LogIN.add(Dont_have_acc);
-        Dont_have_acc.setBounds(20, 380, 150, 20);
+        Dont_have_acc.setBounds(20, 360, 150, 20);
 
         LOGIN.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         LOGIN.setText("Log In");
         LogIN.add(LOGIN);
         LOGIN.setBounds(20, 33, 115, 25);
 
-        Email.setBackground(new java.awt.Color(0, 0, 0));
-        Email.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        Email.setText("Email");
-        LogIN.add(Email);
-        Email.setBounds(20, 160, 87, 16);
-
-        Email_data.setBackground(new java.awt.Color(171, 186, 255));
-        Email_data.addActionListener(this::Email_dataActionPerformed);
-        LogIN.add(Email_data);
-        Email_data.setBounds(20, 180, 516, 20);
-
         password.setBackground(new java.awt.Color(0, 0, 0));
         password.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         password.setText("Password");
         LogIN.add(password);
-        password.setBounds(20, 220, 75, 16);
+        password.setBounds(20, 160, 75, 16);
 
         loginbutton.setBackground(new java.awt.Color(5, 13, 153));
         loginbutton.setForeground(new java.awt.Color(255, 255, 255));
         loginbutton.setText("Log In");
         loginbutton.addActionListener(this::loginbuttonActionPerformed);
         LogIN.add(loginbutton);
-        loginbutton.setBounds(20, 340, 516, 23);
+        loginbutton.setBounds(20, 320, 516, 23);
 
         registerbutton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         registerbutton.setForeground(new java.awt.Color(5, 13, 153));
@@ -111,7 +98,7 @@ public class LogIn extends javax.swing.JFrame {
         registerbutton.setContentAreaFilled(false);
         registerbutton.addActionListener(this::registerbuttonActionPerformed);
         LogIN.add(registerbutton);
-        registerbutton.setBounds(160, 370, 120, 40);
+        registerbutton.setBounds(160, 350, 120, 40);
 
         Text.setText("Enter your credentials to access your dashboard");
         LogIN.add(Text);
@@ -123,11 +110,11 @@ public class LogIn extends javax.swing.JFrame {
         forgetpasswordbutton.setContentAreaFilled(false);
         forgetpasswordbutton.addActionListener(this::forgetpasswordbuttonActionPerformed);
         LogIN.add(forgetpasswordbutton);
-        forgetpasswordbutton.setBounds(400, 270, 140, 23);
+        forgetpasswordbutton.setBounds(400, 220, 140, 23);
 
         Or.setText("--------------------------------------------------------------- or -------------------------------------------------------------");
         LogIN.add(Or);
-        Or.setBounds(20, 310, 516, 16);
+        Or.setBounds(20, 260, 516, 16);
 
         username1.setBackground(new java.awt.Color(0, 0, 0));
         username1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -143,7 +130,7 @@ public class LogIn extends javax.swing.JFrame {
         getContentPane().add(LogIN);
         LogIN.setBounds(760, 180, 590, 540);
 
-        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/WhatsApp Image 2026-05-20 at 5.01.07 PM.jpeg"))); // NOI18N
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/WhatsApp Image 2026-05-20 at 5.01.07 PM.jpeg"))); // NOI18N
         getContentPane().add(Background);
         Background.setBounds(0, 0, 1550, 840);
 
@@ -153,10 +140,6 @@ public class LogIn extends javax.swing.JFrame {
     private void Password_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Password_dataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Password_dataActionPerformed
-
-    private void Email_dataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Email_dataActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Email_dataActionPerformed
 
     private void loginbuttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginbuttonActionPerformed
         // TODO add your handling code here:
@@ -213,8 +196,6 @@ public class LogIn extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Background;
     private javax.swing.JLabel Dont_have_acc;
-    private javax.swing.JLabel Email;
-    private javax.swing.JTextField Email_data;
     private javax.swing.JLabel LOGIN;
     private javax.swing.JPanel LogIN;
     private javax.swing.JLabel Or;
@@ -230,10 +211,6 @@ public class LogIn extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 // REPLACE these methods at the bottom of LogIn.java
-
-public javax.swing.JTextField getEmailField() {
-    return Email_data;
-}
 
 // FIXED: return JPasswordField, not JTextField
 public javax.swing.JPasswordField getPasswordField() {

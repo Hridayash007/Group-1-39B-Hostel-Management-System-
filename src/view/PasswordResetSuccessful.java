@@ -62,14 +62,14 @@ public class PasswordResetSuccessful extends javax.swing.JFrame {
         resetsuccessfulpanel.add(gotologin);
         gotologin.setBounds(30, 290, 440, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/resetsuccess.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/resetsuccess.png"))); // NOI18N
         resetsuccessfulpanel.add(jLabel1);
         jLabel1.setBounds(170, 30, 152, 128);
 
         backgroundpane.add(resetsuccessfulpanel);
         resetsuccessfulpanel.setBounds(790, 160, 500, 480);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/forgetpasswordbg.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/forgetpasswordbg.png"))); // NOI18N
         backgroundpane.add(background);
         background.setBounds(0, 0, 1550, 840);
 

@@ -8,15 +8,14 @@ public class UserDao {
 
     MYSqlConnector mysql = new MYSqlConnector();
 
-    // ── Registration ────────────────────────────────────────────────────────
+    // ── Registration ──────────────────────────────────────────────────────────
     public void createUser(UserData user) {
         Connection conn = mysql.openConnection();
-        String sql = "INSERT INTO users (username, email, password, confirm_password) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
         try (PreparedStatement pstm = conn.prepareStatement(sql)) {
             pstm.setString(1, user.getUsername());
             pstm.setString(2, user.getEmail());
             pstm.setString(3, user.getPassword());
-            pstm.setString(4, user.getConfirmPassword());
             pstm.executeUpdate();
         } catch (Exception e) {
             System.out.print(e);
@@ -41,17 +40,16 @@ public class UserDao {
         return false;
     }
 
-    // ── Login ────────────────────────────────────────────────────────────────
-    public UserData loginUser(String email, String password) {
+    // ── Login ─────────────────────────────────────────────────────────────────
+    public UserData loginUser(String username, String password) {
         Connection conn = mysql.openConnection();
-        String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
+        String sql = "SELECT * FROM users WHERE (username = ? OR email = ?) AND password = ?";
         try (PreparedStatement pstm = conn.prepareStatement(sql)) {
-            pstm.setString(1, email);
-            pstm.setString(2, password);
+            pstm.setString(1, username);
+            pstm.setString(2, username);
+            pstm.setString(3, password);
             ResultSet rs = pstm.executeQuery();
-            if (rs.next()) {
-                return mapFullRow(rs);
-            }
+            if (rs.next()) return mapFullRow(rs);
         } catch (SQLException ex) {
             System.out.print(ex);
         } finally {
@@ -60,16 +58,14 @@ public class UserDao {
         return null;
     }
 
-    // ── Fetch all details by user_id ─────────────────────────────────────────
+    // ── Fetch by user_id ──────────────────────────────────────────────────────
     public UserData getStudentDetails(int userId) {
         Connection conn = mysql.openConnection();
         String sql = "SELECT * FROM users WHERE user_id = ?";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                return mapFullRow(rs);
-            }
+            if (rs.next()) return mapFullRow(rs);
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -78,13 +74,13 @@ public class UserDao {
         return null;
     }
 
-    // ── Update all student detail fields (user_id stays constant) ───────────
+    // ── Update student details (includes profile image path) ─────────────────
     public boolean updateStudentDetails(UserData user) {
         String sql = "UPDATE users SET "
-                + "full_name = ?, phone = ?, date_of_birth = ?, nationality = ?, "
-                + "program = ?, year_of_study = ?, semester = ?, address = ?, "
-                + "ec_name = ?, ec_relation = ?, ec_number = ?, email = ? "
-                + "WHERE user_id = ?";
+                + "full_name=?, phone=?, date_of_birth=?, nationality=?, "
+                + "program=?, year_of_study=?, semester=?, address=?, "
+                + "ec_name=?, ec_relation=?, ec_number=?, email=?, userimage=? "
+                + "WHERE user_id=?";
         Connection conn = mysql.openConnection();
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1,  user.getFullName());
@@ -99,7 +95,8 @@ public class UserDao {
             ps.setString(10, user.getEcRelation());
             ps.setString(11, user.getEcNumber());
             ps.setString(12, user.getEmail());
-            ps.setInt(13,    user.getId());
+            ps.setString(13, user.getUserImage());  // String path
+            ps.setInt(14,    user.getId());
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -109,7 +106,23 @@ public class UserDao {
         }
     }
 
-    // ── Password reset ───────────────────────────────────────────────────────
+    // ── Update only the profile image ─────────────────────────────────────────
+    public boolean updateProfileImage(int userId, String imagePath) {
+        String sql = "UPDATE users SET userimage = ? WHERE user_id = ?";
+        Connection conn = mysql.openConnection();
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, imagePath);
+            ps.setInt(2, userId);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            mysql.closeConnection(conn);
+        }
+    }
+
+    // ── Password reset ────────────────────────────────────────────────────────
     public boolean checkEmailExists(String email) {
         Connection conn = mysql.openConnection();
         String query = "SELECT * FROM users WHERE email = ?";
@@ -124,13 +137,12 @@ public class UserDao {
         }
     }
 
-    public boolean updatePassword(String email, String newPassword, String confirmPassword) {
+    public boolean updatePassword(String email, String newPassword) {
         Connection conn = mysql.openConnection();
-        String query = "UPDATE users SET password = ?, confirm_password = ? WHERE email = ?";
+        String query = "UPDATE users SET password=? WHERE email=?";
         try (PreparedStatement ps = conn.prepareStatement(query)) {
             ps.setString(1, newPassword);
-            ps.setString(2, confirmPassword);
-            ps.setString(3, email);
+            ps.setString(2, email);
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -140,70 +152,57 @@ public class UserDao {
         }
     }
 
-   
+    // ── All students ──────────────────────────────────────────────────────────
+    public java.util.List<UserData> getAllStudents() {
+        java.util.List<UserData> list = new java.util.ArrayList<>();
+        String sql = "SELECT * FROM users ORDER BY user_id ASC";
+        Connection conn = mysql.openConnection();
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) list.add(mapFullRow(rs));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            mysql.closeConnection(conn);
+        }
+        return list;
+    }
+
+    public boolean deleteStudent(int userId) {
+        String sql = "DELETE FROM users WHERE user_id = ?";
+        Connection conn = mysql.openConnection();
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setInt(1, userId);
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            mysql.closeConnection(conn);
+        }
+    }
+
+    // ── Helpers ───────────────────────────────────────────────────────────────
     private UserData mapFullRow(ResultSet rs) throws SQLException {
         UserData user = new UserData();
-        user.setId(rs.getInt("user_id"));
-        user.setUsername(rs.getString("username"));
-        user.setEmail(rs.getString("email"));
-        user.setPassword(rs.getString("password"));
-
-        // Extended fields — may be NULL for new users
-        user.setFullName(    nullSafe(rs, "full_name"));
-        user.setPhone(       nullSafe(rs, "phone"));
-        user.setDateOfBirth( nullSafe(rs, "date_of_birth"));
-        user.setNationality( nullSafe(rs, "nationality"));
-        user.setProgram(     nullSafe(rs, "program"));
-        user.setYearOfStudy( nullSafe(rs, "year_of_study"));
-        user.setSemester(    nullSafe(rs, "semester"));
-        user.setAddress(     nullSafe(rs, "address"));
-        user.setEcName(      nullSafe(rs, "ec_name"));
-        user.setEcRelation(  nullSafe(rs, "ec_relation"));
-        user.setEcNumber(    nullSafe(rs, "ec_number"));
+        user.setId(         rs.getInt("user_id"));
+        user.setUsername(   rs.getString("username"));
+        user.setEmail(      rs.getString("email"));
+        user.setPassword(   rs.getString("password"));
+        user.setFullName(   nullSafe(rs, "full_name"));
+        user.setPhone(      nullSafe(rs, "phone"));
+        user.setDateOfBirth(nullSafe(rs, "date_of_birth"));
+        user.setNationality(nullSafe(rs, "nationality"));
+        user.setProgram(    nullSafe(rs, "program"));
+        user.setYearOfStudy(nullSafe(rs, "year_of_study"));
+        user.setSemester(   nullSafe(rs, "semester"));
+        user.setAddress(    nullSafe(rs, "address"));
+        user.setEcName(     nullSafe(rs, "ec_name"));
+        user.setEcRelation( nullSafe(rs, "ec_relation"));
+        user.setEcNumber(   nullSafe(rs, "ec_number"));
+        user.setUserImage(  nullSafe(rs, "userimage"));  // load image path
         return user;
     }
-    
-    public java.util.List<model.UserData> getAllStudents() {
-    java.util.List<model.UserData> list = new java.util.ArrayList<>();
-    String sql = "SELECT * FROM users ORDER BY user_id ASC";
-    java.sql.Connection conn = mysql.openConnection();
-    try (java.sql.PreparedStatement ps = conn.prepareStatement(sql)) {
-        java.sql.ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            model.UserData u = new model.UserData();
-            u.setId(rs.getInt("user_id"));
-            u.setUsername(rs.getString("username"));
-            u.setEmail(rs.getString("email"));
-            u.setFullName(  nullSafe(rs, "full_name"));
-            u.setPhone(     nullSafe(rs, "phone"));
-            u.setProgram(   nullSafe(rs, "program"));
-            u.setSemester(  nullSafe(rs, "semester"));
-            u.setYearOfStudy(nullSafe(rs, "year_of_study"));
-            list.add(u);
-        }
-    } catch (java.sql.SQLException e) {
-        e.printStackTrace();
-    } finally {
-        mysql.closeConnection(conn);
-    }
-    return list;
-}
- 
-/** Deletes a student by user_id. Returns true on success. */
-public boolean deleteStudent(int userId) {
-    String sql = "DELETE FROM users WHERE user_id = ?";
-    java.sql.Connection conn = mysql.openConnection();
-    try (java.sql.PreparedStatement ps = conn.prepareStatement(sql)) {
-        ps.setInt(1, userId);
-        return ps.executeUpdate() > 0;
-    } catch (java.sql.SQLException e) {
-        e.printStackTrace();
-        return false;
-    } finally {
-        mysql.closeConnection(conn);
-    }
-}
-
 
     private String nullSafe(ResultSet rs, String col) throws SQLException {
         String val = rs.getString(col);

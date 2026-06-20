@@ -2,9 +2,14 @@ package controller;
 
 import model.UserData;
 import view.AddStudentDetails;
+import view.IssueComplaints;
 import view.LogIn;
+import view.MakePayment;
+import view.RoomDetailsStudent;
 import view.StudentDashboard;
+import view.StudentMealRoutine;
 import view.StudentProfile;
+import view.ViewNotice;
 
 public class StudentProfileController {
 
@@ -14,9 +19,7 @@ public class StudentProfileController {
     public StudentProfileController(StudentProfile view, UserData user) {
         this.view = view;
         this.user = user;
-        
-        // Display the logged-in user's name on the dashboard
-        view.setWelcomeUser(user.getUsername());
+
         populateProfile();
 
         // ── "edit Profile" button top-right → open AddStudentDetails ────────
@@ -40,18 +43,44 @@ public class StudentProfileController {
             new StudentDashboardController(dashView, user).open();
         });
 
-        view.MyProfileListener(e -> {
+        
+        view.MyComplaintsListener(e -> {
             close();
-            StudentProfile freshView = new StudentProfile();
-            new StudentProfileController(freshView, user).open();
+            new IssueComplaintsController(new IssueComplaints(), user).open();
         });
-
-        view.ProfileListener(e -> {
+        view.NoticeListener(e -> {
             close();
-            StudentProfile freshView = new StudentProfile();
-            new StudentProfileController(freshView, user).open();
+            new ViewNoticeController(new ViewNotice(), user).open();
         });
-
+        //--Room Details
+        view.RoomDetailsListener(e -> {
+            close();
+            new RoomDetailsStudentController(new RoomDetailsStudent(), user).open();
+        });
+        
+         //meal routine
+        view.MealRoutineListener(e -> {
+            close();
+            new StudentMealRoutineController(new StudentMealRoutine(),user).open();
+        });
+        
+        //--Make Payment
+        view.MakePaymentListener(e -> {
+            close();
+            new MakePaymentController(new MakePayment(), user).open();
+        });
+        
+        view.PaymentHistoryListener(e -> {
+            close();
+            new ViewPaymentDetailsController(new view.ViewPaymentDetails(), user).open();
+        });
+        
+        //top right notice
+        view.NotificatinListener(e -> {
+            close();
+            new ViewNoticeController(new ViewNotice(), user).open();
+        });
+        
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = javax.swing.JOptionPane.showConfirmDialog(
@@ -74,6 +103,9 @@ public class StudentProfileController {
      * already set in initComponents() and are never touched here.
      */
     private void populateProfile() {
+        // Load profile picture into the label (circular crop)
+        util.ProfileImageHelper.applyCircularImage(
+                view.getProfilePicLabel(), user.getUserImage(), 120);
         String displayName = notEmpty(user.getFullName()) ? user.getFullName() : user.getUsername();
         String studentId   = "Student id-" + user.getId();
         String yearSem     = orDash(user.getYearOfStudy()) + ", " + orDash(user.getSemester()) + " Semester";

@@ -32,19 +32,20 @@ public class NoticeAdmin extends javax.swing.JFrame {
         admindashboard = new javax.swing.JLabel();
         welcomeback = new javax.swing.JLabel();
         notification = new javax.swing.JButton();
-        profile = new javax.swing.JButton();
         cityscape = new javax.swing.JLabel();
         administration = new javax.swing.JLabel();
-        notice = new javax.swing.JButton();
         signout = new javax.swing.JButton();
         noticemanagement = new javax.swing.JLabel();
         noticedesc = new javax.swing.JLabel();
         newnotice = new javax.swing.JButton();
-        roomallocation = new javax.swing.JButton();
-        roomdetails = new javax.swing.JButton();
         dashboard = new javax.swing.JButton();
-        mealroutine = new javax.swing.JButton();
+        students = new javax.swing.JButton();
         complaints = new javax.swing.JButton();
+        mealroutine = new javax.swing.JButton();
+        notice = new javax.swing.JButton();
+        roomdetails = new javax.swing.JButton();
+        roomallocation = new javax.swing.JButton();
+        paymentdetails = new javax.swing.JButton();
         pinnednoticepanel = new javax.swing.JPanel();
         pinnednotice = new javax.swing.JLabel();
         pinnednoticenumber = new javax.swing.JLabel();
@@ -60,8 +61,6 @@ public class NoticeAdmin extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         deletenotice = new javax.swing.JButton();
         viewnotice = new javax.swing.JButton();
-        adminprofile = new javax.swing.JButton();
-        students = new javax.swing.JButton();
         backgroundpanel = new javax.swing.JPanel();
         background = new javax.swing.JLabel();
 
@@ -77,22 +76,16 @@ public class NoticeAdmin extends javax.swing.JFrame {
         getContentPane().add(welcomeback);
         welcomeback.setBounds(340, 30, 90, 16);
 
-        notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notification.png"))); // NOI18N
+        notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notification.png"))); // NOI18N
         notification.setBorderPainted(false);
         notification.setContentAreaFilled(false);
         notification.addActionListener(this::notificationActionPerformed);
         getContentPane().add(notification);
         notification.setBounds(1440, 10, 30, 40);
 
-        profile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/profile.png"))); // NOI18N
-        profile.setBorderPainted(false);
-        profile.setContentAreaFilled(false);
-        getContentPane().add(profile);
-        profile.setBounds(1480, 10, 41, 40);
-
         cityscape.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         cityscape.setForeground(new java.awt.Color(255, 255, 255));
-        cityscape.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/logo.png"))); // NOI18N
+        cityscape.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
         cityscape.setText("Cityscape");
         getContentPane().add(cityscape);
         cityscape.setBounds(20, 10, 150, 36);
@@ -103,18 +96,9 @@ public class NoticeAdmin extends javax.swing.JFrame {
         getContentPane().add(administration);
         administration.setBounds(20, 180, 90, 16);
 
-        notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        notice.setForeground(new java.awt.Color(255, 255, 255));
-        notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notice.png"))); // NOI18N
-        notice.setText("Notice");
-        notice.setBorderPainted(false);
-        notice.setContentAreaFilled(false);
-        getContentPane().add(notice);
-        notice.setBounds(0, 420, 140, 43);
-
         signout.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         signout.setForeground(new java.awt.Color(255, 255, 255));
-        signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/sign out.png"))); // NOI18N
+        signout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign out.png"))); // NOI18N
         signout.setText("Sign Out");
         signout.setBorderPainted(false);
         signout.setContentAreaFilled(false);
@@ -134,34 +118,14 @@ public class NoticeAdmin extends javax.swing.JFrame {
 
         newnotice.setBackground(new java.awt.Color(99, 102, 255));
         newnotice.setForeground(new java.awt.Color(255, 255, 255));
-        newnotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/addnotice.png"))); // NOI18N
+        newnotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/addnotice.png"))); // NOI18N
         newnotice.setText("New Notice");
         getContentPane().add(newnotice);
         newnotice.setBounds(1375, 103, 140, 30);
 
-        roomallocation.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        roomallocation.setForeground(new java.awt.Color(255, 255, 255));
-        roomallocation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomallocation.png"))); // NOI18N
-        roomallocation.setText("Room Allocation");
-        roomallocation.setBorderPainted(false);
-        roomallocation.setContentAreaFilled(false);
-        roomallocation.addActionListener(this::roomallocationActionPerformed);
-        getContentPane().add(roomallocation);
-        roomallocation.setBounds(-30, 560, 280, 43);
-
-        roomdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        roomdetails.setForeground(new java.awt.Color(255, 255, 255));
-        roomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/roomdetails.png"))); // NOI18N
-        roomdetails.setText("Room Details");
-        roomdetails.setBorderPainted(false);
-        roomdetails.setContentAreaFilled(false);
-        roomdetails.addActionListener(this::roomdetailsActionPerformed);
-        getContentPane().add(roomdetails);
-        roomdetails.setBounds(-20, 490, 240, 43);
-
         dashboard.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         dashboard.setForeground(new java.awt.Color(255, 255, 255));
-        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/dashboard.png"))); // NOI18N
+        dashboard.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/dashboard.png"))); // NOI18N
         dashboard.setText("Dashboard");
         dashboard.setBorderPainted(false);
         dashboard.setContentAreaFilled(false);
@@ -169,23 +133,72 @@ public class NoticeAdmin extends javax.swing.JFrame {
         getContentPane().add(dashboard);
         dashboard.setBounds(-50, 210, 280, 43);
 
-        mealroutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        mealroutine.setForeground(new java.awt.Color(255, 255, 255));
-        mealroutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/meal routine.png"))); // NOI18N
-        mealroutine.setText("Meal Routine");
-        mealroutine.setBorderPainted(false);
-        mealroutine.setContentAreaFilled(false);
-        getContentPane().add(mealroutine);
-        mealroutine.setBounds(-40, 350, 270, 43);
+        students.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        students.setForeground(new java.awt.Color(255, 255, 255));
+        students.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/students.png"))); // NOI18N
+        students.setText("Students");
+        students.setBorderPainted(false);
+        students.setContentAreaFilled(false);
+        getContentPane().add(students);
+        students.setBounds(-60, 270, 280, 43);
 
         complaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         complaints.setForeground(new java.awt.Color(255, 255, 255));
-        complaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/my complaints.png"))); // NOI18N
+        complaints.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/my complaints.png"))); // NOI18N
         complaints.setText("Complaints");
         complaints.setBorderPainted(false);
         complaints.setContentAreaFilled(false);
         getContentPane().add(complaints);
-        complaints.setBounds(-60, 280, 290, 43);
+        complaints.setBounds(-60, 330, 300, 43);
+
+        mealroutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        mealroutine.setForeground(new java.awt.Color(255, 255, 255));
+        mealroutine.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/meal routine.png"))); // NOI18N
+        mealroutine.setText("Meal Routine");
+        mealroutine.setBorderPainted(false);
+        mealroutine.setContentAreaFilled(false);
+        mealroutine.addActionListener(this::mealroutineActionPerformed);
+        getContentPane().add(mealroutine);
+        mealroutine.setBounds(-40, 390, 280, 43);
+
+        notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        notice.setForeground(new java.awt.Color(255, 255, 255));
+        notice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/notice.png"))); // NOI18N
+        notice.setText("Notice");
+        notice.setBorderPainted(false);
+        notice.setContentAreaFilled(false);
+        getContentPane().add(notice);
+        notice.setBounds(-30, 450, 210, 43);
+
+        roomdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        roomdetails.setForeground(new java.awt.Color(255, 255, 255));
+        roomdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomdetails.png"))); // NOI18N
+        roomdetails.setText("Room Details");
+        roomdetails.setBorderPainted(false);
+        roomdetails.setContentAreaFilled(false);
+        roomdetails.addActionListener(this::roomdetailsActionPerformed);
+        getContentPane().add(roomdetails);
+        roomdetails.setBounds(-20, 510, 250, 43);
+
+        roomallocation.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        roomallocation.setForeground(new java.awt.Color(255, 255, 255));
+        roomallocation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/roomallocation.png"))); // NOI18N
+        roomallocation.setText("Room Allocation");
+        roomallocation.setBorderPainted(false);
+        roomallocation.setContentAreaFilled(false);
+        roomallocation.addActionListener(this::roomallocationActionPerformed);
+        getContentPane().add(roomallocation);
+        roomallocation.setBounds(-20, 570, 270, 43);
+
+        paymentdetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        paymentdetails.setForeground(new java.awt.Color(255, 255, 255));
+        paymentdetails.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/paymentdetails.png"))); // NOI18N
+        paymentdetails.setText("Payment Details");
+        paymentdetails.setBorderPainted(false);
+        paymentdetails.setContentAreaFilled(false);
+        paymentdetails.addActionListener(this::paymentdetailsActionPerformed);
+        getContentPane().add(paymentdetails);
+        paymentdetails.setBounds(-20, 630, 270, 43);
 
         pinnednoticepanel.setBackground(new java.awt.Color(255, 255, 255));
         pinnednoticepanel.setLayout(null);
@@ -246,11 +259,11 @@ public class NoticeAdmin extends javax.swing.JFrame {
 
         jPanel1.setLayout(null);
 
-        deletenotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/deletenotice.png"))); // NOI18N
+        deletenotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/deletenotice.png"))); // NOI18N
         jPanel1.add(deletenotice);
         deletenotice.setBounds(1090, 20, 50, 40);
 
-        viewnotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/viewnotice.png"))); // NOI18N
+        viewnotice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/viewnotice.png"))); // NOI18N
         jPanel1.add(viewnotice);
         viewnotice.setBounds(1030, 20, 50, 40);
 
@@ -265,27 +278,9 @@ public class NoticeAdmin extends javax.swing.JFrame {
         getContentPane().add(noticelist);
         noticelist.setBounds(310, 270, 1210, 540);
 
-        adminprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        adminprofile.setForeground(new java.awt.Color(255, 255, 255));
-        adminprofile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/myprofile.png"))); // NOI18N
-        adminprofile.setText("Admin Profile");
-        adminprofile.setBorderPainted(false);
-        adminprofile.setContentAreaFilled(false);
-        getContentPane().add(adminprofile);
-        adminprofile.setBounds(-40, 680, 280, 43);
-
-        students.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        students.setForeground(new java.awt.Color(255, 255, 255));
-        students.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/students.png"))); // NOI18N
-        students.setText("Students");
-        students.setBorderPainted(false);
-        students.setContentAreaFilled(false);
-        getContentPane().add(students);
-        students.setBounds(-60, 620, 280, 43);
-
         backgroundpanel.setLayout(null);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/adminbackground.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/adminbackground.png"))); // NOI18N
         backgroundpanel.add(background);
         background.setBounds(0, 0, 1550, 840);
 
@@ -310,6 +305,14 @@ public class NoticeAdmin extends javax.swing.JFrame {
     private void roomallocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_roomallocationActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_roomallocationActionPerformed
+
+    private void mealroutineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mealroutineActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mealroutineActionPerformed
+
+    private void paymentdetailsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_paymentdetailsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_paymentdetailsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,7 +342,6 @@ public class NoticeAdmin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel admindashboard;
     private javax.swing.JLabel administration;
-    private javax.swing.JButton adminprofile;
     private javax.swing.JPanel allnoticepanel;
     private javax.swing.JScrollPane allnoticescrollpane;
     private javax.swing.JLabel background;
@@ -356,10 +358,10 @@ public class NoticeAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel noticelist;
     private javax.swing.JLabel noticemanagement;
     private javax.swing.JButton notification;
+    private javax.swing.JButton paymentdetails;
     private javax.swing.JLabel pinnednotice;
     private javax.swing.JLabel pinnednoticenumber;
     private javax.swing.JPanel pinnednoticepanel;
-    private javax.swing.JButton profile;
     private javax.swing.JButton roomallocation;
     private javax.swing.JButton roomdetails;
     private javax.swing.JButton signout;
@@ -410,12 +412,25 @@ public void DashboardListener(java.awt.event.ActionListener listener) {
     dashboard.addActionListener(listener);
 }
 
-public void ProfileListener(java.awt.event.ActionListener listener) {
-    profile.addActionListener(listener);
-}
 
 public void StudentsListener(java.awt.event.ActionListener listener) {
     students.addActionListener(listener); 
 }
  
+public void ComplaintsListener(java.awt.event.ActionListener listener) {
+    complaints.addActionListener(listener);
+}
+ 
+public void RoomDetailsListener(java.awt.event.ActionListener listener) {
+    roomdetails.addActionListener(listener);
+}
+public void NotificationListener(java.awt.event.ActionListener listener) {
+    notification.addActionListener(listener);
+}
+public void RoomAllocationListener(java.awt.event.ActionListener listener) {
+    roomallocation.addActionListener(listener);
+}
+public void MealRoutineListener(java.awt.event.ActionListener l)          { mealroutine.addActionListener(l); }
+
+public void PaymentDetailsListener(java.awt.event.ActionListener l)          { paymentdetails.addActionListener(l); }
 }

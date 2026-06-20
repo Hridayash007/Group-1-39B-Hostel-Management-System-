@@ -56,7 +56,7 @@ public class VerifyOtp extends javax.swing.JFrame {
         verifyotppanel.setBackground(new java.awt.Color(255, 255, 255));
         verifyotppanel.setLayout(null);
 
-        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/arrow.png"))); // NOI18N
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/arrow.png"))); // NOI18N
         back.setText("Back");
         back.setBorderPainted(false);
         back.setContentAreaFilled(false);
@@ -178,14 +178,14 @@ public class VerifyOtp extends javax.swing.JFrame {
         verifyotppanel.add(resend);
         resend.setBounds(270, 323, 120, 30);
 
-        verifyotpicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/verifyotp.png"))); // NOI18N
+        verifyotpicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/verifyotp.png"))); // NOI18N
         verifyotppanel.add(verifyotpicon);
         verifyotpicon.setBounds(210, 0, 64, 64);
 
         backgroundpanel.add(verifyotppanel);
         verifyotppanel.setBounds(790, 160, 500, 480);
 
-        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/forgetpasswordbg.png"))); // NOI18N
+        background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/forgetpasswordbg.png"))); // NOI18N
         backgroundpanel.add(background);
         background.setBounds(0, 0, 1550, 840);
 

@@ -55,7 +55,7 @@
             <Component class="javax.swing.JButton" name="back">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/arrow.png"/>
+                  <Image iconType="3" name="/images/arrow.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Back"/>
                 <Property name="borderPainted" type="boolean" value="false"/>
@@ -267,7 +267,7 @@
             <Component class="javax.swing.JLabel" name="verifyotpicon">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/view/verifyotp.png"/>
+                  <Image iconType="3" name="/images/verifyotp.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -281,7 +281,7 @@
         <Component class="javax.swing.JLabel" name="background">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/view/forgetpasswordbg.png"/>
+              <Image iconType="3" name="/images/forgetpasswordbg.png"/>
             </Property>
           </Properties>
           <Constraints>

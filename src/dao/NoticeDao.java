@@ -97,7 +97,21 @@ public class NoticeDao {
         }
         return 0;
     }
-
+    
+     public int countUnreadByUser(int userId) {
+     String sql = "SELECT COUNT(*) FROM notices WHERE priority = 'Urgent'";
+     Connection conn = mysql.openConnection();
+     try (PreparedStatement ps = conn.prepareStatement(sql)) {
+         ResultSet rs = ps.executeQuery();
+         if (rs.next()) return rs.getInt(1);
+     } catch (SQLException e) {
+         e.printStackTrace();
+     } finally {
+         mysql.closeConnection(conn);
+     }
+     return 0;
+ }
+    
     private NoticeData mapRow(ResultSet rs) throws SQLException {
         NoticeData n = new NoticeData();
         n.setNoticeId(  rs.getInt("notice_id"));

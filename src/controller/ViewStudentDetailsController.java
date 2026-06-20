@@ -1,5 +1,7 @@
 package controller;
 
+import dao.FeeDao;
+import dao.RoomDao;
 import dao.UserDao;
 import java.awt.Component;
 import java.util.EventObject;
@@ -18,10 +20,14 @@ import view.NoticeAdmin;
 import view.ViewStudentDetails;
 import view.ViewStudentExpand;
 import javax.swing.ImageIcon;
+import view.AdminDasboard;
+import view.AdminMenuAdjustment;
 
 public class ViewStudentDetailsController {
 
     private final UserDao userDao = new UserDao();
+    private final FeeDao  feeDao  = new FeeDao();
+    private final RoomDao roomDao = new RoomDao();
     private final ViewStudentDetails view;
 
     public ViewStudentDetailsController(ViewStudentDetails view) {
@@ -29,20 +35,58 @@ public class ViewStudentDetailsController {
 
         loadStudents();
 
+        // ── Navigation: Dashboard ────────────────────────────────────────────
+         view.DashboardListener(e -> {
+            close();
+            new AdminDashboardController(new AdminDasboard()).open();
+        });
+         
+        
+        // ── Complaints button (sidebar) ───────────────────────────────────────
+        view.ComplaintsListener(e -> {
+            close();
+            new ViewComplaintController(new view.ViewComplaint()).open();
+        });
+        
+        
         // ── Navigation: Notice ───────────────────────────────────────────────
         view.NoticeListener(e -> {
             close();
             NoticeAdmin adminView = new NoticeAdmin();
             new NoticeAdminController(adminView).open();
         });
-
-        // ── Navigation: Dashboard ────────────────────────────────────────────
-        view.DashboardListener(e -> {
+        
+        // top right Notice
+        view.NotificationListener(e -> {
             close();
-            NoticeAdmin adminView = new NoticeAdmin();
-            new NoticeAdminController(adminView).open();
+            new NoticeAdminController(new NoticeAdmin()).open();
         });
+        
+        // ── Room Details button ─────────────────────────────────────────────────
+        view.RoomDetailsListener(e -> {
+            close();
+            new RoomDetailsController(new view.RoomDetails()).open();
+        }
+);
 
+        // ── Room Allocation button ─────────────────────────────────────────────
+        view.RoomAllocationListener(e -> {
+            close();
+            new RoomAllocationController(new view.RoomAllocation1()).open();
+        });
+        
+        //Payment Details
+        view.PaymentDetailsListener(e -> {
+            close();
+            new ViewPaymentDetailsAdminController(new view.ViewPaymentDetailsAdmin()).open();
+        });
+        
+        //meal routine
+        view.MealRoutineListener(e -> {
+            close();
+            new AdminMenuAdjustmentController(new AdminMenuAdjustment()).open();
+        });
+        
         // ── Sign Out ─────────────────────────────────────────────────────────
         view.SignOutListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(view,
@@ -73,11 +117,21 @@ public class ViewStudentDetailsController {
         for (UserData u : students) {
             String name = (u.getFullName() != null && !u.getFullName().isEmpty())
                     ? u.getFullName() : u.getUsername();
+
+            // BUG FIX: was hardcoded "—" with a comment saying "from room
+            // allocation table later" — RoomDao.getRoomByUser already exists
+            // and does exactly that lookup.
+            String roomNumber = "—";
+            var allocated = roomDao.getRoomByUser(u.getId());
+            if (allocated != null) {
+                roomNumber = allocated.getRoomNumber() + " (" + allocated.getBlock() + ")";
+            }
+
             model.addRow(new Object[]{
                 name,
                 u.getProgram()     != null ? u.getProgram()     : "—",
                 u.getSemester()    != null ? u.getSemester()    : "—",
-                "—",               // room number — from room allocation table later
+                roomNumber,
                 u                  // store full UserData object for Action column
             });
         }
@@ -91,8 +145,10 @@ public class ViewStudentDetailsController {
         table.getColumnModel().getColumn(4).setCellEditor(new ActionEditor(students, table));
         table.getColumnModel().getColumn(4).setPreferredWidth(160);
 
-        // Update total count label
+        // ── Update all four stat cards with live data ───────────────────────────
         view.setTotalStudents(students.size());
+        view.setPendingFees(feeDao.countPendingFees());
+        view.setPendingAllocation(roomDao.countUnallocatedStudents());
     }
 
     public void open()  { view.setVisible(true); }
@@ -106,8 +162,8 @@ public class ViewStudentDetailsController {
 
         ActionRenderer() {
             panel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 4, 4));
-            viewBtn.setIcon(new ImageIcon(getClass().getResource("/view/viewnotice.png")));
-            deleteBtn.setIcon(new ImageIcon(getClass().getResource("/view/deletenotice.png")));
+            viewBtn.setIcon(new ImageIcon(getClass().getResource("/images/viewnotice.png")));
+            deleteBtn.setIcon(new ImageIcon(getClass().getResource("/images/deletenotice.png")));
 
             viewBtn.setBorderPainted(false);
             viewBtn.setContentAreaFilled(false);
@@ -141,8 +197,8 @@ public class ViewStudentDetailsController {
             this.table    = table;
 
             panel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 4, 4));
-            viewBtn.setIcon(new ImageIcon(getClass().getResource("/view/viewnotice.png")));
-        deleteBtn.setIcon(new ImageIcon(getClass().getResource("/view/deletenotice.png")));
+            viewBtn.setIcon(new ImageIcon(getClass().getResource("/images/viewnotice.png")));
+        deleteBtn.setIcon(new ImageIcon(getClass().getResource("/images/deletenotice.png")));
 
         viewBtn.setBorderPainted(false);
         viewBtn.setContentAreaFilled(false);
