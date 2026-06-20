@@ -784,12 +784,13 @@ public class AdminDasboard extends javax.swing.JFrame {
 
         jButton15.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButton15.setForeground(new java.awt.Color(255, 255, 255));
+        jButton15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/Screenshot 2026-06-20 125133.png"))); // NOI18N
         jButton15.setText("Sign Out");
         jButton15.setBorderPainted(false);
         jButton15.setContentAreaFilled(false);
         jButton15.addActionListener(this::jButton15ActionPerformed);
         jPanel18.add(jButton15);
-        jButton15.setBounds(40, 700, 110, 23);
+        jButton15.setBounds(50, 693, 160, 30);
 
         jButton14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/View/Screenshot 2026-06-02 193750.png"))); // NOI18N
         jButton14.setBorderPainted(false);
