@@ -143,7 +143,22 @@ public class FeeDao {
         }
         return list;
     }
-
+    
+    /** Count of all pending fees across every student — for admin stat cards. */
+    public int countPendingFees() {
+        String sql = "SELECT COUNT(*) FROM fees WHERE status = 'Pending'";
+        Connection conn = mysql.openConnection();
+        try (PreparedStatement ps = conn.prepareStatement(sql)) {
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) return rs.getInt(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            mysql.closeConnection(conn);
+        }
+        return 0;
+    }
+    
     public boolean markPaid(int feeId){
 
 

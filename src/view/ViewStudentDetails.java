@@ -371,6 +371,16 @@ public javax.swing.JTable getStudentTable() {
 public void setTotalStudents(int count) {
     totalstudentsnumber.setText(String.valueOf(count));
 }
+
+/** Sets the pending fees count label */
+public void setPendingFees(int count) {
+    feescount.setText(String.valueOf(count));
+}
+
+/** Sets the pending room allocation count label */
+public void setPendingAllocation(int count) {
+    allocationnumber.setText(String.valueOf(count));
+}
  
 // ── Navigation listeners ──────────────────────────────────────────────────────
 public void DashboardListener(java.awt.event.ActionListener listener) {

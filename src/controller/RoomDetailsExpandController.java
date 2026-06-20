@@ -32,17 +32,17 @@ public class RoomDetailsExpandController {
         String feeText = view.getFee();
 
 
-        if (roomNum.isEmpty()) {
-            JOptionPane.showMessageDialog(dialog, "Please enter a room number.");
+        if (roomNum.isEmpty() || !roomNum.matches("\\d+")){
+            JOptionPane.showMessageDialog(dialog, "Please enter a valid room number.");
             return;
         }
-        if (floor.isEmpty()) {
-            JOptionPane.showMessageDialog(dialog, "Please enter a floor.");
+        if (floor.isEmpty()|| !floor.matches("\\d+")) {
+            JOptionPane.showMessageDialog(dialog, "Please enter a valid floor.");
             return;
         }
-        if(feeText.isEmpty()){
+        if(feeText.isEmpty()|| !feeText.matches("\\d+")){
             JOptionPane.showMessageDialog(dialog,
-                "Please enter room fee.");
+                "Please enter a valid room fee.");
             return;
         }
 

@@ -48,8 +48,6 @@ public class StudentDashboard extends javax.swing.JFrame {
         hello = new javax.swing.JPanel();
         hellolabel = new javax.swing.JLabel();
         hellodesc = new javax.swing.JLabel();
-        roomnumber = new javax.swing.JLabel();
-        daydate = new javax.swing.JLabel();
         card1 = new javax.swing.JPanel();
         card1roomno = new javax.swing.JLabel();
         card1room = new javax.swing.JLabel();
@@ -221,16 +219,6 @@ public class StudentDashboard extends javax.swing.JFrame {
         hello.add(hellodesc);
         hellodesc.setBounds(20, 40, 350, 20);
 
-        roomnumber.setForeground(new java.awt.Color(190, 219, 255));
-        roomnumber.setText(" Room 204");
-        hello.add(roomnumber);
-        roomnumber.setBounds(20, 70, 70, 16);
-
-        daydate.setForeground(new java.awt.Color(190, 219, 255));
-        daydate.setText(" Wednesday, Apr 29, 2025");
-        hello.add(daydate);
-        daydate.setBounds(90, 70, 150, 16);
-
         backgroundpanel.add(hello);
         hello.setBounds(290, 90, 1230, 100);
 
@@ -268,7 +256,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         mealslabel.setBounds(10, 10, 110, 16);
 
         mealsnumber.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        mealsnumber.setText("16");
+        mealsnumber.setText("7");
         card2.add(mealsnumber);
         mealsnumber.setBounds(10, 40, 70, 30);
 
@@ -305,9 +293,9 @@ public class StudentDashboard extends javax.swing.JFrame {
         card4.add(noticeicon);
         noticeicon.setBounds(230, 10, 24, 24);
 
-        Unreadnotice.setText("Unread Notice");
+        Unreadnotice.setText("Urgent Notice");
         card4.add(Unreadnotice);
-        Unreadnotice.setBounds(10, 10, 90, 16);
+        Unreadnotice.setBounds(10, 10, 130, 16);
 
         unreadnoticenumber.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         unreadnoticenumber.setText("3");
@@ -474,7 +462,6 @@ public class StudentDashboard extends javax.swing.JFrame {
     private javax.swing.JButton checknotice;
     private javax.swing.JLabel complaintsicon;
     private javax.swing.JLabel complaintsnumber;
-    private javax.swing.JLabel daydate;
     private javax.swing.JButton filecomplaint;
     private javax.swing.JLabel floor;
     private javax.swing.JPanel hello;
@@ -498,7 +485,6 @@ public class StudentDashboard extends javax.swing.JFrame {
     private javax.swing.JButton profile;
     private javax.swing.JPanel quickactions;
     private javax.swing.JLabel roomicon;
-    private javax.swing.JLabel roomnumber;
     private javax.swing.JButton signout;
     private javax.swing.JLabel unreadnoticenumber;
     private javax.swing.JButton viewroomdetails;
@@ -567,5 +553,23 @@ public void PaymentHistoryListener(java.awt.event.ActionListener listener) {
 
 public void setWelcomeUser(String username) {
     Welcomeback.setText("Welcome back, " + username + "!");
+}
+
+public void setRoomNumber(String roomNumber) {
+    card1room.setText(roomNumber);
+}
+
+public void setFloor(String floorText) {
+    floor.setText(floorText);
+}
+
+/** Open Complaints card */
+public void setOpenComplaints(int count) {
+    complaintsnumber.setText(String.valueOf(count));
+}
+
+/** Unread Notices card */
+public void setUnreadNotices(int count) {
+    unreadnoticenumber.setText(String.valueOf(count));
 }
 }

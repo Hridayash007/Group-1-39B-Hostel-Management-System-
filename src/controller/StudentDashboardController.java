@@ -2,6 +2,10 @@ package controller;
 
 import model.UserData;
 import dao.FeeDao;
+import dao.RoomDao;
+import dao.ComplaintDao;
+import dao.NoticeDao;
+import model.RoomData;
 import view.IssueComplaints;
 import view.LogIn;
 import view.StudentDashboard;
@@ -15,6 +19,9 @@ public class StudentDashboardController {
 
     private final StudentDashboard view;
     private final UserData user;
+    private final RoomDao roomDao = new RoomDao();
+    private final ComplaintDao complaintDao = new ComplaintDao();
+    private final NoticeDao noticeDao = new NoticeDao();
 
     public StudentDashboardController(StudentDashboard view, UserData user) {
         this.view = view;
@@ -25,7 +32,7 @@ public class StudentDashboardController {
         // Generate this month's fee for the student if not already created.
         // Safe to call every login — duplicate-check is inside the SQL.
         new FeeDao().generateMonthlyFees();
-
+        loadDashboardCards();
         // ── My Complaints ────────────────────────────────────────────────────
         view.MyComplaintsListener(e -> {
             close();
@@ -120,4 +127,22 @@ public class StudentDashboardController {
 
     public void open()  { view.setVisible(true); }
     public void close() { view.dispose(); }
+    
+    private void loadDashboardCards() {
+        // Room Number card
+        RoomData room = roomDao.getRoomByUser(user.getId());
+        if (room != null) {
+            view.setRoomNumber(room.getRoomNumber());
+            view.setFloor("Floor " + room.getFloor());
+        } else {
+            view.setRoomNumber("—");
+            view.setFloor("No room assigned");
+        }
+
+        // Open Complaints card — count of this student's unresolved complaints
+        view.setOpenComplaints(complaintDao.countOpenByUser(user.getId()));
+
+        // Unread Notices card — count of notices this student hasn't seen yet
+        view.setUnreadNotices(noticeDao.countUnreadByUser(user.getId()));
+    }
 }

@@ -1,5 +1,7 @@
 package controller;
 
+import dao.FeeDao;
+import dao.RoomDao;
 import dao.UserDao;
 import java.awt.Component;
 import java.util.EventObject;
@@ -24,6 +26,8 @@ import view.AdminMenuAdjustment;
 public class ViewStudentDetailsController {
 
     private final UserDao userDao = new UserDao();
+    private final FeeDao  feeDao  = new FeeDao();
+    private final RoomDao roomDao = new RoomDao();
     private final ViewStudentDetails view;
 
     public ViewStudentDetailsController(ViewStudentDetails view) {
@@ -113,11 +117,21 @@ public class ViewStudentDetailsController {
         for (UserData u : students) {
             String name = (u.getFullName() != null && !u.getFullName().isEmpty())
                     ? u.getFullName() : u.getUsername();
+
+            // BUG FIX: was hardcoded "—" with a comment saying "from room
+            // allocation table later" — RoomDao.getRoomByUser already exists
+            // and does exactly that lookup.
+            String roomNumber = "—";
+            var allocated = roomDao.getRoomByUser(u.getId());
+            if (allocated != null) {
+                roomNumber = allocated.getRoomNumber() + " (" + allocated.getBlock() + ")";
+            }
+
             model.addRow(new Object[]{
                 name,
                 u.getProgram()     != null ? u.getProgram()     : "—",
                 u.getSemester()    != null ? u.getSemester()    : "—",
-                "—",               // room number — from room allocation table later
+                roomNumber,
                 u                  // store full UserData object for Action column
             });
         }
@@ -131,8 +145,10 @@ public class ViewStudentDetailsController {
         table.getColumnModel().getColumn(4).setCellEditor(new ActionEditor(students, table));
         table.getColumnModel().getColumn(4).setPreferredWidth(160);
 
-        // Update total count label
+        // ── Update all four stat cards with live data ───────────────────────────
         view.setTotalStudents(students.size());
+        view.setPendingFees(feeDao.countPendingFees());
+        view.setPendingAllocation(roomDao.countUnallocatedStudents());
     }
 
     public void open()  { view.setVisible(true); }

@@ -128,6 +128,21 @@ public class ComplaintDao {
         return c;
     }
     
+    public int countOpenByUser(int userId) {
+    String sql = "SELECT COUNT(*) FROM complaints WHERE user_id = ? AND status != 'Resolved'";
+    Connection conn = mysql.openConnection();
+    try (PreparedStatement ps = conn.prepareStatement(sql)) {
+        ps.setInt(1, userId);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) return rs.getInt(1);
+    } catch (SQLException e) {
+        e.printStackTrace();
+    } finally {
+        mysql.closeConnection(conn);
+    }
+    return 0;
+}
+    
     public java.util.List<Object[]> getUrgentComplaints(int limit) {
     java.util.List<Object[]> list = new java.util.ArrayList<>();
  
