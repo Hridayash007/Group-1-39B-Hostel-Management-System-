@@ -74,6 +74,7 @@ public class MakePayment extends javax.swing.JFrame {
         Card5 = new javax.swing.JPanel();
         outstanding = new javax.swing.JLabel();
         Welcomeback = new javax.swing.JLabel();
+        pofileicon = new javax.swing.JButton();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -167,7 +168,7 @@ public class MakePayment extends javax.swing.JFrame {
 
         Notificationbutton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/notification.png"))); // NOI18N
         backgroundpanel.add(Notificationbutton);
-        Notificationbutton.setBounds(1420, 0, 30, 50);
+        Notificationbutton.setBounds(1440, 10, 30, 40);
 
         Card1.setBackground(new java.awt.Color(30, 58, 138));
         Card1.setForeground(new java.awt.Color(37, 99, 235));
@@ -199,11 +200,11 @@ public class MakePayment extends javax.swing.JFrame {
             .addGroup(Card1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(Makepayment)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(12, 12, 12)
                 .addComponent(Selectthefee)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel1)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         backgroundpanel.add(Card1);
@@ -222,7 +223,7 @@ public class MakePayment extends javax.swing.JFrame {
         Selectfeetopay.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         Selectfeetopay.setText("Select Fees To Pay");
         Card2.add(Selectfeetopay);
-        Selectfeetopay.setBounds(18, 8, 123, 20);
+        Selectfeetopay.setBounds(20, 10, 123, 20);
 
         messbill.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         messbill.setText("Mess Bill");
@@ -268,16 +269,16 @@ public class MakePayment extends javax.swing.JFrame {
         Card3Layout.setHorizontalGroup(
             Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card3Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addContainerGap()
                 .addComponent(paymentsummary, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         Card3Layout.setVerticalGroup(
             Card3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Card3Layout.createSequentialGroup()
-                .addGap(16, 16, 16)
+                .addContainerGap()
                 .addComponent(paymentsummary)
-                .addContainerGap(304, Short.MAX_VALUE))
+                .addContainerGap(314, Short.MAX_VALUE))
         );
 
         backgroundpanel.add(Card3);
@@ -300,7 +301,7 @@ public class MakePayment extends javax.swing.JFrame {
         Card4.add(payvia);
         payvia.setBounds(70, 100, 110, 16);
         Card4.add(upi);
-        upi.setBounds(49, 38, 235, 120);
+        upi.setBounds(20, 40, 235, 120);
 
         netbankinglable.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         netbankinglable.setText("Net Banking");
@@ -311,7 +312,7 @@ public class MakePayment extends javax.swing.JFrame {
         Card4.add(allmajorbank);
         allmajorbank.setBounds(340, 100, 140, 16);
         Card4.add(netbanking);
-        netbanking.setBounds(325, 38, 235, 120);
+        netbanking.setBounds(290, 40, 235, 120);
 
         debitcreditcard.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         debitcreditcard.setText("Debit / Credit Card");
@@ -322,7 +323,7 @@ public class MakePayment extends javax.swing.JFrame {
         Card4.add(visamasterlabel);
         visamasterlabel.setBounds(630, 100, 140, 16);
         Card4.add(debate);
-        debate.setBounds(616, 38, 235, 120);
+        debate.setBounds(560, 40, 235, 120);
 
         backgroundpanel.add(Card4);
         Card4.setBounds(300, 610, 880, 200);
@@ -357,6 +358,11 @@ public class MakePayment extends javax.swing.JFrame {
         backgroundpanel.add(Welcomeback);
         Welcomeback.setBounds(300, 40, 110, 16);
 
+        pofileicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/user.png"))); // NOI18N
+        pofileicon.addActionListener(this::pofileiconActionPerformed);
+        backgroundpanel.add(pofileicon);
+        pofileicon.setBounds(1480, 10, 30, 40);
+
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/view/background.png"))); // NOI18N
         Background.setText("jLabel1");
         backgroundpanel.add(Background);
@@ -375,6 +381,10 @@ public class MakePayment extends javax.swing.JFrame {
     private void AddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AddActionPerformed
+
+    private void pofileiconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pofileiconActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pofileiconActionPerformed
 
     /**
      * @param args the command line arguments
@@ -446,6 +456,7 @@ public class MakePayment extends javax.swing.JFrame {
     private javax.swing.JLabel paymentmethod;
     private javax.swing.JLabel paymentsummary;
     private javax.swing.JLabel payvia;
+    private javax.swing.JButton pofileicon;
     private javax.swing.JButton upi;
     private javax.swing.JLabel upilable;
     private javax.swing.JLabel visamasterlabel;
