@@ -2,6 +2,7 @@ package dao;
 
 import database.MYSqlConnector;
 import model.UserData;
+import util.PasswordUtil;
 import java.sql.*;
 
 public class UserDao {
@@ -15,7 +16,10 @@ public class UserDao {
         try (PreparedStatement pstm = conn.prepareStatement(sql)) {
             pstm.setString(1, user.getUsername());
             pstm.setString(2, user.getEmail());
-            pstm.setString(3, user.getPassword());
+            // Every NEW signup gets a hashed password. Existing plaintext
+            // rows in the database are left untouched per your instruction —
+            // loginUser() below handles both cases at login time.
+            pstm.setString(3, PasswordUtil.hash(user.getPassword()));
             pstm.executeUpdate();
         } catch (Exception e) {
             System.out.print(e);
@@ -42,14 +46,34 @@ public class UserDao {
 
     // ── Login ─────────────────────────────────────────────────────────────────
     public UserData loginUser(String username, String password) {
+        // BUG FIX: the old query did "AND password = ?" directly in SQL.
+        // That only works for plaintext. BCrypt hashes are salted differently
+        // every time they're generated, so the same password never produces
+        // the same hash twice — a SQL equality check against a hash can never
+        // match. We must fetch the row by identifier only, then verify the
+        // password against the stored hash (or legacy plaintext) in Java.
         Connection conn = mysql.openConnection();
-        String sql = "SELECT * FROM users WHERE (username = ? OR email = ?) AND password = ?";
+        String sql = "SELECT * FROM users WHERE username = ? OR email = ?";
         try (PreparedStatement pstm = conn.prepareStatement(sql)) {
             pstm.setString(1, username);
             pstm.setString(2, username);
-            pstm.setString(3, password);
             ResultSet rs = pstm.executeQuery();
-            if (rs.next()) return mapFullRow(rs);
+
+            if (rs.next()) {
+                String storedPassword = rs.getString("password");
+
+                boolean passwordMatches;
+                if (PasswordUtil.isHashed(storedPassword)) {
+                    // New-style account — verify against the BCrypt hash.
+                    passwordMatches = PasswordUtil.verify(password, storedPassword);
+                } else {
+                    // Legacy plaintext account (left as-is per your instruction)
+                    // — fall back to a direct comparison.
+                    passwordMatches = storedPassword.equals(password);
+                }
+
+                if (passwordMatches) return mapFullRow(rs);
+            }
         } catch (SQLException ex) {
             System.out.print(ex);
         } finally {
@@ -141,7 +165,9 @@ public class UserDao {
         Connection conn = mysql.openConnection();
         String query = "UPDATE users SET password=? WHERE email=?";
         try (PreparedStatement ps = conn.prepareStatement(query)) {
-            ps.setString(1, newPassword);
+            // Any password set through this flow is hashed — only old rows
+            // that have never gone through signup/reset stay plaintext.
+            ps.setString(1, PasswordUtil.hash(newPassword));
             ps.setString(2, email);
             return ps.executeUpdate() > 0;
         } catch (SQLException e) {

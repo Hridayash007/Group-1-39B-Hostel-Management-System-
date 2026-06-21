@@ -238,7 +238,7 @@ public class StudentDashboard extends javax.swing.JFrame {
         floor.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         floor.setText("Floor 2");
         card1.add(floor);
-        floor.setBounds(10, 60, 100, 30);
+        floor.setBounds(10, 60, 240, 30);
 
         roomicon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/QAroomdetails .png"))); // NOI18N
         card1.add(roomicon);

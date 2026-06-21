@@ -1,0 +1,24 @@
+package util;
+
+import org.mindrot.jbcrypt.BCrypt;
+
+
+public class PasswordUtil {
+
+    private PasswordUtil() {} // static-only utility class, never instantiated
+
+    
+    public static String hash(String plainPassword) {
+        return BCrypt.hashpw(plainPassword, BCrypt.gensalt());
+    }
+
+    
+    public static boolean verify(String plainPassword, String storedHash) {
+        return BCrypt.checkpw(plainPassword, storedHash);
+    }
+
+    
+    public static boolean isHashed(String storedValue) {
+        return storedValue != null && storedValue.matches("^\\$2[aby]\\$\\d{2}\\$.{53}$");
+    }
+}
