@@ -1,6 +1,7 @@
 package controller;
 
 import dao.UserDao;
+import util.PasswordUtil;
 import javax.swing.JOptionPane;
 import model.UserData;
 import view.ChangePassword;
@@ -124,8 +125,17 @@ public class ChangePasswordController {
             return;
         }
 
-        // Verify current password matches what's stored in DB
-        if (!currentPw.equals(user.getPassword())) {
+        // BUG FIX: user.getPassword() now holds a BCrypt hash (e.g. "$2a$10$...")
+        // for any account created or reset after hashing was added — a direct
+        // .equals() against typed plaintext can never match a hash. Mirror the
+        // same isHashed()-then-verify logic used in UserDao.loginUser(), so
+        // legacy plaintext accounts (left as-is per your instruction) still work.
+        String storedPassword = user.getPassword();
+        boolean currentPwCorrect = PasswordUtil.isHashed(storedPassword)
+                ? PasswordUtil.verify(currentPw, storedPassword)
+                : storedPassword.equals(currentPw);
+
+        if (!currentPwCorrect) {
             JOptionPane.showMessageDialog(view,
                     "Current password is incorrect.",
                     "Wrong Password", JOptionPane.ERROR_MESSAGE);
@@ -157,9 +167,12 @@ public class ChangePasswordController {
         boolean updated = userDao.updatePassword(user.getEmail(), newPw);
 
         if (updated) {
-            // Update the in-memory user object so current session reflects change
-            user.setPassword(newPw);
-            user.setConfirmPassword(newPw);
+            // Note: this generates a fresh hash with a new random salt — it
+            // will not be byte-identical to what userDao.updatePassword()
+            // wrote to the DB, but that's fine: PasswordUtil.verify() checks
+            // a plaintext attempt against ANY valid hash of that password,
+            // not hash-to-hash equality. Functionally correct either way.
+            user.setPassword(PasswordUtil.hash(newPw));
 
             JOptionPane.showMessageDialog(view,
                     "Password updated successfully!",

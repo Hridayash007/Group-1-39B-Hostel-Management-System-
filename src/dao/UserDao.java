@@ -46,12 +46,7 @@ public class UserDao {
 
     // ── Login ─────────────────────────────────────────────────────────────────
     public UserData loginUser(String username, String password) {
-        // BUG FIX: the old query did "AND password = ?" directly in SQL.
-        // That only works for plaintext. BCrypt hashes are salted differently
-        // every time they're generated, so the same password never produces
-        // the same hash twice — a SQL equality check against a hash can never
-        // match. We must fetch the row by identifier only, then verify the
-        // password against the stored hash (or legacy plaintext) in Java.
+        
         Connection conn = mysql.openConnection();
         String sql = "SELECT * FROM users WHERE username = ? OR email = ?";
         try (PreparedStatement pstm = conn.prepareStatement(sql)) {
@@ -165,8 +160,7 @@ public class UserDao {
         Connection conn = mysql.openConnection();
         String query = "UPDATE users SET password=? WHERE email=?";
         try (PreparedStatement ps = conn.prepareStatement(query)) {
-            // Any password set through this flow is hashed — only old rows
-            // that have never gone through signup/reset stay plaintext.
+            
             ps.setString(1, PasswordUtil.hash(newPassword));
             ps.setString(2, email);
             return ps.executeUpdate() > 0;
