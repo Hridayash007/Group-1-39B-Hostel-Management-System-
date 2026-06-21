@@ -79,7 +79,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         Dashboard.setText("Dashboard");
         Dashboard.setContentAreaFilled(false);
         backgroundpanel.add(Dashboard);
-        Dashboard.setBounds(10, 210, 160, 43);
+        Dashboard.setBounds(-20, 210, 280, 43);
 
         MyComplaints.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MyComplaints.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,7 +87,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         MyComplaints.setText("My complaints");
         MyComplaints.setContentAreaFilled(false);
         backgroundpanel.add(MyComplaints);
-        MyComplaints.setBounds(10, 280, 190, 43);
+        MyComplaints.setBounds(-10, 280, 280, 43);
 
         MealRoutine.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         MealRoutine.setForeground(new java.awt.Color(255, 255, 255));
@@ -95,7 +95,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         MealRoutine.setText("Meal Routine");
         MealRoutine.setContentAreaFilled(false);
         backgroundpanel.add(MealRoutine);
-        MealRoutine.setBounds(10, 350, 180, 43);
+        MealRoutine.setBounds(-10, 350, 280, 43);
 
         Notice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Notice.setForeground(new java.awt.Color(255, 255, 255));
@@ -103,7 +103,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         Notice.setText("Notice");
         Notice.setContentAreaFilled(false);
         backgroundpanel.add(Notice);
-        Notice.setBounds(-10, 480, 180, 43);
+        Notice.setBounds(-10, 490, 280, 43);
 
         RoomDetails.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         RoomDetails.setForeground(new java.awt.Color(255, 255, 255));
@@ -111,7 +111,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         RoomDetails.setText("Room Details");
         RoomDetails.setContentAreaFilled(false);
         backgroundpanel.add(RoomDetails);
-        RoomDetails.setBounds(10, 420, 190, 43);
+        RoomDetails.setBounds(-10, 420, 280, 43);
 
         Myprofile.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         Myprofile.setForeground(new java.awt.Color(255, 255, 255));
@@ -119,7 +119,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         Myprofile.setText("My Profile");
         Myprofile.setContentAreaFilled(false);
         backgroundpanel.add(Myprofile);
-        Myprofile.setBounds(10, 540, 170, 43);
+        Myprofile.setBounds(0, 550, 280, 43);
 
         SignOut.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         SignOut.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,7 +127,7 @@ public class IssueComplaints extends javax.swing.JFrame {
         SignOut.setText("Sign Out");
         SignOut.setContentAreaFilled(false);
         backgroundpanel.add(SignOut);
-        SignOut.setBounds(10, 610, 190, 43);
+        SignOut.setBounds(0, 710, 280, 43);
 
         Card1.setBackground(new java.awt.Color(255, 255, 255));
         Card1.setLayout(null);
