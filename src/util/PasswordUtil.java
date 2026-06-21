@@ -5,7 +5,7 @@ import org.mindrot.jbcrypt.BCrypt;
 
 public class PasswordUtil {
 
-    private PasswordUtil() {} // static-only utility class, never instantiated
+    private PasswordUtil() {} 
 
     
     public static String hash(String plainPassword) {
